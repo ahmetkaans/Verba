@@ -2,12 +2,17 @@
 
 What changed in My Game Project, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-11
+
+### Fill in the Blanks can accept a second spelling, like "blond" and "blonde"
+A typed Fill in the Blanks question can now list another spelling that counts as fully correct. If a student types "blonde" for "blond", they get full points, and the feedback says "Also correct: "blond"." (in Turkish: "Şu da doğru: "blond"."), without repeating the answer on another line. A small typo of either spelling still gets the "Almost!" half points, and questions without a second spelling work exactly as before. No question uses it yet. The notes also gained a short how-to for adding this kind of optional part to a question, a self-audit step for writing questions, and fixes to the file counts in the docs.
+
 ## 2026-11-08
 
-### The Roadmap now holds the achievements idea (notes only)
+### The Roadmap now holds the achievements idea (notes only) (`74c6d18`)
 The README's Roadmap has a new item for the achievements you described: a menu with earned and not-yet-earned achievements, and a pop-up on the results screen when one is earned. It records every decision so far (one-time events, separate from the reset buttons, a link on the History screen, old plays earn them silently) and the order of work, and says to ask before building anything. The game itself is the same.
 
-### No more "try harder quizzes" after a single play
+### No more "try harder quizzes" after a single play (`74c6d18`)
 The comment under the overall result (for example "Very good. Try the harder quizzes.") now appears only from the third play on. With one or two plays the number, the difficulty pills and the line "Play a few more quizzes for a fairer picture" still show, but no advice, because one play can't say whether a student is ready for harder quizzes. It works the same in "All plays" and "Recent plays".
 
 ### The tips now show on screen: a "Tips for you" card and a tip on the results screen (`d3cf43c`)

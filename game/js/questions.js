@@ -1,6 +1,6 @@
 /* js/questions.js - the quiz key, which parts have real questions, getting and shuffling questions, lorem questions, checking a typed Fill answer
    Provides: quizKey, hasRealQuizzes, isInUnfinished, quizIsReal, getQuestions, generateLoremQuestions, prepareQuiz,
-             balancedPositions, editDistance, normalizeAnswer, judgeFill, questionText, correctAnswerText
+             balancedPositions, editDistance, normalizeAnswer, fillAnswers, alsoCorrectForms, judgeFill, questionText, correctAnswerText
    Needs: CONFIG, hashString, mulberry32, makeLorem, QUESTION_BANK, fillBefore, fillAfter */
 'use strict';
 /* =========================================================================
@@ -140,18 +140,35 @@ function normalizeAnswer(text) {
   return text.trim().toLowerCase().replace(/\s+/g, ' ').replace(/[‘’]/g, "'");
 }
 
+// The forms of a Fill answer that count as correct, normalized: the answer itself, then the optional "accept"
+// list of the question (for example "blond" with accept ["blonde"]). See README.md "Typed Fill in the Blanks".
+function fillAnswers(q) {
+  return [q.answer, ...(q.accept || [])].map(normalizeAnswer);
+}
+
+// The other correct forms for the "Also correct" note, as written in the question: none when the student typed
+// the main answer, otherwise the main answer and the other accepted forms. Call it only for a correct answer.
+function alsoCorrectForms(input, q) {
+  const typed = normalizeAnswer(input);
+  if (typed === normalizeAnswer(q.answer)) return [];
+  return [q.answer, ...(q.accept || [])].filter((form) => normalizeAnswer(form) !== typed);
+}
+
 // Typed fill answer → 'correct' | 'misspelled' | 'incorrect' (see README.md "Typed Fill in the Blanks").
 function judgeFill(input, q) {
   const typed = normalizeAnswer(input);
-  const answer = normalizeAnswer(q.answer);
-  const others = q.bank.map(normalizeAnswer).filter((w) => w !== answer);
-  if (typed === answer) return 'correct';
+  const answers = fillAnswers(q);
+  const others = q.bank.map(normalizeAnswer).filter((w) => !answers.includes(w));
+  if (answers.includes(typed)) return 'correct';
   if (others.includes(typed)) return 'incorrect';
-  if (answer.length <= CONFIG.SPELL_EXACT_MAX_LENGTH) return 'incorrect'; // very short answers (hi, oh, one, six) must be exact: one wrong letter often makes another real word
-  const allowed = answer.length <= CONFIG.SPELL_SHORT_MAX_LENGTH ? CONFIG.SPELL_MAX_EDITS_SHORT : CONFIG.SPELL_MAX_EDITS_LONG;
-  const toAnswer = editDistance(typed, answer);
-  const closerToAnswer = others.every((w) => toAnswer < editDistance(typed, w));
-  return toAnswer <= allowed && closerToAnswer ? 'misspelled' : 'incorrect';
+  // Misspelled = close to ONE accepted form and strictly closer to it than to every wrong bank word.
+  const misspelled = answers.some((answer) => {
+    if (answer.length <= CONFIG.SPELL_EXACT_MAX_LENGTH) return false; // very short answers (hi, oh, one, six) must be exact: one wrong letter often makes another real word
+    const allowed = answer.length <= CONFIG.SPELL_SHORT_MAX_LENGTH ? CONFIG.SPELL_MAX_EDITS_SHORT : CONFIG.SPELL_MAX_EDITS_LONG;
+    const toAnswer = editDistance(typed, answer);
+    return toAnswer <= allowed && others.every((w) => toAnswer < editDistance(typed, w));
+  });
+  return misspelled ? 'misspelled' : 'incorrect';
 }
 
 function questionText(q) {

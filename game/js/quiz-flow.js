@@ -21,7 +21,7 @@ function startQuiz() {
     records: questions.map(() => ({
       status: 'unanswered',                     // correct | partial | incorrect | skipped | unanswered
       userAnswer: null,
-      note: null,                               // partial: { key, params } of a text (spellingWarning / pairsCorrect), shown by noteText()
+      note: null,                               // { key, params } of a text (spellingWarning / pairsCorrect / alsoCorrect), shown by noteText()
       points: 0,                                // points from answering
       penalty: 0,                               // points lost to the time extension
       extensionUsed: false,
@@ -120,7 +120,8 @@ function updateScoreDisplay() {
 
 /*
  * outcome: 'correct' | 'partial' | 'incorrect'. points: what the answer earns (renderers compute it,
- * see questionPoints()). note: { key, params } of a text, shown for partial answers (spelling warning, pairs count).
+ * see questionPoints()). note: { key, params } of a text (spelling warning and pairs count for partial answers;
+ * "Also correct" for a correct Fill answer typed in an accepted form).
  */
 function submitAnswer(outcome, userAnswer, points, note = null) {
   const quiz = state.quiz;
@@ -153,7 +154,9 @@ function submitAnswer(outcome, userAnswer, points, note = null) {
   // The answer and the explanation are English content: they carry lang="en" inside the (maybe Turkish) line.
   const labelled = (key, value) => el('p', {}, [`${t(key)}: `, englishText(value)]);
   if (outcome === 'correct') {
-    lines.push(labelled('answer', correctAnswerText(q)));
+    // Say each fact once (README "Confirmed decisions", owner 2026-11-11): the note "Also correct: ..." already names
+    // the answer, so a correct answer with that note has no "Answer" line.
+    if (!(note && note.key === 'alsoCorrect')) lines.push(labelled('answer', correctAnswerText(q)));
   } else {
     lines.push(labelled('correctAnswer', correctAnswerText(q)));
     lines.push(labelled('explanation', q.explanation));

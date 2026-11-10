@@ -1,6 +1,6 @@
 /* js/fill.js - the question screens, part 2: Fill in the Blanks, typed and tapped (SmartBoard)
    Provides: fillBefore, fillAfter, renderFill, renderFillTap
-   Needs: CONFIG, el, state, t, normalizeAnswer, judgeFill, submitAnswer */
+   Needs: CONFIG, el, state, t, normalizeAnswer, alsoCorrectForms, judgeFill, submitAnswer */
 'use strict';
 // Typed fill: the word bank is shown above the sentence; the student types one word into the blank.
 // Spaces around the blank like normal print: none after an opening quote ("___) and none before
@@ -27,7 +27,9 @@ function renderFill(q, area) {
     const result = judgeFill(typed, q);
     if (result === 'correct') {
       input.classList.add('is-correct');
-      submitAnswer('correct', typed, CONFIG.POINTS_CORRECT);
+      // Typed an accepted form (not the main answer): full points, plus the note "Also correct: ..." with the other form(s).
+      const others = alsoCorrectForms(typed, q);
+      submitAnswer('correct', typed, CONFIG.POINTS_CORRECT, others.length ? { key: 'alsoCorrect', params: { answer: others.join(', ') } } : null);
     } else if (result === 'misspelled') {
       input.classList.add('is-partial');
       submitAnswer('partial', typed, CONFIG.POINTS_CORRECT * CONFIG.FILL_MISSPELLED_SHARE,
