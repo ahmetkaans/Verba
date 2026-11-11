@@ -12,8 +12,10 @@ function startQuiz() {
   if (sinkWalker(startQuiz)) return; // Trick or Treat: a walker still on screen sinks into the ground first, then the quiz starts
   stopTimer();
   closeModal();
-  const questions = prepareQuiz(getQuestions(state.nav), quizKey(state.nav));
+  const seed = Math.floor(Math.random() * 4294967296);   // a new random question order for every play (owner, 2026-11-12)
+  const questions = prepareQuiz(getQuestions(state.nav), quizKey(state.nav), seed);
   state.quiz = {
+    seed,
     questions,
     index: 0,
     score: 0,                                   // raw running score, may go negative
@@ -42,7 +44,7 @@ function startQuiz() {
   openWordPreview(() => { closeModal(); renderQuestion(); });
 }
 
-// The words a quiz tests, in order of appearance, without repeats: [{ word, type }].
+// The words a quiz tests, in alphabetical order (not the order of the questions), without repeats: [{ word, type }].
 // type = the word type used in this quiz (q.targetType / pair.type); needed when a word has several types.
 // q.target (optional on mc / fill) = the dictionary form when the answer is another form ("laughs" -> "laugh").
 function quizTargetWords(questions) {
@@ -54,7 +56,8 @@ function quizTargetWords(questions) {
     else if (q.type === 'tf') add(q.target, q.targetType);
     else if (q.type === 'match') q.pairs.forEach((p) => add(p.left, p.type));
   });
-  return [...words.values()];
+  // Alphabetical, English rules, case ignored: the list must not follow the order of the questions (owner, 2026-11-12).
+  return [...words.values()].sort((a, b) => a.word.localeCompare(b.word, 'en', { sensitivity: 'base' }));
 }
 
 // All senses of a word from GLOSSARY[level]: [{ type, meaning }]. An entry is one sense (object) or several

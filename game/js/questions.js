@@ -1,6 +1,6 @@
 /* js/questions.js - the quiz key, which parts have real questions, getting and shuffling questions, lorem questions, checking a typed Fill answer
    Provides: quizKey, hasRealQuizzes, isInUnfinished, quizIsReal, getQuestions, generateLoremQuestions, prepareQuiz,
-             balancedPositions, editDistance, normalizeAnswer, fillAnswers, alsoCorrectForms, judgeFill, questionText, correctAnswerText
+             orderQuestions, balancedPositions, editDistance, normalizeAnswer, fillAnswers, alsoCorrectForms, judgeFill, questionText, correctAnswerText
    Needs: CONFIG, hashString, mulberry32, makeLorem, QUESTION_BANK, fillBefore, fillAfter */
 'use strict';
 /* =========================================================================
@@ -81,19 +81,25 @@ function generateLoremQuestions(nav) {
 }
 
 /*
- * Mindful shuffling, seeded by the quiz key so Retry shows exactly the same quiz.
- * Returns copies; the stored questions are never changed.
+ * Mindful shuffling. Returns copies; the stored questions are never changed.
+ * The seed makes the result repeatable: startQuiz() passes a fresh random seed for every play, so every play asks the
+ * questions in a new order (owner, 2026-11-12; Retry means the same quiz, not the same order). Without a seed the quiz
+ * key is used (the demo data and the tests).
+ * Order of the work: 1. the questions are put in a random order (orderQuestions); 2. the Multiple Choice answer
+ * positions are assigned in that order; 3. the options, bank words and pairs are shuffled.
  * - mc: each position holds the correct answer equally often (8 questions → each position twice),
- *       never more than MC_MAX_SAME_POSITION_IN_A_ROW times in a row. Sets q.answer (index).
+ *       never more than MC_MAX_SAME_POSITION_IN_A_ROW times in a row (in the order asked). Sets q.answer (index).
  * - fill: bank order shuffled.
- * - match: right-side order shuffled, never the same order as the left side. Sets q.rightOrder.
+ * - match: the pairs (the left column) are shuffled, then the right-side order is shuffled, never the same order as
+ *          the left side. Sets q.rightOrder.
  */
-function prepareQuiz(questions, key) {
-  const L = makeLorem(mulberry32(hashString(`shuffle|${key}`)));
-  const mcCount = questions.filter((q) => q.type === 'mc').length;
+function prepareQuiz(questions, key, seed) {
+  const L = makeLorem(mulberry32(seed === undefined ? hashString(`shuffle|${key}`) : seed));
+  const asked = orderQuestions(questions, L);
+  const mcCount = asked.filter((q) => q.type === 'mc').length;
   const positions = balancedPositions(mcCount, CONFIG.MC_OPTIONS, CONFIG.MC_MAX_SAME_POSITION_IN_A_ROW, L);
   let mcIndex = 0;
-  return questions.map((q) => {
+  return asked.map((q) => {
     if (q.type === 'mc') {
       const [correct, ...wrong] = q.options;
       const options = L.shuffle(wrong);
@@ -103,13 +109,38 @@ function prepareQuiz(questions, key) {
     }
     if (q.type === 'fill') return { ...q, bank: L.shuffle(q.bank) };
     if (q.type === 'match') {
-      const identity = q.pairs.map((_, i) => i);
+      const pairs = L.shuffle(q.pairs);
+      const identity = pairs.map((_, i) => i);
       let order = L.shuffle(identity);
       while (order.every((v, i) => v === i)) order = L.shuffle(identity);
-      return { ...q, rightOrder: order };
+      return { ...q, pairs, rightOrder: order };
     }
     return { ...q };
   });
+}
+
+// The questions of a quiz in a random order (owner, 2026-11-12), so that the order of the answers is never a pattern
+// (one, two, three ...) and never the order of the plan or of the pop-up list. With 3 or more questions the order is
+// never the stored order or its reverse. True or False: never three questions in a row with the same answer (4 true and
+// 4 false stay as they are); if 200 random tries do not give such an order, the true and false statements alternate.
+function orderQuestions(questions, L) {
+  const n = questions.length;
+  if (n < 2) return questions.slice();
+  const same = (a, b) => a.every((q, i) => q === b[i]);
+  const runOfThree = (arr) => arr.some((q, i) => i >= 2 && q.type === 'tf' && arr[i - 1].answer === q.answer && arr[i - 2].answer === q.answer);
+  let order = questions.slice();
+  for (let tries = 0; tries < 200; tries++) {
+    order = L.shuffle(questions);
+    if (n >= 3 && (same(order, questions) || same(order.slice().reverse(), questions))) continue;
+    if (!runOfThree(order)) return order;
+  }
+  if (questions.every((q) => q.type === 'tf')) {
+    const yes = L.shuffle(questions.filter((q) => q.answer));
+    const no = L.shuffle(questions.filter((q) => !q.answer));
+    const first = yes.length >= no.length ? yes : no, second = first === yes ? no : yes;
+    return first.flatMap((q, i) => (i < second.length ? [q, second[i]] : [q]));
+  }
+  return order;
 }
 
 function balancedPositions(count, slots, maxRun, L) {

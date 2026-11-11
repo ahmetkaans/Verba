@@ -4,10 +4,16 @@ What changed in My Game Project, in plain language. The newest change is at the 
 
 ## 2026-11-12
 
-### Two more themes to play: People and Family, and School and Classroom
+### Every play asks its questions in a new random order
+Each time you start a quiz, the questions come in a new order, so the answers can never follow a pattern like one, two, three, and Retry gives the same quiz in a different order. The true and false answers are mixed too, with never three of the same answer in a row, and the pairs in Matching are shuffled. The "Words in this game" list before a quiz is now in alphabetical order, so it no longer shows the order of the questions.
+
+### The review tip no longer has a "See the list" link
+The History tip that says looking again at the questions to review is the quickest way to improve is now only a sentence. Its link used to scroll down the same page, which did not help. The notes also hold the plan for showing the questions you got right, with a button on the results and History pages, and the ideas of word lists and a "not reviewed yet" switch.
+
+### Two more themes to play: People and Family, and School and Classroom (`5d1e19a`)
 A1 Vocabulary has two new themes with all their quizzes: People and Family, and School and Classroom. Each has 16 quizzes (four question types at four difficulties) and 104 questions, and the "Words in this game" pop-up now tells the meaning of 95 more words. The typed question for "dialogue" also accepts "dialog", with the "Also correct" note.
 
-### The Numbers and Amounts questions come in a mixed order
+### The Numbers and Amounts questions come in a mixed order (`5d1e19a`)
 The answers of the Numbers and Amounts quizzes used to come in counting order (one, two, three ...), so a student could guess the next one without reading. The questions are the same, only their order changed, and the pairs in Matching are mixed too. The notes now say to write questions in a mixed order.
 
 ## 2026-11-11

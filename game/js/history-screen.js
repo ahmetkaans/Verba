@@ -1,11 +1,11 @@
 /* js/history-screen.js - the History screens: the overall result block, the list of finished plays, one play in detail, and the buttons that open them
    Provides: HISTORY_SCREENS, OVERALL_VIEW_KEY, historyView, overallView, renderOverall, setOverallView,
-             scrollToHistoryList, tipWithAction, renderTips, updateHistoryResets, askHistoryReset, showHistoryAfterReset, askClearHistory, askResetCalculation, isPlayRecord, readHistoryPlays, historyDate, historyPath, historyMeta, historyCounts,
+             tipWithAction, renderTips, updateHistoryResets, askHistoryReset, showHistoryAfterReset, askClearHistory, askResetCalculation, isPlayRecord, readHistoryPlays, historyDate, historyPath, historyMeta, historyCounts,
              historyScore, historyTag, historyRow, appendHistoryRows, updateHistoryFooter, renderHistoryList, renderHistoryDetail,
              historyQuitRow, historyPlayAgain, updateHistoryQuitCount, refreshHistoryScreen, openHistory, closeHistory, openHistoryPlay,
              backToHistoryList, showMoreHistory, initHistory
    Needs: CONFIG, el, fmt, englishText, noteText, state, $, t, ICONS, loadHistory, clearHistory, loadStats, resetStats, overallResult, overallBand,
-          loadPref, savePref, prefersReducedMotion, currentTips, tipElement, openModal, closeModal,
+          loadPref, savePref, currentTips, tipElement, openModal, closeModal,
           showScreen, renderResultsContent, getTopics,
           quizIsReal, startQuiz */
 'use strict';
@@ -178,22 +178,11 @@ function setOverallView(view) {
 }
 
 // ---- The "Tips for you" card (the rules and the sentences are in js/tips.js) ----
-// The review tip has a link that moves to the list below; the retry tip has a button that starts the same quiz again, like Play again.
-function scrollToHistoryList() {
-  const list = $('#history-list');
-  list.tabIndex = -1;
-  list.focus({ preventScroll: true });
-  list.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
-}
-
+// The retry tip has a button that starts the same quiz again, like Play again. The other tips are a sentence only (the review tip's "See the list" link was removed on 2026-11-12: it only scrolled down the same page).
 function tipWithAction(tip) {
   const item = tipElement(tip);
   const body = item.querySelector('.tip-body');
-  if (tip.kind === 'review') {
-    const link = el('button', { class: 'link-btn tip-action', type: 'button', text: t('tipReviewLink') });
-    link.addEventListener('click', scrollToHistoryList);
-    body.append(link);
-  } else if (tip.kind === 'retry') {
+  if (tip.kind === 'retry') {
     const p = tip.params;
     const button = el('button', { class: 'history-again tip-button', type: 'button', text: t('tipRetryButton') });
     button.addEventListener('click', () => historyPlayAgain({ level: p.level, category: p.category, topic: p.topic, type: p.type, difficulty: p.d }));
