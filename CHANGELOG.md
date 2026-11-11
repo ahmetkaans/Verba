@@ -2,9 +2,17 @@
 
 What changed in My Game Project, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-12
+
+### Two more themes to play: People and Family, and School and Classroom
+A1 Vocabulary has two new themes with all their quizzes: People and Family, and School and Classroom. Each has 16 quizzes (four question types at four difficulties) and 104 questions, and the "Words in this game" pop-up now tells the meaning of 95 more words. The typed question for "dialogue" also accepts "dialog", with the "Also correct" note.
+
+### The Numbers and Amounts questions come in a mixed order
+The answers of the Numbers and Amounts quizzes used to come in counting order (one, two, three ...), so a student could guess the next one without reading. The questions are the same, only their order changed, and the pairs in Matching are mixed too. The notes now say to write questions in a mixed order.
+
 ## 2026-11-11
 
-### Fill in the Blanks can accept a second spelling, like "blond" and "blonde"
+### Fill in the Blanks can accept a second spelling, like "blond" and "blonde" (`939aee1`)
 A typed Fill in the Blanks question can now list another spelling that counts as fully correct. If a student types "blonde" for "blond", they get full points, and the feedback says "Also correct: "blond"." (in Turkish: "Şu da doğru: "blond"."), without repeating the answer on another line. A small typo of either spelling still gets the "Almost!" half points, and questions without a second spelling work exactly as before. No question uses it yet. The notes also gained a short how-to for adding this kind of optional part to a question, a self-audit step for writing questions, and fixes to the file counts in the docs.
 
 ## 2026-11-08
