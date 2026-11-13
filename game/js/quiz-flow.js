@@ -3,7 +3,7 @@
              renderQuestion, updateScoreDisplay, submitAnswer, goNext, skipQuestion, requestQuit
    Needs: CONFIG, el, fmt, englishText, noteText, hashString, mulberry32, makeLorem, state, $, playSound, t, GLOSSARY,
           quizKey, getQuestions, prepareQuiz, correctAnswerText, showScreen, getQuestionSeconds, openModal,
-          closeModal, startTimer, resumeTimer, pauseTimer, stopTimer, renderFillTap, RENDERERS, showResults, sinkWalker, saveQuizRun */
+          closeModal, startTimer, resumeTimer, pauseTimer, stopTimer, renderFillTap, RENDERERS, showResults, sinkWalker, saveQuizRun, newPlayId */
 'use strict';
 /* =========================================================================
  * QUIZ FLOW
@@ -16,6 +16,7 @@ function startQuiz() {
   const questions = prepareQuiz(getQuestions(state.nav), quizKey(state.nav), seed);
   state.quiz = {
     seed,
+    playId: newPlayId(),                        // the game's identity: on its note, its quit row and its finished record (js/history.js)
     questions,
     index: 0,
     score: 0,                                   // raw running score, may go negative

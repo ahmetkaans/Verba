@@ -7,7 +7,7 @@
  * INIT
  * ========================================================================= */
 initLanguage();
-recordInterruptedQuiz(); // before the first screen is shown: showing a screen removes the "quiz in progress" note
+recordInterruptedQuiz(); // every leftover "quiz in progress" note (a reload, a closed tab or browser) becomes a quit play in the history
 if (wasReloaded()) openReloadNotice(); // before initTheme: the Halloween walker sees the open pop-up and waits for it
 initTheme();
 initSound();

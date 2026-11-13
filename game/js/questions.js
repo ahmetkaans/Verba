@@ -167,8 +167,10 @@ function editDistance(a, b) {
   return d[a.length][b.length];
 }
 
+// Lower case, one space between words, straight apostrophes. The word o'clock is also accepted without its
+// apostrophe (oclock), so a student who forgets it still gets full points (owner, 2026-11-13). Only this word.
 function normalizeAnswer(text) {
-  return text.trim().toLowerCase().replace(/\s+/g, ' ').replace(/[‘’]/g, "'");
+  return text.trim().toLowerCase().replace(/\s+/g, ' ').replace(/[‘’]/g, "'").replace(/\bo'?clock\b/g, "o'clock");
 }
 
 // The forms of a Fill answer that count as correct, normalized: the answer itself, then the optional "accept"

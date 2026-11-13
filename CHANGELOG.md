@@ -2,15 +2,29 @@
 
 What changed in My Game Project, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-13
+
+### A new theme to play: Time and Dates
+A1 Vocabulary has a new theme with all its quizzes: Time and Dates (the parts of the day, the days of the week, the seasons, the months and the words about time). It has 16 quizzes (four question types at four difficulties) and 108 questions, and the "Words in this game" pop-up now tells the meaning of 52 more words. The months and days use one-step clues, and the holiday names (Halloween, April Fools' Day, New Year's Day) appear only where they help. The word "weekend" is explained without naming a country or its days.
+
+### A typed "o'clock" works without the apostrophe
+In Fill in the Blanks, "oclock" and "o’clock" now count as fully correct for "o'clock". Only this word has the rule, so "dont" is still not "don't".
+
+### A quiz you leave by closing the tab or the browser is saved as Quit
+If you close the tab or the browser in the middle of a quiz, the game now notices the next time you open it and saves that game in History as Quit. Reloading the page does the same. Each game is remembered on its own, so two open tabs never mix up their games, and a game is never saved twice. The History panel says this in one sentence, in English and in Turkish.
+
+### The notes know the holiday names
+The private question checker now allows Halloween, Valentine's Day and April Fools' Day as known words, like the language names (never forced, no religious holidays). The notes explain it.
+
 ## 2026-11-12
 
-### See the questions you got right, with one button
+### See the questions you got right, with one button (`456cd33`)
 On the results page and on each game in History, a button now switches between "Show all questions" and "Show only my mistakes". At first you see only the questions you missed, in the order you played them. Tap the button and the ones you got right appear between them. The button remembers your choice on both pages, even after you close the game. A game with no right answers shows the line "No right answers yet." Games with everything right can now be opened in History too.
 
-### History keeps the questions you got right
+### History keeps the questions you got right (`456cd33`)
 Every finished game now saves its right answers as well as its mistakes, so History can show the whole game later. Games saved before today only have their mistakes, and the page says so.
 
-### Tidier notes
+### Tidier notes (`456cd33`)
 The README is a little shorter. Its finished plans were trimmed and some out-of-date lines were fixed. It also has a short warning on how to edit files safely.
 
 ### Every play asks its questions in a new random order (`65bae8d`)

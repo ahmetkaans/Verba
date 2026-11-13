@@ -1,7 +1,7 @@
-/* js/history.js - the history of plays: one record per finished real quiz, and one per real quiz cut short by a reload; saved in the browser
-   Provides: HISTORY_KEY, HISTORY_BACKUP_KEY, HISTORY_VERSION, QUIZ_RUN_KEY, newPlayId, buildPlayRecord, loadHistory, saveHistory,
-             clearHistory, recordPlay, saveQuizRun, clearQuizRun, buildQuitRecord, recordInterruptedQuiz
-   Needs: CONFIG, state, quizIsReal, questionText, correctAnswerText, getTopics, getQuestionSeconds, clampScore, wasReloaded, recordStats */
+/* js/history.js - the history of plays: one record per finished real quiz, and one per real quiz cut short (a reload, a closed tab or browser); saved in the browser
+   Provides: HISTORY_KEY, HISTORY_BACKUP_KEY, HISTORY_VERSION, QUIZ_RUN_KEY, ownQuizRunKey, newPlayId, buildPlayRecord, loadHistory, saveHistory,
+             clearHistory, recordPlay, saveQuizRun, clearQuizRun, buildQuitRecord, quizRunKeys, addQuitPlay, recordInterruptedQuiz
+   Needs: CONFIG, state, quizIsReal, questionText, correctAnswerText, getTopics, getQuestionSeconds, clampScore, recordStats */
 'use strict';
 /* =========================================================================
  * HISTORY  (recording only for now; README.md, "History")
@@ -44,7 +44,7 @@ function buildPlayRecord(quiz, nav) {
     });
   });
   return {
-    id: newPlayId(),
+    id: quiz.playId || newPlayId(),               // the identity the game got when it started (js/quiz-flow.js), so a quit row of the same game can be replaced
     at: Date.now(),
     end: 'finished',                              // room for 'quit' later
     level: nav.level,
@@ -121,6 +121,8 @@ function recordPlay() {
     recordStats(play); // the overall result has its own totals: it does not depend on the history being saved (js/overall.js)
     const history = loadHistory();
     if (!history) return false;
+    // A quit play of the same game (made at a start-up while this game was still running in this tab) is replaced by the real result.
+    history.plays = history.plays.filter((p) => !(p && p.end === 'quit' && p.id === play.id));
     history.plays.unshift(play);
     return saveHistory(history.plays);
   } catch (e) {
@@ -128,12 +130,16 @@ function recordPlay() {
   }
 }
 
-// ---- A quiz cut short by a reload ----
-// While a real quiz is running, a small note ("a quiz is in progress, at question n") is kept in sessionStorage: it survives a
-// reload in the same tab, not a closed tab or browser (accepted limit) and is not shared between tabs. The note is removed when the
-// quiz screen is left (finished, quit). If the page starts again with a note left over after a reload, that quiz was cut short and
-// a "quit" play is added to the history. Quit plays have no score and are never part of any calculation.
-const QUIZ_RUN_KEY = 'lg-quiz-run';
+// ---- A quiz cut short: a reload, or a closed tab or browser ----
+// While a real quiz is running, every game has its own small note ("this game is in progress, at question n") in localStorage, named
+// with the game's identity (state.quiz.playId; owner's decision, 2026-11-13: a closed tab or browser is noticed too, not only a
+// reload). The note is written once per question and removed by the tab that owns it when the quiz screen is left (finished, quit).
+// At every start-up the game looks for notes that are left over: each one is a game that was cut short, and a "quit" play is added to
+// the history. A tab never has a running game when it starts, so a leftover note is a dead game (or a game in another open tab, which
+// cannot be told apart: that quit row corrects itself when the game finishes, see recordPlay()). Quit plays have no score and are
+// never part of any calculation.
+const QUIZ_RUN_KEY = 'lg-quiz-run';   // the notes are saved as QUIZ_RUN_KEY + ':' + the game's identity
+let ownQuizRunKey = null;             // the name of the note this tab wrote last: the only one this tab ever removes
 
 // Called by renderQuestion(): the player is now at this question of a real quiz.
 function saveQuizRun() {
@@ -141,40 +147,79 @@ function saveQuizRun() {
     const quiz = state.quiz;
     const nav = state.nav;
     if (!quiz || !quizIsReal(nav)) return;
-    sessionStorage.setItem(QUIZ_RUN_KEY, JSON.stringify({
-      at: Date.now(), level: nav.level, category: nav.category, topic: nav.topic, topicName: getTopics(nav)[nav.topic], type: nav.type,
+    if (!quiz.playId) quiz.playId = newPlayId();
+    ownQuizRunKey = `${QUIZ_RUN_KEY}:${quiz.playId}`;
+    localStorage.setItem(ownQuizRunKey, JSON.stringify({
+      id: quiz.playId, at: Date.now(), level: nav.level, category: nav.category, topic: nav.topic, topicName: getTopics(nav)[nav.topic], type: nav.type,
       difficulty: nav.difficulty, seconds: getQuestionSeconds(), sameDuration: nav.sameDuration, total: quiz.questions.length, question: quiz.index + 1,
     }));
-  } catch (e) { /* storage blocked: nothing is noted */ }
+  } catch (e) { /* storage blocked or full: nothing is noted */ }
 }
 
+// Removes this tab's own note, never another tab's.
 function clearQuizRun() {
-  try { sessionStorage.removeItem(QUIZ_RUN_KEY); } catch (e) { /* ignore */ }
+  if (ownQuizRunKey === null) return;
+  const key = ownQuizRunKey;
+  ownQuizRunKey = null;
+  try { localStorage.removeItem(key); } catch (e) { /* ignore */ }
 }
 
 function buildQuitRecord(note) {
   return {
-    id: newPlayId(), at: note.at, end: 'quit',
+    id: typeof note.id === 'string' && note.id ? note.id : newPlayId(), at: note.at, end: 'quit',
     level: note.level, category: note.category, topic: note.topic, topicName: note.topicName, type: note.type, difficulty: note.difficulty,
     seconds: note.seconds, sameDuration: note.sameDuration, total: note.total, quitIn: note.question,
   };
 }
 
-// Called once at start-up, before the first screen is shown (showing a screen removes the note). Always removes the note;
-// adds a quit play only after a reload, for a real quiz, from a note of the expected shape.
+// The names of the notes in the storage (this tab's own included).
+function quizRunKeys() {
+  const keys = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith(`${QUIZ_RUN_KEY}:`)) keys.push(key);
+  }
+  return keys;
+}
+
+// Puts a quit play in the list by its time (newest first), or updates the quit play of the same game. A game that is already in the
+// history as a finished play is left alone. Returns true when the list changed.
+function addQuitPlay(plays, quit) {
+  const same = plays.findIndex((p) => p && p.id === quit.id);
+  if (same !== -1) {
+    if (plays[same].end !== 'quit') return false;
+    plays.splice(same, 1);
+  }
+  let at = plays.findIndex((p) => p && Number(p.at) < quit.at);
+  if (at === -1) at = plays.length;
+  plays.splice(at, 0, quit);
+  return true;
+}
+
+// Called once at start-up. Every leftover note of a real quiz becomes a quit play (not only after a reload); the notes are removed
+// once they are dealt with (a note that cannot be saved stays for the next start-up). Never throws.
 function recordInterruptedQuiz() {
   try {
-    const raw = sessionStorage.getItem(QUIZ_RUN_KEY);
-    if (raw === null) return false;
-    sessionStorage.removeItem(QUIZ_RUN_KEY);
-    if (!wasReloaded()) return false;
-    const note = JSON.parse(raw);
-    const shape = { level: 'string', category: 'string', topicName: 'string', type: 'string', difficulty: 'string', at: 'number', topic: 'number', total: 'number', question: 'number' };
-    if (!note || Object.keys(shape).some((key) => typeof note[key] !== shape[key]) || !quizIsReal(note)) return false;
+    const keys = quizRunKeys();
+    if (!keys.length) return false;
+    const shape = { id: 'string', level: 'string', category: 'string', topicName: 'string', type: 'string', difficulty: 'string', at: 'number', topic: 'number', total: 'number', question: 'number' };
+    const notes = [];
+    keys.forEach((key) => {
+      let note = null;
+      try { note = JSON.parse(localStorage.getItem(key)); } catch (e) { note = null; }
+      const valid = note && Object.keys(shape).every((field) => typeof note[field] === shape[field]) && quizIsReal(note);
+      if (valid) notes.push({ key, note });
+      else localStorage.removeItem(key);          // damaged, wrong shape, or a quiz that is gone: nothing to record
+    });
+    if (!notes.length) return false;
     const history = loadHistory();
-    if (!history) return false;
-    history.plays.unshift(buildQuitRecord(note));
-    return saveHistory(history.plays);
+    if (!history) return false;                   // the saved history cannot be written now: the notes stay
+    notes.sort((a, b) => a.note.at - b.note.at);
+    let changed = false;
+    notes.forEach(({ note }) => { if (addQuitPlay(history.plays, buildQuitRecord(note))) changed = true; });
+    if (changed && !saveHistory(history.plays)) return false;
+    notes.forEach(({ key }) => localStorage.removeItem(key));
+    return changed;
   } catch (e) {
     return false;
   }

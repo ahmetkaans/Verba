@@ -236,6 +236,88 @@ Object.assign(GAME_DATA.glossary, {
     "chart": { "type": "noun", "meaning": "a picture with numbers that shows facts" },
     "section": { "type": "noun", "meaning": "one part of a book, a text or a newspaper" },
     "article": { "type": "noun", "meaning": "a text in a newspaper or a magazine" },
-    "title": { "type": "noun", "meaning": "the name of a book, a movie or a text" }
+    "title": { "type": "noun", "meaning": "the name of a book, a movie or a text" },
+    "today": [
+      { "type": "adverb", "meaning": "on this day, the day that is now" },
+      { "type": "noun", "meaning": "this day, the day that is now" }
+    ],
+    "tomorrow": [
+      { "type": "adverb", "meaning": "on the day after today" },
+      { "type": "noun", "meaning": "the day after today" }
+    ],
+    "yesterday": [
+      { "type": "adverb", "meaning": "on the day before today" },
+      { "type": "noun", "meaning": "the day before today" }
+    ],
+    "morning": { "type": "noun", "meaning": "the first part of the day, after you get up" },
+    "afternoon": { "type": "noun", "meaning": "the part of the day after the morning and before the evening" },
+    "evening": { "type": "noun", "meaning": "the part of the day after the afternoon and before the night" },
+    "night": { "type": "noun", "meaning": "the dark part of the day, when many people sleep" },
+    "tonight": [
+      { "type": "adverb", "meaning": "on this evening or this night" },
+      { "type": "noun", "meaning": "this evening or this night" }
+    ],
+    "weekend": { "type": "noun", "meaning": "the days at the end of the week when many people do not work or go to school" },
+    "hour": { "type": "noun", "meaning": "a time of 60 minutes" },
+    "minute": { "type": "noun", "meaning": "a short time: 60 of them make one hour" },
+    "clock": { "type": "noun", "meaning": "a thing that shows what time it is" },
+    "soon": { "type": "adverb", "meaning": "in a short time from now" },
+    "monday": { "type": "noun", "meaning": "the day after Sunday" },
+    "tuesday": { "type": "noun", "meaning": "the day after Monday" },
+    "wednesday": { "type": "noun", "meaning": "the day after Tuesday" },
+    "thursday": { "type": "noun", "meaning": "the day after Wednesday" },
+    "friday": { "type": "noun", "meaning": "the day after Thursday" },
+    "saturday": { "type": "noun", "meaning": "the day after Friday" },
+    "sunday": { "type": "noun", "meaning": "the day after Saturday" },
+    "spring": { "type": "noun", "meaning": "the time of the year after winter and before summer" },
+    "summer": { "type": "noun", "meaning": "the hot time of the year, after spring" },
+    "fall": [
+      { "type": "verb", "meaning": "to go down, for example to the floor" },
+      { "type": "noun", "meaning": "the time of the year between summer and winter" }
+    ],
+    "winter": { "type": "noun", "meaning": "the cold time of the year, when there can be snow" },
+    "early": [
+      { "type": "adjective", "meaning": "before the time you need to be there" },
+      { "type": "adverb", "meaning": "before the time you need to be there" }
+    ],
+    "late": [
+      { "type": "adjective", "meaning": "after the time you need to be there" },
+      { "type": "adverb", "meaning": "after the time you need to be there" }
+    ],
+    "next": [
+      { "type": "adjective", "meaning": "coming after this one" },
+      { "type": "adverb", "meaning": "after this one, as the thing that comes after" }
+    ],
+    "january": { "type": "noun", "meaning": "the first month of the year" },
+    "february": { "type": "noun", "meaning": "the second month of the year; it is the shortest month" },
+    "march": { "type": "noun", "meaning": "the third month of the year" },
+    "april": { "type": "noun", "meaning": "the fourth month of the year" },
+    "may": { "type": "noun", "meaning": "the fifth month of the year" },
+    "june": { "type": "noun", "meaning": "the month after May" },
+    "july": { "type": "noun", "meaning": "the month after June" },
+    "august": { "type": "noun", "meaning": "the month after July" },
+    "september": { "type": "noun", "meaning": "the month after August" },
+    "october": { "type": "noun", "meaning": "the month after September" },
+    "november": { "type": "noun", "meaning": "the month after October" },
+    "december": { "type": "noun", "meaning": "the last month of the year" },
+    "month": { "type": "noun", "meaning": "one of the twelve parts of a year, like May or June" },
+    "date": { "type": "noun", "meaning": "the day of the month, like May 5" },
+    "later": { "type": "adverb", "meaning": "after now, at a time that is not now" },
+    "end": [
+      { "type": "noun", "meaning": "the last part, where something stops" },
+      { "type": "verb", "meaning": "to stop, or to come to the last part" }
+    ],
+    "begin": { "type": "verb", "meaning": "to start" },
+    "beginning": { "type": "noun", "meaning": "the first part of something" },
+    "midnight": { "type": "noun", "meaning": "twelve o'clock at night, when one day ends and a new day begins" },
+    "o'clock": { "type": "adverb", "meaning": "used after a number to say the hour, with no extra minutes" },
+    "period": { "type": "noun", "meaning": "a time that goes on for days, weeks or months" },
+    "present": [
+      { "type": "adjective", "meaning": "at this time, now" },
+      { "type": "noun", "meaning": "the time that is now" }
+    ],
+    "future": { "type": "noun", "meaning": "the time that comes after now" },
+    "moment": { "type": "noun", "meaning": "a very short time" },
+    "special": { "type": "adjective", "meaning": "different from other things in a good way" }
   }
 });
