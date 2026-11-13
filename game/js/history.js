@@ -6,7 +6,7 @@
 /* =========================================================================
  * HISTORY  (recording only for now; README.md, "History")
  * Saved in localStorage "lg-history" as { v, plays }: plays are newest first, at most CONFIG.HISTORY_MAX.
- * A record keeps the numbers of the results screen and the missed questions (everything not fully correct).
+ * A record keeps the numbers of the results screen, the missed questions (everything not fully correct) and, since 2026-11-12, the correct ones (`correct`, optional: older records do not have it).
  * ========================================================================= */
 const HISTORY_KEY = 'lg-history';
 const HISTORY_BACKUP_KEY = 'lg-history-backup'; // the old text of a damaged list is kept here (one slot), never thrown away silently
@@ -21,11 +21,14 @@ function newPlayId() {
 function buildPlayRecord(quiz, nav) {
   const counts = { correct: 0, partial: 0, incorrect: 0, skipped: 0, unanswered: 0 };
   quiz.records.forEach((r) => { counts[r.status]++; });
+  // Every question of the play, in the order it was asked (n = its place in that order): the ones that were not fully correct
+  // go in `missed` (the Tips code and the History screens read it), the fully correct ones in `correct` (owner, 2026-11-12: the
+  // student can choose to see them too). Both lists have the same shape.
   const missed = [];
+  const correct = [];
   quiz.questions.forEach((q, i) => {
     const rec = quiz.records[i];
-    if (rec.status === 'correct') return;
-    missed.push({
+    (rec.status === 'correct' ? correct : missed).push({
       n: i + 1,
       type: q.type,
       status: rec.status,
@@ -60,6 +63,7 @@ function buildPlayRecord(quiz, nav) {
     extensions: quiz.records.filter((r) => r.extensionUsed).length,
     over: quiz.over,
     missed,
+    correct,
   };
 }
 

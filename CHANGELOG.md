@@ -4,10 +4,19 @@ What changed in My Game Project, in plain language. The newest change is at the 
 
 ## 2026-11-12
 
-### Every play asks its questions in a new random order
+### See the questions you got right, with one button
+On the results page and on each game in History, a button now switches between "Show all questions" and "Show only my mistakes". At first you see only the questions you missed, in the order you played them. Tap the button and the ones you got right appear between them. The button remembers your choice on both pages, even after you close the game. A game with no right answers shows the line "No right answers yet." Games with everything right can now be opened in History too.
+
+### History keeps the questions you got right
+Every finished game now saves its right answers as well as its mistakes, so History can show the whole game later. Games saved before today only have their mistakes, and the page says so.
+
+### Tidier notes
+The README is a little shorter. Its finished plans were trimmed and some out-of-date lines were fixed. It also has a short warning on how to edit files safely.
+
+### Every play asks its questions in a new random order (`65bae8d`)
 Each time you start a quiz, the questions come in a new order, so the answers can never follow a pattern like one, two, three, and Retry gives the same quiz in a different order. The true and false answers are mixed too, with never three of the same answer in a row, and the pairs in Matching are shuffled. The "Words in this game" list before a quiz is now in alphabetical order, so it no longer shows the order of the questions.
 
-### The review tip no longer has a "See the list" link
+### The review tip no longer has a "See the list" link (`65bae8d`)
 The History tip that says looking again at the questions to review is the quickest way to improve is now only a sentence. Its link used to scroll down the same page, which did not help. The notes also hold the plan for showing the questions you got right, with a button on the results and History pages, and the ideas of word lists and a "not reviewed yet" switch.
 
 ### Two more themes to play: People and Family, and School and Classroom (`5d1e19a`)

@@ -14,7 +14,7 @@ Before doing anything with the game files (`game/index.html` and the files next 
    - works at phone width;
    - check both light and dark mode;
    - works with "reduce motion" turned on;
-   - test remembered settings (language, theme, sound, same duration, SmartBoard mode) in a normal browser, because previews served as `data:` URLs block `localStorage`;
+   - test remembered settings (language, theme, sound, same duration, SmartBoard mode, which questions the cards show) in a normal browser, because previews served as `data:` URLs block `localStorage`;
    - works both as a website and by double-click from the folder, offline (README.md, "Testing", "Website check").
 7. **Git.** Commit only when asked, with a meaningful message. Do not push unless asked. **Every commit adds an entry to `CHANGELOG.md`** (see README.md, "Changelog").
 8. **Private `.gitignore/` folder.** The files in the `.gitignore/` folder must never be uploaded to GitHub: never `git add`, commit or push them. The folder is excluded locally through `.git/info/exclude` (a folder named `.gitignore` cannot work as an ignore file). It has five drawers: `tools/` (check scripts, test server, play-through test), `drafts/` (drafts and plans in progress), `words/` (word lists), `plans/` (theme plans) and `archive/` (the old single-file version of the game, kept just in case: never changed, never needed for a task). For A1 work, read `words/ORG_A1_WORDS.md`. `words/A1_WORDS.md` should be read only when you work on creating a file in the same format as `ORG_A1_WORDS.md` (for example for another level), just to understand how the original word file is turned into a useful file for AI, or when the owner asks you to.

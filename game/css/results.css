@@ -22,6 +22,18 @@
   .results-list strong { font-weight: 500; }
   .results-list .label { color: var(--muted); }
 
+  /* The view pill (owner, 2026-11-12): one button above the cards of the results page and of one History play; its label says what a tap shows
+     (all questions / only my mistakes), the round number is how many cards that view has. Quiet when it shows only the mistakes, accent-tinted
+     when all questions are shown. */
+  .view-bar { margin: 18px 0 -6px; }
+  .view-pill { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 8px 0 14px; border-radius: 999px; font-size: 0.9rem; }
+  .view-pill-icon { display: inline-flex; }
+  .view-pill-icon svg { width: 18px; height: 18px; display: block; }
+  .view-pill-count { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; padding: 0 7px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+  .view-pill.is-on { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+  .view-pill.is-on .view-pill-count { border-color: var(--accent-line); color: var(--accent); }
+  .view-note { margin: 10px 0 0; color: var(--muted); font-size: 0.9rem; }
+
   /* Footer / credits */
   footer { padding: 16px 16px 28px; text-align: center; }
   .link-btn {

@@ -78,6 +78,7 @@
   .history-review-title { margin: 22px 0 -8px; color: var(--muted); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
   .history-qhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .history-tag { padding: 1px 10px; border: 1px solid currentColor; border-radius: 999px; color: var(--muted); font-size: 0.8rem; font-weight: 500; white-space: nowrap; }
+  .history-tag.is-correct { color: var(--ok); }
   .history-tag.is-incorrect { color: var(--bad); }
   .history-tag.is-partial { color: var(--accent); }
 

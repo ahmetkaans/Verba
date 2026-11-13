@@ -5,7 +5,7 @@
              historyQuitRow, historyPlayAgain, updateHistoryQuitCount, refreshHistoryScreen, openHistory, closeHistory, openHistoryPlay,
              backToHistoryList, showMoreHistory, initHistory
    Needs: CONFIG, el, fmt, englishText, noteText, state, $, t, ICONS, loadHistory, clearHistory, loadStats, resetStats, overallResult, overallBand,
-          loadPref, savePref, currentTips, tipElement, openModal, closeModal,
+          loadPref, savePref, currentTips, tipElement, showAllQuestions, updateViewPill, allCorrectCard, openModal, closeModal,
           showScreen, renderResultsContent, getTopics,
           quizIsReal, startQuiz */
 'use strict';
@@ -25,7 +25,7 @@ function isPlayRecord(p) {
   if (p.end === 'quit') {
     return Number.isFinite(p.quitIn) && Number.isFinite(p.total) && ['level', 'category', 'topicName', 'type', 'difficulty'].every((key) => typeof p[key] === 'string');
   }
-  return Boolean(p.counts) && typeof p.counts === 'object' && Array.isArray(p.missed);
+  return Boolean(p.counts) && typeof p.counts === 'object' && Array.isArray(p.missed) && (p.correct === undefined || Array.isArray(p.correct));
 }
 
 function readHistoryPlays() {
@@ -72,10 +72,12 @@ function historyScore(p) {
   return [el('span', { class: 'score-num', text: fmt(Number(p.score) || 0) }), el('span', { class: 'score-max', text: ` / ${Number(p.max) || 0}` })];
 }
 
-// The small tag of a question to review: Incorrect, Partly correct (Misspelled in Fill in the Blanks), Skipped, Not answered, Time ran out.
+// The small tag of a question: Correct (only when the student shows all questions), Incorrect, Partly correct (Misspelled in Fill in the Blanks),
+// Skipped, Not answered, Time ran out.
 function historyTag(m) {
   let key;
-  if (m.status === 'incorrect') key = 'status.incorrect';
+  if (m.status === 'correct') key = 'status.correct';
+  else if (m.status === 'incorrect') key = 'status.incorrect';
   else if (m.status === 'partial') key = m.type === 'fill' ? 'status.misspelled' : 'status.partial';
   else if (m.status === 'skipped') key = 'historySkipped';
   else key = m.timedOut ? 'historyTimedOut' : 'status.unanswered';
@@ -109,7 +111,8 @@ function historyPlayAgain(p) {
   startQuiz();
 }
 
-// A play with questions to review is a button that opens it; a perfect play is a plain box that says so.
+// A play with saved questions is a button that opens it (a perfect play too, since 2026-11-12: it can show its questions with the pill); a
+// play with nothing saved to open (an older perfect play) is a plain box that says so.
 function historyRow(p) {
   if (p.end === 'quit') return historyQuitRow(p);
   const top = el('span', { class: 'history-top' }, [
@@ -121,11 +124,11 @@ function historyRow(p) {
     el('span', { class: 'history-score' }, historyScore(p)),
   ]);
   const pills = el('span', { class: 'history-pills' }, historyCounts(p).map((text) => el('span', { text })));
-  if (!p.missed.length) {
-    const perfect = el('span', { class: 'history-perfect', text: `✓ ${t('historyPerfect')}` });
+  const perfect = el('span', { class: 'history-perfect', text: `✓ ${t('historyPerfect')}` });
+  if (!p.missed.length && !(p.correct && p.correct.length)) {
     return el('li', {}, [el('div', { class: 'history-row is-perfect' }, [top, pills, perfect])]);
   }
-  const button = el('button', { class: 'history-row', type: 'button' }, [top, pills, el('span', { class: 'history-arrow', 'aria-hidden': 'true', text: '›' })]);
+  const button = el('button', { class: 'history-row', type: 'button' }, [top, pills, ...(p.missed.length ? [] : [perfect]), el('span', { class: 'history-arrow', 'aria-hidden': 'true', text: '›' })]);
   button.addEventListener('click', () => openHistoryPlay(p.id));
   return el('li', {}, [button]);
 }
@@ -274,15 +277,29 @@ function renderHistoryList() {
   updateHistoryFooter();
 }
 
-// One play: its place and date, the score and counts of the results screen, and every question that was not fully correct.
+// One play: its place and date, the score and counts of the results screen, and the questions: the ones that were not fully correct, or
+// every question in the order it was asked when the student has chosen all questions (the pill; one choice for both pages). A play saved
+// before 2026-11-12 has no list of correct questions: with all questions chosen it shows a note and only the missed ones.
 function renderHistoryDetail() {
   const p = historyView.plays.find((x) => x.id === historyView.openId);
   if (!p) return;
+  const all = showAllQuestions();
+  const saved = Array.isArray(p.correct) ? p.correct : [];
+  const countedCorrect = Number(p.counts && p.counts.correct) || 0;
   $('#history-detail-title').textContent = historyPath(p);
   $('#history-detail-sub').textContent = `${historyDate(p.at)} · ${historyMeta(p)}`;
   $('#history-detail-score').replaceChildren(...historyScore(p));
   $('#history-detail-summary').replaceChildren(...historyCounts(p).map((text) => el('li', { text })));
-  $('#history-detail-list').replaceChildren(...p.missed.map((m) => {
+  $('#history-review-title').textContent = t(all ? 'historyAllTitle' : 'historyReview');
+  updateViewPill($('#history-view'), { total: p.missed.length + saved.length, missed: p.missed.length });
+  // The note under the pill (only with all questions chosen): an older play whose correct questions were not saved, or a play with no right answer.
+  const olderPlay = saved.length === 0 && countedCorrect > 0;
+  const noneRight = saved.length === 0 && countedCorrect === 0;
+  $('#history-view-note').hidden = !(all && (olderPlay || noneRight));
+  $('#history-view-note').textContent = t(olderPlay ? 'historyNoCorrectSaved' : 'noRightYet');
+  const items = all ? [...p.missed, ...saved].sort((a, b) => a.n - b.n) : p.missed;
+  if (!items.length) { $('#history-detail-list').replaceChildren(allCorrectCard()); return; }
+  $('#history-detail-list').replaceChildren(...items.map((m) => {
     const row = (label, value) => el('p', {}, [el('span', { class: 'label', text: `${label}: ` }), value]);
     const children = [
       el('p', { class: 'history-qhead' }, [el('strong', { text: t('questionNumber', { n: m.n }) }), historyTag(m)]),

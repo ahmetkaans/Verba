@@ -1,6 +1,7 @@
 /* js/results.js - the results screen
-   Provides: statusLabel, renderResultsContent, renderResultsTip, showResults
-   Needs: launchConfetti, CONFIG, el, fmt, englishText, noteText, clampScore, state, $, t, questionText,
+   Provides: statusLabel, renderResultsContent, renderResultsList, renderResultsTip, SHOW_ALL_KEY, showAllQuestions, updateViewPill, allCorrectCard,
+             toggleViewPill, initViewPills, showResults
+   Needs: launchConfetti, CONFIG, el, fmt, englishText, noteText, clampScore, state, $, t, questionText, loadPref, savePref, ICONS, renderHistoryDetail,
           correctAnswerText, showScreen, getNextExercise, stopTimer, recordPlay, resultsTips, tipElement */
 'use strict';
 /* =========================================================================
@@ -35,8 +36,51 @@ function renderResultsContent() {
     el('li', { text: `${t('count.unanswered')}: ${counts.unanswered}` }),
   );
 
-  $('#results-list').replaceChildren(...quiz.questions.map((q, i) => {
-    const rec = quiz.records[i];
+  renderResultsList();
+
+  $('#results-next').hidden = !getNextExercise(state.nav);   // hidden after the very last quiz
+  renderResultsTip();
+}
+
+// ---- Which questions the cards show (owner, 2026-11-12) ----
+// The results page and the History detail page show only the questions that were not fully correct, until the student switches
+// the pill to all questions. One remembered choice for both pages (a setting like the language), so a change made on either page
+// is the same everywhere.
+const SHOW_ALL_KEY = 'lg-show-all'; // '1' = every question; anything else = only the questions that were not fully correct
+
+function showAllQuestions() {
+  return loadPref(SHOW_ALL_KEY, '0') === '1';
+}
+
+// Puts a view pill in its state. It is a plain button whose label says what a tap will show; the round number is how many cards
+// that view has. It is always shown (owner, 2026-11-12), also when the play has no fully correct question, so the pages look the same.
+// The button is updated in place, so it keeps the keyboard focus. `bar` = the .view-bar around it; `total` = all cards;
+// `missed` = the cards that were not fully correct.
+function updateViewPill(bar, { total, missed }) {
+  const all = showAllQuestions();
+  bar.hidden = false;
+  const pill = bar.querySelector('.view-pill');
+  pill.querySelector('.view-pill-icon').innerHTML = ICONS[all ? 'eyeOff' : 'eye'];
+  pill.querySelector('.view-pill-label').textContent = t(all ? 'viewMistakesOnly' : 'viewAllQuestions');
+  pill.querySelector('.view-pill-count').textContent = String(all ? missed : total);
+  pill.classList.toggle('is-on', all);
+}
+
+// A card that says every answer was correct: what the list shows (in the mistakes-only view) when there is no mistake.
+function allCorrectCard() {
+  return el('li', { class: 'st-correct' }, [el('p', {}, [el('strong', { text: t('historyPerfect') })])]);
+}
+
+// The cards of the play that was just finished, in the order the questions were asked.
+function renderResultsList() {
+  const quiz = state.quiz;
+  const all = showAllQuestions();
+  const total = quiz.questions.length;
+  const correct = quiz.records.filter((r) => r.status === 'correct').length;
+  updateViewPill($('#results-view'), { total, missed: total - correct });
+  $('#results-view-note').hidden = !(all && correct === 0);
+  $('#results-view-note').textContent = t('noRightYet');
+  const cards = quiz.questions.map((q, i) => ({ q, i, rec: quiz.records[i] })).filter(({ rec }) => all || rec.status !== 'correct').map(({ q, i, rec }) => {
     const row = (label, value) => el('p', {}, [el('span', { class: 'label', text: `${label}: ` }), value]);
     const children = [
       el('p', {}, [el('strong', {}, [`${t('questionNumber', { n: i + 1 })} `, englishText(questionText(q))])]),
@@ -50,12 +94,22 @@ function renderResultsContent() {
     }
     children.push(row(t('explanation'), englishText(q.explanation)));
     return el('li', { class: `st-${rec.status}` }, children);
-  }));
-
-  $('#results-next').hidden = !getNextExercise(state.nav);   // hidden after the very last quiz
-  renderResultsTip();
+  });
+  $('#results-list').replaceChildren(...(cards.length ? cards : [allCorrectCard()]));
 }
 
+// A tap on a view pill: the choice is saved and both pages follow it; the page stays where it is.
+function toggleViewPill(render) {
+  savePref(SHOW_ALL_KEY, showAllQuestions() ? '0' : '1');
+  const y = window.scrollY;
+  render();
+  window.scrollTo(0, y);
+}
+
+function initViewPills() {
+  $('#results-view-pill').addEventListener('click', () => toggleViewPill(renderResultsList));
+  $('#history-view-pill').addEventListener('click', () => toggleViewPill(renderHistoryDetail));
+}
 // The one tip about the play just finished (a new best, or a retry tip as a sentence only: the Retry button is right above it).
 // Nothing for a quiz that was not recorded.
 function renderResultsTip() {

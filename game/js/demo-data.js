@@ -130,10 +130,14 @@ function demoRecord({ d, score, type = 'mc', at }) {
     n: i + 1, type, status: 'incorrect', timedOut: false, question: `Test question ${i + 1}`, userAnswer: 'a wrong answer',
     correctAnswer: 'the right answer', note: null, points: -CONFIG.POINTS_INCORRECT, penalty: 0, extensionUsed: false, explanation: 'A test explanation.',
   }));
+  const right = Array.from({ length: correct }, (x, i) => ({
+    n: total - correct + i + 1, type, status: 'correct', timedOut: false, question: `Test question ${total - correct + i + 1}`, userAnswer: 'the right answer',
+    correctAnswer: 'the right answer', note: null, points: CONFIG.POINTS_CORRECT, penalty: 0, extensionUsed: false, explanation: 'A test explanation.',
+  }));
   return {
     id: newPlayId(), at, end: 'finished', level: 'A1', category: 'vocabulary', topic: 0, topicName: getTopics({ level: 'A1', category: 'vocabulary' })[0],
     type, difficulty: d, seconds: findById(CONFIG.DIFFICULTIES, d).seconds, sameDuration: false, graded: true, score, max: CONFIG.SCORE_MAX,
-    counts: { correct, partial: 0, incorrect: total - correct, skipped: 0, unanswered: 0 }, total, extensions: 0, over: false, missed, demo: true,
+    counts: { correct, partial: 0, incorrect: total - correct, skipped: 0, unanswered: 0 }, total, extensions: 0, over: false, missed, correct: right, demo: true,
   };
 }
 
