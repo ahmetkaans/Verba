@@ -2,18 +2,36 @@
 
 What changed in My Game Project, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-17
+
+### A Word list button shows every word the game tests
+The main menu has a new button, Word list (Kelime Listesi in Turkish). Pick a level and a topic, and the list opens at once with every word of that topic, in four tabs: Easy, Medium, Hard and Very Hard. Each word shows its type in italics, a dot and its meaning (the meanings stay in English). A button at the end of the list, "Separate words by question type", shows four type buttons above the tabs, so you can see only the words of Multiple Choice, Fill in the Blanks, True or False or Matching. The page looks like a spiral-bound notebook, with a ribbon that shows your level, so it never looks like the main menu.
+
+### The notes hold new ideas for later
+The README now lists ideas that are not built yet: a "words I don't know" list, sharing a game or a list of games with a code or a link, a teacher mode with a test maker, results that go to the teacher, and a History kept on a server. Each one has its open questions, so we decide them before building.
+
+## 2026-11-16
+
+### Three more themes to play: Town and Shopping, Free Time and Sports, and Body and Health
+A1 Vocabulary has three new themes with all their quizzes (16 quizzes each, four question types at four difficulties).
+
+## 2026-11-15
+
+### Three more themes to play: Home and Daily Routine, Food and Drink, and Clothes and Colors
+A1 Vocabulary has three new themes with all their quizzes (16 quizzes each, four question types at four difficulties). A1 Vocabulary now has eleven themes to play.
+
 ## 2026-11-13
 
-### A new theme to play: Time and Dates
+### A new theme to play: Time and Dates (`d0b7130`)
 A1 Vocabulary has a new theme with all its quizzes: Time and Dates (the parts of the day, the days of the week, the seasons, the months and the words about time). It has 16 quizzes (four question types at four difficulties) and 108 questions, and the "Words in this game" pop-up now tells the meaning of 52 more words. The months and days use one-step clues, and the holiday names (Halloween, April Fools' Day, New Year's Day) appear only where they help. The word "weekend" is explained without naming a country or its days.
 
-### A typed "o'clock" works without the apostrophe
+### A typed "o'clock" works without the apostrophe (`d0b7130`)
 In Fill in the Blanks, "oclock" and "o’clock" now count as fully correct for "o'clock". Only this word has the rule, so "dont" is still not "don't".
 
-### A quiz you leave by closing the tab or the browser is saved as Quit
+### A quiz you leave by closing the tab or the browser is saved as Quit (`d0b7130`)
 If you close the tab or the browser in the middle of a quiz, the game now notices the next time you open it and saves that game in History as Quit. Reloading the page does the same. Each game is remembered on its own, so two open tabs never mix up their games, and a game is never saved twice. The History panel says this in one sentence, in English and in Turkish.
 
-### The notes know the holiday names
+### The notes know the holiday names (`d0b7130`)
 The private question checker now allows Halloween, Valentine's Day and April Fools' Day as known words, like the language names (never forced, no religious holidays). The notes explain it.
 
 ## 2026-11-12

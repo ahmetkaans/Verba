@@ -74,6 +74,9 @@ const I18N = {
     'difficulty.easy': 'Easy', 'difficulty.medium': 'Medium', 'difficulty.hard': 'Hard', 'difficulty.veryhard': 'Very Hard',
     nextTag: 'Next', secondsShort: '{n}s',
     sameDuration: 'Same duration per question across all difficulty settings',
+    vocabButton: 'Word list', vocabLevelTitle: 'Choose a level',
+    vocabSeparate: 'Separate words by question type', vocabShowAll: 'Show all question types',
+    vocabWords: '{n} words', vocabWordsOne: '1 word', vocabEmpty: 'There are no words here yet.',
 
     homeTitle: 'Go to the main menu?', homeBody: 'You will go back to the level selection screen.', no: 'No', yes: 'Yes',
     unfinishedTag: 'Not finished', unfinishedTitle: 'Not finished yet',
@@ -187,6 +190,9 @@ const I18N = {
     'difficulty.easy': 'Kolay', 'difficulty.medium': 'Orta', 'difficulty.hard': 'Zor', 'difficulty.veryhard': 'Çok Zor',
     nextTag: 'Sıradaki', secondsShort: '{n} sn',
     sameDuration: 'Tüm zorluk seviyelerinde soru başına aynı süre',
+    vocabButton: 'Kelime Listesi', vocabLevelTitle: 'Bir seviye seç',
+    vocabSeparate: 'Kelimeleri soru türüne göre ayır', vocabShowAll: 'Tüm soru türlerini göster',
+    vocabWords: '{n} kelime', vocabWordsOne: '1 kelime', vocabEmpty: 'Burada henüz kelime yok.',
 
     homeTitle: 'Ana menüye gitmek istiyor musun?', homeBody: 'Seviye seçim ekranına geri döneceksin.', no: 'Hayır', yes: 'Evet',
     unfinishedTag: 'Henüz bitmedi', unfinishedTitle: 'Henüz bitmedi',

@@ -1,7 +1,7 @@
 /* js/language.js - the saved language, the static texts of the page, switching the language
    Provides: initLanguage, applyStaticTexts, setLanguage
    Needs: t, LANGS, loadPref, savePref, state, $, refreshBreadcrumb, renderDifficultyButtons, renderMenus,
-          renderTopicButtons, translateSettings, renderResultsContent, refreshHistoryScreen, modalState */
+          renderTopicButtons, translateSettings, renderResultsContent, refreshHistoryScreen, refreshVocab, modalState */
 'use strict';
 /* =========================================================================
  * LANGUAGE  (English / Turkish, chosen in Settings, remembered in localStorage "lg-lang")
@@ -37,5 +37,6 @@ function setLanguage(lang, save = true) {
   // The results screen is built from the quiz record: build it again in the new language.
   if (state.screen === 'results' && state.quiz) renderResultsContent();
   refreshHistoryScreen();   // the History screens too (only when one is showing)
+  if (state.screen === 'vocab') refreshVocab();   // the Vocabulary screen too
 }
 

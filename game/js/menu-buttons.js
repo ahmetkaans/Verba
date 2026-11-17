@@ -1,5 +1,5 @@
 /* js/menu-buttons.js - the topic, level, category and type buttons (with the gray "not finished" ones); menu start-up
-   Provides: renderTopicButtons, renderCategoryButtons, renderMenus, initMenus
+   Provides: renderTopicButtons, renderCategoryButtons, renderLevelGroups, renderMenus, initMenus
    Needs: CONFIG, el, loadPref, state, $, t, getTopics, ICONS, hasRealQuizzes, showScreen, renderButtons,
           setSameDuration, goHome, openNextExercise, openCredits, setSmartBoard, openSettings, startQuiz, goNext,
           requestQuit */
@@ -35,14 +35,12 @@ function renderCategoryButtons() {
   });
 }
 
-// The level and question type buttons (and the category buttons); built again when the language changes.
-function renderMenus() {
-  $('#level-buttons').replaceChildren(...CONFIG.LEVEL_GROUPS.map((group) => {
+// The level buttons in their three groups (A, B, C), put into container; onPick(item) runs when a level is chosen (item.id = the level).
+// Used by the main menu and by the Vocabulary screen (js/vocab-list.js).
+function renderLevelGroups(container, onPick) {
+  container.replaceChildren(...CONFIG.LEVEL_GROUPS.map((group) => {
     const grid = el('div', { class: 'grid' });
-    renderButtons(grid, group.levels.map((l) => ({ id: l, label: l, sub: t(`levelName.${l}`), unfinished: !hasRealQuizzes(l) })), (item) => {
-      state.nav.level = item.id;
-      showScreen('category');
-    });
+    renderButtons(grid, group.levels.map((l) => ({ id: l, label: l, sub: t(`levelName.${l}`), unfinished: !hasRealQuizzes(l) })), onPick);
     // Each level button previews its own level color.
     [...grid.children].forEach((btn, i) => {
       btn.classList.add('level-btn');
@@ -50,6 +48,14 @@ function renderMenus() {
     });
     return el('div', { class: 'level-group' }, [el('h2', { class: 'level-group-title', text: t(`levelGroup.${group.id}`) }), grid]);
   }));
+}
+
+// The level and question type buttons (and the category buttons); built again when the language changes.
+function renderMenus() {
+  renderLevelGroups($('#level-buttons'), (item) => {
+    state.nav.level = item.id;
+    showScreen('category');
+  });
   renderCategoryButtons();
   renderButtons($('#type-buttons'), CONFIG.TYPES.map((x) => ({ ...x, label: t(`type.${x.id}`) })), (item) => {
     state.nav.type = item.id;

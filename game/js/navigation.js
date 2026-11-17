@@ -1,7 +1,7 @@
 /* js/navigation.js - screens, the path line, the button builder (with the gray "not finished" buttons), difficulty buttons, the same-duration switch
    Provides: breadcrumbParts, refreshBreadcrumb, showScreen, renderButtons, getQuestionSeconds, setSameDuration,
              renderDifficultyButtons, SCREEN_DEPTH
-   Needs: stopConfetti, clearQuizRun, HISTORY_SCREENS, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
+   Needs: stopConfetti, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
           renderTopicButtons, openUnfinishedConfirm, refreshSettings, startQuiz */
 'use strict';
 /* =========================================================================
@@ -28,20 +28,22 @@ function refreshBreadcrumb() {
 
 function showScreen(name) {
   const onHistory = HISTORY_SCREENS.includes(name);
+  const onVocab = name === 'vocab';   // the Vocabulary screen (js/vocab-list.js): its own path and level accent
   state.screen = name;
   stopConfetti();
   if (name !== 'quiz') clearQuizRun(); // the quiz is over or left: this tab removes its own note, so a closed tab or a reload is no longer a quit
   if (name !== 'difficulty' && !onHistory) state.nextHint = null; // the History screens keep the "Next" mark for the way back
   document.querySelectorAll('.screen').forEach((s) => { s.hidden = s.id !== `screen-${name}`; });
   // Level accent: neutral on the level screen and the History screens, the chosen level's color everywhere inside a level.
-  if (name === 'level' || onHistory) delete document.body.dataset.level;
+  if (onVocab) vocabAccent();
+  else if (name === 'level' || onHistory) delete document.body.dataset.level;
   else if (state.nav.level) document.body.dataset.level = state.nav.level;
   // Credits and the theme/mute bar are shown on every page except the game (quiz) page.
   $('#credits-footer').hidden = name === 'quiz';
   $('#topbar').hidden = name === 'quiz';
   $('#home-btn').hidden = name === 'level'; // already on the main menu
   $('#history-btn').hidden = onHistory;     // already on the History screens
-  $('#tree-btn').hidden = onHistory;        // the menu tree shows the quiz path, which the History screens do not have
+  $('#tree-btn').hidden = onHistory || onVocab; // the menu tree shows the quiz path, which the History and Vocabulary screens do not have
   refreshBreadcrumb();
   // These grids depend on the chosen level / category (the gray "not finished" buttons too): built each time they are shown.
   if (name === 'category') renderCategoryButtons();

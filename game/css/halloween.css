@@ -32,6 +32,7 @@
      orange outline; the buttons whose part is not finished keep a dashed amber one. */
   html[data-halloween="on"] .menu-btn,
   html[data-halloween="on"] .card,
+  html[data-halloween="on"] .vocab-page,
   html[data-halloween="on"] .modal,
   html[data-halloween="on"] .history-row,
   html[data-halloween="on"] .icon-btn { border-color: var(--accent); border-width: var(--line); }

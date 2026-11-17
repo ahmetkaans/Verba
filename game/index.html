@@ -42,6 +42,7 @@
     <h1>My Game Project</h1>
     <p class="subtitle" data-i18n="chooseLevel">Choose your level.</p>
     <div id="level-buttons"></div>
+    <button class="menu-btn vocab-btn" id="vocab-btn" type="button"><span class="vocab-btn-icon" id="vocab-btn-icon" aria-hidden="true"></span><span data-i18n="vocabButton">Word list</span></button>
   </section>
 
   <!-- Screen: category (Vocabulary / Grammar) -->
@@ -183,6 +184,19 @@
     <ol class="results-list" id="history-detail-list"></ol>
   </section>
 
+  <!-- Screen: Vocabulary lists (the words of a topic; steps and lists built by js/vocab-list.js) -->
+  <section id="screen-vocab" class="screen" hidden>
+    <button class="back-btn" id="vocab-back" type="button" data-i18n="backArrow">&larr; Back</button>
+    <div class="vocab-rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="vocab-page">
+      <span class="vocab-ribbon" id="vocab-ribbon" aria-hidden="true" hidden></span>
+      <h1 id="vocab-title" tabindex="-1"></h1>
+      <p class="vocab-sub" id="vocab-sub"></p>
+      <div id="vocab-buttons"></div>
+      <div id="vocab-list" hidden></div>
+    </div>
+  </section>
+
 </main>
 
 <footer id="credits-footer">
@@ -218,6 +232,12 @@
 <script src="data/questions/a1-vocabulary-02-people-and-family.js"></script>
 <script src="data/questions/a1-vocabulary-03-school-and-classroom.js"></script>
 <script src="data/questions/a1-vocabulary-04-time-and-dates.js"></script>
+<script src="data/questions/a1-vocabulary-05-home-and-daily-routine.js"></script>
+<script src="data/questions/a1-vocabulary-06-food-and-drink.js"></script>
+<script src="data/questions/a1-vocabulary-07-clothes-and-colors.js"></script>
+<script src="data/questions/a1-vocabulary-08-town-and-shopping.js"></script>
+<script src="data/questions/a1-vocabulary-09-free-time-and-sports.js"></script>
+<script src="data/questions/a1-vocabulary-10-body-and-health.js"></script>
 <script src="data/glossary/a1.js"></script>
 
 <script src="js/config.js"></script>
@@ -246,6 +266,7 @@
 <script src="js/tips.js"></script>
 <script src="js/results.js"></script>
 <script src="js/history-screen.js"></script>
+<script src="js/vocab-list.js"></script>
 <script src="js/demo-data.js"></script>
 <script src="js/init.js"></script>
 </body>

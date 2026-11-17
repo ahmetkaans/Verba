@@ -1,5 +1,5 @@
 /* js/quiz-flow.js - starting a quiz, the words pop-up, one question, answering, quitting
-   Provides: startQuiz, quizTargetWords, glossarySenses, openWordPreview, currentQuestion, currentRecord,
+   Provides: startQuiz, questionTargets, quizTargetWords, glossarySenses, wordRow, openWordPreview, currentQuestion, currentRecord,
              renderQuestion, updateScoreDisplay, submitAnswer, goNext, skipQuestion, requestQuit
    Needs: CONFIG, el, fmt, englishText, noteText, hashString, mulberry32, makeLorem, state, $, playSound, t, GLOSSARY,
           quizKey, getQuestions, prepareQuiz, correctAnswerText, showScreen, getQuestionSeconds, openModal,
@@ -45,18 +45,26 @@ function startQuiz() {
   openWordPreview(() => { closeModal(); renderQuestion(); });
 }
 
+// The words ONE question tests: [{ word, type }]. type = the word type the question names (q.targetType / pair.type; needed
+// when a word has several types), or undefined. q.target (optional on mc / fill) = the dictionary form when the answer is
+// another form ("laughs" -> "laugh"). It works on a prepared question (mc: q.answer is the position of the right option) and
+// on a question as stored in the bank (mc: the right option is options[0]), so a list can read the bank without shuffling it.
+// This is the ONE rule for "which word does this question test": the words pop-up and the Vocabulary lists both use it.
+function questionTargets(q) {
+  if (q.type === 'mc') return [{ word: q.target || q.options[q.answer === undefined ? 0 : q.answer], type: q.targetType }];
+  if (q.type === 'fill') return [{ word: q.target || q.answer, type: q.targetType }];
+  if (q.type === 'tf') return [{ word: q.target, type: q.targetType }];
+  if (q.type === 'match') return q.pairs.map((p) => ({ word: p.left, type: p.type }));
+  return [];
+}
+
 // The words a quiz tests, in alphabetical order (not the order of the questions), without repeats: [{ word, type }].
-// type = the word type used in this quiz (q.targetType / pair.type); needed when a word has several types.
-// q.target (optional on mc / fill) = the dictionary form when the answer is another form ("laughs" -> "laugh").
+// type = the word type used in this quiz, or null.
 function quizTargetWords(questions) {
   const words = new Map();
-  const add = (word, type) => { if (word && !words.has(word)) words.set(word, { word, type: type || null }); };
-  questions.forEach((q) => {
-    if (q.type === 'mc') add(q.target || q.options[q.answer], q.targetType);
-    else if (q.type === 'fill') add(q.target || q.answer, q.targetType);
-    else if (q.type === 'tf') add(q.target, q.targetType);
-    else if (q.type === 'match') q.pairs.forEach((p) => add(p.left, p.type));
-  });
+  questions.forEach((q) => questionTargets(q).forEach(({ word, type }) => {
+    if (word && !words.has(word)) words.set(word, { word, type: type || null });
+  }));
   // Alphabetical, English rules, case ignored: the list must not follow the order of the questions (owner, 2026-11-12).
   return [...words.values()].sort((a, b) => a.word.localeCompare(b.word, 'en', { sensitivity: 'base' }));
 }
@@ -70,19 +78,24 @@ function glossarySenses(level, word) {
   return [{ type: L.words(1)[0], meaning: L.sentence(3, 6, '') }];
 }
 
+// One row of the words pop-up: the word, then each of its word types with its meaning (the Word list screen has its own rows, vocabRow in vocab-list.js).
+// senses = [{ type, meaning }]. used = the word type to underline (the one this game uses); null underlines nothing.
+function wordRow(word, senses, used) {
+  return el('li', {}, [
+    el('span', { class: 'word', text: word }),
+    ...senses.map((s) => el('p', { class: 'word-sense' }, [
+      el('span', { class: `word-type${s.type === used ? ' is-used' : ''}`, text: s.type }),
+      ` ${s.meaning}`,
+    ])),
+  ]);
+}
+
 function openWordPreview(start) {
   const level = state.nav.level;
   const list = el('ul', { class: 'word-list', lang: 'en' }, quizTargetWords(state.quiz.questions).map(({ word, type }) => {
     const senses = glossarySenses(level, word);
-    const used = type || senses[0].type;   // one sense: that one is used
-    // Every word type of the word is shown; the one used in this game is underlined.
-    return el('li', {}, [
-      el('span', { class: 'word', text: word }),
-      ...senses.map((s) => el('p', { class: 'word-sense' }, [
-        el('span', { class: `word-type${s.type === used ? ' is-used' : ''}`, text: s.type }),
-        ` ${s.meaning}`,
-      ])),
-    ]);
+    // Every word type of the word is shown; the one used in this game is underlined (one sense: that one).
+    return wordRow(word, senses, type || senses[0].type);
   }));
   openModal({
     title: t('wordsTitle'),
