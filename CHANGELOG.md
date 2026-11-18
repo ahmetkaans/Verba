@@ -2,22 +2,30 @@
 
 What changed in My Game Project, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-19
+
+### Every file link of the game now has a version number
+After an update, a browser could keep an old copy of one game file and use a new copy of another, and that can cause odd bugs. Each file link in the page now carries a short number that changes only when that file changes, so visitors always get matching files. Nothing looks different when you play.
+
+### The notes hold a website checklist and a new rule for questions
+The README now has a checklist of what to do before the game goes online (removing the test buttons, choosing the final web address, the font, a description and an icon for shared links, and more). It also holds the notes on signing in with Google, results for teachers, a scoreboard and a History kept on a server, all still ideas. A new rule for writing questions says that no sentence, option or meaning may be read as rude or sexual, and every sentence is read twice for it.
+
 ## 2026-11-17
 
-### A Word list button shows every word the game tests
+### A Word list button shows every word the game tests (`8226218`)
 The main menu has a new button, Word list (Kelime Listesi in Turkish). Pick a level and a topic, and the list opens at once with every word of that topic, in four tabs: Easy, Medium, Hard and Very Hard. Each word shows its type in italics, a dot and its meaning (the meanings stay in English). A button at the end of the list, "Separate words by question type", shows four type buttons above the tabs, so you can see only the words of Multiple Choice, Fill in the Blanks, True or False or Matching. The page looks like a spiral-bound notebook, with a ribbon that shows your level, so it never looks like the main menu.
 
-### The notes hold new ideas for later
+### The notes hold new ideas for later (`8226218`)
 The README now lists ideas that are not built yet: a "words I don't know" list, sharing a game or a list of games with a code or a link, a teacher mode with a test maker, results that go to the teacher, and a History kept on a server. Each one has its open questions, so we decide them before building.
 
 ## 2026-11-16
 
-### Three more themes to play: Town and Shopping, Free Time and Sports, and Body and Health
+### Three more themes to play: Town and Shopping, Free Time and Sports, and Body and Health (`8226218`)
 A1 Vocabulary has three new themes with all their quizzes (16 quizzes each, four question types at four difficulties).
 
 ## 2026-11-15
 
-### Three more themes to play: Home and Daily Routine, Food and Drink, and Clothes and Colors
+### Three more themes to play: Home and Daily Routine, Food and Drink, and Clothes and Colors (`8226218`)
 A1 Vocabulary has three new themes with all their quizzes (16 quizzes each, four question types at four difficulties). A1 Vocabulary now has eleven themes to play.
 
 ## 2026-11-13
