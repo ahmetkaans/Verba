@@ -639,6 +639,8 @@ Run them from the project folder. Every command starts with `powershell -Executi
 
 #### Writing questions with it (the tools inside "Workflow: draft → review → write")
 
+**For any question task, start with `ADDING_QUESTIONS.md`: it holds the current read list, the shapes and the steps (reasons: Roadmap item 14, d). The list below is the older, longer wording of the same steps; if the two differ, follow `ADDING_QUESTIONS.md` and tell the owner (AGENTS.md rule 10).**
+
 1. **Read a small working set**, not the whole README and word list. Writing questions is a **change task**, so also read "Confirmed decisions" and the "Change together" row of the map. Then: the theme's section of the approved plan (`.gitignore/plans/PLAN_<LEVEL>_<CATEGORY>.md`, for example `PLAN_A1_VOCABULARY.md`), its lines in `ORG_<LEVEL>_WORDS.md` (words, "goes well with", word types), the glossary entries that already exist (`-Worksheet -Only '<theme key>'` prints them for written quizzes), and the rules you need from "Question content method".
 2. **Write the draft in a draft file** in the private folder `.gitignore/drafts/` (for example `A1_vocabulary_2_mc.json`), in the same shape as the bank: `{ "A1|vocabulary|2|mc|easy": [ ...8 questions... ], ... }`. New glossary meanings go in a second file (`{ "A1": { "word": ... } }`). Drafts are never committed, and nothing goes into the data files yet.
 3. **Check the draft:** `-Draft <file> -DraftGlossary <file>`. Fix every error, read every warning. Repeat until clean.
@@ -901,6 +903,8 @@ Extra guidance for themes that need it. Everything else in this README applies t
 - Use a **sum only as a last resort**, when a number word in the theme's Words line cannot be covered by any real-life context from `ORG_A1_WORDS.md`. Write it with symbols only ("5 + 3 = ?"), because *plus*, *minus* and *equals* are not A1 words. A sum has exactly one answer. The draft says which questions use sums and why, so the owner can approve each one.
 
 ### Workflow: draft → review → write (AGENTS.md rule 9)
+
+**For question tasks, start with `ADDING_QUESTIONS.md`** (the current read list, the shapes and the commands); this section holds the full rules of the workflow that it points to.
 
 Questions, explanations, glossary meanings and target-word plans are **never written into the files right after they are drafted**.
 

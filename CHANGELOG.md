@@ -4,6 +4,9 @@ What changed in My Game Project, in plain language. The newest change is at the 
 
 ## 2026-11-19
 
+### The notes for writing questions now point to the new questions guide
+The two places in the README where a helper reads how to write questions now say to start with ADDING_QUESTIONS.md, so an old, longer reading list cannot be followed by mistake. Only notes changed; nothing in the game changed.
+
 ### The working rules are shorter, so a helper uses less of its memory
 The helper's working rules are now a short index in AGENTS.md, and the full text of all 13 rules moved, unchanged, to docs/RULES_FULL.md. A new ADDING_QUESTIONS.md lists the few parts of the notes needed to write questions, and the notes explain why each of these changes was made. Nothing in the game changed: the question check gives the same report as before and the play-through test passes as before.
 
