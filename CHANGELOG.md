@@ -4,6 +4,9 @@ What changed in My Game Project, in plain language. The newest change is at the 
 
 ## 2026-11-19
 
+### The working rules are shorter, so a helper uses less of its memory
+The helper's working rules are now a short index in AGENTS.md, and the full text of all 13 rules moved, unchanged, to docs/RULES_FULL.md. A new ADDING_QUESTIONS.md lists the few parts of the notes needed to write questions, and the notes explain why each of these changes was made. Nothing in the game changed: the question check gives the same report as before and the play-through test passes as before.
+
 ### Every file link of the game now has a version number
 After an update, a browser could keep an old copy of one game file and use a new copy of another, and that can cause odd bugs. Each file link in the page now carries a short number that changes only when that file changes, so visitors always get matching files. Nothing looks different when you play.
 
