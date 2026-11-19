@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-19
 
+### A workflow to publish the game on GitHub Pages
+A small GitHub Actions file (`.github/workflows/pages.yml`) publishes the `game/` folder as a website after every push, at `https://ahmetkaans.github.io/Verba/`. It uses only GitHub's own actions and needs no build or secret. Nothing goes online until the owner switches Pages on once in the repository settings (Source: GitHub Actions).
+
 ### The Credits have a tagline for each person
 The Credits pop-up now lists Ahmet Kaan Sarılarlı ("The creator of Verba"), Claude ("Coding and design") and Enes Miraç Ateş ("A friend of mine who shared many ideas for the game"), each name with its tagline underneath, in English and Turkish. The names are not translated.
 
