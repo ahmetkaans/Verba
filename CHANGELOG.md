@@ -1,8 +1,11 @@
 # Changelog
 
-What changed in My Game Project, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
+What changed in Verba, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
 ## 2026-11-19
+
+### The game is now called Verba
+The owner chose the name Verba (always written with a capital V, no tagline). It replaces "My Game Project" in the browser tab and the title on the level screen, and in DESIGN.md (the list of names the owner has fixed) and the README. The name is not translated, so the Turkish texts did not change.
 
 ### Every written theme was read again, and the weak wrong options of one theme were replaced
 A helper read all 11 written themes once, and about 50 small fixes were made in nine of them: wrong or too narrow meanings, unclear explanations, a few sentences that had a second possible answer, and some grammar above beginner level. In Free Time and Sports, the weak wrong options (like shoe and door) in the Hard and Very Hard quizzes now use words from the same theme. The notes also gained a helper-review step for new themes, new warning checks and some wording rules; nothing in how the game works changed.

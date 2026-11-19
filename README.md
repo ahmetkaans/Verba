@@ -3,7 +3,7 @@ I have a dream so close.
 
 A language-learning quiz game in plain files with no build step: the page is [game/index.html](game/index.html) and its look is in [game/css/](game/css/); open the page in a browser. (The questions and word meanings are in [game/data/](game/data/) and all the code in [game/js/](game/js/).) The only external resource is the Inter font from Google Fonts (optional: the system font is used when it can't load).
 
-The game is called **My Game Project**. Texts the owner has not named are still lorem ipsum (mostly questions and the topic names of other levels); the approved screen and pop-up texts are listed in DESIGN.md. The visual design ("clean study app", level colors, dark mode, motion, sound) is documented in [DESIGN.md](DESIGN.md). Agents must read [AGENTS.md](AGENTS.md) first. What changed and when is listed in [CHANGELOG.md](CHANGELOG.md).
+The game is called **Verba** (owner's decision, 2026-11-19). Texts the owner has not named are still lorem ipsum (mostly questions and the topic names of other levels); the approved screen and pop-up texts are listed in DESIGN.md. The visual design ("clean study app", level colors, dark mode, motion, sound) is documented in [DESIGN.md](DESIGN.md). Agents must read [AGENTS.md](AGENTS.md) first. What changed and when is listed in [CHANGELOG.md](CHANGELOG.md).
 
 **What is in this folder** (in plain words):
 
@@ -431,7 +431,7 @@ record = { status: 'correct'|'partial'|'incorrect'|'skipped'|'unanswered', userA
 
 Owner's request (2026-11-01), built in two rounds. **Both rounds are built.** Round 1 is committed (`8f4af6c`) and round 2 is committed (`ea4d67c`).
 
-**What is translated** (owner's decisions): menu elements, buttons, pop-ups, Settings, the quiz screen, answer feedback and the results screen, and the fixed names (Multiple Choice, Easy, level names, …). **Never translated, not ever:** questions and their options, bank words and Matching words; the True / False **answer buttons** (the type *name* "True or False" is translated); topic names; the game name "My Game Project"; level codes (A1 … C1); people's names. Later, separate steps (not started): the meanings in the "Words in this game" pop-up, then the answer explanations.
+**What is translated** (owner's decisions): menu elements, buttons, pop-ups, Settings, the quiz screen, answer feedback and the results screen, and the fixed names (Multiple Choice, Easy, level names, …). **Never translated, not ever:** questions and their options, bank words and Matching words; the True / False **answer buttons** (the type *name* "True or False" is translated); topic names; the game name "Verba"; level codes (A1 … C1); people's names. Later, separate steps (not started): the meanings in the "Words in this game" pop-up, then the answer explanations.
 
 **How it works** (the code is in `game/js/`: `texts.js` holds `I18N`, `language.js` the switching, `core.js` the helpers, `settings.js` the toggle):
 - `I18N = { en: {…}, tr: {…} }` holds every text, one key per text (`'type.mc'`, `'timeOutBodyPts'`, …). **Both languages must have every key** (English is the fallback; a key missing everywhere logs `Missing text: key` to the console and shows the key). `{name}` in a text is filled from the params: `t('endTitle', { here })`. `t(key, params)` returns the text in `state.lang`. Keep the key names free of `'A1|vocabulary':`-style strings, because `check_questions.ps1` finds topic names by searching the file for them.
