@@ -60,6 +60,8 @@
   button:active:not(:disabled) { transform: scale(0.98); }
   button:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 2px; }
   button:disabled { opacity: 0.55; cursor: not-allowed; }
+  /* A disabled main button (Check before an answer is given): flat and quiet, not a half-faded accent */
+  button.primary:disabled { opacity: 1; background: color-mix(in srgb, var(--fg) 8%, var(--surface)); border-color: var(--border); color: var(--muted); }
   button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
   button.primary:hover:not(:disabled) {
     background: color-mix(in srgb, var(--accent) 86%, var(--fg));

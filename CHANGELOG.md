@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-19
 
+### Fill in the Blanks and Matching got their own pass
+After Check, the typed blank shows a check, a cross or a dot at its right end (right, wrong, partly right), also in SmartBoard mode. In Matching, a right pair has a solid border and a green number badge, and a wrong pair has a dashed border and a red badge, so color is never the only sign. The word bank is quieter, and a disabled main button such as Check before an answer is now a flat gray instead of a faded green. Only the look changed, no texts, questions or rules.
+
 ### History and the Word list match the new look
 On the History screen the overall result number is bigger and bolder, its card has a thin colored line on top like the results page, and each play's score is bolder. In a play's row and in the results summary, the "Correct" pill is lightly green and the "Incorrect" pill lightly red, with the words kept. On a play's detail page the cross was removed because each card already has its "Incorrect" or "Correct" tag. In the Word list each word is bolder. Only the look changed, no texts or behavior.
 
