@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-19
 
+### A new "Warm paper" look for the menus, the quiz and the results
+The game now has a calm cream look in light mode and a graphite look in dark mode, with softer shadows, rounder cards and a bolder title type (weight 600). The level, category, topic, type and difficulty screens show the level color as a short bar (longer for harder difficulties), Multiple Choice options have the letters A to D, and right and wrong answers carry a check or a cross so color is never the only cue. The results page has a bigger score and a mark on each question card. Only the look changed, no texts, questions or rules. The C1 gold was darkened a little so its text stays easy to read.
+
 ### The weak wrong options of themes 6, 7, 8 and 10 were replaced
 In the Hard and Very Hard multiple-choice and fill-in quizzes of Food and Drink, Clothes and Colors, Town and Shopping, and Body and Health, 75 questions had wrong options that were easy to rule out (desk, door, key). They now use words from the same theme or other clearly wrong words, and every change was checked so that no wrong option can also be right. About 25 questions stayed as they were because every close word could also be correct. One explanation in Town and Shopping was rewritten, and "play ball" became "play football".
 

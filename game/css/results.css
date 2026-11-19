@@ -1,7 +1,7 @@
   /* Results */
-  .results-hero { text-align: center; }
+  .results-hero { text-align: center; box-shadow: inset 0 4px 0 var(--accent), var(--shadow); padding-top: 28px; }
   .results-score { margin: 4px 0 0; font-variant-numeric: tabular-nums; }
-  .score-num { font-size: 3.5rem; font-weight: 500; line-height: 1.1; color: var(--accent); letter-spacing: -0.02em; }
+  .score-num { font-size: 4rem; font-weight: 600; line-height: 1.1; color: var(--accent); letter-spacing: -0.02em; }
   .score-max { font-size: 1.25rem; color: var(--muted); }
   .score-na { font-size: 1.5rem; font-weight: 500; color: var(--accent); }
   .results-summary { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
@@ -9,15 +9,24 @@
   .results-hero .actions { justify-content: center; }
   .results-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: var(--gap); }
   .results-list li {
-    padding: 14px 16px;
+    position: relative;
+    padding: 14px 48px 14px 16px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-left: 4px solid var(--muted);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius);
   }
   .results-list li.st-correct { border-left-color: var(--ok); }
   .results-list li.st-incorrect { border-left-color: var(--bad); }
   .results-list li.st-partial { border-left-color: var(--accent); }
+  /* A mark in the top right corner, so right, wrong and partly right differ by shape too, not only by color */
+  .results-list li.st-correct::after, .results-list li.st-incorrect::after, .results-list li.st-partial::after { content: ""; position: absolute; }
+  .results-list li.st-correct::after { top: 14px; right: 22px; width: 8px; height: 15px; border: solid var(--ok); border-width: 0 3px 3px 0; transform: rotate(45deg); }
+  .results-list li.st-incorrect::after {
+    top: 16px; right: 16px; width: 18px; height: 18px; color: var(--bad);
+    background: linear-gradient(45deg, transparent 43%, currentColor 43% 57%, transparent 57%), linear-gradient(-45deg, transparent 43%, currentColor 43% 57%, transparent 57%);
+  }
+  .results-list li.st-partial::after { top: 19px; right: 19px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
   .results-list p { margin: 2px 0; }
   .results-list strong { font-weight: 500; }
   .results-list .label { color: var(--muted); }

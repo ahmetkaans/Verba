@@ -26,12 +26,24 @@
     background: repeating-linear-gradient(-45deg, var(--extra) 0 8px, color-mix(in srgb, var(--extra) 70%, var(--surface)) 8px 16px);
   }
 
-  .prompt { font-size: 1.25rem; font-weight: 500; line-height: 1.45; margin: 0 0 18px; }
+  .prompt { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.35; margin: 0 0 18px; }
   .instructions { color: var(--muted); margin: 0 0 12px; }
-  .options { display: grid; gap: 10px; }
+  .options { display: grid; gap: 10px; counter-reset: opt; }
   .options.two { grid-template-columns: 1fr 1fr; }
-  .option { min-height: 56px; text-align: left; font-size: 1.05rem; }
-  .options.two .option { text-align: center; }
+  .option { display: flex; align-items: center; gap: 12px; min-height: 56px; text-align: left; font-size: 1.05rem; border-radius: var(--radius); }
+  .options.two .option { justify-content: center; text-align: center; }
+  /* Letters A, B, C, D on Multiple Choice options (not on True or False), drawn by CSS only */
+  .options:not(.two) .option::before {
+    counter-increment: opt; content: counter(opt, upper-alpha);
+    flex: none; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border); border-radius: 50%; font-size: 0.8rem; color: var(--muted);
+  }
+  /* A check or a cross at the right edge of a right or wrong option, so color is never the only cue */
+  .option.is-correct::after, .option.is-wrong::after { content: ""; flex: none; margin-left: auto; width: 18px; height: 18px; }
+  .option.is-correct::after { width: 10px; margin-right: 4px; border: solid currentColor; border-width: 0 3px 3px 0; transform: rotate(45deg) scale(0.8); }
+  .option.is-wrong::after {
+    background: linear-gradient(45deg, transparent 43%, currentColor 43% 57%, transparent 57%), linear-gradient(-45deg, transparent 43%, currentColor 43% 57%, transparent 57%);
+  }
 
   .is-correct { background: var(--ok-soft) !important; border-color: var(--ok) !important; color: var(--ok) !important; }
   .is-wrong { background: var(--bad-soft) !important; border-color: var(--bad) !important; color: var(--bad) !important; }
@@ -50,7 +62,7 @@
     padding: 10px;
     margin-bottom: 18px;
     background: var(--accent-soft);
-    border: 1.5px dashed var(--accent-line);
+    border: 1.5px solid var(--accent-line);
     border-radius: var(--radius-sm);
   }
   .chip {

@@ -59,7 +59,9 @@ A1 Grammar topics (21, in this order; stored in `TOPICS_BY_SECTION['A1|grammar']
 
 - Calm, focused and minimal, but not boring. For adults, teens and kids.
 - Neutral surfaces everywhere; color comes only from the **level accent** and from the **correct / wrong** states. The one exception is the optional **Halloween theme** (Trick or Treat), a whole separate look: see "Light and dark mode".
-- Soft white cards (`.card`, menu buttons) on a page background lightly tinted with the level color. Rounded corners (14px cards, 10px controls), very soft shadows, no hard lines.
+- **"Warm paper" redesign (owner chose it from three directions, 2026-11-19; first round = shared style, level screen, quiz screen; other pages follow in their own plans):** warm cream cards (`.card`, menu buttons) on a neutral cream page, hairline borders (1.5px on buttons and answer options), soft shadows, rounded corners (16px cards, 12px controls). A level card has a 26x4px bar in its level color, the code in 600 and the name small and muted; a small teal dot sits before "Verba" on the level screen. Multiple Choice options carry letters A to D (CSS counters, not on True or False); a right or wrong option also shows a check or a cross drawn in CSS, so color is never the only cue.
+- **Menu screens and results (second round of the redesign, 2026-11-19):** category, topic and question type cards carry a short 3px bar in the level color above a 600 label (the same bar as the level cards); on the Difficulty screen the bar grows with the difficulty (12, 22, 32, 42px, by position, CSS only). The breadcrumb is 0.85rem. The round top bar buttons have the soft shadow. On the results page the score is 4rem / 600, the hero card has a 4px accent line on top, and each question card keeps its colored left stripe and adds a mark in the top right corner (check = correct, cross = incorrect, dot = partly right), so color is never the only cue.
+- (Older text, kept for history: soft white cards on a page lightly tinted with the level color, 14px and 10px corners.)
 - Works on phones and computers: single centered column (`max-width: 760px`, 16px side gutter), all tap targets at least 44–48px tall, menu grids are 2 columns on phones and auto-fill on wider screens, primary actions are full width on phones.
 
 ## Level colors
@@ -72,10 +74,10 @@ Each level's color is the accent (`--accent`) on **every screen inside that leve
 | A2 blue | `#2F6FB8` | `#7DB1EC` |
 | B1 violet | `#6B4FC0` | `#A894EE` |
 | B2 rose | `#A8436F` | `#E89BBB` |
-| C1 gold | `#A0670B` | `#E7B54F` |
+| C1 gold | `#946006` | `#E7B54F` |
 
 - **Level selection screen** (no level chosen yet): neutral slate accent (`--neutral-accent`: `#44505C` / `#B4BEC9`). Each level button is tinted in its own level color as a preview (`.level-btn`, `--chip`).
-- **Backgrounds** use tints of the accent made with `color-mix()`: `--page-bg` (page, ~7% light / ~10% dark), `--accent-soft` (hover, selection, word bank; ~12% / ~18%). In dark mode the same mix produces dark tints automatically.
+- **Backgrounds** (redesign "Warm paper", owner, 2026-11-19): the page is a neutral cream (`--tint: 0%`, so `--page-bg` equals `--bg`); the level color shows on the bar and code of its card, buttons, timer and focus, not on the page. `--accent-soft` (hover, selection, word bank; ~12% / ~18%) is still a `color-mix()` tint. C1 light was darkened from `#A0670B` to `#946006` (4.3 on the cream page was under AA). The old plan (page tinted 7% / 10%) is replaced.
 - Text on accent-colored buttons: white in light mode, near-black in dark mode (`--on-accent`), because the dark-mode level colors are light.
 
 ## Other colors
@@ -85,8 +87,8 @@ Each level's color is the accent (`--accent`) on **every screen inside that leve
 | `--ok` | `#1E7B3C` | `#6CCB8A` | correct answers only |
 | `--bad` | `#B3261E` | `#F08A80` | wrong answers only |
 | `--extra` | `#C2410C` | `#FB923C` | timer during the +10 s extra time |
-| `--bg` / `--surface` | `#F6F6F3` / `#FFFFFF` | `#121417` / `#1A1D21` | page base / cards |
-| `--fg` / `--muted` / `--border` | `#1D2125` / `#5F6670` / `#E3E3DE` | `#E6E8EB` / `#9AA1AA` / `#2C3137` | text / secondary text / lines |
+| `--bg` / `--surface` | `#F8F3EA` / `#FFFDF8` | `#161616` / `#1F1F1F` (graphite, owner's pick 2026-11-19) | page base / cards |
+| `--fg` / `--muted` / `--border` | `#2A241C` / `#6B6256` / `#E8DFCF` | `#EDEBE6` / `#A3A09A` / `#303030` | text / secondary text / lines |
 | `--overlay` | `rgba(20,24,28,.5)` | `rgba(0,0,0,.66)` | the dim behind pop-ups and the menu tree (no blur, so their animations stay smooth) |
 
 - Green and red are used **only** for correct and wrong answers (buttons, feedback box, results cards). Partly right answers use the level color.
@@ -101,9 +103,9 @@ Each level's color is the accent (`--accent`) on **every screen inside that leve
 
 ## Typography
 
-- **Inter** from Google Fonts, weights **400 (regular)** and **500 (medium)** only, `display=swap`.
+- **Inter** from Google Fonts, weights **400 (regular)**, **500 (medium)** and **600 (semibold, since the 2026-11-19 redesign: titles, level codes, the question, the Word list button)**, `display=swap`.
 - Fallback: the device's system font (`system-ui, -apple-system, "Segoe UI", Roboto, …`) — used automatically when offline or while Inter loads.
-- Headings and buttons use 500; body text uses 400. No bold (600/700) weights. Numbers in the timer and score use tabular figures.
+- Buttons use 500; body text uses 400; page titles (h1), the level code, the quiz question and the Word list button use 600. Nothing heavier (no 700). Numbers in the timer and score use tabular figures.
 
 ## Motion
 
