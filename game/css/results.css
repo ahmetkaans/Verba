@@ -6,6 +6,8 @@
   .score-na { font-size: 1.5rem; font-weight: 500; color: var(--accent); }
   .results-summary { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
   .results-summary li { padding: 4px 12px; border-radius: 999px; background: var(--accent-soft); font-size: 0.9rem; }
+  .results-summary li:first-child { background: var(--ok-soft); }
+  .results-summary li:nth-last-child(3) { background: var(--bad-soft); }
   .results-hero .actions { justify-content: center; }
   .results-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: var(--gap); }
   .results-list li {
@@ -27,6 +29,8 @@
     background: linear-gradient(45deg, transparent 43%, currentColor 43% 57%, transparent 57%), linear-gradient(-45deg, transparent 43%, currentColor 43% 57%, transparent 57%);
   }
   .results-list li.st-partial::after { top: 19px; right: 19px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+  /* A History card already has a word tag (Correct / Incorrect), so it needs no mark */
+  .results-list li:has(.history-tag)::after { display: none; }
   .results-list p { margin: 2px 0; }
   .results-list strong { font-weight: 500; }
   .results-list .label { color: var(--muted); }

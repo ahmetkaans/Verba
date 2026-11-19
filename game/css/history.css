@@ -19,11 +19,14 @@
   .history-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
   .history-date, .history-meta { display: block; color: var(--muted); font-size: 0.85rem; }
   .history-path { display: block; margin: 2px 0; font-weight: 500; }
-  .history-score { flex: none; color: var(--accent); font-size: 1.6rem; font-weight: 500; line-height: 1.1; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .history-score { flex: none; color: var(--accent); font-size: 1.8rem; font-weight: 600; line-height: 1.1; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .history-score .score-num { font-size: inherit; }
   .history-score .score-max { font-size: 0.85rem; }
   .history-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .history-pills span { padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); font-size: 0.8rem; }
+  /* The pill order is fixed at its ends: Correct is first, Incorrect is third from last. The words stay, so color is not the only cue. */
+  .history-row .history-pills span:first-child { background: var(--ok-soft); }
+  .history-row .history-pills span:nth-last-child(3) { background: var(--bad-soft); }
   .history-arrow { position: absolute; right: 14px; bottom: 10px; color: var(--accent); font-size: 1.25rem; line-height: 1; }
   .history-perfect { display: block; margin-top: 10px; color: var(--ok); font-weight: 500; }
 
@@ -34,11 +37,11 @@
   .history-again svg { width: 16px; height: 16px; }
 
   /* The overall result block at the top of the History screen: title, the All plays / Recent plays switch (the Settings .segmented), the number, the comment, the pills */
-  .overall { margin-bottom: 16px; padding: 14px 16px; }
+  .overall { margin-bottom: 16px; padding: 18px 16px 14px; box-shadow: inset 0 4px 0 var(--accent), var(--shadow); }
   .overall-title { margin: 0; color: var(--muted); font-size: 0.85rem; }
   .overall .segmented { margin: 8px 0 12px; }
   .overall-score { margin: 0; line-height: 1.1; font-variant-numeric: tabular-nums; }
-  .overall-num { color: var(--accent); font-size: 2.1rem; font-weight: 500; }
+  .overall-num { color: var(--accent); font-size: 2.8rem; font-weight: 600; letter-spacing: -0.02em; }
   .overall-max { color: var(--muted); font-size: 0.9rem; }
   .overall-comment { margin: 6px 0 10px; }
   .overall-pills { margin: 0 0 10px; }
