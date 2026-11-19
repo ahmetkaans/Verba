@@ -46,7 +46,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Maria reads Ben's ___ on her computer. It says, \"Hi Maria! See you on Sunday.\"", "options": ["email", "address", "name", "birthday"], "targetType": "noun", "explanation": "An email is a message you send and read on a computer. Maria reads Ben's message on her computer, so it is an email." }
   ],
   "A1|vocabulary|2|fill|easy": [
-    { "type": "fill", "before": "Lisa is at school, and her", "after": "is at home. She is cooking dinner.", "answer": "mother", "bank": ["mother", "shirt", "bread"], "explanation": "A mother is a woman with a child. Lisa is at school, so the woman who is cooking dinner at home is her mother." },
+    { "type": "fill", "before": "Lisa is at school, and her", "after": "is at home. She is reading a book.", "answer": "mother", "bank": ["mother", "shirt", "bread"], "explanation": "A mother is a woman with a child. Lisa is at school, so the woman who is reading a book at home is her mother." },
     { "type": "fill", "before": "Tom's", "after": "plays basketball with him after school. He is older than Tom.", "answer": "brother", "bank": ["brother", "chair", "apple"], "explanation": "A brother is a boy or man with the same mother and father as you. Tom's brother is older than Tom and plays basketball with him." },
     { "type": "fill", "before": "Ben's mother has a new", "after": ". It is very small, and it sleeps a lot.", "answer": "baby", "bank": ["baby", "hat", "river"], "explanation": "A baby is a very young child. A baby is very small and sleeps a lot." },
     { "type": "fill", "before": "Maria loves her", "after": ". They all eat dinner together every night.", "answer": "family", "bank": ["family", "coat", "hat"], "targetType": "noun", "explanation": "Your family is the people close to you at home. Maria loves her family, and they eat dinner together." },
@@ -56,7 +56,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Emma calls her", "after": "every day. She likes talking to her.", "answer": "mom", "bank": ["mom", "pen", "bread"], "explanation": "Mom is another word for mother. Emma calls her mom every day." }
   ],
   "A1|vocabulary|2|fill|medium": [
-    { "type": "fill", "before": "My", "after": "makes cakes for me. She is the mother of my father.", "answer": "grandmother", "bank": ["grandmother", "aunt", "sister"], "explanation": "A grandmother is the mother of your mother or father. The woman who makes cakes is the mother of my father, so she is my grandmother." },
+    { "type": "fill", "before": "My", "after": "lives near our house. She is the mother of my father.", "answer": "grandmother", "bank": ["grandmother", "aunt", "sister"], "explanation": "A grandmother is the mother of your mother or father. The woman who lives near our house is the mother of my father, so she is my grandmother." },
     { "type": "fill", "before": "My", "after": "and my father are brothers. He lives in London.", "answer": "uncle", "bank": ["uncle", "aunt", "cousin"], "explanation": "An uncle is the brother of your mother or father. He and my father are brothers, so he is my uncle." },
     { "type": "fill", "before": "My", "after": "has two children, my cousins. She is my mother's sister.", "answer": "aunt", "bank": ["aunt", "uncle", "grandmother"], "explanation": "An aunt is the sister of your mother or father. She is my mother's sister, so she is my aunt." },
     { "type": "fill", "before": "Tom can move a big table and does not need help. He is very", "after": ".", "answer": "strong", "bank": ["strong", "funny", "pretty"], "explanation": "A strong person can move big, hard things. Tom can move a big table without help, so he is strong." },
@@ -73,7 +73,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "In every city, people know Emma's face. She is", "after": ".", "answer": "famous", "bank": ["famous", "poor", "tall", "funny"], "explanation": "Many people know a famous person. People in every city know Emma's face, so she is famous." },
     { "type": "fill", "before": "At the party, Tom wants to", "after": "Anna to his mother. He says, \"Mom, this is Anna.\"", "answer": "introduce", "bank": ["introduce", "teach", "visit", "help"], "explanation": "When you introduce a person, you say who the person is to other people. Tom says, \"Mom, this is Anna,\" so he introduces Anna to his mother." },
     { "type": "fill", "before": "Ali and Ben have only one pen, so they", "after": "it.", "answer": "share", "bank": ["share", "wash", "draw", "buy"], "explanation": "When two people share something, they both use it. Ali and Ben have only one pen, so they share it." },
-    { "type": "fill", "before": "Anna has a work phone and a", "after": "phone. She calls her family with it.", "answer": "personal", "bank": ["personal", "famous", "poor", "friendly"], "explanation": "A personal phone is for one person only, not for work. Anna has a work phone and a personal phone." }
+    { "type": "fill", "before": "Anna has a work phone and a", "after": "phone. She calls her family with it.", "answer": "personal", "bank": ["personal", "famous", "poor", "friendly"], "explanation": "A personal phone is your own phone, not for work. Anna has a work phone and a personal phone." }
   ],
   "A1|vocabulary|2|fill|veryhard": [
     { "type": "fill", "before": "Tom and Mia are not married. They live together and love each other. Mia is his", "after": ".", "answer": "partner", "bank": ["partner", "neighbor", "member", "adult"], "explanation": "A partner is the person you live with and love, like a husband or wife. Tom and Mia live together and love each other, so Mia is his partner." },
@@ -109,9 +109,9 @@ Object.assign(GAME_DATA.questions, {
     { "type": "tf", "prompt": "Smart is a word for a person with a lot of money.", "answer": false, "target": "smart", "explanation": "No. A smart person learns fast and knows a lot. A person with a lot of money is rich." },
     { "type": "tf", "prompt": "A fat cat has a big body.", "answer": true, "target": "fat", "explanation": "Yes. Fat means big around the body." },
     { "type": "tf", "prompt": "An address tells us how old a person is.", "answer": false, "target": "address", "explanation": "No. An address tells us where a person lives. Your age tells us how old you are." },
-    { "type": "tf", "prompt": "A personal phone is for everyone in the school.", "answer": false, "target": "personal", "explanation": "No. A personal phone is for one person only." },
+    { "type": "tf", "prompt": "A personal phone is for everyone in the school.", "answer": false, "target": "personal", "explanation": "No. A personal phone is your own phone, not for a group." },
     { "type": "tf", "prompt": "A rich person has a lot of money.", "answer": true, "target": "rich", "explanation": "Yes. Rich means with a lot of money." },
-    { "type": "tf", "prompt": "Your boyfriend is a man or boy that you love.", "answer": true, "target": "boyfriend", "explanation": "Yes. A boyfriend is a man or boy that a person loves and goes out with." },
+    { "type": "tf", "prompt": "A boyfriend is a boy or man that you go out with.", "answer": true, "target": "boyfriend", "explanation": "Yes. A boyfriend is a man or boy that a person loves and goes out with." },
     { "type": "tf", "prompt": "Your girlfriend is your brother.", "answer": false, "target": "girlfriend", "explanation": "No. A girlfriend is a woman or girl that a person loves. A brother is a boy or man with the same mother and father as you." },
     { "type": "tf", "prompt": "Two friends can share one pen.", "answer": true, "target": "share", "explanation": "Yes. When two people share something, they both use it." }
   ],
@@ -156,7 +156,7 @@ Object.assign(GAME_DATA.questions, {
   "A1|vocabulary|2|match|hard": [
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
       { "left": "poor", "right": "when you have little money and cannot buy many things" },
-      { "left": "smart", "right": "a student who always has the best answers in class" },
+      { "left": "smart", "right": "a person who learns fast" },
       { "left": "boyfriend", "right": "the boy or man that Anna goes out with because she loves him" },
       { "left": "cousin", "right": "the child of your mom's sister or your dad's brother" }
     ], "explanation": "Poor means having very little money, and a smart student learns fast. Anna's boyfriend is the boy or man she loves and goes out with. Your cousin is the child of an aunt or an uncle." },

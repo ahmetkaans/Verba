@@ -29,7 +29,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Mia wears warm ___ on her feet in the snow.", "options": ["boots", "hats", "bags", "shirts"], "target": "boot", "explanation": "A boot is a strong shoe for rain or snow. Mia wears warm boots in the snow." },
     { "type": "mc", "prompt": "Many people wear blue ___ every day.", "options": ["jeans", "desks", "doors", "keys"], "explanation": "Jeans are strong pants, often blue." },
     { "type": "mc", "prompt": "Ben puts on a ___ because it is a little cold.", "options": ["jacket", "table", "pen", "wall"], "explanation": "A jacket is a short coat. Ben puts one on when it is a little cold." },
-    { "type": "mc", "prompt": "In winter, Dad wears a long warm ___.", "options": ["coat", "desk", "key", "bed"], "explanation": "A coat is a long warm piece of clothes for cold weather." },
+    { "type": "mc", "prompt": "In winter, Dad wears a long warm ___.", "options": ["coat", "desk", "key", "bed"], "explanation": "A coat is a long warm thing you wear in cold weather." },
     { "type": "mc", "prompt": "Anna wears a warm ___ in the fall, when the weather gets cold.", "options": ["sweater", "door", "window", "bus"], "explanation": "A sweater is a warm shirt for cold weather. Anna wears it in the fall." },
     { "type": "mc", "prompt": "Ali puts his books and his lunch in his ___.", "options": ["bag", "table", "wall", "bed"], "explanation": "A bag is something you carry things in. Ali puts his books in his bag." },
     { "type": "mc", "prompt": "Mia wears a ___ and a shirt. It goes around her body.", "options": ["skirt", "pen", "tree", "chair"], "explanation": "A skirt is something you wear around your body, below your shirt. It has no legs." },
@@ -39,7 +39,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Anna has a new ___ of shoes.", "options": ["pair", "glass", "cup", "bottle"], "explanation": "A pair is two things that go together. Shoes always come in a pair." },
     { "type": "mc", "prompt": "Red, blue and green are ___.", "options": ["colors", "pairs", "styles", "designs"], "target": "color", "explanation": "A color is red, blue, green and so on." },
     { "type": "mc", "prompt": "Shirts, pants and dresses are all ___.", "options": ["clothes", "colors", "shoes", "bags"], "explanation": "Clothes are what people wear. Shirts, pants and dresses are clothes." },
-    { "type": "mc", "prompt": "Tom likes to ___ a hat and boots in the snow.", "options": ["wear", "wash", "drive", "cook"], "explanation": "To wear is to have clothes on your body. Tom has a hat and boots on." },
+    { "type": "mc", "prompt": "It is cold. Tom likes to ___ a hat and boots.", "options": ["wear", "wash", "drive", "cook"], "explanation": "To wear is to have clothes on your body. Tom has a hat and boots on." },
     { "type": "mc", "prompt": "Mia makes a new ___ for her dress. It has red and blue flowers.", "options": ["design", "key", "desk", "door"], "targetType": "noun", "explanation": "A design is a plan or a picture of how something will look. Mia makes a plan for her dress." },
     { "type": "mc", "prompt": "The room has big windows and white walls. It is very ___.", "options": ["light", "fast", "young", "ready"], "targetType": "adjective", "explanation": "Light means not dark. A room with big windows and white walls is full of light." },
     { "type": "mc", "prompt": "At night, it is ___ outside. We cannot see well.", "options": ["dark", "ready", "young", "dirty"], "explanation": "Dark means with no light, or with very little light. At night we cannot see well." },
@@ -63,13 +63,13 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Many flowers in the garden are red, yellow or", "after": ".", "answer": "purple", "bank": ["purple", "fast", "busy"], "targetType": "adjective", "explanation": "Purple is a color between red and blue. Some flowers are purple." },
     { "type": "fill", "before": "A mouse is", "after": ".", "answer": "gray", "bank": ["gray", "tall", "ready"], "targetType": "adjective", "explanation": "Gray is the color of many mice and of an elephant." },
     { "type": "fill", "before": "Mom helps the baby", "after": "every morning.", "answer": "dress", "bank": ["dress", "drive", "cook"], "targetType": "verb", "explanation": "To dress is to put clothes on yourself or on another person. Mom puts clothes on the baby." },
-    { "type": "fill", "before": "I need new", "after": "for school.", "answer": "shoes", "bank": ["shoes", "desks", "doors"], "target": "shoe", "explanation": "A shoe is something you wear on your foot. The speaker needs new ones for school." }
+    { "type": "fill", "before": "My old", "after": "are too small. I need new ones for school.", "answer": "shoes", "bank": ["shoes", "desks", "doors"], "target": "shoe", "explanation": "A shoe is something you wear on your foot. The speaker needs new ones for school." }
   ],
   "A1|vocabulary|7|fill|hard": [
     { "type": "fill", "before": "Ali's father wears big", "after": "on the farm.", "answer": "boots", "bank": ["boots", "desks", "keys", "beds"], "target": "boot", "explanation": "A boot is a strong shoe for rain or snow. Ali's father wears big boots on the farm." },
     { "type": "fill", "before": "I need a new pair of", "after": ".", "answer": "jeans", "bank": ["jeans", "walls", "chairs", "beds"], "explanation": "Jeans are strong pants, often blue. The speaker needs a new pair." },
     { "type": "fill", "before": "Today is warm. You do not need a", "after": ".", "answer": "jacket", "bank": ["jacket", "desk", "window", "bus"], "explanation": "A jacket is a short coat. You wear it when it is cold, not when it is warm." },
-    { "type": "fill", "before": "Ali's mother gives him a new", "after": "for his birthday.", "answer": "coat", "bank": ["coat", "pen", "wall", "tree"], "explanation": "A coat is a long warm piece of clothes for cold weather. Ali gets a new one for his birthday." },
+    { "type": "fill", "before": "It is very cold. Ali's mother gives him a new warm", "after": "for his birthday.", "answer": "coat", "bank": ["coat", "pen", "wall", "tree"], "explanation": "A coat is a long warm thing you wear in cold weather. Ali gets a new one for his birthday." },
     { "type": "fill", "before": "Anna's grandmother makes a warm", "after": "for her.", "answer": "sweater", "bank": ["sweater", "door", "key", "chair"], "explanation": "A sweater is a warm shirt for cold weather. Her grandmother makes one for her." },
     { "type": "fill", "before": "Mom puts the apples and the bread in a", "after": ".", "answer": "bag", "bank": ["bag", "desk", "window", "bed"], "explanation": "A bag is something you carry things in. Mom puts the food in a bag." },
     { "type": "fill", "before": "Leo wears a", "after": "because it is very hot.", "answer": "T-shirt", "bank": ["T-shirt", "pen", "bus", "tree"], "explanation": "A T-shirt is a shirt with short arms, for hot weather. Leo wears one when it is hot." },
@@ -102,7 +102,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "tf", "prompt": "Pink is the color of a banana.", "answer": false, "target": "pink", "targetType": "noun", "explanation": "No. A banana is yellow. Pink is the color of a pig." },
     { "type": "tf", "prompt": "Gray is a color, like black and white.", "answer": true, "target": "gray", "targetType": "noun", "explanation": "Yes. Gray is a color between black and white." },
     { "type": "tf", "prompt": "You wear a shoe on your hand.", "answer": false, "target": "shoe", "explanation": "No. You wear a shoe on your foot." },
-    { "type": "tf", "prompt": "A dress is one piece of clothes for the body.", "answer": true, "target": "dress", "targetType": "noun", "explanation": "Yes. A dress is one piece of clothes with a skirt part." },
+    { "type": "tf", "prompt": "A dress is one thing you wear, with a skirt part.", "answer": true, "target": "dress", "targetType": "noun", "explanation": "Yes. A dress is one thing you wear on your body, and it has a skirt part." },
     { "type": "tf", "prompt": "Purple and white are the same color.", "answer": false, "target": "purple", "targetType": "noun", "explanation": "No. Purple is a color between red and blue. Snow is white." }
   ],
   "A1|vocabulary|7|tf|hard": [

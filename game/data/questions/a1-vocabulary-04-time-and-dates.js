@@ -76,7 +76,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Halloween is on October 31. The day after Halloween is in", "after": ".", "answer": "November", "bank": ["November", "September", "December", "January"], "explanation": "The day after October 31 is November 1. So the day after Halloween is in November." }
   ],
   "A1|vocabulary|4|fill|veryhard": [
-    { "type": "fill", "before": "The movie has a happy", "after": ". Everyone is happy.", "answer": "end", "bank": ["end", "kitchen", "shirt", "month"], "targetType": "noun", "explanation": "The end is the last part of something. The last part of the movie is happy." },
+    { "type": "fill", "before": "At the", "after": "of the movie, everyone is happy.", "answer": "end", "bank": ["end", "kitchen", "shirt", "month"], "targetType": "noun", "explanation": "The end is the last part of something. The last part of the movie is happy." },
     { "type": "fill", "before": "At the", "after": "of the class, the teacher says hello.", "answer": "beginning", "bank": ["beginning", "window", "mountain", "hotel"], "explanation": "The beginning is the first part of something. The teacher says hello at the first part of the class." },
     { "type": "fill", "before": "The cake has eight pieces. Four pieces are one", "after": "of the cake.", "answer": "half", "bank": ["half", "glass", "month", "hour"], "targetType": "noun", "explanation": "Half is one of two parts that look the same. Four pieces of eight are one half." },
     { "type": "fill", "before": "It is 4:15. Anna says, \"It is a", "after": "after four.\"", "answer": "quarter", "bank": ["quarter", "week", "birthday", "window"], "explanation": "A quarter of an hour is 15 minutes. In the US, we say \"a quarter after four\" for 4:15." },
@@ -169,9 +169,9 @@ Object.assign(GAME_DATA.questions, {
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
       { "left": "November", "right": "it comes right before December" },
       { "left": "June", "right": "it comes between May and July" },
-      { "left": "month", "right": "it has about thirty days, and there are twelve in a year" },
+      { "left": "month", "right": "one of the twelve parts of a year, like January, March and May" },
       { "left": "February", "right": "it has 28 days in most years" }
-    ], "explanation": "November is before December, and June is between May and July. A month has about thirty days. February has 28 days in most years." },
+    ], "explanation": "November is before December, and June is between May and July. A month is one of the twelve parts of a year. February has 28 days in most years." },
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
       { "left": "April", "right": "the month after March, with 30 days" },
       { "left": "August", "right": "the month right before September" },
@@ -187,7 +187,7 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|4|match|veryhard": [
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
-      { "left": "present", "right": "now: not the time that has gone and not the time that comes later", "type": "noun" },
+      { "left": "present", "right": "now: not the time before and not the time that comes later", "type": "noun" },
       { "left": "o'clock", "right": "the word you say after nine when it is 9:00" },
       { "left": "special", "right": "a birthday is this kind of day because it is not like other days" },
       { "left": "begin", "right": "to do the first part of something, like a lesson at nine" }
@@ -199,10 +199,10 @@ Object.assign(GAME_DATA.questions, {
       { "left": "moment", "right": "a time shorter than a minute" }
     ], "explanation": "The beginning is the first part of a story, and midnight is when a new day begins. Thirty minutes is half an hour. A moment is shorter than a minute." },
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
-      { "left": "end", "right": "what comes after the last page of a book or the last part of a movie", "type": "noun" },
+      { "left": "end", "right": "the last part of a book or a movie", "type": "noun" },
       { "left": "future", "right": "the time of next year and of the years after it" },
       { "left": "second", "right": "the smallest time you can read on most clocks", "type": "noun" },
       { "left": "period", "right": "the time you stay at a hotel, in days, weeks or months" }
-    ], "explanation": "The end comes after the last part, and the future is next year and the years after it. A second is a very short time. A period is a time that goes on for days or weeks." }
+    ], "explanation": "The end is the last part, and the future is next year and the years after it. A second is a very short time. A period is a time that goes on for days or weeks." }
   ]
 });

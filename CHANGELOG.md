@@ -4,6 +4,9 @@ What changed in My Game Project, in plain language. The newest change is at the 
 
 ## 2026-11-19
 
+### Every written theme was read again, and the weak wrong options of one theme were replaced
+A helper read all 11 written themes once, and about 50 small fixes were made in nine of them: wrong or too narrow meanings, unclear explanations, a few sentences that had a second possible answer, and some grammar above beginner level. In Free Time and Sports, the weak wrong options (like shoe and door) in the Hard and Very Hard quizzes now use words from the same theme. The notes also gained a helper-review step for new themes, new warning checks and some wording rules; nothing in how the game works changed.
+
 ### The notes for writing questions now point to the new questions guide
 The two places in the README where a helper reads how to write questions now say to start with ADDING_QUESTIONS.md, so an old, longer reading list cannot be followed by mistake. Only notes changed; nothing in the game changed.
 

@@ -27,7 +27,7 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|6|mc|hard": [
     { "type": "mc", "prompt": "A ___ is a long orange vegetable.", "options": ["carrot", "potato", "bread", "soup"], "explanation": "A carrot is a long orange vegetable. A potato is brown." },
-    { "type": "mc", "prompt": "Rice with chicken is my favorite ___.", "options": ["dish", "desk", "bed", "clock"], "explanation": "A dish is food that is made in a special way. Rice with chicken is a dish." },
+    { "type": "mc", "prompt": "Rice with chicken is my favorite ___.", "options": ["dish", "desk", "bed", "clock"], "explanation": "A dish is food that you cook in a special way. Rice with chicken is a dish." },
     { "type": "mc", "prompt": "Mom puts salt and ___ on the egg.", "options": ["pepper", "chair", "key", "wall"], "explanation": "Pepper is something we put on food. We often use it with salt." },
     { "type": "mc", "prompt": "Breakfast, lunch and dinner are three ___ of the day.", "options": ["meals", "desks", "windows", "boxes"], "target": "meal", "explanation": "A meal is food that you eat at one time. We have three meals a day." },
     { "type": "mc", "prompt": "Dad drinks his coffee from a big ___.", "options": ["cup", "desk", "bed", "bus"], "explanation": "A cup is something you drink hot drinks from. Dad drinks his coffee from a cup." },
@@ -52,7 +52,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "A baby drinks", "after": "from a bottle.", "answer": "milk", "bank": ["milk", "bed", "shoe"], "explanation": "Milk is a white drink from a cow. Babies drink milk." },
     { "type": "fill", "before": "Leo eats eggs and bread for", "after": "every day.", "answer": "breakfast", "bank": ["breakfast", "tree", "shirt"], "explanation": "Breakfast is the first meal of the day. Leo eats eggs and bread then." },
     { "type": "fill", "before": "Mia drinks apple", "after": "with her sandwich.", "answer": "juice", "bank": ["juice", "bed", "door"], "explanation": "Juice is a drink from fruit. Apple juice is a drink from apples." },
-    { "type": "fill", "before": "A chicken makes", "after": "every day.", "answer": "eggs", "bank": ["eggs", "shoes", "hats"], "target": "egg", "explanation": "An egg is a food that comes from a chicken. A chicken makes eggs." },
+    { "type": "fill", "before": "A chicken makes", "after": "for us to eat.", "answer": "eggs", "bank": ["eggs", "shoes", "hats"], "target": "egg", "explanation": "An egg is a food that comes from a chicken. A chicken makes eggs." },
     { "type": "fill", "before": "Leo's friends bring a big", "after": "for his birthday.", "answer": "cake", "bank": ["cake", "bus", "desk"], "explanation": "A cake is a food that people eat on a birthday. His friends bring a big one." }
   ],
   "A1|vocabulary|6|fill|medium": [
@@ -63,17 +63,17 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Anna eats a lot of", "after": "like apples and oranges.", "answer": "fruit", "bank": ["fruit", "desks", "hats"], "explanation": "Fruit is food that grows on plants and trees. Apples and oranges are fruit." },
     { "type": "fill", "before": "Tom does not eat", "after": ". He eats only vegetables.", "answer": "meat", "bank": ["meat", "bus", "window"], "explanation": "Meat is the part of an animal that people eat. Tom eats only vegetables." },
     { "type": "fill", "before": "A sandwich with", "after": "and cheese is good for lunch.", "answer": "chicken", "bank": ["chicken", "door", "bed"], "explanation": "Chicken is the meat of a bird. It is good in a sandwich with cheese." },
-    { "type": "fill", "before": "Mia is hungry, so she calls the restaurant and buys a", "after": ".", "answer": "pizza", "bank": ["pizza", "shirt", "bag"], "explanation": "Pizza is a food with cheese on it. Mia buys one at the restaurant." }
+    { "type": "fill", "before": "Mia is hungry, so she calls the restaurant and buys a", "after": ".", "answer": "pizza", "bank": ["pizza", "shirt", "bag"], "explanation": "Pizza is a food with cheese on it. Mia orders one from the restaurant." }
   ],
   "A1|vocabulary|6|fill|hard": [
     { "type": "fill", "before": "Ben buys a", "after": "of water at the shop.", "answer": "bottle", "bank": ["bottle", "desk", "door", "bus"], "explanation": "A bottle is a tall thing for water or other drinks. Ben buys one at the shop." },
-    { "type": "fill", "before": "Anna wants to try a new", "after": "at the restaurant. She looks at the menu.", "answer": "dish", "bank": ["dish", "table", "chair", "key"], "explanation": "A dish is food that is made in a special way. Anna looks at the menu to find a new one." },
+    { "type": "fill", "before": "Anna wants to try a new", "after": "at the restaurant. She looks at the menu.", "answer": "dish", "bank": ["dish", "table", "chair", "key"], "explanation": "A dish is food that you cook in a special way. Anna looks at the menu to find a new one." },
     { "type": "fill", "before": "The salt and the", "after": "are on the table. You can put them on your food.", "answer": "pepper", "bank": ["pepper", "desk", "hat", "key"], "explanation": "Pepper is something we put on food, like salt." },
     { "type": "fill", "before": "Dad cuts two", "after": "and some carrots for the soup.", "answer": "onions", "bank": ["onions", "hats", "keys", "desks"], "target": "onion", "explanation": "An onion is a vegetable that people put in many dishes. Dad cuts two for the soup." },
     { "type": "fill", "before": "Mom and Dad have a glass of red", "after": "with dinner.", "answer": "wine", "bank": ["wine", "desk", "hat", "key"], "explanation": "Wine is a drink for adults. It is often red or white." },
     { "type": "fill", "before": "Mia drinks a", "after": "of milk before bed.", "answer": "glass", "bank": ["glass", "desk", "door", "key"], "explanation": "A glass is something you drink water or milk from." },
     { "type": "fill", "before": "Ken eats fruit and", "after": "every day for his health.", "answer": "vegetables", "bank": ["vegetables", "desks", "hats", "keys"], "target": "vegetable", "explanation": "A vegetable is a plant that people eat. Ken eats vegetables every day." },
-    { "type": "fill", "before": "Anna puts some", "after": "in her coffee.", "answer": "sugar", "bank": ["sugar", "desk", "key", "door"], "explanation": "Sugar is something white that we put in coffee or tea." }
+    { "type": "fill", "before": "Anna puts some", "after": "in her coffee.", "answer": "sugar", "bank": ["sugar", "desk", "key", "door"], "explanation": "Sugar is something that we put in coffee or tea." }
   ],
   "A1|vocabulary|6|fill|veryhard": [
     { "type": "fill", "before": "Can I have one more", "after": "of pizza, please?", "answer": "piece", "bank": ["piece", "desk", "door", "key"], "explanation": "A piece is one part of something. The speaker wants one more part of the pizza." },
@@ -112,7 +112,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "tf", "prompt": "A meal is a place where you buy food.", "answer": false, "target": "meal", "explanation": "No. A meal is the food you eat at one time. A restaurant is a place where you buy food." },
     { "type": "tf", "prompt": "A menu is a list of the food at a restaurant.", "answer": true, "target": "menu", "explanation": "Yes. You read the menu before you order." },
     { "type": "tf", "prompt": "A glass is something you eat with.", "answer": false, "target": "glass", "explanation": "No. You drink from a glass." },
-    { "type": "tf", "prompt": "People put salt on food.", "answer": true, "target": "salt", "explanation": "Yes. Many people put salt and pepper on food." },
+    { "type": "tf", "prompt": "Many people put salt on food.", "answer": true, "target": "salt", "explanation": "Yes. Many people put salt and pepper on food." },
     { "type": "tf", "prompt": "A tomato is blue.", "answer": false, "target": "tomato", "explanation": "No. A tomato is a red vegetable." }
   ],
   "A1|vocabulary|6|tf|veryhard": [
@@ -143,7 +143,7 @@ Object.assign(GAME_DATA.questions, {
       { "left": "juice", "right": "you make it from apples or oranges, and you drink it" },
       { "left": "banana", "right": "a long fruit that is green at first and then yellow" },
       { "left": "cake", "right": "you make it with eggs and sugar" }
-    ], "explanation": "You eat breakfast after you wake up. Juice is made from fruit, and a banana is a long fruit. You make a cake with eggs and sugar." }
+    ], "explanation": "You eat breakfast after you wake up. You make juice from fruit, and a banana is a long fruit. You make a cake with eggs and sugar." }
   ],
   "A1|vocabulary|6|match|medium": [
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [

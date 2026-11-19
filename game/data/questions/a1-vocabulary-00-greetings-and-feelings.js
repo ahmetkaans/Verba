@@ -68,7 +68,7 @@ Object.assign(GAME_DATA.questions, {
   "A1|vocabulary|0|fill|hard": [
     { "type": "fill", "before": "Lisa is", "after": "to fly, so she always goes by train.", "answer": "afraid", "bank": ["afraid", "bored", "excited", "interested"], "explanation": "Lisa thinks flying is dangerous, so she is afraid to fly. She takes the train." },
     { "type": "fill", "before": "It's Sunday afternoon, and Ben has nothing to do. He is", "after": ".", "answer": "bored", "bank": ["bored", "afraid", "excited", "sure"], "explanation": "Ben has nothing to do, so he is bored." },
-    { "type": "fill", "before": "The children are very", "after": "about the school trip tomorrow.", "answer": "excited", "bank": ["excited", "bored", "afraid", "interested"], "explanation": "The trip is something good that is going to happen, so the children are excited. We say \"excited about\"." },
+    { "type": "fill", "before": "The children love trips. They are very", "after": "about the trip tomorrow.", "answer": "excited", "bank": ["excited", "bored", "afraid", "interested"], "explanation": "The trip is something good that is going to happen, so the children are excited. We say \"excited about\"." },
     { "type": "fill", "before": "\"Are you", "after": "in art?\" \"Yes, I love painting.\"", "answer": "interested", "bank": ["interested", "excited", "bored", "afraid"], "explanation": "The answer \"I love painting\" tells us the person likes art. We say \"interested in\"." },
     { "type": "fill", "before": "\"Is the museum open today?\" \"I'm not", "after": ". Let's check online.\"", "answer": "sure", "bank": ["sure", "afraid", "bored", "interested"], "explanation": "\"I'm not sure\" means \"I don't know\". So they check online." },
     { "type": "fill", "before": "Don't forget to", "after": "your grandfather for the birthday money.", "answer": "thank", "bank": ["thank", "laugh", "hope", "miss"], "targetType": "verb", "explanation": "We thank people when they give us something. Your grandfather gives you money, so you thank him." },
@@ -106,7 +106,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "tf", "prompt": "\"Yeah\" means \"yes\", and we say it to friends.", "answer": true, "target": "yeah", "explanation": "Yes. \"Yeah\" is a friendly way to say \"yes\"." }
   ],
   "A1|vocabulary|0|tf|hard": [
-    { "type": "tf", "prompt": "People who are afraid of dogs stay away from them.", "answer": true, "target": "afraid", "explanation": "Yes. When we are afraid of something, we don't want to be near it." },
+    { "type": "tf", "prompt": "People who are afraid of dogs often stay away from them.", "answer": true, "target": "afraid", "explanation": "Yes. When we are afraid of something, we don't want to be near it." },
     { "type": "tf", "prompt": "An exciting movie makes people bored.", "answer": false, "target": "bored", "explanation": "No. An exciting movie makes people excited. We feel bored when we have nothing to do, or when something is not interesting." },
     { "type": "tf", "prompt": "\"I'm excited\" means \"I'm very tired\".", "answer": false, "target": "excited", "explanation": "No. \"Excited\" means very happy because something good is going to happen." },
     { "type": "tf", "prompt": "A person interested in music wants to know more about it.", "answer": true, "target": "interested", "explanation": "Yes. When we are interested in something, we want to learn more about it." },

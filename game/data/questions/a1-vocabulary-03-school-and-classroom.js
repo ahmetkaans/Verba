@@ -27,7 +27,7 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|3|mc|hard": [
     { "type": "mc", "prompt": "Students take a big ___ at the end of the year.", "options": ["exam", "rule", "college", "desk"], "explanation": "An exam is a big test. Students take it at the end of the year." },
-    { "type": "mc", "prompt": "Anna goes to a small ___ after high school to study.", "options": ["college", "bank", "airport", "restaurant"], "explanation": "A college is a school for people who finish high school. Anna studies at one for two years." },
+    { "type": "mc", "prompt": "Anna goes to a small ___ after high school to study.", "options": ["college", "bank", "airport", "restaurant"], "explanation": "A college is a school for people who finish high school. Anna studies at one after high school." },
     { "type": "mc", "prompt": "Ali studies for many years at a big ___ to become a doctor.", "options": ["university", "bank", "classroom", "airport"], "explanation": "A university is a big school where adults study for many years. Ali studies there to become a doctor." },
     { "type": "mc", "prompt": "Science, art and music are all school ___.", "options": ["subjects", "teachers", "pencils", "desks"], "target": "subject", "explanation": "A subject is something that you study at school. Science, art and music are subjects." },
     { "type": "mc", "prompt": "Maria's group works for two weeks on a ___ about the sun. Then they show it to the class.", "options": ["project", "rule", "college", "university"], "explanation": "A project is a big piece of work about one subject. Maria's group works on it for two weeks." },
@@ -67,7 +67,7 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|3|fill|hard": [
     { "type": "fill", "before": "At the end of the year, there is one big", "after": ". Students cannot use their books.", "answer": "exam", "bank": ["exam", "lesson", "course", "project"], "explanation": "An exam is a big test. Students cannot use their books in it." },
-    { "type": "fill", "before": "Tom finished school last year. Now he studies at a big", "after": "with 10,000 students.", "answer": "college", "bank": ["college", "library", "classroom", "subject"], "explanation": "A college is a school for people who finish high school. Tom studies there now." },
+    { "type": "fill", "before": "Tom finished school last year. Now he studies at a", "after": "with 200 students.", "answer": "college", "bank": ["college", "library", "classroom", "subject"], "explanation": "A college is a school for people who finish high school. Tom studies there now." },
     { "type": "fill", "before": "Maria is taking an English", "after": ": twenty lessons in ten weeks.", "answer": "course", "bank": ["course", "exam", "college", "project"], "explanation": "A course is a group of lessons about one subject. Maria has twenty English lessons in ten weeks." },
     { "type": "fill", "before": "Science is my favorite school", "after": ".", "answer": "subject", "bank": ["subject", "teacher", "desk", "page"], "explanation": "A subject is something that you study at school. Science is a subject." },
     { "type": "fill", "before": "The teacher puts the students in", "after": "of four for the project.", "answer": "groups", "bank": ["groups", "desks", "lessons", "pages"], "target": "group", "explanation": "A group is people or things that are together. The students work together in groups of four." },

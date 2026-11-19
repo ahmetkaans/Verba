@@ -26,12 +26,12 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Dad cooks a big ___ every Sunday.", "options": ["dinner", "bed", "key", "bus"], "explanation": "Dinner is the main meal of the day. Dad cooks a big dinner on Sundays." }
   ],
   "A1|vocabulary|5|mc|hard": [
-    { "type": "mc", "prompt": "In many bathrooms, there is a bath, a shower and a ___.", "options": ["toilet", "garden", "apartment", "key"], "explanation": "A toilet is something in a bathroom that people sit on and use. Many bathrooms have a bath, a shower and a toilet." },
+    { "type": "mc", "prompt": "In many bathrooms, there is a bath, a shower and a ___.", "options": ["toilet", "garden", "bedroom", "key"], "explanation": "A toilet is a thing in a bathroom. You use it when you need to go. Many bathrooms have a bath, a shower and a toilet." },
     { "type": "mc", "prompt": "Mia does her homework at her ___ every day.", "options": ["desk", "clock", "shower", "box"], "explanation": "A desk is a table where you work or study. Mia does her homework at her desk." },
     { "type": "mc", "prompt": "Tom plays basketball with his friends in the ___ near his house.", "options": ["garden", "shower", "toilet", "box"], "explanation": "A garden is a place near a house with flowers and plants. Tom plays there with his friends." },
     { "type": "mc", "prompt": "Anna lives in a small ___ on the third floor.", "options": ["apartment", "yard", "bath", "desk"], "explanation": "An apartment is a home in a big building. Anna's apartment is on the third floor." },
     { "type": "mc", "prompt": "The water is warm. Leo takes a ___ before bed.", "options": ["bath", "desk", "key", "clock"], "explanation": "A bath is something you sit in with water to wash your body. Leo takes a bath before bed." },
-    { "type": "mc", "prompt": "You need a ___ to open the door of your apartment.", "options": ["key", "shower", "garden", "apartment"], "targetType": "noun", "explanation": "A key is a small thing that opens a door. You need it to open your apartment door." },
+    { "type": "mc", "prompt": "You need a ___ to open the door of your apartment.", "options": ["key", "shower", "garden", "bed"], "targetType": "noun", "explanation": "A key is a small thing that opens a door. You need it to open your apartment door." },
     { "type": "mc", "prompt": "Ben turns on the water and takes a quick ___ every morning.", "options": ["shower", "desk", "box", "yard"], "explanation": "A shower is a way to wash with water that falls on you. Ben takes one every morning." },
     { "type": "mc", "prompt": "Mom puts the old books in a big ___.", "options": ["box", "light", "garden", "key"], "explanation": "A box is something you put things in and keep them in. Mom puts the books in a box." }
   ],
@@ -66,7 +66,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "We eat", "after": "at seven in the evening.", "answer": "dinner", "bank": ["dinner", "homework", "bath"], "explanation": "Dinner is the main meal of the day. We eat it in the evening." }
   ],
   "A1|vocabulary|5|fill|hard": [
-    { "type": "fill", "before": "People sit on the", "after": "in the bathroom.", "answer": "toilet", "bank": ["toilet", "window", "wall", "apartment"], "explanation": "A toilet is something in a bathroom that people sit on and use." },
+    { "type": "fill", "before": "People sit on the", "after": "in the bathroom.", "answer": "toilet", "bank": ["toilet", "window", "wall", "apartment"], "explanation": "A toilet is a thing in a bathroom. You use it when you need to go." },
     { "type": "fill", "before": "The dog runs and plays in the", "after": "behind our house.", "answer": "yard", "bank": ["yard", "shower", "key", "clock"], "explanation": "A yard is the open place behind or in front of a house. The dog plays there." },
     { "type": "fill", "before": "Anna's grandmother has many flowers and trees in her", "after": ".", "answer": "garden", "bank": ["garden", "shower", "desk", "door"], "explanation": "A garden is a place near a house with flowers and plants." },
     { "type": "fill", "before": "In the morning, the", "after": "from the sun comes in through the window.", "answer": "light", "bank": ["light", "key", "box", "wall"], "targetType": "noun", "explanation": "Light is what lets you see. The sun gives light in the morning." },
@@ -150,8 +150,8 @@ Object.assign(GAME_DATA.questions, {
       { "left": "breakfast", "right": "the first meal after you wake up" },
       { "left": "cook", "right": "to make food for a meal" },
       { "left": "bring", "right": "to take something with you when you come" },
-      { "left": "wash", "right": "to put something in water to make it clean" }
-    ], "explanation": "Breakfast is the first meal after you wake up, and you cook food for a meal. You bring something with you, and you wash something in water." }
+      { "left": "wash", "right": "to make something clean with water" }
+    ], "explanation": "Breakfast is the first meal after you wake up, and you cook food for a meal. You bring something with you, and you wash something with water." }
   ],
   "A1|vocabulary|5|match|hard": [
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
@@ -163,9 +163,9 @@ Object.assign(GAME_DATA.questions, {
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
       { "left": "garden", "right": "you can grow plants there, near your house" },
       { "left": "bath", "right": "you sit in it with warm water to wash" },
-      { "left": "clock", "right": "a thing with numbers and two arms on the wall or on a table" },
+      { "left": "clock", "right": "a thing with numbers and two hands on the wall or on a table" },
       { "left": "box", "right": "a thing for putting things in and keeping them" }
-    ], "explanation": "You can grow plants in a garden. You sit in a bath to wash, and a clock has numbers and two arms. A box is for putting things in." }
+    ], "explanation": "You can grow plants in a garden. You sit in a bath to wash, and a clock has numbers and two hands. A box is for putting things in." }
   ],
   "A1|vocabulary|5|match|veryhard": [
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [

@@ -161,7 +161,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
       { "left": "building", "right": "the word for a house, a school or an office" },
       { "left": "station", "right": "where you wait for a train or a bus" },
-      { "left": "theater", "right": "a building where you pay to sit and watch a play or a movie" },
+      { "left": "theater", "right": "a place where you pay to sit and watch a play or a movie" },
       { "left": "club", "right": "a place where friends meet to do a sport or play music together" }
     ], "explanation": "A house, a school and an office are all buildings. You wait for a train at a station. You pay to sit in a theater and watch a play, and friends meet in a club." }
   ],
@@ -187,10 +187,10 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|8|match|veryhard": [
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
-      { "left": "product", "right": "a thing like bread or shoes that a person makes so that others can buy it" },
+      { "left": "product", "right": "something a store sells, like shoes or a bag" },
       { "left": "build", "right": "to make a new school or a new house, a little at a time" },
       { "left": "center", "right": "the part of a city where most stores, cafes and offices are" },
-      { "left": "order", "right": "the food that a person asks a restaurant to bring", "type": "noun" }
+      { "left": "order", "right": "the things you ask a store or a restaurant to bring you", "type": "noun" }
     ], "explanation": "A product is something people make and sell. To build is to make a new house. The center is where most stores are, and an order is the food that you ask for." },
     { "type": "match", "prompt": "Match each word with its meaning.", "pairs": [
       { "left": "local", "right": "of the place where you live, not far away" },
