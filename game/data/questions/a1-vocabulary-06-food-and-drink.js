@@ -27,23 +27,23 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|6|mc|hard": [
     { "type": "mc", "prompt": "A ___ is a long orange vegetable.", "options": ["carrot", "potato", "bread", "soup"], "explanation": "A carrot is a long orange vegetable. A potato is brown." },
-    { "type": "mc", "prompt": "Rice with chicken is my favorite ___.", "options": ["dish", "desk", "bed", "clock"], "explanation": "A dish is food that you cook in a special way. Rice with chicken is a dish." },
-    { "type": "mc", "prompt": "Mom puts salt and ___ on the egg.", "options": ["pepper", "chair", "key", "wall"], "explanation": "Pepper is something we put on food. We often use it with salt." },
-    { "type": "mc", "prompt": "Breakfast, lunch and dinner are three ___ of the day.", "options": ["meals", "desks", "windows", "boxes"], "target": "meal", "explanation": "A meal is food that you eat at one time. We have three meals a day." },
-    { "type": "mc", "prompt": "Dad drinks his coffee from a big ___.", "options": ["cup", "desk", "bed", "bus"], "explanation": "A cup is something you drink hot drinks from. Dad drinks his coffee from a cup." },
-    { "type": "mc", "prompt": "Dad has a cold ___ with his friends at the restaurant.", "options": ["beer", "door", "hat", "bag"], "explanation": "Beer is a drink for adults. Dad has a cold one with his friends." },
-    { "type": "mc", "prompt": "Potatoes and onions are ___.", "options": ["vegetables", "shoes", "hats", "books"], "target": "vegetable", "explanation": "A vegetable is a plant that we eat. A potato and an onion are vegetables." },
-    { "type": "mc", "prompt": "Anna puts a red ___ in her salad.", "options": ["tomato", "table", "pen", "wall"], "explanation": "A tomato is a red vegetable. Many people put tomatoes in a salad." }
+    { "type": "mc", "prompt": "Rice with chicken is my favorite ___.", "options": ["dish", "drink", "cup", "bottle"], "explanation": "A dish is food that you cook in a special way. Rice with chicken is a dish." },
+    { "type": "mc", "prompt": "Mom puts salt and ___ on the egg.", "options": ["pepper", "juice", "coffee", "tea"], "explanation": "Pepper is something we put on food. We often use it with salt." },
+    { "type": "mc", "prompt": "Breakfast, lunch and dinner are three ___ of the day.", "options": ["meals", "cups", "glasses", "days"], "target": "meal", "explanation": "A meal is food that you eat at one time. We have three meals a day." },
+    { "type": "mc", "prompt": "Dad drinks his coffee from a big ___.", "options": ["cup", "pizza", "egg", "bread"], "explanation": "A cup is something you drink hot drinks from. Dad drinks his coffee from a cup." },
+    { "type": "mc", "prompt": "Dad has a cold ___ with his friends at the restaurant.", "options": ["beer", "menu", "waiter", "bill"], "explanation": "Beer is a drink for adults. Dad has a cold one with his friends." },
+    { "type": "mc", "prompt": "Potatoes and onions are ___.", "options": ["vegetables", "eggs", "drinks", "cakes"], "target": "vegetable", "explanation": "A vegetable is a plant that we eat. A potato and an onion are vegetables." },
+    { "type": "mc", "prompt": "Anna puts a red ___ in her salad.", "options": ["tomato", "cup", "bottle", "glass"], "explanation": "A tomato is a red vegetable. Many people put tomatoes in a salad." }
   ],
   "A1|vocabulary|6|mc|veryhard": [
     { "type": "mc", "prompt": "Mia wants a ___ of cake.", "options": ["piece", "glass", "cup", "bottle"], "explanation": "A piece is one part of something. Mia wants one part of the cake." },
-    { "type": "mc", "prompt": "Mom will ___ dinner in the kitchen.", "options": ["prepare", "wash", "drive", "wake"], "explanation": "To prepare is to make something ready. Mom makes dinner ready in the kitchen." },
+    { "type": "mc", "prompt": "Mom will ___ dinner in the kitchen.", "options": ["prepare", "drink", "add", "wash"], "explanation": "To prepare is to make something ready. Mom makes dinner ready in the kitchen." },
     { "type": "mc", "prompt": "Dad loves ___. He makes soup, pizza and cake at home.", "options": ["cooking", "window", "desk", "shoes"], "explanation": "Cooking is making food. Dad likes to make food at home." },
-    { "type": "mc", "prompt": "Anna wants to ___ soup for the family tonight.", "options": ["cook", "wash", "drive", "relax"], "explanation": "To cook is to make food hot so you can eat it. Anna makes soup for the family." },
-    { "type": "mc", "prompt": "Ali and his family eat dinner at a ___ on Saturday.", "options": ["restaurant", "bank", "library", "museum"], "explanation": "A restaurant is a place where you buy and eat a meal. Ali's family eats dinner there." },
+    { "type": "mc", "prompt": "Anna wants to ___ soup for the family tonight.", "options": ["cook", "drink", "cut", "wash"], "explanation": "To cook is to make food hot so you can eat it. Anna makes soup for the family." },
+    { "type": "mc", "prompt": "Ali and his family eat dinner at a ___ on Saturday.", "options": ["restaurant", "bank", "museum", "waiter"], "explanation": "A restaurant is a place where you buy and eat a meal. Ali's family eats dinner there." },
     { "type": "mc", "prompt": "Fruit and vegetables are good for you. They are ___ food.", "options": ["healthy", "dirty", "busy", "quiet"], "explanation": "Healthy food is good for your body. Fruit and vegetables are healthy." },
-    { "type": "mc", "prompt": "Doctors say a good ___ has a lot of fruit and vegetables.", "options": ["diet", "key", "desk", "door"], "explanation": "A diet is the food and drink that a person usually has. A good diet has fruit and vegetables." },
-    { "type": "mc", "prompt": "Mom's soup is ___. Everybody wants more.", "options": ["delicious", "dirty", "young", "small"], "explanation": "Delicious means very good to eat. Everybody wants more of Mom's soup." }
+    { "type": "mc", "prompt": "Doctors say a good ___ has a lot of fruit and vegetables.", "options": ["diet", "waiter", "bottle", "glass"], "explanation": "A diet is the food and drink that a person usually has. A good diet has fruit and vegetables." },
+    { "type": "mc", "prompt": "Mom's soup is ___. Everybody wants more.", "options": ["delicious", "full", "dirty", "young"], "explanation": "Delicious means very good to eat. Everybody wants more of Mom's soup." }
   ],
   "A1|vocabulary|6|fill|easy": [
     { "type": "fill", "before": "Anna eats a big sandwich for", "after": "at school.", "answer": "lunch", "bank": ["lunch", "bed", "bus"], "explanation": "Lunch is the meal between breakfast and dinner. Anna eats it at school." },
@@ -66,24 +66,24 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Mia is hungry, so she calls the restaurant and buys a", "after": ".", "answer": "pizza", "bank": ["pizza", "shirt", "bag"], "explanation": "Pizza is a food with cheese on it. Mia orders one from the restaurant." }
   ],
   "A1|vocabulary|6|fill|hard": [
-    { "type": "fill", "before": "Ben buys a", "after": "of water at the shop.", "answer": "bottle", "bank": ["bottle", "desk", "door", "bus"], "explanation": "A bottle is a tall thing for water or other drinks. Ben buys one at the shop." },
-    { "type": "fill", "before": "Anna wants to try a new", "after": "at the restaurant. She looks at the menu.", "answer": "dish", "bank": ["dish", "table", "chair", "key"], "explanation": "A dish is food that you cook in a special way. Anna looks at the menu to find a new one." },
-    { "type": "fill", "before": "The salt and the", "after": "are on the table. You can put them on your food.", "answer": "pepper", "bank": ["pepper", "desk", "hat", "key"], "explanation": "Pepper is something we put on food, like salt." },
-    { "type": "fill", "before": "Dad cuts two", "after": "and some carrots for the soup.", "answer": "onions", "bank": ["onions", "hats", "keys", "desks"], "target": "onion", "explanation": "An onion is a vegetable that people put in many dishes. Dad cuts two for the soup." },
-    { "type": "fill", "before": "Mom and Dad have a glass of red", "after": "with dinner.", "answer": "wine", "bank": ["wine", "desk", "hat", "key"], "explanation": "Wine is a drink for adults. It is often red or white." },
-    { "type": "fill", "before": "Mia drinks a", "after": "of milk before bed.", "answer": "glass", "bank": ["glass", "desk", "door", "key"], "explanation": "A glass is something you drink water or milk from." },
-    { "type": "fill", "before": "Ken eats fruit and", "after": "every day for his health.", "answer": "vegetables", "bank": ["vegetables", "desks", "hats", "keys"], "target": "vegetable", "explanation": "A vegetable is a plant that people eat. Ken eats vegetables every day." },
-    { "type": "fill", "before": "Anna puts some", "after": "in her coffee.", "answer": "sugar", "bank": ["sugar", "desk", "key", "door"], "explanation": "Sugar is something that we put in coffee or tea." }
+    { "type": "fill", "before": "Ben buys a", "after": "of water at the shop.", "answer": "bottle", "bank": ["bottle", "piece", "menu", "meal"], "explanation": "A bottle is a tall thing for water or other drinks. Ben buys one at the shop." },
+    { "type": "fill", "before": "Anna wants to try a new", "after": "at the restaurant. She looks at the menu.", "answer": "dish", "bank": ["dish", "waiter", "bottle", "key"], "explanation": "A dish is food that you cook in a special way. Anna looks at the menu to find a new one." },
+    { "type": "fill", "before": "The salt and the", "after": "are on the table. You can put them on your food.", "answer": "pepper", "bank": ["pepper", "cup", "glass", "bottle"], "explanation": "Pepper is something we put on food, like salt." },
+    { "type": "fill", "before": "Dad cuts two", "after": "and some carrots for the soup.", "answer": "onions", "bank": ["onions", "bottles", "cups", "glasses"], "target": "onion", "explanation": "An onion is a vegetable that people put in many dishes. Dad cuts two for the soup." },
+    { "type": "fill", "before": "Mom and Dad have a glass of red", "after": "with dinner.", "answer": "wine", "bank": ["wine", "milk", "water", "coffee"], "explanation": "Wine is a drink for adults. It is often red or white." },
+    { "type": "fill", "before": "Mia drinks a", "after": "of milk before bed.", "answer": "glass", "bank": ["glass", "piece", "pair", "waiter"], "explanation": "A glass is something you drink water or milk from." },
+    { "type": "fill", "before": "Ken eats fruit and", "after": "every day for his health.", "answer": "vegetables", "bank": ["vegetables", "cups", "glasses", "bottles"], "target": "vegetable", "explanation": "A vegetable is a plant that people eat. Ken eats vegetables every day." },
+    { "type": "fill", "before": "Anna puts some", "after": "in her coffee.", "answer": "sugar", "bank": ["sugar", "rice", "onion", "fish"], "explanation": "Sugar is something that we put in coffee or tea." }
   ],
   "A1|vocabulary|6|fill|veryhard": [
-    { "type": "fill", "before": "Can I have one more", "after": "of pizza, please?", "answer": "piece", "bank": ["piece", "desk", "door", "key"], "explanation": "A piece is one part of something. The speaker wants one more part of the pizza." },
-    { "type": "fill", "before": "Anna puts milk and", "after": "in her coffee.", "answer": "cream", "bank": ["cream", "chair", "wall", "bed"], "explanation": "Cream is a white food from milk. People often put it in coffee." },
+    { "type": "fill", "before": "Can I have one more", "after": "of pizza, please?", "answer": "piece", "bank": ["piece", "glass", "cup", "bottle"], "explanation": "A piece is one part of something. The speaker wants one more part of the pizza." },
+    { "type": "fill", "before": "Anna puts milk and", "after": "in her coffee.", "answer": "cream", "bank": ["cream", "rice", "meat", "pizza"], "explanation": "Cream is a white food from milk. People often put it in coffee." },
     { "type": "fill", "before": "Ken is good at", "after": ". His pizza is delicious.", "answer": "cooking", "bank": ["cooking", "desk", "window", "key"], "explanation": "Cooking is making food ready to eat. Ken makes very good pizza." },
-    { "type": "fill", "before": "At the restaurant, Ali wants to", "after": "a pizza.", "answer": "order", "bank": ["order", "wash", "drive", "wake"], "targetType": "verb", "explanation": "To order is to ask for food in a restaurant. Ali wants to ask for a pizza." },
-    { "type": "fill", "before": "The meal was big. Now Ben cannot eat more because he is", "after": ".", "answer": "full", "bank": ["full", "dirty", "quiet", "blue"], "explanation": "Full means you cannot eat any more. Ben had a big meal." },
-    { "type": "fill", "before": "The", "after": "brings the food to our table.", "answer": "waiter", "bank": ["waiter", "key", "chair", "bed"], "explanation": "A waiter is a person who brings food to your table in a restaurant." },
-    { "type": "fill", "before": "Mia eats a lot of fruit and fish every day. This is her", "after": ".", "answer": "diet", "bank": ["diet", "window", "wall", "door"], "explanation": "A diet is the food and drink that a person usually has. Mia eats fruit and fish every day." },
-    { "type": "fill", "before": "Ben wants to", "after": "some sugar to his coffee.", "answer": "add", "bank": ["add", "wash", "drive", "wake"], "explanation": "To add is to put one thing into another thing. Ben puts sugar into his coffee." }
+    { "type": "fill", "before": "At the restaurant, Ali wants to", "after": "a pizza.", "answer": "order", "bank": ["order", "drink", "add", "wake"], "targetType": "verb", "explanation": "To order is to ask for food in a restaurant. Ali wants to ask for a pizza." },
+    { "type": "fill", "before": "The meal was big. Now Ben cannot eat more because he is", "after": ".", "answer": "full", "bank": ["full", "hungry", "delicious", "dirty"], "explanation": "Full means you cannot eat any more. Ben had a big meal." },
+    { "type": "fill", "before": "The", "after": "brings the food to our table.", "answer": "waiter", "bank": ["waiter", "menu", "dish", "bottle"], "explanation": "A waiter is a person who brings food to your table in a restaurant." },
+    { "type": "fill", "before": "Mia eats a lot of fruit and fish every day. This is her", "after": ".", "answer": "diet", "bank": ["diet", "cup", "bottle", "waiter"], "explanation": "A diet is the food and drink that a person usually has. Mia eats fruit and fish every day." },
+    { "type": "fill", "before": "Ben wants to", "after": "some sugar to his coffee.", "answer": "add", "bank": ["add", "cut", "drink", "cook"], "explanation": "To add is to put one thing into another thing. Ben puts sugar into his coffee." }
   ],
   "A1|vocabulary|6|tf|easy": [
     { "type": "tf", "prompt": "Dinner is a meal that many people eat in the evening.", "answer": true, "target": "dinner", "explanation": "Yes. Dinner is the main meal of the day, and many people eat it in the evening." },

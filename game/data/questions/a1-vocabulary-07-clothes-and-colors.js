@@ -27,22 +27,22 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|7|mc|hard": [
     { "type": "mc", "prompt": "Mia wears warm ___ on her feet in the snow.", "options": ["boots", "hats", "bags", "shirts"], "target": "boot", "explanation": "A boot is a strong shoe for rain or snow. Mia wears warm boots in the snow." },
-    { "type": "mc", "prompt": "Many people wear blue ___ every day.", "options": ["jeans", "desks", "doors", "keys"], "explanation": "Jeans are strong pants, often blue." },
-    { "type": "mc", "prompt": "Ben puts on a ___ because it is a little cold.", "options": ["jacket", "table", "pen", "wall"], "explanation": "A jacket is a short coat. Ben puts one on when it is a little cold." },
-    { "type": "mc", "prompt": "In winter, Dad wears a long warm ___.", "options": ["coat", "desk", "key", "bed"], "explanation": "A coat is a long warm thing you wear in cold weather." },
-    { "type": "mc", "prompt": "Anna wears a warm ___ in the fall, when the weather gets cold.", "options": ["sweater", "door", "window", "bus"], "explanation": "A sweater is a warm shirt for cold weather. Anna wears it in the fall." },
-    { "type": "mc", "prompt": "Ali puts his books and his lunch in his ___.", "options": ["bag", "table", "wall", "bed"], "explanation": "A bag is something you carry things in. Ali puts his books in his bag." },
-    { "type": "mc", "prompt": "Mia wears a ___ and a shirt. It goes around her body.", "options": ["skirt", "pen", "tree", "chair"], "explanation": "A skirt is something you wear around your body, below your shirt. It has no legs." },
-    { "type": "mc", "prompt": "Leo takes his ___ to school because of the rain.", "options": ["umbrella", "table", "pen", "chair"], "explanation": "An umbrella is something you carry when it rains." }
+    { "type": "mc", "prompt": "Many people wear blue ___ every day.", "options": ["jeans", "umbrellas", "colors", "styles"], "explanation": "Jeans are strong pants, often blue." },
+    { "type": "mc", "prompt": "Ben puts on a ___ because it is a little cold.", "options": ["jacket", "color", "design", "pair"], "explanation": "A jacket is a short coat. Ben puts one on when it is a little cold." },
+    { "type": "mc", "prompt": "In winter, Dad wears a long warm ___.", "options": ["coat", "umbrella", "bag", "color"], "explanation": "A coat is a long warm thing you wear in cold weather." },
+    { "type": "mc", "prompt": "Anna wears a warm ___ in the fall, when the weather gets cold.", "options": ["sweater", "umbrella", "bag", "shoe"], "explanation": "A sweater is a warm shirt for cold weather. Anna wears it in the fall." },
+    { "type": "mc", "prompt": "Ali puts his books and his lunch in his ___.", "options": ["bag", "umbrella", "boot", "dress"], "explanation": "A bag is something you carry things in. Ali puts his books in his bag." },
+    { "type": "mc", "prompt": "Mia wears a ___ and a shirt. It goes around her body.", "options": ["skirt", "hat", "boot", "shoe"], "explanation": "A skirt is something you wear around your body, below your shirt. It has no legs." },
+    { "type": "mc", "prompt": "Leo takes his ___ to school because of the rain.", "options": ["umbrella", "style", "design", "color"], "explanation": "An umbrella is something you carry when it rains." }
   ],
   "A1|vocabulary|7|mc|veryhard": [
-    { "type": "mc", "prompt": "Anna has a new ___ of shoes.", "options": ["pair", "glass", "cup", "bottle"], "explanation": "A pair is two things that go together. Shoes always come in a pair." },
+    { "type": "mc", "prompt": "Anna has a new ___ of shoes.", "options": ["pair", "piece", "cup", "bottle"], "explanation": "A pair is two things that go together. Shoes always come in a pair." },
     { "type": "mc", "prompt": "Red, blue and green are ___.", "options": ["colors", "pairs", "styles", "designs"], "target": "color", "explanation": "A color is red, blue, green and so on." },
     { "type": "mc", "prompt": "Shirts, pants and dresses are all ___.", "options": ["clothes", "colors", "shoes", "bags"], "explanation": "Clothes are what people wear. Shirts, pants and dresses are clothes." },
     { "type": "mc", "prompt": "It is cold. Tom likes to ___ a hat and boots.", "options": ["wear", "wash", "drive", "cook"], "explanation": "To wear is to have clothes on your body. Tom has a hat and boots on." },
-    { "type": "mc", "prompt": "Mia makes a new ___ for her dress. It has red and blue flowers.", "options": ["design", "key", "desk", "door"], "targetType": "noun", "explanation": "A design is a plan or a picture of how something will look. Mia makes a plan for her dress." },
-    { "type": "mc", "prompt": "The room has big windows and white walls. It is very ___.", "options": ["light", "fast", "young", "ready"], "targetType": "adjective", "explanation": "Light means not dark. A room with big windows and white walls is full of light." },
-    { "type": "mc", "prompt": "At night, it is ___ outside. We cannot see well.", "options": ["dark", "ready", "young", "dirty"], "explanation": "Dark means with no light, or with very little light. At night we cannot see well." },
+    { "type": "mc", "prompt": "Mia makes a new ___ for her dress. It has red and blue flowers.", "options": ["design", "pair", "boot", "key"], "targetType": "noun", "explanation": "A design is a plan or a picture of how something will look. Mia makes a plan for her dress." },
+    { "type": "mc", "prompt": "The room has big windows and white walls. It is very ___.", "options": ["light", "dark", "young", "ready"], "targetType": "adjective", "explanation": "Light means not dark. A room with big windows and white walls is full of light." },
+    { "type": "mc", "prompt": "At night, it is ___ outside. We cannot see well.", "options": ["dark", "light", "young", "dirty"], "explanation": "Dark means with no light, or with very little light. At night we cannot see well." },
     { "type": "mc", "prompt": "Ben likes his new coat. It has a very nice ___.", "options": ["style", "pair", "glass", "cup"], "explanation": "Style is the way something looks. Ben thinks his new coat looks very nice." }
   ],
   "A1|vocabulary|7|fill|easy": [
@@ -66,19 +66,19 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "My old", "after": "are too small. I need new ones for school.", "answer": "shoes", "bank": ["shoes", "desks", "doors"], "target": "shoe", "explanation": "A shoe is something you wear on your foot. The speaker needs new ones for school." }
   ],
   "A1|vocabulary|7|fill|hard": [
-    { "type": "fill", "before": "Ali's father wears big", "after": "on the farm.", "answer": "boots", "bank": ["boots", "desks", "keys", "beds"], "target": "boot", "explanation": "A boot is a strong shoe for rain or snow. Ali's father wears big boots on the farm." },
+    { "type": "fill", "before": "Ali's father wears big", "after": "on the farm.", "answer": "boots", "bank": ["boots", "umbrellas", "colors", "designs"], "target": "boot", "explanation": "A boot is a strong shoe for rain or snow. Ali's father wears big boots on the farm." },
     { "type": "fill", "before": "I need a new pair of", "after": ".", "answer": "jeans", "bank": ["jeans", "walls", "chairs", "beds"], "explanation": "Jeans are strong pants, often blue. The speaker needs a new pair." },
     { "type": "fill", "before": "Today is warm. You do not need a", "after": ".", "answer": "jacket", "bank": ["jacket", "desk", "window", "bus"], "explanation": "A jacket is a short coat. You wear it when it is cold, not when it is warm." },
-    { "type": "fill", "before": "It is very cold. Ali's mother gives him a new warm", "after": "for his birthday.", "answer": "coat", "bank": ["coat", "pen", "wall", "tree"], "explanation": "A coat is a long warm thing you wear in cold weather. Ali gets a new one for his birthday." },
-    { "type": "fill", "before": "Anna's grandmother makes a warm", "after": "for her.", "answer": "sweater", "bank": ["sweater", "door", "key", "chair"], "explanation": "A sweater is a warm shirt for cold weather. Her grandmother makes one for her." },
-    { "type": "fill", "before": "Mom puts the apples and the bread in a", "after": ".", "answer": "bag", "bank": ["bag", "desk", "window", "bed"], "explanation": "A bag is something you carry things in. Mom puts the food in a bag." },
-    { "type": "fill", "before": "Leo wears a", "after": "because it is very hot.", "answer": "T-shirt", "bank": ["T-shirt", "pen", "bus", "tree"], "explanation": "A T-shirt is a shirt with short arms, for hot weather. Leo wears one when it is hot." },
-    { "type": "fill", "before": "Rain is falling. Ben opens his", "after": ".", "answer": "umbrella", "bank": ["umbrella", "desk", "wall", "key"], "explanation": "An umbrella is something you carry when it rains. Ben opens it." }
+    { "type": "fill", "before": "It is very cold. Ali's mother gives him a new warm", "after": "for his birthday.", "answer": "coat", "bank": ["coat", "umbrella", "pair", "tree"], "explanation": "A coat is a long warm thing you wear in cold weather. Ali gets a new one for his birthday." },
+    { "type": "fill", "before": "Anna's grandmother makes a warm", "after": "for her.", "answer": "sweater", "bank": ["sweater", "umbrella", "pair", "key"], "explanation": "A sweater is a warm shirt for cold weather. Her grandmother makes one for her." },
+    { "type": "fill", "before": "Mom puts the apples and the bread in a", "after": ".", "answer": "bag", "bank": ["bag", "boot", "shoe", "bed"], "explanation": "A bag is something you carry things in. Mom puts the food in a bag." },
+    { "type": "fill", "before": "Leo wears a", "after": "because it is very hot.", "answer": "T-shirt", "bank": ["T-shirt", "coat", "sweater", "boot"], "explanation": "A T-shirt is a shirt with short arms, for hot weather. Leo wears one when it is hot." },
+    { "type": "fill", "before": "Rain is falling. Ben opens his", "after": ".", "answer": "umbrella", "bank": ["umbrella", "hat", "boot", "shoe"], "explanation": "An umbrella is something you carry when it rains. Ben opens it." }
   ],
   "A1|vocabulary|7|fill|veryhard": [
-    { "type": "fill", "before": "Ben buys a", "after": "of jeans.", "answer": "pair", "bank": ["pair", "desk", "door", "key"], "explanation": "A pair is two things that go together. Jeans have two legs, so we say a pair of jeans." },
-    { "type": "fill", "before": "What", "after": "is your hat? It is red.", "answer": "color", "bank": ["color", "wall", "chair", "bed"], "explanation": "A color is red, blue, green and so on. The question asks about the color of the hat." },
-    { "type": "fill", "before": "Tom puts his", "after": "in the bag: pants, a shirt and a jacket.", "answer": "clothes", "bank": ["clothes", "desks", "doors", "keys"], "explanation": "Clothes are what people wear. Pants, a shirt and a jacket are clothes." },
+    { "type": "fill", "before": "Ben buys a", "after": "of jeans.", "answer": "pair", "bank": ["pair", "piece", "glass", "bottle"], "explanation": "A pair is two things that go together. Jeans have two legs, so we say a pair of jeans." },
+    { "type": "fill", "before": "What", "after": "is your hat? It is red.", "answer": "color", "bank": ["color", "pair", "boot", "shoe"], "explanation": "A color is red, blue, green and so on. The question asks about the color of the hat." },
+    { "type": "fill", "before": "Tom puts his", "after": "in the bag: pants, a shirt and a jacket.", "answer": "clothes", "bank": ["clothes", "colors", "styles", "umbrellas"], "explanation": "Clothes are what people wear. Pants, a shirt and a jacket are clothes." },
     { "type": "fill", "before": "It is cold, so Anna wants to", "after": "her warm coat.", "answer": "wear", "bank": ["wear", "wash", "drive", "cook"], "explanation": "To wear is to have clothes on your body. Anna wants to have her warm coat on." },
     { "type": "fill", "before": "Ken likes to draw. He wants to", "after": "a new hat for school.", "answer": "design", "bank": ["design", "drive", "cook", "wake"], "targetType": "verb", "explanation": "To design is to plan how something will look. Ken draws a plan for a new hat." },
     { "type": "fill", "before": "Mia has two blue coats. One is dark, and one is", "after": ".", "answer": "light", "bank": ["light", "fast", "young", "quiet"], "targetType": "adjective", "explanation": "Light means not dark. Mia has a dark blue coat and a light blue coat." },

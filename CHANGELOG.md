@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-19
 
+### The weak wrong options of themes 6, 7, 8 and 10 were replaced
+In the Hard and Very Hard multiple-choice and fill-in quizzes of Food and Drink, Clothes and Colors, Town and Shopping, and Body and Health, 75 questions had wrong options that were easy to rule out (desk, door, key). They now use words from the same theme or other clearly wrong words, and every change was checked so that no wrong option can also be right. About 25 questions stayed as they were because every close word could also be correct. One explanation in Town and Shopping was rewritten, and "play ball" became "play football".
+
 ### The game is now called Verba
 The owner chose the name Verba (always written with a capital V, no tagline). It replaces "My Game Project" in the browser tab and the title on the level screen, and in DESIGN.md (the list of names the owner has fixed) and the README. The name is not translated, so the Turkish texts did not change.
 
