@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-19
 
+### The Word list uses level tabs instead of a level step
+The Word list no longer starts with the same level cards as the main menu. It opens on the topics of A1, and five tabs on the right edge of the notebook page (A1 to C1) switch the level. The chosen tab is solid in its level color, and levels without questions yet are softly grayed and show "There are no words here yet." with the "Not finished" tag. A tab does not ask "Go back / Go there", because it only changes what you look at. The word list and everything after the topic step stay as they were.
+
 ### The level now shows as a colored stripe, and difficulty has dots
 Each level card and each History row has a colored stripe on its left edge, in the color of its level, so the level is easy to see at a glance. The History rows needed one small code change to know their level. The category, topic and question type cards are plain, because a marker should only ever mean the level, and the difficulty cards show one to four small dots from Easy to Very Hard. Only the look changed, no texts or rules.
 

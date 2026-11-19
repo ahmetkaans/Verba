@@ -261,6 +261,30 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
   }
   .vocab-page h1 { margin: 0; padding-right: 52px; }
+  /* Level tabs on the right edge of the page (the topic step): the chosen level is solid in its color, the others pale with a hint of
+     their color, a level with no real vocabulary quizzes softly grayed. The screen leaves room for the tabs (data-step is set by renderVocab). */
+  #screen-vocab[data-step="theme"] { padding-right: 46px; }
+  #screen-vocab[data-step="theme"] .vocab-page h1 { padding-right: 0; }
+  #screen-vocab[data-step="theme"] .vocab-page { min-height: 340px; }   /* tall enough for the five tabs, also on a level with no topics yet */
+  .vocab-levels { position: absolute; top: 34px; right: -1px; transform: translateX(100%); display: flex; flex-direction: column; gap: 8px; z-index: 2; }
+  .vocab-level-tab {
+    width: 40px; min-height: 46px; height: 46px; padding: 0;
+    border: 1px solid var(--border); border-left: 0; border-radius: 0 12px 12px 0;
+    font-size: 0.875rem; font-weight: 600; color: var(--tab, var(--accent));
+    background: color-mix(in srgb, var(--tab, var(--accent)) 16%, var(--surface));
+  }
+  .vocab-level-tab[data-level="A1"] { --tab: var(--lvl-A1); }
+  .vocab-level-tab[data-level="A2"] { --tab: var(--lvl-A2); }
+  .vocab-level-tab[data-level="B1"] { --tab: var(--lvl-B1); }
+  .vocab-level-tab[data-level="B2"] { --tab: var(--lvl-B2); }
+  .vocab-level-tab[data-level="C1"] { --tab: var(--lvl-C1); }
+  .vocab-level-tab.is-unfinished {
+    color: color-mix(in srgb, var(--tab) 45%, var(--muted));
+    background: color-mix(in srgb, var(--tab) 11%, color-mix(in srgb, var(--muted) 5%, var(--surface)));
+  }
+  .vocab-level-tab:hover:not(:disabled) { background: color-mix(in srgb, var(--tab) 24%, var(--surface)); border-color: var(--border); }
+  .vocab-level-tab.is-on, .vocab-level-tab.is-on:hover:not(:disabled) { width: 48px; color: var(--on-accent); background: var(--tab); border-color: var(--tab); }
+  .vocab-topics .vocab-level-tag { display: inline-block; margin-top: 10px; }
   #vocab-title:focus { outline: none; }
   .vocab-sub { margin: 6px 0 22px; color: var(--muted); font-size: 0.9rem; }
   .vocab-topics { display: block; }

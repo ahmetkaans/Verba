@@ -1,6 +1,6 @@
 /* js/vocab-list.js - the Vocabulary lists: which words a topic (or one quiz) tests, with their meanings (data in, lists out), and the Vocabulary screen
-   Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, vocabKinds, selectVocabKind, toggleVocabKinds, renderVocabList, renderVocabTopics, renderVocab, openVocab, vocabBack, refreshVocab, initVocab
-   Needs: CONFIG, QUESTION_BANK, GLOSSARY, ICONS, $, el, t, state, getTopics, hasRealQuizzes, renderLevelGroups, showScreen,
+   Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, vocabKinds, selectVocabKind, toggleVocabKinds, renderVocabList, vocabLevelTabs, selectVocabLevel, renderVocabTopics, renderVocab, openVocab, vocabBack, refreshVocab, initVocab
+   Needs: CONFIG, QUESTION_BANK, GLOSSARY, ICONS, $, el, t, state, getTopics, hasRealQuizzes, showScreen,
           quizTargetWords, openUnfinishedConfirm */
 'use strict';
 /* =========================================================================
@@ -47,13 +47,15 @@ function vocabularyWords(level, category, theme, only = {}, bank = QUESTION_BANK
 /* =========================================================================
  * VOCABULARY SCREEN  (the Word list button on the main menu; one screen with steps; the spiral notebook design the owner chose from mock-ups, 2026-11-17)
  * Its own state, state.vocab (never state.nav), so the quiz path, the menu tree, Next exercise and the History are not touched.
- * Steps: Level -> Topic -> the list. The list shows every word of the topic under one tab for each difficulty. A button at the
- * end of the list, "Separate words by question type", shows four question type buttons above the tabs; a type button keeps
- * only the words of that question type (tap it again, or the button at the end, to see all types again). The level step uses
- * the game's menu buttons (renderLevelGroups); the topic step is a list of rows with the number of words, and a part with no
- * real questions is gray and asks "Go back / Go there" in the same way. Back goes one step back; from the first step to the
- * main menu. All steps sit on a "notebook page" (spiral rings, a ribbon with the level code), so the screen never looks like
- * the main menu.
+ * Steps: Topic -> the list. The topic step shows five level tabs on the right edge of the notebook page (vocabLevelTabs; the
+ * Word list button opens it on A1) and the topics of the chosen level as rows with the number of words; a topic with no real
+ * questions is gray and asks "Go back / Go there", and a level with no real vocabulary quizzes (its tab is softly grayed) shows
+ * "There are no words here yet." with the "Not finished" tag. The list shows every word of the topic under one tab for each
+ * difficulty. A button at the end of the list, "Separate words by question type", shows four question type buttons above the
+ * tabs; a type button keeps only the words of that question type (tap it again, or the button at the end, to see all types
+ * again). Back goes one step back; from the topic step to the main menu. Both steps sit on a "notebook page" (spiral rings;
+ * the list also has a ribbon with the level code), so the screen never looks like the main menu.
+ * (Until 2026-11-19 there was a separate Level step with the main menu's level buttons; the owner replaced it with the tabs.)
  * ========================================================================= */
 
 // The level accent of the Vocabulary screen: the chosen level's color, neutral before a level is chosen (showScreen calls it too).
@@ -71,8 +73,7 @@ function vocabCount(n) {
 // result: the list (vocabularyWords) when the step is the list, else null.
 function vocabSub(result) {
   const v = state.vocab;
-  if (v.step === 'level') return t('vocabLevelTitle');
-  if (v.step === 'theme') return t('topicTitle');
+  if (v.step === 'theme') return `${v.level} · ${t(`levelName.${v.level}`)}`;
   const count = result.total ? ` · ${vocabCount(result.total)}` : '';
   return (v.type ? t(`type.${v.type}`) : t('vocabButton')) + count;
 }
@@ -173,10 +174,55 @@ function renderVocabList(result) {
   }
 }
 
+// The level tabs on the right edge of the notebook page (owner's design from mock-ups, 2026-11-19): one tab for each level, the
+// chosen one solid in its level color; a level with no real vocabulary quizzes is softly grayed. A tab only switches the level
+// (no "Go back / Go there" question: nothing is lost). Up / Down arrows, Home and End move between the tabs.
+function vocabLevelTabs(box) {
+  const v = state.vocab;
+  const levels = CONFIG.LEVELS;
+  box.replaceChildren(...levels.map((l, i) => {
+    const on = l === v.level;
+    const finished = hasRealQuizzes(l, 'vocabulary');
+    const btn = el('button', {
+      type: 'button',
+      class: `vocab-level-tab${on ? ' is-on' : ''}${finished ? '' : ' is-unfinished'}`,
+      role: 'tab',
+      'aria-selected': String(on),
+      'aria-label': `${l}, ${t(`levelName.${l}`)}`,
+      tabindex: on ? '0' : '-1',
+      'data-level': l,
+      text: l,
+    });
+    btn.addEventListener('click', () => selectVocabLevel(l));
+    btn.addEventListener('keydown', (e) => {
+      const to = { ArrowUp: i - 1, ArrowDown: i + 1, Home: 0, End: levels.length - 1 }[e.key];
+      if (to === undefined || !levels[to]) return;
+      e.preventDefault();
+      selectVocabLevel(levels[to]);
+    });
+    return btn;
+  }));
+}
+
+// A level tab: shows the topics of that level; the reading position stays, the focus stays on the (new) chosen tab.
+function selectVocabLevel(level) {
+  Object.assign(state.vocab, { level, theme: null, type: null, tab: null, showTypes: false });
+  renderVocab(false);
+  $('#vocab-levels .vocab-level-tab.is-on').focus({ preventScroll: true });
+}
+
 // The topic step: one row for each topic with the number of its words; a topic with no real quiz is gray, with the "Not finished" tag.
+// A level with no real vocabulary quizzes shows one muted line and the tag instead of its placeholder topics.
 function renderVocabTopics(box) {
   const v = state.vocab;
   const levelFinished = hasRealQuizzes(v.level, 'vocabulary');
+  if (!levelFinished) {
+    box.replaceChildren(
+      el('p', { class: 'vocab-empty', text: t('vocabEmpty') }),
+      el('span', { class: 'unfinished-tag vocab-level-tag', lang: state.lang, text: t('unfinishedTag') }),
+    );
+    return;
+  }
   box.replaceChildren(...getTopics({ level: v.level, category: 'vocabulary' }).map((name, i) => {
     const unfinished = levelFinished && !hasRealQuizzes(v.level, 'vocabulary', i);
     const total = vocabularyWords(v.level, 'vocabulary', i).total;
@@ -208,21 +254,20 @@ function renderVocab(focus = true) {
   const result = onList ? vocabularyWords(v.level, 'vocabulary', v.theme, v.type ? { type: v.type } : {}) : null;
   $('#vocab-sub').textContent = vocabSub(result);
   const ribbon = $('#vocab-ribbon');
-  ribbon.hidden = !v.level;
+  ribbon.hidden = !onList;   // on the topic step the level tabs already show the level
   ribbon.textContent = v.level || '';
+  $('#screen-vocab').dataset.step = v.step;
   const box = $('#vocab-buttons');
   box.hidden = onList;
   $('#vocab-list').hidden = !onList;
-  box.className = v.step === 'theme' ? 'vocab-topics' : '';
-  if (v.step === 'level') {
-    renderLevelGroups(box, (item) => {
-      Object.assign(v, { level: item.id, theme: null, type: null, tab: null, showTypes: false, step: 'theme' });
-      renderVocab();
-    });
-  } else if (v.step === 'theme') {
-    renderVocabTopics(box);
-  } else {
+  box.className = 'vocab-topics';
+  const tabs = $('#vocab-levels');
+  tabs.hidden = onList;
+  if (onList) {
     renderVocabList(result);
+  } else {
+    vocabLevelTabs(tabs);
+    renderVocabTopics(box);
   }
   if (focus) {
     window.scrollTo(0, 0);
@@ -230,9 +275,9 @@ function renderVocab(focus = true) {
   }
 }
 
-// The Word list button: always starts at the first step.
+// The Word list button: always starts at the topic step of the first level (A1); the level tabs change the level.
 function openVocab() {
-  Object.assign(state.vocab, { step: 'level', level: null, theme: null, type: null, tab: null, showTypes: false });
+  Object.assign(state.vocab, { step: 'theme', level: CONFIG.LEVELS[0], theme: null, type: null, tab: null, showTypes: false });
   showScreen('vocab');
   renderVocab();
 }
@@ -240,11 +285,11 @@ function openVocab() {
 // Back: one step back (the list: to the topics); from the first step to the main menu.
 function vocabBack() {
   const v = state.vocab;
-  if (v.step === 'level') {
+  if (v.step === 'theme') {
     showScreen('level');
     return;
   }
-  v.step = { list: 'theme', theme: 'level' }[v.step];
+  v.step = 'theme';
   renderVocab();
 }
 
