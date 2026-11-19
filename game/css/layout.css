@@ -104,16 +104,23 @@
     gap: 2px;
   }
   .menu-btn small { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
-  /* Category, topic, type and difficulty cards: a short bar in the level color (like the level cards) tells where you are.
-     On the Difficulty screen its length grows from Easy to Very Hard. */
-  .grid .menu-btn:not(.level-btn) { font-weight: 600; justify-content: flex-start; padding-top: 16px; min-height: 84px; }
-  .grid .menu-btn:not(.level-btn)::before { content: ""; width: 22px; height: 3px; margin-bottom: 6px; border-radius: 2px; background: var(--accent); }
+  /* Category, topic, type and difficulty cards: a 600 label, no marker (a marker only ever means the level, on the level cards and
+     History rows). The Difficulty cards show 1 to 4 dots (Easy to Very Hard): ::before is the row of four empty dots,
+     ::after the filled ones, drawn with gradients, no extra element. */
+  .grid .menu-btn:not(.level-btn) { font-weight: 600; }
   .grid .menu-btn:not(.level-btn) small { font-weight: 400; }
-  #difficulty-buttons .menu-btn:nth-child(1)::before { width: 12px; }
-  #difficulty-buttons .menu-btn:nth-child(2)::before { width: 22px; }
-  #difficulty-buttons .menu-btn:nth-child(3)::before { width: 32px; }
-  #difficulty-buttons .menu-btn:nth-child(4)::before { width: 42px; }
-  .menu-btn.is-unfinished:not(.level-btn)::before { opacity: 0.4; }
+  #difficulty-buttons .menu-btn { justify-content: flex-start; padding-top: 16px; min-height: 84px; }
+  #difficulty-buttons .menu-btn::before,
+  #difficulty-buttons .menu-btn::after {
+    content: ""; display: block; height: 8px;
+    background: radial-gradient(circle at 5.5px 4px, var(--dot) 0 3px, transparent 3.5px) 0 0 / 11px 8px repeat-x;
+  }
+  #difficulty-buttons .menu-btn::before { --dot: color-mix(in srgb, var(--muted) 35%, var(--surface)); width: 44px; margin-bottom: 8px; }
+  #difficulty-buttons .menu-btn::after { --dot: var(--accent); position: absolute; left: 16px; top: 16px; }
+  #difficulty-buttons .menu-btn:nth-child(1)::after { width: 11px; }
+  #difficulty-buttons .menu-btn:nth-child(2)::after { width: 22px; }
+  #difficulty-buttons .menu-btn:nth-child(3)::after { width: 33px; }
+  #difficulty-buttons .menu-btn:nth-child(4)::after { width: 44px; }
   /* The quiz suggested by "Next exercise" on the Difficulty screen */
   .menu-btn.is-next { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
   .next-tag {
@@ -135,7 +142,8 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 4px;
-    padding: 18px 16px 14px;
+    padding: 16px 16px 14px 22px;
+    overflow: hidden;
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.1;
@@ -144,8 +152,8 @@
     background: var(--surface);
     border-color: var(--border);
   }
-  /* The level's color bar above the code (the one place the level color shows on this card) */
-  .level-btn::before { content: ""; width: 26px; height: 4px; margin-bottom: 10px; border-radius: 2px; background: var(--chip); }
+  /* The level's color as a stripe on the card's left edge (the same stripe marks the level on History rows) */
+  .level-btn::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--chip); }
   .level-btn small { color: var(--muted); font-size: 0.82rem; font-weight: 400; line-height: 1.3; letter-spacing: 0; }
   #screen-level h1 { display: flex; align-items: center; gap: 10px; }
   #screen-level h1::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--lvl-A1); }

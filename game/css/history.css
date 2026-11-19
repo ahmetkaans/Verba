@@ -16,6 +16,15 @@
     box-shadow: var(--shadow);
   }
   div.history-row { cursor: default; padding-right: 16px; }
+  /* The level of the play as a stripe on the left edge (js/history-screen.js sets data-level); the same stripe as the level cards */
+  .history-row { overflow: hidden; padding-left: 22px; }
+  .history-row::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--row-level, var(--muted)); }
+  .history-row.is-quit::before { opacity: 0.5; }
+  .history-row[data-level="A1"] { --row-level: var(--lvl-A1); }
+  .history-row[data-level="A2"] { --row-level: var(--lvl-A2); }
+  .history-row[data-level="B1"] { --row-level: var(--lvl-B1); }
+  .history-row[data-level="B2"] { --row-level: var(--lvl-B2); }
+  .history-row[data-level="C1"] { --row-level: var(--lvl-C1); }
   .history-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
   .history-date, .history-meta { display: block; color: var(--muted); font-size: 0.85rem; }
   .history-path { display: block; margin: 2px 0; font-weight: 500; }

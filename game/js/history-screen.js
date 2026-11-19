@@ -102,7 +102,7 @@ function historyQuitRow(p) {
     again.addEventListener('click', () => historyPlayAgain(p));
     children.push(again);
   }
-  return el('li', {}, [el('div', { class: 'history-row is-quit' }, children)]);
+  return el('li', {}, [el('div', { class: 'history-row is-quit', 'data-level': p.level }, children)]);
 }
 
 // Play again: the same quiz (level, category, topic, type, difficulty), with the same-duration setting as it is now.
@@ -126,9 +126,9 @@ function historyRow(p) {
   const pills = el('span', { class: 'history-pills' }, historyCounts(p).map((text) => el('span', { text })));
   const perfect = el('span', { class: 'history-perfect', text: `✓ ${t('historyPerfect')}` });
   if (!p.missed.length && !(p.correct && p.correct.length)) {
-    return el('li', {}, [el('div', { class: 'history-row is-perfect' }, [top, pills, perfect])]);
+    return el('li', {}, [el('div', { class: 'history-row is-perfect', 'data-level': p.level }, [top, pills, perfect])]);
   }
-  const button = el('button', { class: 'history-row', type: 'button' }, [top, pills, ...(p.missed.length ? [] : [perfect]), el('span', { class: 'history-arrow', 'aria-hidden': 'true', text: '›' })]);
+  const button = el('button', { class: 'history-row', type: 'button', 'data-level': p.level }, [top, pills, ...(p.missed.length ? [] : [perfect]), el('span', { class: 'history-arrow', 'aria-hidden': 'true', text: '›' })]);
   button.addEventListener('click', () => openHistoryPlay(p.id));
   return el('li', {}, [button]);
 }
