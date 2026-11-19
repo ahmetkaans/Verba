@@ -18,13 +18,13 @@
     padding: 24px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: var(--shadow-lg);
     animation: rise 0.2s ease-out;
   }
   .modal-head { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; }
   .modal-head .icon-btn { margin-left: -6px; flex: none; }
-  .modal h2 { margin: 0; font-size: 1.35rem; font-weight: 500; }
+  .modal h2 { margin: 0; font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; }
   .modal p { color: var(--muted); }
   .modal ul { padding-left: 20px; }
   /* "Words in this game" pop-up: word, type, meaning */
@@ -47,8 +47,10 @@
   }
 
   /* Settings pop-up: one row per setting (name + control, short explanation underneath) */
-  .settings { display: grid; gap: var(--gap); margin-top: 12px; }
-  .setting { padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .settings { display: block; margin-top: 8px; }
+  /* One list with hairline dividers instead of a box around each setting */
+  .setting { padding: 16px 0; border: 0; border-top: 1px solid var(--border); }
+  .setting:first-child { border-top: 0; }
   .setting-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
   label.setting-head { min-height: 44px; cursor: pointer; }
   .setting-name { font-weight: 500; }
@@ -160,7 +162,7 @@
     }
   }
   .tree-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-  .tree-head h2 { margin: 0; font-size: 1.35rem; font-weight: 500; }
+  .tree-head h2 { margin: 0; font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; }
   .tree-close { min-height: 44px; padding: 8px 14px; }
   .tree { list-style: none; margin: 0; padding: 0; }
   /* each step sits one level deeper; an elbow line joins it to the step above, a dot marks it */
