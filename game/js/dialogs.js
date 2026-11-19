@@ -86,7 +86,10 @@ function openReloadNotice() {
 function openCredits() {
   openModal({
     title: t('credits'),
-    body: el('ul', {}, CREDITS.map((name) => el('li', { text: name }))),
+    body: el('ul', { class: 'credits' }, CREDITS.map(({ name, role }) => el('li', {}, [
+      el('span', { class: 'credit-name', text: name }),
+      el('span', { class: 'credit-role', text: t(role) }),
+    ]))),
     buttons: [{ label: t('close'), primary: true, onClick: closeModal }],
     dismissible: true,
   });

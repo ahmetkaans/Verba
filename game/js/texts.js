@@ -62,6 +62,7 @@ const I18N = {
     'tip.trend.2': 'Your last few plays are stronger than your average. Keep it up!',
     'tip.trend.3': 'Nice progress! Your recent scores are above your usual.',
     mainMenu: 'Main menu', menuTree: 'Menu tree', settings: 'Settings', credits: 'Credits',
+    'credits.ahmet': 'The creator of Verba', 'credits.claude': 'Coding and design', 'credits.enes': 'A friend of mine who shared many ideas for the game',
 
     chooseLevel: 'Choose your level.',
     'levelGroup.A': 'A – Basic user', 'levelGroup.B': 'B – Independent user', 'levelGroup.C': 'C – Proficient user',
@@ -178,6 +179,7 @@ const I18N = {
     'tip.trend.2': 'Son birkaç oyunun ortalamandan daha güçlü. Böyle devam!',
     'tip.trend.3': 'Güzel ilerleme! Son puanların her zamankinin üstünde.',
     mainMenu: 'Ana menü', menuTree: 'Menü ağacı', settings: 'Ayarlar', credits: 'Emeği Geçenler',
+    'credits.ahmet': "Verba'nın yaratıcısı", 'credits.claude': 'Kodlama ve tasarım', 'credits.enes': 'Oyun için pek çok fikir paylaşan bir arkadaşım',
 
     chooseLevel: 'Seviyeni seç.',
     'levelGroup.A': 'A – Temel kullanıcı', 'levelGroup.B': 'B – Bağımsız kullanıcı', 'levelGroup.C': 'C – Yetkin kullanıcı',

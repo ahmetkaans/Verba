@@ -27,6 +27,11 @@
   .modal h2 { margin: 0; font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; }
   .modal p { color: var(--muted); }
   .modal ul { padding-left: 20px; }
+  /* Credits pop-up: a name (600) and its tagline (muted) under it, no bullets */
+  .modal ul.credits { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 14px; }
+  .credit-name, .credit-role { display: block; }
+  .credit-name { font-weight: 600; }
+  .modal .credit-role { margin-top: 2px; color: var(--muted); font-size: 0.9rem; }
   /* "Words in this game" pop-up: word, type, meaning */
   .modal ul.word-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 8px; }
   .word-list li {

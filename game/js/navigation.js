@@ -41,6 +41,7 @@ function showScreen(name) {
   // Credits and the theme/mute bar are shown on every page except the game (quiz) page.
   $('#credits-footer').hidden = name === 'quiz';
   $('#topbar').hidden = name === 'quiz';
+  $('#vocab-btn').hidden = onVocab;         // already on the Word list
   $('#home-btn').hidden = name === 'level'; // already on the main menu
   $('#history-btn').hidden = onHistory;     // already on the History screens
   $('#tree-btn').hidden = onHistory || onVocab; // the menu tree shows the quiz path, which the History and Vocabulary screens do not have

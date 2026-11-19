@@ -20,6 +20,31 @@
     box-shadow: var(--shadow);
   }
   .icon-btn svg { width: 20px; height: 20px; }
+  /* The Word list button in the top bar (owner's design from a mock-up, 2026-11-19): like the round buttons but long, with the book
+     icon and the words inside. Computers: first in the row, left of the round buttons. Phones: alone on a second row under them
+     (the empty .topbar-break starts that row). */
+  .pill-btn {
+    height: 44px;
+    min-height: 44px;
+    padding: 0 16px 0 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .pill-btn-icon { display: inline-flex; flex: none; width: 20px; height: 20px; color: var(--accent); }
+  .pill-btn-icon svg { width: 100%; height: 100%; }
+  .topbar-break { display: none; }
+  @media (max-width: 599px) {
+    .topbar { flex-wrap: wrap; }
+    .topbar-break { display: block; flex-basis: 100%; height: 0; order: 9; }
+    .pill-btn { order: 10; }
+    #vocab-btn[hidden] ~ .topbar-break { display: none; }
+  }
 
   main {
     flex: 1;
@@ -245,9 +270,6 @@
   .switch input:focus-visible + .slider { outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 2px; }
 
   /* Vocabulary lists: the button on the main menu and the screen with the words of a topic (js/vocab-list.js) */
-  .menu-btn.vocab-btn { width: 100%; margin-top: 28px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 14px; font-size: 1.1rem; font-weight: 600; }
-  .vocab-btn-icon { display: inline-flex; flex: none; width: 28px; height: 28px; color: var(--accent); }
-  .vocab-btn-icon svg { width: 100%; height: 100%; }
   /* The Word list screen is a notebook page: spiral rings on top, a ribbon with the level code, the topics as plain rows,
      the words under folder tabs (owner's design from mock-ups, 2026-11-17). Colors only from the theme tokens. */
   .vocab-rings { display: flex; justify-content: space-around; padding: 0 28px; margin-bottom: -10px; position: relative; z-index: 3; }

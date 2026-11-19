@@ -1,5 +1,6 @@
-/* js/demo-data.js - TEMPORARY test helper: a small "TEST ONLY" box with buttons that fill the History with fake plays (random ones, or a
-   scenario for each tip), add one play, age the newest play, and show the tips and numbers as text. DELETE BEFORE PUBLISHING.
+/* js/demo-data.js - the owner's test helper: a small "TEST ONLY" box with buttons that fill the History with fake plays (random ones, or a
+   scenario for each tip), add one play, age the newest play, and show the tips and numbers as text. KEEP THE CODE: the box is no longer shown
+   on load (since 2026-11-19); the owner will open it from a hidden place and wants to use it after publishing too (call initDemoData()).
    Provides: DEMO_PLAY_COUNT, DEMO_DAYS, DEMO_BACKUP_KEY, DEMO_HOUR, DEMO_DAY, DEMO_SCENARIOS, DEMO_BUTTON_STYLE, DEMO_FIELD_STYLE, demoPick,
              demoRepeat, demoTypeAt, demoWrongAnswer, makeDemoPlay, rebuildDemoStats, addDemoPlays, backupRealData, restoreRealData, demoRecord,
              buildScenario, addManualPlay, setNewestPlayDaysAgo, describeTips, removeDemoData, initDemoData
@@ -8,10 +9,10 @@
           countPlaysToReview, tipsFor, currentTips, tipKey, tipText, openHistory */
 'use strict';
 /* =========================================================================
- * DEMO DATA (TEMPORARY)  (README.md, "Testing", "Temporary test buttons")
+ * DEMO DATA (HIDDEN TEST BUTTONS)  (README.md, "Testing", "Hidden test buttons")
  * The owner's test helper so the History can be looked at without playing many quizzes. It is one file with one script tag in
- * index.html. To remove it before publishing: delete this file, its script tag in index.html, its map rows in README.md and the
- * play-through test section "Demo data". Every fake play is marked demo: true, so "Remove all test data" takes out only those. A scenario
+ * index.html. Since 2026-11-19 the box is not shown on load and the code is KEPT on purpose (do not delete it before publishing);
+ * initDemoData() builds and shows the box. Every fake play is marked demo: true, so "Remove all test data" takes out only those. A scenario
  * replaces the whole history and totals, so it saves the real ones first (lg-demo-backup); "Remove all test data" then puts them back.
  * ========================================================================= */
 const DEMO_PLAY_COUNT = 15;
@@ -350,4 +351,7 @@ function initDemoData() {
   document.body.append(box);
 }
 
-initDemoData();
+// The box is NOT shown any more (owner's decision, 2026-11-19): the owner will put a way to open it somewhere that other players
+// cannot find easily, and wants to keep using it after publishing. All the code above stays. To show the box again (for example
+// from the browser console, or from the future hidden place), call initDemoData(). Do not call it on load.
+// initDemoData();

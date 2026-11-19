@@ -61,8 +61,12 @@ function getTopics(nav) {
   return TOPICS_BY_SECTION[`${nav.level}|${nav.category}`] || DEFAULT_TOPICS;
 }
 
-// Placeholder credits.
-const CREDITS = ['Claude', 'Ahmet Kaan Sarılarlı', 'Enes Miraç Ateş'];
+// The Credits pop-up: each person's name (not translated) and the key of the tagline under it (texts in I18N, both languages; owner's wording, 2026-11-19).
+const CREDITS = [
+  { name: 'Ahmet Kaan Sarılarlı', role: 'credits.ahmet' },
+  { name: 'Claude', role: 'credits.claude' },
+  { name: 'Enes Miraç Ateş', role: 'credits.enes' },
+];
 
 // Real questions and the glossary come from the files of data/ (loaded before this script, see index.html).
 const QUESTION_BANK = GAME_DATA.questions;

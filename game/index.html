@@ -18,21 +18,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/colors.css?v=06ac1be0">
-<link rel="stylesheet" href="css/layout.css?v=ed892582">
+<link rel="stylesheet" href="css/layout.css?v=4935e4ea">
 <link rel="stylesheet" href="css/quiz.css?v=43a5bf87">
 <link rel="stylesheet" href="css/results.css?v=c1faccf0">
 <link rel="stylesheet" href="css/history.css?v=c84e19aa">
-<link rel="stylesheet" href="css/dialogs.css?v=4fbf4bba">
-<link rel="stylesheet" href="css/halloween.css?v=ade983de">
+<link rel="stylesheet" href="css/dialogs.css?v=2c5003d7">
+<link rel="stylesheet" href="css/halloween.css?v=db4b729f">
 </head>
 <body>
 
 <header class="topbar" id="topbar">
   <span class="topbar-ghost" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 27 V14 C7 8.5 11 5 16 5 C21 5 25 8.5 25 14 V27 L21.5 24 L18.5 27 L16 24.5 L13.5 27 L10.5 24 Z"/><circle cx="12.5" cy="14" r="1.6" fill="currentColor"/><circle cx="19.5" cy="14" r="1.6" fill="currentColor"/><path d="M13.5 19 Q16 21 18.5 19"/></svg></span>
+  <button class="pill-btn" id="vocab-btn" type="button"><span class="pill-btn-icon" id="vocab-btn-icon" aria-hidden="true"></span><span data-i18n="vocabButton">Word list</span></button>
   <button class="icon-btn" id="home-btn" type="button" title="Main menu" aria-label="Main menu" data-i18n-label="mainMenu"></button>
   <button class="icon-btn" id="history-btn" type="button" title="History" aria-label="History" data-i18n-label="historyTitle"></button>
   <button class="icon-btn" id="tree-btn" type="button" title="Menu tree" aria-label="Menu tree" data-i18n-label="menuTree"></button>
   <button class="icon-btn" id="settings-btn" type="button" title="Settings" aria-label="Settings" data-i18n-label="settings"></button>
+  <span class="topbar-break" aria-hidden="true"></span>
 </header>
 
 <main id="app">
@@ -42,7 +44,6 @@
     <h1>Verba</h1>
     <p class="subtitle" data-i18n="chooseLevel">Choose your level.</p>
     <div id="level-buttons"></div>
-    <button class="menu-btn vocab-btn" id="vocab-btn" type="button"><span class="vocab-btn-icon" id="vocab-btn-icon" aria-hidden="true"></span><span data-i18n="vocabButton">Word list</span></button>
   </section>
 
   <!-- Screen: category (Vocabulary / Grammar) -->
@@ -242,8 +243,8 @@
 <script src="data/glossary/a1.js?v=b627809f"></script>
 
 <script src="js/config.js?v=f8a8ce28"></script>
-<script src="js/texts.js?v=4ef53ca8"></script>
-<script src="js/topics.js?v=92e0f464"></script>
+<script src="js/texts.js?v=0009a111"></script>
+<script src="js/topics.js?v=38dd65f4"></script>
 <script src="js/core.js?v=93fd416f"></script>
 <script src="js/language.js?v=54096a21"></script>
 <script src="js/theme.js?v=8ec0f0bd"></script>
@@ -251,10 +252,10 @@
 <script src="js/confetti.js?v=3a827c02"></script>
 <script src="js/halloween-walker.js?v=89a806d0"></script>
 <script src="js/questions.js?v=e4354b3e"></script>
-<script src="js/navigation.js?v=0714079e"></script>
+<script src="js/navigation.js?v=68afb04a"></script>
 <script src="js/next-exercise.js?v=be62f21a"></script>
 <script src="js/menu-buttons.js?v=ecb5c907"></script>
-<script src="js/dialogs.js?v=ed08693e"></script>
+<script src="js/dialogs.js?v=a01afedd"></script>
 <script src="js/settings.js?v=f63fe0ba"></script>
 <script src="js/menu-tree.js?v=c9171517"></script>
 <script src="js/quiz-flow.js?v=b1f7b7ee"></script>
@@ -268,7 +269,7 @@
 <script src="js/results.js?v=08eb864a"></script>
 <script src="js/history-screen.js?v=c93eb094"></script>
 <script src="js/vocab-list.js?v=25f5f265"></script>
-<script src="js/demo-data.js?v=0332daff"></script>
+<script src="js/demo-data.js?v=a6185a4e"></script>
 <script src="js/init.js?v=dc242113"></script>
 </body>
 </html>

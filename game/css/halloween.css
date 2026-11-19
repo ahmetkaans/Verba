@@ -35,7 +35,8 @@
   html[data-halloween="on"] .vocab-page,
   html[data-halloween="on"] .modal,
   html[data-halloween="on"] .history-row,
-  html[data-halloween="on"] .icon-btn { border-color: var(--accent); border-width: var(--line); }
+  html[data-halloween="on"] .icon-btn,
+  html[data-halloween="on"] .pill-btn { border-color: var(--accent); border-width: var(--line); }
   html[data-halloween="on"] .history-again { border-color: var(--accent); }
   html[data-halloween="on"] .level-btn { border-color: var(--chip); border-width: var(--line); }
   html[data-halloween="on"] .menu-btn.is-unfinished,
