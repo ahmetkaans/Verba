@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-21
 
+### On a phone the game starts a bit smaller
+The menus looked a little zoomed in on a real phone, so the page now starts at 90% on phones, which gives the layout more room. Computers are not changed, and players can still pinch-zoom. It is one number in the page header (`initial-scale`), so it can be changed to 95% or 85% in one place.
+
 ### The browser's Back and Forward buttons work
 Every screen, pop-up and the menu tree is now a step in the browser's history, so Back goes to the previous screen instead of leaving the game, and Forward goes on again. Back closes an open pop-up first; during a quiz it asks "Quit quiz?" and Cancel keeps the timer going; the Time out and Game over pop-ups stay until the player chooses. The History's list and plays and the Word list's topics and word list are steps too. The web address does not change, and a reload still returns to the main menu. Back on the main menu leaves the game, as on any website.
 
