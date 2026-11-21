@@ -103,6 +103,8 @@ function openWordPreview(start) {
     buttons: [{ label: t('start'), primary: true, onClick: start }],
     // The arrow leaves before the quiz begins: same place as Quit, the Difficulty screen (nothing was answered yet)
     onBack: () => { closeModal(); state.quiz = null; showScreen('difficulty'); },
+    // The browser's Back button does the same as the arrow
+    onDismiss: () => { closeModal(); state.quiz = null; showScreen('difficulty'); },
   });
 }
 
@@ -216,6 +218,8 @@ function requestQuit() {
       { label: t('cancel'), primary: true, onClick: () => { closeModal(); if (wasRunning) resumeTimer(); } },
       { label: t('quit'), onClick: () => { closeModal(); stopTimer(); state.quiz = null; showScreen('difficulty'); } },
     ],
+    // The browser's Back button does the same as Cancel (the timer goes on)
+    onDismiss: () => { closeModal(); if (wasRunning) resumeTimer(); },
   });
 }
 

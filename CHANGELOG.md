@@ -2,6 +2,11 @@
 
 What changed in Verba, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-21
+
+### The browser's Back and Forward buttons work
+Every screen, pop-up and the menu tree is now a step in the browser's history, so Back goes to the previous screen instead of leaving the game, and Forward goes on again. Back closes an open pop-up first; during a quiz it asks "Quit quiz?" and Cancel keeps the timer going; the Time out and Game over pop-ups stay until the player chooses. The History's list and plays and the Word list's topics and word list are steps too. The web address does not change, and a reload still returns to the main menu. Back on the main menu leaves the game, as on any website.
+
 ## 2026-11-19
 
 ### A workflow to publish the game on GitHub Pages

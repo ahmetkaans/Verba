@@ -1,6 +1,6 @@
 /* js/vocab-list.js - the Vocabulary lists: which words a topic (or one quiz) tests, with their meanings (data in, lists out), and the Vocabulary screen
    Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, vocabKinds, selectVocabKind, toggleVocabKinds, renderVocabList, vocabLevelTabs, selectVocabLevel, renderVocabTopics, renderVocab, openVocab, vocabBack, refreshVocab, initVocab
-   Needs: CONFIG, QUESTION_BANK, GLOSSARY, ICONS, $, el, t, state, getTopics, hasRealQuizzes, showScreen,
+   Needs: bhNavigate, CONFIG, QUESTION_BANK, GLOSSARY, ICONS, $, el, t, state, getTopics, hasRealQuizzes, showScreen,
           quizTargetWords, openUnfinishedConfirm */
 'use strict';
 /* =========================================================================
@@ -209,6 +209,7 @@ function selectVocabLevel(level) {
   Object.assign(state.vocab, { level, theme: null, type: null, tab: null, showTypes: false });
   renderVocab(false);
   $('#vocab-levels .vocab-level-tab.is-on').focus({ preventScroll: true });
+  bhNavigate();   // only keeps the current step up to date (a tab is not a step)
 }
 
 // The topic step: one row for each topic with the number of its words; a topic with no real quiz is gray, with the "Not finished" tag.
@@ -236,6 +237,7 @@ function renderVocabTopics(box) {
     const go = () => {
       Object.assign(v, { theme: i, tab: null, type: null, showTypes: false, step: 'list' });
       renderVocab();
+      bhNavigate();   // the list is a step of the browser's history
     };
     row.addEventListener('click', () => (unfinished ? openUnfinishedConfirm(go) : go()));
     return row;
@@ -291,6 +293,7 @@ function vocabBack() {
   }
   v.step = 'theme';
   renderVocab();
+  bhNavigate();   // back to the topics: the previous step of the browser's history
 }
 
 // The language changed while the screen was showing: its texts change in place.

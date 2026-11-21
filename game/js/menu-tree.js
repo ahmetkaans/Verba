@@ -1,7 +1,7 @@
 /* js/menu-tree.js - the menu tree panel; also the pop-up listeners (initModal)
    Provides: renderTree, openTree, closeTree, initTree, initModal, TREE_STEPS, treeCloseTimer
    Needs: CONFIG, el, state, $, t, ICONS, breadcrumbParts, showScreen, SCREEN_DEPTH, openHomeConfirm, updateInert,
-          closeModal, modalState */
+          closeModal, modalState, bhOverlayOpened, bhOverlayClosed */
 'use strict';
 /* =========================================================================
  * MENU TREE  (the student's path through the menu; a chosen step opens that menu screen)
@@ -46,6 +46,7 @@ function openTree() {
   void overlay.offsetWidth; // let the browser draw the closed position first, so the slide-in plays
   overlay.classList.add('is-open');
   updateInert();
+  bhOverlayOpened('tree'); // the browser's Back button closes the tree first (js/browser-history.js)
   $('#tree-close').focus();
 }
 
@@ -54,6 +55,7 @@ function closeTree() {
   if (overlay.hidden) return;
   overlay.classList.remove('is-open');
   updateInert();
+  bhOverlayClosed();
   clearTimeout(treeCloseTimer);
   treeCloseTimer = setTimeout(() => { overlay.hidden = true; }, CONFIG.TREE_CLOSE_MS); // a timer, so it also hides with reduced motion
   $('#tree-btn').focus(); // back to the button that opened it (a click doesn't focus buttons in every browser)

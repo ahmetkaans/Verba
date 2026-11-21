@@ -1,7 +1,7 @@
 /* js/navigation.js - screens, the path line, the button builder (with the gray "not finished" buttons), difficulty buttons, the same-duration switch
-   Provides: breadcrumbParts, refreshBreadcrumb, showScreen, renderButtons, getQuestionSeconds, setSameDuration,
+   Provides: breadcrumbParts, refreshBreadcrumb, showScreen, showScreenRaw, renderButtons, getQuestionSeconds, setSameDuration,
              renderDifficultyButtons, SCREEN_DEPTH
-   Needs: stopConfetti, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
+   Needs: bhNavigate, stopConfetti, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
           renderTopicButtons, openUnfinishedConfirm, refreshSettings, startQuiz */
 'use strict';
 /* =========================================================================
@@ -26,7 +26,14 @@ function refreshBreadcrumb() {
   if (crumb) crumb.textContent = breadcrumbParts().slice(0, SCREEN_DEPTH[state.screen]).join(' › ');
 }
 
+// Shows a screen and makes the browser's history match (bhNavigate, js/browser-history.js): every normal change of screen goes through here.
 function showScreen(name) {
+  showScreenRaw(name);
+  bhNavigate();
+}
+
+// Shows a screen only (no history step): used by showScreen and by the browser's Back and Forward (bhShow).
+function showScreenRaw(name) {
   const onHistory = HISTORY_SCREENS.includes(name);
   const onVocab = name === 'vocab';   // the Vocabulary screen (js/vocab-list.js): its own path and level accent
   state.screen = name;
