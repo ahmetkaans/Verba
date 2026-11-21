@@ -1,5 +1,5 @@
 /* js/navigation.js - screens, the path line, the button builder (with the gray "not finished" buttons), difficulty buttons, the same-duration switch
-   Provides: breadcrumbParts, refreshBreadcrumb, showScreen, showScreenRaw, renderButtons, getQuestionSeconds, setSameDuration,
+   Provides: breadcrumbParts, refreshBreadcrumb, markTopbarButton, showScreen, showScreenRaw, renderButtons, getQuestionSeconds, setSameDuration,
              renderDifficultyButtons, SCREEN_DEPTH
    Needs: bhNavigate, walkerModalClosed, stopConfetti, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
           renderTopicButtons, openUnfinishedConfirm, refreshSettings, startQuiz */
@@ -32,6 +32,15 @@ function showScreen(name) {
   bhNavigate();
 }
 
+// A top bar button: always shown. current = the page behind this button is the page you are on: the button is disabled (no click, no hover,
+// no ripple), has aria-current="page" and the class is-current (a "pressed" look in layout.css, not the dimmed look of a disabled button).
+function markTopbarButton(btn, current) {
+  btn.hidden = false;
+  btn.disabled = current;
+  btn.classList.toggle('is-current', current);
+  if (current) btn.setAttribute('aria-current', 'page'); else btn.removeAttribute('aria-current');
+}
+
 // Shows a screen only (no history step): used by showScreen and by the browser's Back and Forward (bhShow).
 function showScreenRaw(name) {
   const onHistory = HISTORY_SCREENS.includes(name);
@@ -50,11 +59,21 @@ function showScreenRaw(name) {
   // Credits and the theme/mute bar are shown on every page except the game (quiz) page.
   $('#credits-footer').hidden = name === 'quiz';
   $('#topbar').hidden = name === 'quiz';
-  $('#vocab-btn').hidden = onVocab;         // already on the Word list
-  $('#home-btn').hidden = name === 'level'; // already on the main menu
-  $('#history-btn').hidden = onHistory;     // already on the History screens
-  $('#settings-btn').hidden = onSettings;   // already on the Settings page
-  $('#tree-btn').hidden = onHistory || onVocab || onSettings; // the menu tree shows the quiz path, which the History, Vocabulary and Settings screens do not have
+  // The top bar keeps its buttons on every screen that has it (owner, 2026-11-21: buttons that vanished on their own page made the menu style
+  // confusing). The button of the page you are on looks "current" and does nothing. The Settings page and the Word list have a SHORT bar: only
+  // Main menu (left) and their own button (right). On the History screens the full bar stays, with the menu tree dimmed (no quiz path there).
+  const shortBar = onSettings || onVocab;
+  markTopbarButton($('#vocab-btn'), onVocab);          // on the Word list
+  markTopbarButton($('#home-btn'), name === 'level');  // on the main menu
+  markTopbarButton($('#history-btn'), onHistory);      // on the History screens
+  markTopbarButton($('#settings-btn'), onSettings);    // on the Settings page
+  $('#vocab-btn').hidden = shortBar && !onVocab;
+  $('#settings-btn').hidden = shortBar && !onSettings;
+  $('#history-btn').hidden = shortBar;
+  const treeBtn = $('#tree-btn');
+  treeBtn.hidden = shortBar;
+  treeBtn.disabled = onHistory;
+  $('#topbar').classList.toggle('is-short', shortBar);   // layout.css: on phones the Word list pill then stays on the first row
   if (leftSettings) walkerModalClosed();    // Trick or Treat turned on in Settings: the walker's few seconds start now
   refreshBreadcrumb();
   // These grids depend on the chosen level / category (the gray "not finished" buttons too): built each time they are shown.

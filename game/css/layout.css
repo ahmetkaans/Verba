@@ -20,6 +20,19 @@
     box-shadow: var(--shadow);
   }
   .icon-btn svg { width: 20px; height: 20px; }
+  /* The Main menu button is the first button of the top bar, in the upper LEFT corner of every screen that has the top bar (owner, 2026-11-21).
+     Its auto margin pushes the other buttons to the right; in the Halloween theme the ghost (halloween.css) sits next to it and has the auto margin. */
+  html:not([data-halloween="on"]) #home-btn { margin-right: auto; }
+  /* The top bar keeps every button on every screen (owner, 2026-11-21). The button of the page you are on is .is-current (also disabled, so no
+     hover, lift or ripple): it looks pressed (accent outline and tint, full strength), not dimmed like a disabled button. The menu tree on
+     the History screens is only disabled (dimmed); on the Settings page and the Word list the bar is SHORT (see navigation.js). */
+  .icon-btn.is-current:disabled, .pill-btn.is-current:disabled {
+    opacity: 1;
+    cursor: default;
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: inset 0 1px 3px color-mix(in srgb, var(--fg) 18%, transparent);
+  }
   /* The Word list button in the top bar (owner's design from a mock-up, 2026-11-19): like the round buttons but long, with the book
      icon and the words inside. Computers: first in the row, left of the round buttons. Phones: alone on a second row under them
      (the empty .topbar-break starts that row). */
@@ -44,6 +57,9 @@
     .topbar-break { display: block; flex-basis: 100%; height: 0; order: 9; }
     .pill-btn { order: 10; }
     #vocab-btn[hidden] ~ .topbar-break { display: none; }
+    /* The short bar (Settings page and Word list, owner 2026-11-21: Main menu and the current page's button only): everything fits on one row */
+    .topbar.is-short .topbar-break { display: none; }
+    .topbar.is-short .pill-btn { order: 0; }
   }
 
   main {

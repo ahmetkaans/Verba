@@ -2,6 +2,11 @@
 
 What changed in Verba, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-22
+
+### The top bar keeps its buttons
+The Main menu button (the house) is now the first button of the top bar, in the upper left corner of every screen that has the top bar; the Halloween ghost sits next to it. No button disappears on its own page any more: the button of the page you are on looks pressed and does nothing, and the menu tree is shown dimmed on the History screens. The Settings page and the Word list have a short bar with only Main menu and their own button; on phones the Word list button then stays on the first row.
+
 ## 2026-11-21
 
 ### Three new themes, and word meanings that follow the quiz
