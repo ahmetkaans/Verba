@@ -1,5 +1,5 @@
 /* js/vocab-list.js - the Vocabulary lists: which words a topic (or one quiz) tests, with their meanings (data in, lists out), and the Vocabulary screen
-   Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, vocabKinds, selectVocabKind, toggleVocabKinds, renderVocabList, vocabLevelTabs, selectVocabLevel, renderVocabTopics, renderVocab, openVocab, vocabBack, vocabShowStep, refreshVocab, initVocab
+   Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, vocabKinds, selectVocabKind, toggleVocabKinds, renderVocabList, vocabLevelTabs, selectVocabLevel, renderVocabTopics, renderVocab, openVocab, vocabBack, refreshVocab, initVocab
    Needs: bhNavigate, CONFIG, QUESTION_BANK, GLOSSARY, ICONS, $, el, t, state, getTopics, hasRealQuizzes, showScreen,
           quizTargetWords, openUnfinishedConfirm */
 'use strict';
@@ -294,16 +294,6 @@ function vocabBack() {
   v.step = 'theme';
   renderVocab();
   bhNavigate();   // back to the topics: the previous step of the browser's history
-}
-
-// The menu tree on the Word list (owner, 2026-11-21): its Level step shows the topics (the level tabs are there), its Topic step shows the list of the
-// chosen topic (only when a topic was chosen); the step already shown does nothing.
-function vocabShowStep(step) {
-  const v = state.vocab;
-  if (v.step === step || (step === 'list' && v.theme === null)) return;
-  v.step = step;
-  renderVocab();
-  bhNavigate();
 }
 
 // The language changed while the screen was showing: its texts change in place.

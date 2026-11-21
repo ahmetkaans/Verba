@@ -4,8 +4,8 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-22
 
-### The same top bar everywhere, with a short menu tree
-All five buttons (Main menu, Word list, History, menu tree, Settings) now show on every screen with the top bar, and the short bar on Settings and the Word list is gone. The menu tree opens everywhere and shows a short "where you are": Level and Topic on the Word list, "Opened from" and Settings on the Settings page, History and "A play" on the History screens.
+### The menu tree works the same on every page
+The Word list, Settings and History now have the same menu tree as the game menus: "Main menu" (click it to go there) and then the page you are on, marked "You are here". It replaces the different trees of the commit before, so nobody has to learn a new layout for each page.
 
 ### The top bar keeps its buttons
 The Main menu button (the house) is now the first button of the top bar, in the upper left corner of every screen that has the top bar; the Halloween ghost sits next to it. No button disappears on its own page any more: the button of the page you are on looks pressed and does nothing, and the menu tree is shown dimmed on the History screens. The Settings page and the Word list have a short bar with only Main menu and their own button; on phones the Word list button then stays on the first row.

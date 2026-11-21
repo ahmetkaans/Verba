@@ -1,7 +1,6 @@
 /* js/menu-tree.js - the menu tree panel; also the pop-up listeners (initModal)
-   Provides: treeScreenLabel, treeSteps, renderTree, openTree, closeTree, initTree, initModal, TREE_STEPS, treeCloseTimer
-   Needs: CONFIG, el, state, $, t, ICONS, getTopics, breadcrumbParts, showScreen, SCREEN_DEPTH, HISTORY_SCREENS, backToHistoryList, settingsFrom,
-          closeSettings, vocabShowStep, openHomeConfirm, updateInert, closeModal, modalState, bhOverlayOpened, bhOverlayClosed */
+   Provides: treeSteps, renderTree, openTree, closeTree, initTree, initModal, TREE_STEPS, treeCloseTimer
+   Needs: CONFIG, el, state, $, t, ICONS, breadcrumbParts, showScreen, SCREEN_DEPTH, HISTORY_SCREENS, openHomeConfirm, updateInert, closeModal, modalState, bhOverlayOpened, bhOverlayClosed */
 'use strict';
 /* =========================================================================
  * MENU TREE  (the student's path through the menu; a chosen step opens that menu screen)
@@ -15,39 +14,16 @@ const TREE_STEPS = [
 ];
 let treeCloseTimer = null;
 
-// The name of a screen for the "Opened from" step of the Settings tree: the path of a quiz screen, or the name of the page.
-function treeScreenLabel(name) {
-  if (!name || name === 'level') return t('mainMenu');
-  if (name === 'results') return t('resultsTitle');
-  if (name === 'vocab') return t('vocabButton');
-  if (HISTORY_SCREENS.includes(name)) return t('historyTitle');
-  return breadcrumbParts().slice(0, SCREEN_DEPTH[name]).join(' › ') || t('mainMenu');
-}
-
-// The steps of the tree for the screen being shown (owner, 2026-11-21: the tree opens on EVERY screen with the top bar, a SHORT one where there is no quiz path):
-// [{ cap, value, chosen, current, onClick }]. The quiz screens show Level, Category, Topic, Question type and Difficulty; the Word list shows Level and Topic;
-// the Settings page shows "Opened from" and Settings; the History screens show History and "A play". A chosen step opens that place; the current one only closes the tree.
+// The steps of the tree for the screen being shown (owner, 2026-11-22: the tree opens on EVERY screen with the top bar and works the same everywhere):
+// [{ cap, value, chosen, current, onClick }]. The quiz screens show Level, Category, Topic, Question type and Difficulty; the Word list, the Settings page
+// and the History screens show Main menu and then the page ("You are here"). A chosen step opens that place; the current one only closes the tree.
 function treeSteps() {
   const screen = state.screen;
-  if (screen === 'vocab') {
-    const v = state.vocab;
-    const topic = v.theme === null ? null : getTopics({ level: v.level, category: 'vocabulary' })[v.theme];
+  const page = screen === 'vocab' ? t('vocabButton') : screen === 'settings' ? t('settings') : HISTORY_SCREENS.includes(screen) ? t('historyTitle') : null;
+  if (page) {
     return [
-      { cap: t('step.level'), value: v.level, chosen: true, current: false, onClick: () => vocabShowStep('theme') },
-      { cap: t('step.topic'), value: topic, chosen: topic !== null, current: true, onClick: () => vocabShowStep('list') },
-    ];
-  }
-  if (screen === 'settings') {
-    return [
-      { cap: t('treeOpenedFrom'), value: treeScreenLabel(settingsFrom), chosen: true, current: false, onClick: closeSettings },
-      { cap: t('settings'), value: '', chosen: true, current: true, onClick: null },
-    ];
-  }
-  if (HISTORY_SCREENS.includes(screen)) {
-    const onPlay = screen === 'history-detail';
-    return [
-      { cap: t('historyTitle'), value: '', chosen: true, current: !onPlay, onClick: onPlay ? backToHistoryList : null },
-      { cap: t('treePlay'), value: '', chosen: onPlay, current: onPlay, onClick: null },
+      { cap: t('mainMenu'), value: '', chosen: true, current: false, onClick: () => showScreen('level') },
+      { cap: page, value: '', chosen: true, current: true, onClick: null },
     ];
   }
   const values = breadcrumbParts();

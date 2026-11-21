@@ -108,7 +108,7 @@ const I18N = {
     workInProgress: 'Work in Progress',
     settingsGroupLanguage: 'Language', settingsGroupLook: 'Look', settingsGroupPlay: 'Play',
 
-    treeTitle: 'Where you are', treeOpenedFrom: 'Opened from', treePlay: 'A play',
+    treeTitle: 'Where you are',
     'step.level': 'Level', 'step.category': 'Category', 'step.topic': 'Topic', 'step.type': 'Question type', 'step.difficulty': 'Difficulty',
     notChosen: 'Not chosen yet', youAreHere: 'You are here',
 
@@ -226,7 +226,7 @@ const I18N = {
     workInProgress: 'Yapım aşamasında',
     settingsGroupLanguage: 'Dil', settingsGroupLook: 'Görünüm', settingsGroupPlay: 'Oyun',
 
-    treeTitle: 'Bulunduğun yer', treeOpenedFrom: 'Geldiğin yer', treePlay: 'Bir oyun',
+    treeTitle: 'Bulunduğun yer',
     'step.level': 'Seviye', 'step.category': 'Kategori', 'step.topic': 'Konu', 'step.type': 'Soru türü', 'step.difficulty': 'Zorluk',
     notChosen: 'Henüz seçilmedi', youAreHere: 'Buradasın',
 
