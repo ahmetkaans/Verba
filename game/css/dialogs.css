@@ -216,6 +216,8 @@
   }
   .tree-step .cap { display: block; color: var(--muted); font-size: 0.8rem; }
   .tree-step .val { display: block; font-weight: 500; overflow-wrap: anywhere; }
+  .tree-step .cap:empty { display: none; }
+  .tree-step .cap:empty + .val { font-size: 1.05rem; line-height: 2.2; } /* Word list, Settings, History: the page names are the big line */
   .tree li.is-pending .tree-step .val { font-weight: 400; color: var(--muted); }
   .tree li.is-current .tree-step { background: var(--accent-soft); border-color: var(--accent-line); }
   .tree-here {

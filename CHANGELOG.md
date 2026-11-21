@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-22
 
+### Bigger names in the menu tree
+On the Word list, Settings and History, "Main menu" and the page name in the menu tree are now the larger main line instead of the small gray caption, in the same style as the game menus' tree.
+
 ### The menu tree works the same on every page
 The Word list, Settings and History now have the same menu tree as the game menus: "Main menu" (click it to go there) and then the page you are on, marked "You are here". It replaces the different trees of the commit before, so nobody has to learn a new layout for each page.
 

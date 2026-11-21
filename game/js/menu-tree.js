@@ -22,8 +22,8 @@ function treeSteps() {
   const page = screen === 'vocab' ? t('vocabButton') : screen === 'settings' ? t('settings') : HISTORY_SCREENS.includes(screen) ? t('historyTitle') : null;
   if (page) {
     return [
-      { cap: t('mainMenu'), value: '', chosen: true, current: false, onClick: () => showScreen('level') },
-      { cap: page, value: '', chosen: true, current: true, onClick: null },
+      { cap: '', value: t('mainMenu'), chosen: true, current: false, onClick: () => showScreen('level') },
+      { cap: '', value: page, chosen: true, current: true, onClick: null },
     ];
   }
   const values = breadcrumbParts();
