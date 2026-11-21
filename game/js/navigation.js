@@ -1,7 +1,7 @@
 /* js/navigation.js - screens, the path line, the button builder (with the gray "not finished" buttons), difficulty buttons, the same-duration switch
    Provides: breadcrumbParts, refreshBreadcrumb, showScreen, showScreenRaw, renderButtons, getQuestionSeconds, setSameDuration,
              renderDifficultyButtons, SCREEN_DEPTH
-   Needs: bhNavigate, stopConfetti, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
+   Needs: bhNavigate, walkerModalClosed, stopConfetti, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
           renderTopicButtons, openUnfinishedConfirm, refreshSettings, startQuiz */
 'use strict';
 /* =========================================================================
@@ -36,14 +36,16 @@ function showScreen(name) {
 function showScreenRaw(name) {
   const onHistory = HISTORY_SCREENS.includes(name);
   const onVocab = name === 'vocab';   // the Vocabulary screen (js/vocab-list.js): its own path and level accent
+  const onSettings = name === 'settings'; // the Settings page (js/settings.js): no path, neutral accent
+  const leftSettings = state.screen === 'settings' && !onSettings;
   state.screen = name;
   stopConfetti();
   if (name !== 'quiz') clearQuizRun(); // the quiz is over or left: this tab removes its own note, so a closed tab or a reload is no longer a quit
   if (name !== 'difficulty' && !onHistory) state.nextHint = null; // the History screens keep the "Next" mark for the way back
   document.querySelectorAll('.screen').forEach((s) => { s.hidden = s.id !== `screen-${name}`; });
-  // Level accent: neutral on the level screen and the History screens, the chosen level's color everywhere inside a level.
+  // Level accent: neutral on the level screen, the History screens and the Settings page, the chosen level's color everywhere inside a level.
   if (onVocab) vocabAccent();
-  else if (name === 'level' || onHistory) delete document.body.dataset.level;
+  else if (name === 'level' || onHistory || onSettings) delete document.body.dataset.level;
   else if (state.nav.level) document.body.dataset.level = state.nav.level;
   // Credits and the theme/mute bar are shown on every page except the game (quiz) page.
   $('#credits-footer').hidden = name === 'quiz';
@@ -51,7 +53,9 @@ function showScreenRaw(name) {
   $('#vocab-btn').hidden = onVocab;         // already on the Word list
   $('#home-btn').hidden = name === 'level'; // already on the main menu
   $('#history-btn').hidden = onHistory;     // already on the History screens
-  $('#tree-btn').hidden = onHistory || onVocab; // the menu tree shows the quiz path, which the History and Vocabulary screens do not have
+  $('#settings-btn').hidden = onSettings;   // already on the Settings page
+  $('#tree-btn').hidden = onHistory || onVocab || onSettings; // the menu tree shows the quiz path, which the History, Vocabulary and Settings screens do not have
+  if (leftSettings) walkerModalClosed();    // Trick or Treat turned on in Settings: the walker's few seconds start now
   refreshBreadcrumb();
   // These grids depend on the chosen level / category (the gray "not finished" buttons too): built each time they are shown.
   if (name === 'category') renderCategoryButtons();

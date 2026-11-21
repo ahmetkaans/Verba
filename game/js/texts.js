@@ -106,6 +106,7 @@ const I18N = {
     smartBoardHelp: 'Typing is hard on a smart board. When this is on, activities that ask you to type, like Fill in the Blanks, let you tap a word to put it in the blank instead.',
     smartBoardLock: 'You can change this between quizzes.',
     workInProgress: 'Work in Progress',
+    settingsGroupLanguage: 'Language', settingsGroupLook: 'Look', settingsGroupPlay: 'Play',
 
     treeTitle: 'Where you are',
     'step.level': 'Level', 'step.category': 'Category', 'step.topic': 'Topic', 'step.type': 'Question type', 'step.difficulty': 'Difficulty',
@@ -223,6 +224,7 @@ const I18N = {
     smartBoardHelp: 'Akıllı tahtada yazı yazmak zordur. Bu açıkken Boşluk Doldurma gibi yazmayı gerektiren etkinliklerde, yazmak yerine bir kelimeye dokunup boşluğa yerleştirirsin.',
     smartBoardLock: 'Bunu alıştırmalar arasında değiştirebilirsin.',
     workInProgress: 'Yapım aşamasında',
+    settingsGroupLanguage: 'Dil', settingsGroupLook: 'Görünüm', settingsGroupPlay: 'Oyun',
 
     treeTitle: 'Bulunduğun yer',
     'step.level': 'Seviye', 'step.category': 'Kategori', 'step.topic': 'Konu', 'step.type': 'Soru türü', 'step.difficulty': 'Zorluk',

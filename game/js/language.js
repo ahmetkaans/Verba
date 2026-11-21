@@ -1,7 +1,7 @@
 /* js/language.js - the saved language, the static texts of the page, switching the language
    Provides: initLanguage, applyStaticTexts, setLanguage
-   Needs: t, LANGS, loadPref, savePref, state, $, refreshBreadcrumb, renderDifficultyButtons, renderMenus,
-          renderTopicButtons, translateSettings, renderResultsContent, refreshHistoryScreen, refreshVocab, modalState */
+   Needs: t, LANGS, loadPref, savePref, state, refreshBreadcrumb, renderDifficultyButtons, renderMenus,
+          renderTopicButtons, translateSettings, renderResultsContent, refreshHistoryScreen, refreshVocab */
 'use strict';
 /* =========================================================================
  * LANGUAGE  (English / Turkish, chosen in Settings, remembered in localStorage "lg-lang")
@@ -32,8 +32,8 @@ function setLanguage(lang, save = true) {
   if (state.screen === 'topic') renderTopicButtons();   // the "Not finished" tags are texts too
   renderDifficultyButtons();
   refreshBreadcrumb();
-  // Settings is the only pop-up that can be open now: its texts change in place, so the toggle keeps its slide and its focus.
-  if (modalState.kind === 'settings' && !$('#modal-overlay').hidden) translateSettings();
+  // The Settings page's texts change in place, so the toggle keeps its slide and its focus.
+  if (state.screen === 'settings') translateSettings();
   // The results screen is built from the quiz record: build it again in the new language.
   if (state.screen === 'results' && state.quiz) renderResultsContent();
   refreshHistoryScreen();   // the History screens too (only when one is showing)

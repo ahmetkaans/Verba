@@ -289,16 +289,17 @@ function finishWalker() {
 }
 
 // Trick or Treat turned on (or the page opened with it on): the pass starts a few seconds later, once per visit.
-// With a pop-up open (the switch was turned on in Settings) it waits: the few seconds start when the pop-up closes.
+// With a pop-up open, or on the Settings page (where the switch is turned on), it waits: the few seconds start when the pop-up closes
+// or when the player leaves the Settings page.
 function startWalker() {
   if (walker.done || walker.active || walker.timer) return;
   if (prefersReducedMotion()) { walker.done = true; return; }
-  if (!$('#modal-overlay').hidden) { walker.waiting = true; return; }
+  if (!$('#modal-overlay').hidden || state.screen === 'settings') { walker.waiting = true; return; }
   walker.waiting = false;
   walker.timer = setTimeout(beginWalker, CONFIG.HALLOWEEN_WALKER_DELAY_SECONDS * 1000);
 }
 
-// closeModal() tells it that a pop-up has closed.
+// closeModal() tells it that a pop-up has closed; showScreenRaw() tells it that the Settings page has been left.
 function walkerModalClosed() {
   if (walker.waiting) startWalker();
 }

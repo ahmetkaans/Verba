@@ -34,6 +34,7 @@
   html[data-halloween="on"] .card,
   html[data-halloween="on"] .vocab-page,
   html[data-halloween="on"] .modal,
+  html[data-halloween="on"] .settings-card,
   html[data-halloween="on"] .history-row,
   html[data-halloween="on"] .icon-btn,
   html[data-halloween="on"] .pill-btn { border-color: var(--accent); border-width: var(--line); }

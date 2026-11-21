@@ -51,15 +51,17 @@
     text-underline-offset: 3px;
   }
 
-  /* Settings pop-up: one row per setting (name + control, short explanation underneath) */
-  .settings { display: block; margin-top: 8px; }
-  /* One list with hairline dividers instead of a box around each setting */
-  .setting { padding: 16px 0; border: 0; border-top: 1px solid var(--border); }
+  /* Settings page (owner's choice from mock-ups, 2026-11-21; it was a pop-up before): three grouped cards under small headings, one row per
+     setting (name + control, short explanation underneath), hairline dividers between the rows of a card */
+  #settings-title:focus { outline: none; }
+  .settings-group { margin: 22px 0 8px; padding: 0 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .settings-card { padding: 0 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+  .setting { padding: 14px 0; border: 0; border-top: 1px solid var(--border); }
   .setting:first-child { border-top: 0; }
   .setting-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
   label.setting-head { min-height: 44px; cursor: pointer; }
   .setting-name { font-weight: 500; }
-  .modal .setting-help { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); }
+  .setting-help { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); }
   .segmented { display: flex; gap: 4px; margin-top: 8px; padding: 4px; background: var(--accent-soft); border-radius: var(--radius-sm); }
   .segmented button {
     flex: 1 1 0;
@@ -76,7 +78,7 @@
   .segmented button svg { width: 18px; height: 18px; flex: none; }
   .segmented button[aria-pressed="true"],
   .segmented button[aria-pressed="true"]:hover:not(:disabled) { background: var(--accent); color: var(--on-accent); font-weight: 500; }
-  .settings-note { margin: 12px 0 0; text-align: center; font-size: 0.85rem; color: var(--muted); }
+  .settings-note { margin: 20px 0 0; text-align: center; font-size: 0.85rem; color: var(--muted); }
   .setting-head.can-wrap { flex-wrap: wrap; }
 
   /* Language toggle (Settings): a sliding pill, both names always shown (DESIGN.md "Language toggle").
@@ -238,9 +240,6 @@
   @media (max-width: 599px) {
     .modal { padding: 18px; font-size: 0.92rem; }
     .modal h2 { font-size: 1.2rem; }
-    .modal .setting-help { font-size: 0.82rem; }
-    .setting { padding: 12px 0; }
-    .settings-note { font-size: 0.78rem; }
     .modal .credit-role { font-size: 0.82rem; }
     .word-list li { padding: 6px 10px; }
     .tree-panel { padding: 16px; }
