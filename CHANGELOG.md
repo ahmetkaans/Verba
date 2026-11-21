@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-21
 
+### Buttons lift and ripple on a computer
+With a mouse, buttons (menu cards, quiz answers, matching items, pop-up and main buttons, the round top-bar buttons, the Word list pill, History rows) now rise a little with a deeper shadow when the pointer is over them, sink when pressed, and show a soft level-coloured ripple from the click point. Answered or disabled buttons stay still. Phones and tablets are unchanged, and "reduce motion" turns it all off. New file `game/js/ui-effects.js`.
+
 ### The old /game/ web address sends visitors to the game
 The game is published at `https://ahmetkaans.github.io/Verba/`. The older address with `/game/` at the end stopped working (it showed "not found") after the site started publishing the game folder directly. A tiny page (`game/game/index.html`) now sends anyone who opens the old address, for example from a bookmark, to the main address.
 

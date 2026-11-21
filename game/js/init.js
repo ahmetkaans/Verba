@@ -1,7 +1,7 @@
 /* js/init.js - start-up: the order in which the parts are started
    Provides: (none)
    Needs: initLanguage, recordInterruptedQuiz, wasReloaded, openReloadNotice, applyStaticTexts, initSound, initTheme, showScreen, initMenus, initTree,
-          initHistory, initVocab, initSettings, initViewPills, initModal, initBrowserHistory */
+          initHistory, initVocab, initSettings, initViewPills, initModal, initBrowserHistory, initButtonRipple */
 'use strict';
 /* =========================================================================
  * INIT
@@ -20,4 +20,5 @@ initSettings(); // the Settings page is built once
 initViewPills();
 applyStaticTexts();
 showScreen('level');
+initButtonRipple(); // the ripple on buttons for mouse users (js/ui-effects.js)
 initBrowserHistory(); // the browser's Back and Forward buttons (js/browser-history.js); after the first screen is shown
