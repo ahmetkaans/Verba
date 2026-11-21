@@ -59,21 +59,14 @@ function showScreenRaw(name) {
   // Credits and the theme/mute bar are shown on every page except the game (quiz) page.
   $('#credits-footer').hidden = name === 'quiz';
   $('#topbar').hidden = name === 'quiz';
-  // The top bar keeps its buttons on every screen that has it (owner, 2026-11-21: buttons that vanished on their own page made the menu style
-  // confusing). The button of the page you are on looks "current" and does nothing. The Settings page and the Word list have a SHORT bar: only
-  // Main menu (left) and their own button (right). On the History screens the full bar stays, with the menu tree dimmed (no quiz path there).
-  const shortBar = onSettings || onVocab;
+  // The top bar looks the same on every screen that has it (owner, 2026-11-21): Main menu, Word list, History, the menu tree and Settings, always all five.
+  // The button of the page you are on looks "current" (pressed) and does nothing. The menu tree always opens: on the quiz screens it shows the quiz
+  // path, on the Word list, the Settings page and the History screens a SHORT path (js/menu-tree.js, treeSteps()).
   markTopbarButton($('#vocab-btn'), onVocab);          // on the Word list
   markTopbarButton($('#home-btn'), name === 'level');  // on the main menu
   markTopbarButton($('#history-btn'), onHistory);      // on the History screens
   markTopbarButton($('#settings-btn'), onSettings);    // on the Settings page
-  $('#vocab-btn').hidden = shortBar && !onVocab;
-  $('#settings-btn').hidden = shortBar && !onSettings;
-  $('#history-btn').hidden = shortBar;
-  const treeBtn = $('#tree-btn');
-  treeBtn.hidden = shortBar;
-  treeBtn.disabled = onHistory;
-  $('#topbar').classList.toggle('is-short', shortBar);   // layout.css: on phones the Word list pill then stays on the first row
+  markTopbarButton($('#tree-btn'), false);             // the tree is never "current": it always opens
   if (leftSettings) walkerModalClosed();    // Trick or Treat turned on in Settings: the walker's few seconds start now
   refreshBreadcrumb();
   // These grids depend on the chosen level / category (the gray "not finished" buttons too): built each time they are shown.
