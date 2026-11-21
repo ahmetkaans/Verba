@@ -95,6 +95,26 @@
 
   html { -webkit-text-size-adjust: 100%; }
 
+  /* Scroll bars on touch screens (owner's request, 2026-11-21): a phone normally shows a thin scroll bar only while you scroll, so a new
+     player may not know that a page or a pop-up goes on. Here the bar stays visible and is wider (Chrome, Brave, Edge and Samsung browsers
+     on Android; Firefox with the standard properties). iPhone browsers ignore this: their bar always fades. Computers keep their own bars. */
+  @media (pointer: coarse) {
+    ::-webkit-scrollbar { width: 12px; height: 12px; }
+    ::-webkit-scrollbar-track { background: color-mix(in srgb, var(--fg) 10%, transparent); }
+    ::-webkit-scrollbar-thumb {
+      min-height: 56px;
+      background: color-mix(in srgb, var(--fg) 58%, var(--surface));
+      border: 2px solid transparent;
+      border-radius: 6px;
+      background-clip: padding-box;
+    }
+  }
+  @supports (-moz-appearance: none) {
+    @media (pointer: coarse) {
+      * { scrollbar-width: auto; scrollbar-color: color-mix(in srgb, var(--fg) 58%, var(--surface)) color-mix(in srgb, var(--fg) 10%, transparent); }
+    }
+  }
+
   body {
     --page-bg: color-mix(in srgb, var(--accent) var(--tint), var(--bg));
     --accent-soft: color-mix(in srgb, var(--accent) var(--soft), var(--surface));

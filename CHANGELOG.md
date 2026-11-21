@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-21
 
+### Smaller pop-ups and a visible scroll bar on phones
+On phones the pop-ups (Settings, Credits, the questions and the menu tree) have about 10% smaller text and tighter spacing, so they match the smaller menus; the buttons keep their size. On touch screens the scroll bar is now wider, darker and always visible, so a new player can see that a page or a pop-up goes on. This works on Android browsers such as Chrome and Brave; iPhone browsers always hide the bar and ignore it. Computers are not changed.
+
 ### On a phone the game starts a bit smaller
 The menus looked a little zoomed in on a real phone, so the page now starts at 90% on phones, which gives the layout more room. Computers are not changed, and players can still pinch-zoom. It is one number in the page header (`initial-scale`), so it can be changed to 95% or 85% in one place.
 
