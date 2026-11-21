@@ -95,22 +95,21 @@
 
   html { -webkit-text-size-adjust: 100%; }
 
-  /* Scroll bars on touch screens (owner's request, 2026-11-21; the stripes were chosen from mock-ups): a phone normally shows a thin scroll bar
-     only while you scroll, so a new player may not know that a page or a pop-up goes on. Here the bar stays visible, is wider, and its thumb has
-     still diagonal stripes in the level color (Chrome, Brave, Edge and Samsung browsers on Android). The bars inside pop-ups and the menu tree
-     follow the level color; the bar of the whole page cannot see the level (it is set on body), so it uses the neutral warm ink. Firefox gets a
-     plain visible bar with the standard properties. iPhone browsers ignore all of this: their bar always fades. Computers keep their own bars. */
+  /* Scroll bars on touch screens (owner's request, 2026-11-21): a phone normally shows a thin scroll bar only while you scroll, so a new
+     player may not know that a page or a pop-up goes on. Here the bar stays visible and is 10px wide (between the thin standard bar and the 16px
+     striped bar tried first; the stripes did not show on the owner's phone and were dropped), with a plain rounded thumb in the level color
+     (Chrome, Brave, Edge and Samsung browsers on Android). The bars inside pop-ups and the menu tree follow the level color; the bar of the
+     whole page cannot see the level (it is set on body), so it uses the neutral warm ink. Firefox gets a plain visible bar with the standard
+     properties. iPhone browsers ignore all of this: their bar always fades. Computers keep their own bars. */
   @media (pointer: coarse) {
-    ::-webkit-scrollbar { width: 16px; height: 16px; }
-    ::-webkit-scrollbar-track { background: color-mix(in srgb, var(--fg) 8%, transparent); border-radius: 10px; margin: 10px 0; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: color-mix(in srgb, var(--fg) 8%, transparent); border-radius: 8px; margin: 8px 0; }
     ::-webkit-scrollbar-thumb {
-      min-height: 64px;
-      border: 3px solid transparent;
-      border-radius: 10px;
+      min-height: 56px;
+      border: 2px solid transparent;
+      border-radius: 8px;
       background-clip: padding-box;
       background-color: var(--accent, var(--neutral-accent));
-      background-image: linear-gradient(135deg, transparent 25%, color-mix(in srgb, var(--surface) 55%, transparent) 25%, color-mix(in srgb, var(--surface) 55%, transparent) 50%, transparent 50%, transparent 75%, color-mix(in srgb, var(--surface) 55%, transparent) 75%);
-      background-size: 20px 20px;
     }
   }
   @supports (-moz-appearance: none) {

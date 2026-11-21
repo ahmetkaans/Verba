@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-21
 
+### The touch scroll bar is a plain 10 px bar
+The stripes did not show on the owner's phone, so the scroll bar on touch screens is now a plain rounded bar in the level color, 10 px wide: between the 16 px striped bar and the thin standard bar. It stays visible so a new player can see that a page or a pop-up goes on. iPhones still show their own thin bar.
+
 ### Settings is a page of its own, with the stripes in the scroll bar
 The Settings pop-up, which was long and boxed on a phone, is now a page of its own with three cards under small headings: Language, Look (theme and Trick or Treat) and Play (sound, same duration and SmartBoard mode). Back returns to the screen you came from, the browser's Back and Forward buttons work on it, and every setting is remembered as before. The Trick or Treat figure starts a few seconds after you leave the Settings page. On Android phones the scroll bar now has still diagonal stripes in the level color, wide and always visible (iPhones keep their own thin bar). The new headings are Language / Dil, Look / Görünüm and Play / Oyun.
 
