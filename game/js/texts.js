@@ -92,7 +92,7 @@ const I18N = {
     plusSecondsPts: '+{n} seconds (−{p} points)', plusSeconds: '+{n} seconds', skipQuestion: 'Skip question',
     gameOverTitle: 'Game over', gameOverBody: 'Time is up again, so the quiz ends here. Try again or see your results.',
     retry: 'Retry', seeResults: 'See results',
-    wordsTitle: 'Words in this game', start: 'Start',
+    wordsTitle: 'Words in this game', wordsStarNote: '* The meaning tested in this game.', start: 'Start',
 
     languageName: 'Language',
     languageHelp: 'Choose the language of menus and buttons. Questions and answer options always stay in English.',
@@ -210,7 +210,7 @@ const I18N = {
     plusSecondsPts: '+{n} saniye (−{p} puan)', plusSeconds: '+{n} saniye', skipQuestion: 'Soruyu atla',
     gameOverTitle: 'Oyun bitti', gameOverBody: 'Süre yine doldu, bu yüzden alıştırma burada bitiyor. Tekrar dene ya da sonuçlarını gör.',
     retry: 'Tekrar dene', seeResults: 'Sonuçları gör',
-    wordsTitle: 'Bu oyundaki kelimeler', start: 'Başla',
+    wordsTitle: 'Bu oyundaki kelimeler', wordsStarNote: '* Bu oyunda test edilen anlam.', start: 'Başla',
 
     languageName: 'Dil',
     languageHelp: 'Menülerin ve düğmelerin dilini seç. Sorular ve cevap seçenekleri her zaman İngilizce kalır.',

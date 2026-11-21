@@ -1,5 +1,5 @@
 /* js/quiz-flow.js - starting a quiz, the words pop-up, one question, answering, quitting
-   Provides: startQuiz, questionTargets, quizTargetWords, glossarySenses, wordRow, openWordPreview, currentQuestion, currentRecord,
+   Provides: startQuiz, questionTargets, quizTargetWords, glossarySenses, testedSenseIndex, wordRow, openWordPreview, currentQuestion, currentRecord,
              renderQuestion, updateScoreDisplay, submitAnswer, goNext, skipQuestion, requestQuit
    Needs: CONFIG, el, fmt, englishText, noteText, hashString, mulberry32, makeLorem, state, $, playSound, t, GLOSSARY,
           quizKey, getQuestions, prepareQuiz, correctAnswerText, showScreen, getQuestionSeconds, openModal,
@@ -78,28 +78,56 @@ function glossarySenses(level, word) {
   return [{ type: L.words(1)[0], meaning: L.sentence(3, 6, '') }];
 }
 
-// One row of the words pop-up: the word, then each of its word types with its meaning (the Word list screen has its own rows, vocabRow in vocab-list.js).
-// senses = [{ type, meaning }]. used = the word type to underline (the one this game uses); null underlines nothing.
-function wordRow(word, senses, used) {
+// The meaning of a word that THIS quiz tests (owner, 2026-11-21; README "Confirmed decisions"): among the senses of the used word type, the one
+// whose "for" tag matches the quiz key most exactly. A tag is a key prefix after "<LEVEL>|vocabulary|" ("3" = a theme, "3|tf" = its True or False
+// quizzes, "3|tf|easy" = one quiz); a sense without a tag fits every quiz. Returns the index in senses (the first sense of that type when no tag
+// matches; the check script reports such a quiz as an error). used = the word type the question names, or null.
+function testedSenseIndex(senses, used, key) {
+  const parts = key.split('|');
+  const rest = parts.slice(2).join('|');
+  let best = -1;
+  let bestLength = -1;
+  senses.forEach((s, i) => {
+    if (used && s.type !== used) return;
+    const tags = Array.isArray(s.for) ? s.for.filter(Boolean) : [];
+    let length = -1;
+    if (!tags.length || parts[1] !== 'vocabulary') length = 0;
+    else tags.forEach((tag) => { if (rest === tag || rest.startsWith(`${tag}|`)) length = Math.max(length, tag.split('|').length); });
+    if (length > bestLength) { bestLength = length; best = i; }
+  });
+  if (best < 0) best = senses.findIndex((s) => !used || s.type === used);
+  return best;
+}
+
+// One row of the words pop-up: the word, then ALL its meanings (the Word list screen has its own rows, vocabRow in vocab-list.js).
+// senses = [{ type, meaning, for? }]. When the word has more than one meaning, the meaning this quiz tests (testedSenseIndex) comes FIRST and ends with *
+// (owner, 2026-11-21); a word with one meaning has no *. used = the word type the question names; key = the quiz key.
+function wordRow(word, senses, used, key) {
+  const tested = senses.length > 1 ? testedSenseIndex(senses, used, key) : -1;
+  const ordered = tested >= 0 ? [senses[tested], ...senses.filter((s, i) => i !== tested)] : senses;
   return el('li', {}, [
     el('span', { class: 'word', text: word }),
-    ...senses.map((s) => el('p', { class: 'word-sense' }, [
-      el('span', { class: `word-type${s.type === used ? ' is-used' : ''}`, text: s.type }),
-      ` ${s.meaning}`,
+    ...ordered.map((s, i) => el('p', { class: 'word-sense' }, [
+      el('span', { class: 'word-type', text: s.type }),
+      ` ${s.meaning}${tested >= 0 && i === 0 ? ' *' : ''}`,   // a no-break space: the * never stands alone at the start of a line
     ])),
   ]);
 }
 
 function openWordPreview(start) {
   const level = state.nav.level;
+  const key = quizKey(state.nav);
+  let anyStar = false;
   const list = el('ul', { class: 'word-list', lang: 'en' }, quizTargetWords(state.quiz.questions).map(({ word, type }) => {
     const senses = glossarySenses(level, word);
-    // Every word type of the word is shown; the one used in this game is underlined (one sense: that one).
-    return wordRow(word, senses, type || senses[0].type);
+    if (senses.length > 1) anyStar = true;   // wordRow() puts a * on the tested meaning of such a word
+    return wordRow(word, senses, type || senses[0].type, key);
   }));
+  // When any word shows a *, the last line of the pop-up says what it means (English or Turkish, by the language setting).
+  const body = anyStar ? el('div', {}, [list, el('p', { class: 'word-note', lang: state.lang, text: t('wordsStarNote') })]) : list;
   openModal({
     title: t('wordsTitle'),
-    body: list,
+    body,
     buttons: [{ label: t('start'), primary: true, onClick: start }],
     // The arrow leaves before the quiz begins: same place as Quit, the Difficulty screen (nothing was answered yet)
     onBack: () => { closeModal(); state.quiz = null; showScreen('difficulty'); },

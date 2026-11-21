@@ -1,5 +1,6 @@
-/* Glossary for the "Words in this game" pop-up: one short meaning per tested word, written once per level and reused
-   in every quiz. Shape: { "A1": { "banana": [ { "type": "noun", "meaning": "a long yellow fruit" } ] } }.
+/* Glossary for the "Words in this game" pop-up and the Word list: the meanings of every tested word, written once per level.
+   A word type may have SEVERAL meanings (2026-11-21), each with "for": [quiz-key prefixes after "A1|vocabulary|"]; the pop-up shows the
+   meaning of the quiz first, with a *, and the Word list shows every meaning (README "Confirmed decisions"). Shape: { "A1": { "banana": [ { "type": "noun", "meaning": "a long yellow fruit" } ] } }.
    Keys are lower case. The part between "Object.assign(GAME_DATA.glossary, " and the closing ");" must stay valid
    JSON: it is read by .gitignore/tools/check_questions.ps1. One file per level. */
 Object.assign(GAME_DATA.glossary, {
@@ -116,7 +117,10 @@ Object.assign(GAME_DATA.glossary, {
     "nineteen": { "type": "number", "meaning": "the number 19" },
     "hundred": { "type": "number", "meaning": "the number 100" },
     "million": { "type": "number", "meaning": "the number 1,000,000" },
-    "miss": { "type": "verb", "meaning": "to feel sad because someone is not with you; also, to be late for a bus, train or plane" },
+    "miss": [
+      { "type": "verb", "meaning": "to feel sad because someone is not with you", "for": ["0|mc", "0|tf", "0|match"] },
+      { "type": "verb", "meaning": "to be too late for a bus, a train or a plane", "for": ["0|fill", "12"] }
+    ],
     "feeling": { "type": "noun", "meaning": "something you feel, like happy or sad" },
     "mother": { "type": "noun", "meaning": "a woman who has a child" },
     "father": { "type": "noun", "meaning": "a man who has a child" },
@@ -185,7 +189,10 @@ Object.assign(GAME_DATA.glossary, {
     "fat": { "type": "adjective", "meaning": "big around the body" },
     "teacher": { "type": "noun", "meaning": "a person who helps students learn at a school" },
     "student": { "type": "noun", "meaning": "a person who goes to a school to learn" },
-    "class": { "type": "noun", "meaning": "a group of students who learn together, or the time when they learn" },
+    "class": [
+      { "type": "noun", "meaning": "a group of students who learn together", "for": ["3|mc|easy", "3|match|easy"] },
+      { "type": "noun", "meaning": "the time when students learn", "for": ["3|tf|easy"] }
+    ],
     "classroom": { "type": "noun", "meaning": "a room in a school where students have lessons" },
     "desk": { "type": "noun", "meaning": "a table where you sit to read and write" },
     "pen": { "type": "noun", "meaning": "something you write with; it is often blue or black" },
@@ -204,7 +211,10 @@ Object.assign(GAME_DATA.glossary, {
       { "type": "noun", "meaning": "words or things written one under the other" },
       { "type": "verb", "meaning": "to write things one under the other" }
     ],
-    "letter": { "type": "noun", "meaning": "a small part of a word that you write, like the first part of \"cat\"" },
+    "letter": [
+      { "type": "noun", "meaning": "a small part of a word that you write, like the first part of \"cat\"", "for": ["3"] },
+      { "type": "noun", "meaning": "a paper message that you send in the post", "for": ["13"] }
+    ],
     "note": { "type": "noun", "meaning": "a short text that you write to tell someone something" },
     "reading": { "type": "noun", "meaning": "looking at words and understanding them" },
     "writing": { "type": "noun", "meaning": "putting words on paper" },
@@ -226,7 +236,10 @@ Object.assign(GAME_DATA.glossary, {
       { "type": "adverb", "meaning": "doing something a lot and trying very much" }
     ],
     "rule": { "type": "noun", "meaning": "something that says what you can and cannot do" },
-    "text": { "type": "noun", "meaning": "the words on a page" },
+    "text": [
+      { "type": "noun", "meaning": "the words on a page", "for": ["3"] },
+      { "type": "noun", "meaning": "a short message that you send from a phone", "for": ["13"] }
+    ],
     "sentence": { "type": "noun", "meaning": "a group of words that says one thing" },
     "paragraph": { "type": "noun", "meaning": "a part of a text with a few sentences about one idea" },
     "phrase": { "type": "noun", "meaning": "a few words that go together" },
@@ -382,7 +395,10 @@ Object.assign(GAME_DATA.glossary, {
     "cake": { "type": "noun", "meaning": "a food that people eat on a birthday" },
     "carrot": { "type": "noun", "meaning": "a long orange vegetable" },
     "cheese": { "type": "noun", "meaning": "a food made from milk, often yellow or white" },
-    "chicken": { "type": "noun", "meaning": "the meat of a bird that people eat" },
+    "chicken": [
+      { "type": "noun", "meaning": "the meat of a bird that people eat", "for": ["6"] },
+      { "type": "noun", "meaning": "a farm bird that gives us eggs", "for": ["11"] }
+    ],
     "chocolate": { "type": "noun", "meaning": "a brown food or drink that many people like" },
     "coffee": { "type": "noun", "meaning": "a hot brown drink" },
     "cooking": { "type": "noun", "meaning": "making food ready to eat" },
@@ -605,7 +621,10 @@ Object.assign(GAME_DATA.glossary, {
       { "type": "verb", "meaning": "to make you want to learn more about something" }
     ],
     "join": { "type": "verb", "meaning": "to become a part of a team or a club" },
-    "lose": { "type": "verb", "meaning": "to not win a game, or to not know where something is" },
+    "lose": [
+      { "type": "verb", "meaning": "to not win a game", "for": ["9|mc|medium", "9|match|medium"] },
+      { "type": "verb", "meaning": "to not know where something is", "for": ["9|fill|medium"] }
+    ],
     "magazine": { "type": "noun", "meaning": "a book with pictures and stories that comes out every week or month" },
     "match": [
       { "type": "noun", "meaning": "a game between two teams or two players" },
@@ -672,6 +691,191 @@ Object.assign(GAME_DATA.glossary, {
     "nose": { "type": "noun", "meaning": "the part of your face above your mouth" },
     "nurse": { "type": "noun", "meaning": "a person who helps sick people and works with doctors" },
     "sick": { "type": "adjective", "meaning": "not well" },
-    "tooth": { "type": "noun", "meaning": "one of the small hard white things in your mouth" }
+    "tooth": { "type": "noun", "meaning": "one of the small hard white things in your mouth" },
+    "air": { "type": "noun", "meaning": "what is all around us; we cannot see it, but we need it to live" },
+    "animal": { "type": "noun", "meaning": "a living thing that is not a plant, like a dog or a bird" },
+    "beach": { "type": "noun", "meaning": "land next to the water, where people play and sit in the sun" },
+    "bird": { "type": "noun", "meaning": "an animal with two legs, and most of them can fly" },
+    "cat": { "type": "noun", "meaning": "a small animal with four legs that many people have at home" },
+    "cow": { "type": "noun", "meaning": "a big farm animal that gives us milk" },
+    "dangerous": { "type": "adjective", "meaning": "when something very bad can happen to you" },
+    "die": { "type": "verb", "meaning": "to stop living" },
+    "dog": { "type": "noun", "meaning": "an animal that many people have at home and walk with" },
+    "elephant": { "type": "noun", "meaning": "a very big gray animal with a very long nose" },
+    "farm": { "type": "noun", "meaning": "a place in the country with animals, where a farmer works" },
+    "farmer": { "type": "noun", "meaning": "a person who works on a farm" },
+    "fire": { "type": "noun", "meaning": "something very hot that gives light" },
+    "flower": { "type": "noun", "meaning": "the pretty red, yellow or white part of a plant" },
+    "grow": { "type": "verb", "meaning": "to get bigger" },
+    "high": { "type": "adjective", "meaning": "far up, above other things" },
+    "horse": { "type": "noun", "meaning": "a big, strong animal that runs fast, and people can ride it" },
+    "ice": { "type": "noun", "meaning": "water that is very cold and hard" },
+    "island": { "type": "noun", "meaning": "land with water all around it" },
+    "land": { "type": "noun", "meaning": "the part of the world that is not water" },
+    "lion": { "type": "noun", "meaning": "a very big yellow cat that lives in Africa" },
+    "mountain": { "type": "noun", "meaning": "a very, very high place on the land" },
+    "mouse": [
+      { "type": "noun", "meaning": "a very small animal that likes cheese", "for": ["11"] },
+      { "type": "noun", "meaning": "a small thing that you move with your hand to use a computer", "for": ["13"] }
+    ],
+    "natural": { "type": "adjective", "meaning": "like a tree or a river, and not from people" },
+    "ocean": { "type": "noun", "meaning": "a very big water between countries" },
+    "pig": { "type": "noun", "meaning": "a pink farm animal with a small nose" },
+    "plant": { "type": "noun", "meaning": "a living thing, like a flower or a tree, that needs water" },
+    "rain": [
+      { "type": "noun", "meaning": "water that comes down from above" },
+      { "type": "verb", "meaning": "when water comes down from above" }
+    ],
+    "river": { "type": "noun", "meaning": "water that goes across the land in a long line" },
+    "sheep": { "type": "noun", "meaning": "a farm animal with a lot of white hair, which people use for warm clothes" },
+    "snake": { "type": "noun", "meaning": "a long animal with no legs" },
+    "snow": [
+      { "type": "noun", "meaning": "white and cold; it comes down in winter" },
+      { "type": "verb", "meaning": "when white, cold things come down in winter" }
+    ],
+    "space": { "type": "noun", "meaning": "the very big place with the sun and the stars in it" },
+    "star": { "type": "noun", "meaning": "a small light that you see at night, far above us" },
+    "sun": { "type": "noun", "meaning": "the big light far above us in the day that makes us warm" },
+    "sunny": { "type": "adjective", "meaning": "with a lot of sun" },
+    "tree": { "type": "noun", "meaning": "a very tall plant" },
+    "warm": { "type": "adjective", "meaning": "not cold and not hot" },
+    "weather": { "type": "noun", "meaning": "the sun, the rain, the snow and the wind of the day" },
+    "airport": { "type": "noun", "meaning": "a place where planes go up and come down" },
+    "arrive": { "type": "verb", "meaning": "to get to a place" },
+    "bicycle": { "type": "noun", "meaning": "something that you sit on and ride; you move it with your feet" },
+    "bike": { "type": "noun", "meaning": "a short word for bicycle" },
+    "boat": { "type": "noun", "meaning": "something that carries people on the water" },
+    "bus": { "type": "noun", "meaning": "a big car for many people that stops at many places in a town" },
+    "capital": [
+      { "type": "noun", "meaning": "the most important city in a country" },
+      { "type": "adjective", "meaning": "big, like the first letter of a name" }
+    ],
+    "car": { "type": "noun", "meaning": "a thing that people drive on the road, for a few people" },
+    "carry": { "type": "verb", "meaning": "to take something with you in your hands" },
+    "country": { "type": "noun", "meaning": "a land with its own name and people, like France or Japan" },
+    "culture": { "type": "noun", "meaning": "the food, the music and the way of life of a country" },
+    "drive": { "type": "verb", "meaning": "to make a car or a bus go" },
+    "driver": { "type": "noun", "meaning": "a person who drives a car, a bus or a taxi" },
+    "east": [
+      { "type": "noun", "meaning": "the way where the sun comes up" },
+      { "type": "adjective", "meaning": "in the place where the sun comes up, or from there" },
+      { "type": "adverb", "meaning": "toward the place where the sun comes up" }
+    ],
+    "flight": { "type": "noun", "meaning": "a trip by plane" },
+    "fly": { "type": "verb", "meaning": "to go in the air, like a bird or a plane" },
+    "follow": { "type": "verb", "meaning": "to go behind someone" },
+    "left": [
+      { "type": "adjective", "meaning": "the opposite of right" },
+      { "type": "adverb", "meaning": "toward the hand that most people do not write with" },
+      { "type": "noun", "meaning": "the place where that hand is" }
+    ],
+    "map": { "type": "noun", "meaning": "a drawing of streets, cities or countries" },
+    "north": [
+      { "type": "noun", "meaning": "the way that is up on a map" },
+      { "type": "adjective", "meaning": "in the place that is up on a map, or from there" },
+      { "type": "adverb", "meaning": "toward the place that is up on a map" }
+    ],
+    "passport": { "type": "noun", "meaning": "a small book with your photo that you show when you go to another country" },
+    "plan": [
+      { "type": "noun", "meaning": "an idea of what you will do" },
+      { "type": "verb", "meaning": "to think about what you will do and then decide" }
+    ],
+    "plane": { "type": "noun", "meaning": "a big thing that flies in the air with many people in it" },
+    "quick": { "type": "adjective", "meaning": "taking a short time" },
+    "quickly": { "type": "adverb", "meaning": "in a way that takes a short time" },
+    "return": [
+      { "type": "verb", "meaning": "to go back to a place" },
+      { "type": "noun", "meaning": "the trip back to a place" }
+    ],
+    "ride": { "type": "verb", "meaning": "to sit on a bike or a horse and go" },
+    "right": [
+      { "type": "adjective", "meaning": "the opposite of left" },
+      { "type": "adverb", "meaning": "toward the hand that most people write with" },
+      { "type": "noun", "meaning": "the place where that hand is" }
+    ],
+    "slow": { "type": "adjective", "meaning": "not fast" },
+    "south": [
+      { "type": "noun", "meaning": "the way that is down on a map" },
+      { "type": "adjective", "meaning": "in the place that is down on a map, or from there" },
+      { "type": "adverb", "meaning": "toward the place that is down on a map" }
+    ],
+    "stay": { "type": "verb", "meaning": "to sleep or live in a place for some time, for example in a hotel" },
+    "taxi": { "type": "noun", "meaning": "a car with a driver that you pay for a trip" },
+    "ticket": { "type": "noun", "meaning": "a small paper that you buy to get on a bus, a train or a plane" },
+    "tourist": { "type": "noun", "meaning": "a person who visits a place on vacation" },
+    "traffic": { "type": "noun", "meaning": "all the cars and buses on a road" },
+    "train": { "type": "noun", "meaning": "a long thing that carries many people from town to town" },
+    "travel": [
+      { "type": "verb", "meaning": "to go from one place to another, often far" },
+      { "type": "noun", "meaning": "going from one place to another, often far" }
+    ],
+    "trip": { "type": "noun", "meaning": "a time when you go to a place and come back" },
+    "truck": { "type": "noun", "meaning": "a very big car that carries things" },
+    "turn": [
+      { "type": "verb", "meaning": "to go in a new way" },
+      { "type": "noun", "meaning": "the time when you do something after another person" }
+    ],
+    "vacation": { "type": "noun", "meaning": "days when you do not work or go to school, often in a new place" },
+    "visit": [
+      { "type": "verb", "meaning": "to go to see a person or a place" },
+      { "type": "noun", "meaning": "a time when you go to see a person or a place" }
+    ],
+    "visitor": { "type": "noun", "meaning": "a person who comes to see you or a place" },
+    "west": [
+      { "type": "noun", "meaning": "the way where the sun goes down" },
+      { "type": "adjective", "meaning": "in the place where the sun goes down, or from there" },
+      { "type": "adverb", "meaning": "toward the place where the sun goes down" }
+    ],
+    "world": { "type": "noun", "meaning": "all the countries and all the people" },
+    "actor": { "type": "noun", "meaning": "a person who plays someone in a movie" },
+    "actress": { "type": "noun", "meaning": "a woman who plays someone in a movie" },
+    "artist": { "type": "noun", "meaning": "a person who makes pictures" },
+    "become": { "type": "verb", "meaning": "to start to be something new" },
+    "blog": { "type": "noun", "meaning": "a place on the internet where a person writes about his or her life" },
+    "business": { "type": "noun", "meaning": "the work of buying and selling things" },
+    "career": { "type": "noun", "meaning": "all the jobs that a person has in his or her life" },
+    "company": { "type": "noun", "meaning": "a group of people who work together to make or sell things" },
+    "computer": { "type": "noun", "meaning": "a machine that you use to write, play and look for things" },
+    "create": { "type": "verb", "meaning": "to make something new" },
+    "dancer": { "type": "noun", "meaning": "a person who moves to music so that people can watch" },
+    "information": { "type": "noun", "meaning": "facts that you learn about something" },
+    "internet": { "type": "noun", "meaning": "all the computers in the world that work together, where you look for things and send messages" },
+    "interview": [
+      { "type": "noun", "meaning": "a meeting where someone asks you questions, for example for a new job" },
+      { "type": "verb", "meaning": "to ask someone questions, for example for a job" }
+    ],
+    "job": { "type": "noun", "meaning": "the work that a person does to get money" },
+    "machine": { "type": "noun", "meaning": "a thing that does work for you" },
+    "meeting": { "type": "noun", "meaning": "a time when people come together to talk" },
+    "message": { "type": "noun", "meaning": "words that you send to a person" },
+    "model": { "type": "noun", "meaning": "a type of a thing that a company makes, like a phone or a car" },
+    "news": { "type": "noun", "meaning": "what is happening in the world, on TV or in a newspaper" },
+    "newspaper": { "type": "noun", "meaning": "a big paper with the news that comes out every day" },
+    "online": [
+      { "type": "adjective", "meaning": "on the internet" },
+      { "type": "adverb", "meaning": "on the internet, with a computer or a phone" }
+    ],
+    "post": [
+      { "type": "noun", "meaning": "the letters and small boxes that come to your house" },
+      { "type": "verb", "meaning": "to send a letter by putting it in a box" }
+    ],
+    "program": { "type": "noun", "meaning": "a thing that you use on a computer" },
+    "radio": { "type": "noun", "meaning": "a thing that you listen to music and the news on" },
+    "reader": { "type": "noun", "meaning": "a person who reads" },
+    "scientist": { "type": "noun", "meaning": "a person who works to learn new things about animals, plants and the world" },
+    "send": { "type": "verb", "meaning": "to make something go to a person" },
+    "skill": { "type": "noun", "meaning": "something that you can do well because you learned it" },
+    "success": { "type": "noun", "meaning": "when something goes very well" },
+    "telephone": [
+      { "type": "noun", "meaning": "a thing that you use to call and talk to a person far away" },
+      { "type": "verb", "meaning": "to call someone" }
+    ],
+    "television": { "type": "noun", "meaning": "a thing with pictures and sound that shows movies and the news at home" },
+    "tv": { "type": "noun", "meaning": "a short word for television" },
+    "useful": { "type": "adjective", "meaning": "good to use, because it helps you" },
+    "video": { "type": "noun", "meaning": "a short movie that you watch" },
+    "website": { "type": "noun", "meaning": "a place on the internet with pages about a hotel, a company or a person" },
+    "worker": { "type": "noun", "meaning": "a person who has a job" },
+    "writer": { "type": "noun", "meaning": "a person who writes books or stories" }
   }
 });

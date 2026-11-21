@@ -42,14 +42,8 @@
   .word-list .word { font-weight: 500; }
   .modal .word-list .word-sense { margin: 2px 0 0; color: var(--fg); }
   .word-list .word-type { margin-right: 4px; color: var(--muted); font-size: 0.85rem; font-style: italic; }
-  /* the word type used in this game */
-  .word-list .word-type.is-used {
-    color: var(--fg);
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
-  }
+  /* the last line of the words pop-up when a word shows a * (the * replaced the underline of the used word type, 2026-11-21) */
+  .modal .word-note { margin: 10px 0 0; color: var(--muted); font-size: 0.85rem; }
 
   /* Settings page (owner's choice from mock-ups, 2026-11-21; it was a pop-up before): three grouped cards under small headings, one row per
      setting (name + control, short explanation underneath), hairline dividers between the rows of a card */

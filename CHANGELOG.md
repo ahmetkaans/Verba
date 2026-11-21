@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-21
 
+### Three new themes, and word meanings that follow the quiz
+Nature and Animals, Travel and the World, and Jobs and Technology now have all their quizzes (48 new quizzes, 318 new questions, and 122 new words in the word pop-up). When a word means different things in different themes (for example chicken as food or as an animal, or mouse as an animal or a computer mouse), the "Words in this game" pop-up now shows the meaning of that quiz first, marked with a star, with a short note at the bottom in English or Turkish; the Word list shows every meaning. The old underline on the word type is gone.
+
 ### The /game/ redirect page is removed
 The tiny page `game/game/index.html`, which sent the old `/game/` web address to the main address, is deleted again at the owner's request. The game's only address is `https://ahmetkaans.github.io/Verba/`.
 
