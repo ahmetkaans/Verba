@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-21
 
+### The old /game/ web address sends visitors to the game
+The game is published at `https://ahmetkaans.github.io/Verba/`. The older address with `/game/` at the end stopped working (it showed "not found") after the site started publishing the game folder directly. A tiny page (`game/game/index.html`) now sends anyone who opens the old address, for example from a bookmark, to the main address.
+
 ### The touch scroll bar is a plain 10 px bar
 The stripes did not show on the owner's phone, so the scroll bar on touch screens is now a plain rounded bar in the level color, 10 px wide: between the 16 px striped bar and the thin standard bar. It stays visible so a new player can see that a page or a pop-up goes on. iPhones still show their own thin bar.
 
