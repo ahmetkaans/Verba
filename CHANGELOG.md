@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### Learning and Ideas written (theme 14)
+The last A1 vocabulary theme now has real questions: 16 quizzes (Multiple Choice, Fill in the Blanks, True or False and Matching at all four difficulties), 107 questions in all, and 51 new meanings in the "Words in this game" pop-up. The words *form*, *match* and *right* now show the meaning of the theme that is being played, and the adverb meanings of *right* and *left* are shorter ("to the hand that most people write with") and no longer use the word "toward".
+
 ### Play-through test brought up to date
 Nothing in the game changed. The private play-through test had drifted (1100 passed, 15 failed) because it still expected the old Settings pop-up, the old Word list level step, buttons that vanish on some screens, the visible test box and two unwritten themes. Its stale sections were rewritten for the screens as they are now, and it passes again: 1175 passed, 0 failed. The README's expected result says so.
 

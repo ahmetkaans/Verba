@@ -183,7 +183,7 @@ Object.assign(GAME_DATA.glossary, {
     "blond": { "type": "adjective", "meaning": "light yellow, like the hair of some people" },
     "form": [
       { "type": "noun", "meaning": "a paper with questions that you fill in with your name and other facts" },
-      { "type": "verb", "meaning": "to make or start something" }
+      { "type": "verb", "meaning": "to make a line or a group" }
     ],
     "wife": { "type": "noun", "meaning": "the woman a man is married to" },
     "fat": { "type": "adjective", "meaning": "big around the body" },
@@ -628,7 +628,8 @@ Object.assign(GAME_DATA.glossary, {
     "magazine": { "type": "noun", "meaning": "a book with pictures and stories that comes out every week or month" },
     "match": [
       { "type": "noun", "meaning": "a game between two teams or two players" },
-      { "type": "verb", "meaning": "to look good with something else, like two colors" }
+      { "type": "verb", "meaning": "to look good with something else, like two colors", "for": ["9"] },
+      { "type": "verb", "meaning": "to put two things together because they go together", "for": ["14"] }
     ],
     "movie": { "type": "noun", "meaning": "a story with pictures and sound, that you watch" },
     "music": { "type": "noun", "meaning": "nice sounds that people make by singing or by playing things like a piano" },
@@ -766,7 +767,7 @@ Object.assign(GAME_DATA.glossary, {
     "follow": { "type": "verb", "meaning": "to go behind someone" },
     "left": [
       { "type": "adjective", "meaning": "the opposite of right" },
-      { "type": "adverb", "meaning": "toward the hand that most people do not write with" },
+      { "type": "adverb", "meaning": "to the hand that most people do not write with" },
       { "type": "noun", "meaning": "the place where that hand is" }
     ],
     "map": { "type": "noun", "meaning": "a drawing of streets, cities or countries" },
@@ -789,8 +790,9 @@ Object.assign(GAME_DATA.glossary, {
     ],
     "ride": { "type": "verb", "meaning": "to sit on a bike or a horse and go" },
     "right": [
-      { "type": "adjective", "meaning": "the opposite of left" },
-      { "type": "adverb", "meaning": "toward the hand that most people write with" },
+      { "type": "adjective", "meaning": "the opposite of left", "for": ["12"] },
+      { "type": "adjective", "meaning": "good because it has no mistakes", "for": ["14"] },
+      { "type": "adverb", "meaning": "to the hand that most people write with" },
       { "type": "noun", "meaning": "the place where that hand is" }
     ],
     "slow": { "type": "adjective", "meaning": "not fast" },
@@ -876,6 +878,69 @@ Object.assign(GAME_DATA.glossary, {
     "video": { "type": "noun", "meaning": "a short movie that you watch" },
     "website": { "type": "noun", "meaning": "a place on the internet with pages about a hotel, a company or a person" },
     "worker": { "type": "noun", "meaning": "a person who has a job" },
-    "writer": { "type": "noun", "meaning": "a person who writes books or stories" }
+    "writer": { "type": "noun", "meaning": "a person who writes books or stories" },
+    "agree": { "type": "verb", "meaning": "to have the same idea as another person" },
+    "answer": [
+      { "type": "noun", "meaning": "what you say or write when someone asks you something" },
+      { "type": "verb", "meaning": "to say or write something when someone asks you" }
+    ],
+    "check": { "type": "verb", "meaning": "to look at something again to see that it is good" },
+    "choose": { "type": "verb", "meaning": "to take one thing from a few things because you want it" },
+    "common": { "type": "adjective", "meaning": "that you see or hear in many places" },
+    "compare": { "type": "verb", "meaning": "to look at two things to see how they are the same and how they are different" },
+    "complete": [
+      { "type": "adjective", "meaning": "with all its parts" },
+      { "type": "verb", "meaning": "to add what is needed to finish something" }
+    ],
+    "conversation": { "type": "noun", "meaning": "a talk between two or more people" },
+    "correct": [
+      { "type": "adjective", "meaning": "right, with no mistakes" },
+      { "type": "verb", "meaning": "to change a mistake so that it is right" }
+    ],
+    "decide": { "type": "verb", "meaning": "to think and then say what you will do" },
+    "describe": { "type": "verb", "meaning": "to say what a person or a thing is like" },
+    "description": { "type": "noun", "meaning": "words that tell you what a person or a place is like" },
+    "detail": { "type": "noun", "meaning": "one small fact about something" },
+    "difference": { "type": "noun", "meaning": "a way that two things are not the same" },
+    "discuss": { "type": "verb", "meaning": "to talk about something with other people" },
+    "example": { "type": "noun", "meaning": "one thing that shows what other things are like" },
+    "explain": { "type": "verb", "meaning": "to say something so that other people understand it" },
+    "fact": { "type": "noun", "meaning": "something that is true" },
+    "false": { "type": "adjective", "meaning": "not true" },
+    "fill": { "type": "verb", "meaning": "to put something in until it is full" },
+    "forget": { "type": "verb", "meaning": "to not remember something" },
+    "guess": [
+      { "type": "verb", "meaning": "to say an answer when you are not sure" },
+      { "type": "noun", "meaning": "an answer that you say when you are not sure" }
+    ],
+    "idea": { "type": "noun", "meaning": "something that you think of, like a plan" },
+    "imagine": { "type": "verb", "meaning": "to see something in your head that is not there" },
+    "improve": { "type": "verb", "meaning": "to get better, or to make something better" },
+    "kind": { "type": "noun", "meaning": "one group of things, like fish or fruit in food" },
+    "line": { "type": "noun", "meaning": "people who stand one behind the other and wait" },
+    "mean": { "type": "verb", "meaning": "to show what a word says" },
+    "meaning": { "type": "noun", "meaning": "what a word or a sentence tells you" },
+    "mistake": { "type": "noun", "meaning": "something that you do in the wrong way" },
+    "negative": { "type": "adjective", "meaning": "bad or not happy, like a sad word" },
+    "object": { "type": "noun", "meaning": "a thing that you can see and take in your hand" },
+    "opinion": { "type": "noun", "meaning": "what you think about something" },
+    "part": { "type": "noun", "meaning": "one piece of something bigger" },
+    "perfect": { "type": "adjective", "meaning": "as good as it can be" },
+    "positive": { "type": "adjective", "meaning": "good and happy, like a nice word" },
+    "possible": { "type": "adjective", "meaning": "that can happen or that you can do" },
+    "problem": { "type": "noun", "meaning": "something difficult that you do not want" },
+    "question": { "type": "noun", "meaning": "words that you say or write when you want to know something" },
+    "reason": { "type": "noun", "meaning": "why something happens, or why a person does something" },
+    "remember": { "type": "verb", "meaning": "to have something in your head from before" },
+    "repeat": { "type": "verb", "meaning": "to say or do something again" },
+    "result": { "type": "noun", "meaning": "what you get at the end, like at the end of a test or a game" },
+    "similar": { "type": "adjective", "meaning": "the same in many ways" },
+    "situation": { "type": "noun", "meaning": "what is happening at one time in one place" },
+    "spell": { "type": "verb", "meaning": "to say or write the letters of a word one by one" },
+    "statement": { "type": "noun", "meaning": "a sentence that says something" },
+    "topic": { "type": "noun", "meaning": "what a talk, a lesson or a blog is about" },
+    "true": { "type": "adjective", "meaning": "like that in real life" },
+    "type": { "type": "noun", "meaning": "a group of things that are the same in some way" },
+    "wrong": { "type": "adjective", "meaning": "not right" }
   }
 });
