@@ -1,6 +1,6 @@
 /* js/fill.js - the question screens, part 2: Fill in the Blanks, typed and tapped (SmartBoard)
    Provides: fillBefore, fillAfter, renderFill, renderFillTap
-   Needs: CONFIG, el, state, t, normalizeAnswer, alsoCorrectForms, judgeFill, submitAnswer */
+   Needs: CONFIG, el, questionNodes, state, t, normalizeAnswer, alsoCorrectForms, judgeFill, submitAnswer */
 'use strict';
 // Typed fill: the word bank is shown above the sentence; the student types one word into the blank.
 // Spaces around the blank like normal print: none after an opening quote ("___) and none before
@@ -45,7 +45,7 @@ function renderFill(q, area) {
   area.append(
     el('p', { class: 'instructions', text: t('typeInstruction') }),
     bank,
-    el('p', { class: 'prompt fill-sentence' }, [fillBefore(q.before), input, fillAfter(q.after)]),
+    el('p', { class: 'prompt fill-sentence' }, [...questionNodes(fillBefore(q.before)), input, ...questionNodes(fillAfter(q.after))]),
     check,
   );
   state.quiz.ui = { input, check };
@@ -92,7 +92,7 @@ function renderFillTap(q, area) {
   area.append(
     el('p', { class: 'instructions', text: t('tapInstruction') }),
     el('div', { class: 'word-bank' }, chips),
-    el('p', { class: 'prompt fill-sentence' }, [fillBefore(q.before), slot, fillAfter(q.after)]),
+    el('p', { class: 'prompt fill-sentence' }, [...questionNodes(fillBefore(q.before)), slot, ...questionNodes(fillAfter(q.after))]),
     check,
   );
   state.quiz.ui = ui;

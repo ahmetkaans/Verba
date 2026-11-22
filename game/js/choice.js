@@ -1,6 +1,6 @@
 /* js/choice.js - the question screens, part 1: Multiple Choice and True or False (the RENDERERS section continues in fill.js and match.js)
    Provides: renderChoiceButtons, choicePoints, submitChoice, renderMC, renderTF
-   Needs: CONFIG, el, state, submitAnswer */
+   Needs: CONFIG, el, questionNodes, state, submitAnswer */
 'use strict';
 /* =========================================================================
  * RENDERERS (one per question type)
@@ -31,12 +31,12 @@ function submitChoice(correct, label) {
 }
 
 function renderMC(q, area) {
-  area.append(el('p', { class: 'prompt', text: q.prompt }));
+  area.append(el('p', { class: 'prompt' }, questionNodes(q.prompt)));
   renderChoiceButtons(area, q.options, q.answer, submitChoice);
 }
 
 function renderTF(q, area) {
-  area.append(el('p', { class: 'prompt', text: q.prompt }));
+  area.append(el('p', { class: 'prompt' }, questionNodes(q.prompt)));
   renderChoiceButtons(area, ['True', 'False'], q.answer ? 0 : 1, submitChoice, 'two');
 }
 

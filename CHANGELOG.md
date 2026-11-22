@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-22
 
+### Dialogues: one speaker per line
+When two people talk in a question, each person now speaks on a line of their own and the name is bold ("Anna:" or the name before "says"), in Multiple Choice, Fill in the Blanks and True or False, and again on the Results screen and in History. The 28 dialogue questions of the first three A1 themes were changed this way (the words did not change). The question check now gives an error when a new dialogue is written on one line, so later questions will follow the same rule.
+
 ### Closer wrong answers in Greetings and Feelings
 Six questions in the first A1 theme had wrong options that were too far from the answer, too close to it, or two words that mean almost the same thing together. They now have wrong options that make you think a little, and none of them can also be right.
 

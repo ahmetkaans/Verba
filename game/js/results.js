@@ -1,7 +1,7 @@
 /* js/results.js - the results screen
    Provides: statusLabel, renderResultsContent, renderResultsList, renderResultsTip, SHOW_ALL_KEY, showAllQuestions, updateViewPill, allCorrectCard,
              toggleViewPill, initViewPills, showResults
-   Needs: launchConfetti, CONFIG, el, fmt, englishText, noteText, clampScore, state, $, t, questionText, loadPref, savePref, ICONS, renderHistoryDetail,
+   Needs: launchConfetti, CONFIG, el, fmt, englishText, questionSpan, noteText, clampScore, state, $, t, questionText, loadPref, savePref, ICONS, renderHistoryDetail,
           correctAnswerText, showScreen, getNextExercise, stopTimer, recordPlay, resultsTips, tipElement */
 'use strict';
 /* =========================================================================
@@ -83,7 +83,7 @@ function renderResultsList() {
   const cards = quiz.questions.map((q, i) => ({ q, i, rec: quiz.records[i] })).filter(({ rec }) => all || rec.status !== 'correct').map(({ q, i, rec }) => {
     const row = (label, value) => el('p', {}, [el('span', { class: 'label', text: `${label}: ` }), value]);
     const children = [
-      el('p', {}, [el('strong', {}, [`${t('questionNumber', { n: i + 1 })} `, englishText(questionText(q))])]),
+      el('p', {}, [el('strong', {}, [`${t('questionNumber', { n: i + 1 })} `, questionSpan(questionText(q))])]),
       row(t('yourAnswer'), englishText(rec.userAnswer ?? '—')),
       row(t('correctAnswer'), englishText(correctAnswerText(q))),
       row(t('result'), statusLabel(rec, quiz.graded, q.type)),

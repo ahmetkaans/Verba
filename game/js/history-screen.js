@@ -4,7 +4,7 @@
              historyScore, historyTag, historyRow, appendHistoryRows, updateHistoryFooter, renderHistoryList, renderHistoryDetail,
              historyQuitRow, historyPlayAgain, updateHistoryQuitCount, refreshHistoryScreen, openHistory, closeHistory, openHistoryPlay,
              backToHistoryList, showMoreHistory, initHistory
-   Needs: CONFIG, el, fmt, englishText, noteText, state, $, t, ICONS, loadHistory, clearHistory, loadStats, resetStats, overallResult, overallBand,
+   Needs: CONFIG, el, fmt, englishText, questionSpan, noteText, state, $, t, ICONS, loadHistory, clearHistory, loadStats, resetStats, overallResult, overallBand,
           loadPref, savePref, currentTips, tipElement, showAllQuestions, updateViewPill, allCorrectCard, openModal, closeModal,
           showScreen, renderResultsContent, getTopics,
           quizIsReal, startQuiz */
@@ -303,7 +303,7 @@ function renderHistoryDetail() {
     const row = (label, value) => el('p', {}, [el('span', { class: 'label', text: `${label}: ` }), value]);
     const children = [
       el('p', { class: 'history-qhead' }, [el('strong', { text: t('questionNumber', { n: m.n }) }), historyTag(m)]),
-      el('p', {}, [englishText(m.question)]),
+      el('p', {}, [questionSpan(m.question)]),
       row(t('yourAnswer'), englishText(m.userAnswer ?? '—')),
       row(t('correctAnswer'), englishText(m.correctAnswer)),
     ];

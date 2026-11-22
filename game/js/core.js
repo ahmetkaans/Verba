@@ -1,5 +1,5 @@
 /* js/core.js - the state object and the small helper tools (element builder, number format, saved settings, seeded random)
-   Provides: el, fmt, englishText, noteText, clampScore, findById, loadPref, savePref, prefersReducedMotion,
+   Provides: el, fmt, englishText, questionNodes, questionSpan, noteText, clampScore, findById, loadPref, savePref, prefersReducedMotion,
              hashString, mulberry32, makeLorem, state, $
    Needs: CONFIG, t, LOREM_WORDS */
 'use strict';
@@ -46,6 +46,26 @@ function fmt(n) {
 // English content (a question, an answer, an explanation) inside a Turkish line says so with lang="en".
 function englishText(text) {
   return el('span', { lang: 'en', text });
+}
+
+// A question text with a line break ("\n") is a DIALOGUE: each speaker is on a line of their own and the speaker's name is bold
+// ("Anna:" at the start of a line, or the name before "says," / "asks," / "answers,"). A text without a line break is shown as it is.
+// Returns a list of nodes (strings, <strong class="speaker">, <br>) so that Fill in the Blanks can put the blank in the last line.
+function questionNodes(text) {
+  const lines = String(text).split('\n');
+  const nodes = [];
+  lines.forEach((line, i) => {
+    if (i > 0) nodes.push(el('br'));
+    const label = lines.length > 1 ? line.match(/^([A-Z][A-Za-z']*:|(?:The )?[A-Za-z']+(?= (?:says|asks|answers),))/) : null;
+    if (label) nodes.push(el('strong', { class: 'speaker', text: label[1] }), line.slice(label[1].length));
+    else if (line) nodes.push(line);
+  });
+  return nodes;
+}
+
+// A whole question text as one English span (Results, History): englishText() with the dialogue lines.
+function questionSpan(text) {
+  return el('span', { lang: 'en' }, questionNodes(text));
 }
 
 // A record's note is stored as { key, params } (not as a sentence), so it can be shown in either language later.
