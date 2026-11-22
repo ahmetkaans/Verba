@@ -36,14 +36,14 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "September is the month before ___.", "options": ["October", "August", "June", "January"], "explanation": "October comes right after September. So September is the month before October." }
   ],
   "A1|vocabulary|4|mc|veryhard": [
-    { "type": "mc", "prompt": "Anna wants to be a doctor in the ___.", "options": ["future", "period", "month", "birthday"], "explanation": "The future is the time that comes after now. Anna wants to be a doctor then." },
-    { "type": "mc", "prompt": "The clock says 12:00 at night. It is ___.", "options": ["midnight", "afternoon", "hour", "month"], "explanation": "Midnight is 12 o'clock at night. A new day begins then." },
+    { "type": "mc", "prompt": "Anna wants to be a doctor in the ___.", "options": ["future", "present", "moment", "beginning"], "explanation": "The future is the time that comes after now. Anna wants to be a doctor then." },
+    { "type": "mc", "prompt": "The clock says 12:00 at night. It is ___.", "options": ["midnight", "afternoon", "evening", "morning"], "explanation": "Midnight is 12 o'clock at night. A new day begins then." },
     { "type": "mc", "prompt": "Ben is busy now. He will call you ___.", "options": ["later", "very", "really", "together"], "explanation": "Later means after now. Ben is busy now, so he will call after some time." },
     { "type": "mc", "prompt": "The class will ___ at nine, so please sit down.", "options": ["begin", "drive", "wash", "carry"], "explanation": "To begin is to start. The class starts at nine, so please sit down." },
-    { "type": "mc", "prompt": "Please wait a ___. I am coming.", "options": ["moment", "birthday", "weekend", "window"], "explanation": "A moment is a very short time. The person will come very soon." },
+    { "type": "mc", "prompt": "Please wait a ___. I am coming.", "options": ["moment", "period", "future", "beginning"], "explanation": "A moment is a very short time. The person will come very soon." },
     { "type": "mc", "prompt": "A ___ of an hour is 15 minutes.", "options": ["quarter", "half", "minute", "day"], "explanation": "A quarter is one of four parts. Fifteen minutes is one of the four parts of an hour." },
     { "type": "mc", "prompt": "The time that is now is called the ___.", "options": ["present", "future", "period", "midnight"], "targetType": "noun", "explanation": "The present is the time that is now. The future is the time that comes later." },
-    { "type": "mc", "prompt": "Tom stays at the hotel for a ___ of two weeks.", "options": ["period", "birthday", "weekend", "morning"], "explanation": "A period is a time that goes on for days, weeks or months. Tom stays at the hotel for two weeks." }
+    { "type": "mc", "prompt": "Tom stays at the hotel for a ___ of two weeks.", "options": ["period", "month", "week", "day"], "explanation": "A period is a time that goes on for days, weeks or months. Tom stays at the hotel for two weeks." }
   ],
   "A1|vocabulary|4|fill|easy": [
     { "type": "fill", "before": "Today is Friday, and", "after": "is Saturday.", "answer": "tomorrow", "bank": ["tomorrow", "window", "bus"], "targetType": "noun", "explanation": "Tomorrow is the day after today. Saturday is the day after Friday." },
@@ -76,14 +76,14 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Halloween is on October 31. The day after Halloween is in", "after": ".", "answer": "November", "bank": ["November", "September", "December", "January"], "explanation": "The day after October 31 is November 1. So the day after Halloween is in November." }
   ],
   "A1|vocabulary|4|fill|veryhard": [
-    { "type": "fill", "before": "At the", "after": "of the movie, everyone is happy.", "answer": "end", "bank": ["end", "kitchen", "shirt", "month"], "targetType": "noun", "explanation": "The end is the last part of something. The last part of the movie is happy." },
-    { "type": "fill", "before": "At the", "after": "of the class, the teacher says hello.", "answer": "beginning", "bank": ["beginning", "window", "mountain", "hotel"], "explanation": "The beginning is the first part of something. The teacher says hello at the first part of the class." },
-    { "type": "fill", "before": "The cake has eight pieces. Four pieces are one", "after": "of the cake.", "answer": "half", "bank": ["half", "glass", "month", "hour"], "targetType": "noun", "explanation": "Half is one of two parts that look the same. Four pieces of eight are one half." },
-    { "type": "fill", "before": "It is 4:15. Anna says, \"It is a", "after": "after four.\"", "answer": "quarter", "bank": ["quarter", "week", "birthday", "window"], "explanation": "A quarter of an hour is 15 minutes. In the US, we say \"a quarter after four\" for 4:15." },
-    { "type": "fill", "before": "Anna says, \"Bye, Tom! See you", "after": "!\"", "answer": "later", "bank": ["later", "very", "really", "even"], "explanation": "We say \"See you later\" when we will meet again after some time." },
-    { "type": "fill", "before": "There are 60", "after": "in one minute.", "answer": "seconds", "bank": ["seconds", "weeks", "days", "months"], "target": "second", "targetType": "noun", "explanation": "A second is a very short time. Sixty seconds make one minute." },
-    { "type": "fill", "before": "The class starts at nine", "after": ".", "answer": "o'clock", "bank": ["o'clock", "very", "really", "together"], "explanation": "We say \"nine o'clock\" for 9:00, with no extra minutes." },
-    { "type": "fill", "before": "In the", "after": ", Leo lives in a small house. In the future, he wants a big house.", "answer": "present", "bank": ["present", "hospital", "mountain", "month"], "targetType": "noun", "explanation": "The present is the time that is now. Leo lives in a small house now." }
+    { "type": "fill", "before": "At the", "after": "of the movie, everyone is happy.", "answer": "end", "bank": ["end", "period", "moment", "future"], "targetType": "noun", "explanation": "The end is the last part of something. The last part of the movie is happy." },
+    { "type": "fill", "before": "At the", "after": "of the class, the teacher says hello.", "answer": "beginning", "bank": ["beginning", "future", "present", "period"], "explanation": "The beginning is the first part of something. The teacher says hello at the first part of the class." },
+    { "type": "fill", "before": "The cake has eight pieces. Four pieces are one", "after": "of the cake.", "answer": "half", "bank": ["half", "quarter", "third", "fourth"], "targetType": "noun", "explanation": "Half is one of two parts that look the same. Four pieces of eight are one half." },
+    { "type": "fill", "before": "It is 4:15. Amy says, \"It is a", "after": "after four.\"", "answer": "quarter", "bank": ["quarter", "half", "minute", "second"], "explanation": "A quarter of an hour is 15 minutes. In the US, we say \"a quarter after four\" for 4:15." },
+    { "type": "fill", "before": "Emma says, \"Bye, Tom! See you", "after": "!\"", "answer": "later", "bank": ["later", "very", "really", "even"], "explanation": "We say \"See you later\" when we will meet again after some time." },
+    { "type": "fill", "before": "There are 60", "after": "in one minute.", "answer": "seconds", "bank": ["seconds", "minutes", "hours", "days"], "target": "second", "targetType": "noun", "explanation": "A second is a very short time. Sixty seconds make one minute." },
+    { "type": "fill", "before": "The class starts at nine", "after": ".", "answer": "o'clock", "bank": ["o'clock", "hour", "minute", "second"], "explanation": "We say \"nine o'clock\" for 9:00, with no extra minutes." },
+    { "type": "fill", "before": "In the", "after": ", Leo lives in a small house. In the future, he wants a big house.", "answer": "present", "bank": ["present", "future", "period", "moment"], "targetType": "noun", "explanation": "The present is the time that is now. Leo lives in a small house now." }
   ],
   "A1|vocabulary|4|tf|easy": [
     { "type": "tf", "prompt": "It is dark at night.", "answer": true, "target": "night", "explanation": "Yes. Night is the dark time of the day, and many people sleep then." },

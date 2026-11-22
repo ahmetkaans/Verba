@@ -46,13 +46,13 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "The city is 80 miles from here. It is ___ miles.", "options": ["eighty", "eighteen", "seventy", "ninety"], "explanation": "In 80, the 8 comes first: eighty. In 18, the 1 comes first and the 8 comes next: eighteen." }
   ],
   "A1|vocabulary|1|fill|easy": [
-    { "type": "fill", "before": "The class has 9 boys. There are", "after": "boys in the class.", "answer": "nine", "bank": ["nine", "six", "ten"], "explanation": "The number 9 is \"nine\"." },
+    { "type": "fill", "before": "The class has 9 boys. There are", "after": "boys in the class.", "answer": "nine", "bank": ["nine", "six", "four"], "explanation": "The number 9 is \"nine\"." },
     { "type": "fill", "before": "Open your book at page 6. Please read page", "after": ".", "answer": "six", "bank": ["six", "three", "eight"], "explanation": "The number 6 is \"six\"." },
-    { "type": "fill", "before": "One, two,", "after": ", four.", "answer": "three", "bank": ["three", "eight", "ten"], "explanation": "The numbers go: one, two, three, four." },
+    { "type": "fill", "before": "One, two,", "after": ", four.", "answer": "three", "bank": ["three", "eight", "seven"], "explanation": "The numbers go: one, two, three, four." },
     { "type": "fill", "before": "Tom says the numbers: eight, nine,", "after": ".", "answer": "ten", "bank": ["ten", "five", "one"], "explanation": "After nine comes ten." },
     { "type": "fill", "before": "Mia's bus is number 1. She takes bus", "after": ".", "answer": "one", "bank": ["one", "five", "nine"], "target": "one", "targetType": "number", "explanation": "The number 1 is \"one\". Mia takes bus one." },
     { "type": "fill", "before": "Ali lives at 7 Park Street. He lives at number", "after": "Park Street.", "answer": "seven", "bank": ["seven", "one", "nine"], "explanation": "The number 7 is \"seven\". Ali lives at number seven." },
-    { "type": "fill", "before": "The bus leaves at 5:30. It leaves at", "after": "thirty.", "answer": "five", "bank": ["five", "seven", "ten"], "explanation": "We say 5:30 \"five thirty\". The number 5 is \"five\"." },
+    { "type": "fill", "before": "The bus leaves at 5:30. It leaves at", "after": "thirty.", "answer": "five", "bank": ["five", "seven", "three"], "explanation": "We say 5:30 \"five thirty\". The number 5 is \"five\"." },
     { "type": "fill", "before": "Mia's phone number is 555-0128. The last number is", "after": ".", "answer": "eight", "bank": ["eight", "three", "five"], "explanation": "The last number in 555-0128 is 8, and 8 is \"eight\"." }
   ],
   "A1|vocabulary|1|fill|medium": [
@@ -69,21 +69,21 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Eighteen, nineteen,", "after": ".", "answer": "twenty", "bank": ["twenty", "twelve", "thirty", "fifteen"], "explanation": "The numbers go: eighteen, nineteen, twenty." },
     { "type": "fill", "before": "Ten,", "after": ", twelve.", "answer": "eleven", "bank": ["eleven", "thirteen", "fifteen", "twenty"], "explanation": "The numbers go: ten, eleven, twelve." },
     { "type": "fill", "before": "The big hotel has 17 floors. It has", "after": "floors.", "answer": "seventeen", "bank": ["seventeen", "seventy", "eighteen", "sixteen"], "explanation": "In 17, the 1 comes first: seventeen. In 70, the 7 comes first: seventy." },
-    { "type": "fill", "before": "The teacher says, \"Read page 14.\" Mia says, \"Page", "after": "?\"", "answer": "fourteen", "bank": ["fourteen", "forty", "sixteen", "twelve"], "explanation": "The number 14 ends with \"-teen\": fourteen. The number 40 is \"forty\"." },
-    { "type": "fill", "before": "It is 12:30. It is", "after": "thirty.", "answer": "twelve", "bank": ["twelve", "ten", "nineteen", "fourteen"], "explanation": "We say 12:30 \"twelve thirty\". The number 12 is \"twelve\"." },
-    { "type": "fill", "before": "Ali says, \"The test is 15 minutes long.\" Ken says, \"OK,", "after": "minutes.\"", "answer": "fifteen", "bank": ["fifteen", "fifty", "fourteen", "eleven"], "explanation": "The number 15 is \"fifteen\" and the number 50 is \"fifty\"." },
+    { "type": "fill", "before": "The teacher says, \"Read page 14.\" Amy says, \"Page", "after": "?\"", "answer": "fourteen", "bank": ["fourteen", "forty", "sixteen", "twelve"], "explanation": "The number 14 ends with \"-teen\": fourteen. The number 40 is \"forty\"." },
+    { "type": "fill", "before": "It is 12:30. It is", "after": "thirty.", "answer": "twelve", "bank": ["twelve", "nine", "nineteen", "fourteen"], "explanation": "We say 12:30 \"twelve thirty\". The number 12 is \"twelve\"." },
+    { "type": "fill", "before": "Carlos says, \"The test is 15 minutes long.\" John says, \"OK,", "after": "minutes.\"", "answer": "fifteen", "bank": ["fifteen", "fifty", "fourteen", "eleven"], "explanation": "The number 15 is \"fifteen\" and the number 50 is \"fifty\"." },
     { "type": "fill", "before": "The ticket is $19. It is", "after": "dollars.", "answer": "nineteen", "bank": ["nineteen", "ninety", "eleven", "twelve"], "explanation": "The number 19 ends with \"-teen\": nineteen. The number 90 is \"ninety\"." },
-    { "type": "fill", "before": "Ken says, \"I am in room 13.\" Mia asks, \"Room", "after": "?\"", "answer": "thirteen", "bank": ["thirteen", "thirty", "fourteen", "eleven"], "explanation": "The number 13 ends with \"-teen\": thirteen. The number 30 ends with \"-ty\": thirty." }
+    { "type": "fill", "before": "Leo says, \"I am in room 13.\" Elif asks, \"Room", "after": "?\"", "answer": "thirteen", "bank": ["thirteen", "thirty", "fourteen", "eleven"], "explanation": "The number 13 ends with \"-teen\": thirteen. The number 30 ends with \"-ty\": thirty." }
   ],
   "A1|vocabulary|1|fill|veryhard": [
     { "type": "fill", "before": "An hour has", "after": "minutes.", "answer": "sixty", "bank": ["sixty", "sixteen", "seventy", "fifty"], "explanation": "An hour has sixty minutes. The number 60 is \"sixty\"." },
     { "type": "fill", "before": "Ten, twenty,", "after": ", forty.", "answer": "thirty", "bank": ["thirty", "thirteen", "fifty", "sixty"], "explanation": "The numbers go up by tens: ten, twenty, thirty, forty." },
     { "type": "fill", "before": "The old tree is 100 years old. It is one", "after": "years old.", "answer": "hundred", "bank": ["hundred", "thousand", "million", "seventy"], "explanation": "The number 100 is \"one hundred\". One thousand is much more than that." },
-    { "type": "fill", "before": "Mia says, \"The bag is $40.\" Ali says, \"OK,", "after": "dollars.\"", "answer": "forty", "bank": ["forty", "fourteen", "fifty", "thirty"], "explanation": "The number 40 is \"forty\". Forty has no \"u\"." },
+    { "type": "fill", "before": "Kate says, \"The bag is $40.\" David says, \"OK,", "after": "dollars.\"", "answer": "forty", "bank": ["forty", "twenty", "eighty", "thirty"], "explanation": "The number 40 is \"forty\". Forty has no \"u\"." },
     { "type": "fill", "before": "The city has 1,000,000 people. It has a", "after": "people.", "answer": "million", "bank": ["million", "hundred", "thousand", "ninety"], "explanation": "The number 1,000,000 is \"one million\". A million is much more than a thousand." },
-    { "type": "fill", "before": "Eighty,", "after": ", one hundred.", "answer": "ninety", "bank": ["ninety", "nineteen", "forty", "seventy"], "explanation": "The numbers go up by tens: eighty, ninety, one hundred." },
+    { "type": "fill", "before": "Eighty,", "after": ", one hundred.", "answer": "ninety", "bank": ["ninety", "nineteen", "forty", "twenty"], "explanation": "The numbers go up by tens: eighty, ninety, one hundred." },
     { "type": "fill", "before": "Half of 100 is", "after": ".", "answer": "fifty", "bank": ["fifty", "fifteen", "forty", "sixty"], "explanation": "One of two same parts of 100 is 50, and 50 is \"fifty\"." },
-    { "type": "fill", "before": "Ken says, \"The bus has 70 students.\" Mia says, \"Oh,", "after": "students!\"", "answer": "seventy", "bank": ["seventy", "seventeen", "sixty", "eighty"], "explanation": "The number 70 is \"seventy\". The number 17 is \"seventeen\"." }
+    { "type": "fill", "before": "Lucas says, \"The bus has 70 students.\" Fatima says, \"Oh,", "after": "students!\"", "answer": "seventy", "bank": ["seventy", "seventeen", "sixty", "eighty"], "explanation": "The number 70 is \"seventy\". The number 17 is \"seventeen\"." }
   ],
   "A1|vocabulary|1|tf|easy": [
     { "type": "tf", "prompt": "The number 9 is \"nine\".", "answer": true, "target": "nine", "explanation": "We write 9 and we say \"nine\"." },

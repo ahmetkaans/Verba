@@ -36,13 +36,13 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "After the game, Sam is hot and takes a cold ___.", "options": ["shower", "foot", "head", "key"], "explanation": "A shower is a way to wash with water that falls on you. A cold one is nice when you are hot." }
   ],
   "A1|vocabulary|10|mc|veryhard": [
-    { "type": "mc", "prompt": "Good food and sleep are important for your ___.", "options": ["health", "doctor", "shoes", "windows"], "explanation": "Your health is how well your body is. Food and sleep help it." },
+    { "type": "mc", "prompt": "Good food and sleep are important for your ___.", "options": ["health", "doctor", "advice", "exercise"], "explanation": "Your health is how well your body is. Food and sleep help it." },
     { "type": "mc", "prompt": "Fruit and vegetables are ___ food.", "options": ["healthy", "sick", "hungry", "quiet"], "explanation": "Healthy food is good for your body." },
     { "type": "mc", "prompt": "Please speak again. I cannot ___ you.", "options": ["hear", "wash", "cook", "build"], "explanation": "To hear is to know about a sound with your ears. The person cannot hear you well." },
-    { "type": "mc", "prompt": "My doctor gives me good ___: eat well and sleep.", "options": ["advice", "hospital", "shower", "chairs"], "explanation": "Advice is a good idea that a person tells you. The doctor says to eat well and sleep." },
-    { "type": "mc", "prompt": "A good ___ has fruit and vegetables, not only chocolate.", "options": ["diet", "shower", "nurse", "desk"], "explanation": "Your diet is the food and drink that you usually have." },
+    { "type": "mc", "prompt": "My doctor gives me good ___: eat well and sleep.", "options": ["advice", "hospital", "shower", "doctor"], "explanation": "Advice is a good idea that a person tells you. The doctor says to eat well and sleep." },
+    { "type": "mc", "prompt": "A good ___ has fruit and vegetables, not only chocolate.", "options": ["diet", "hospital", "nurse", "exercise"], "explanation": "Your diet is the food and drink that you usually have." },
     { "type": "mc", "prompt": "To get strong, you should ___ three times a week.", "options": ["exercise", "cook", "read", "wash"], "targetType": "verb", "explanation": "To exercise is to run, swim or play sports to be strong." },
-    { "type": "mc", "prompt": "People who play a ___ every week are often strong.", "options": ["sport", "diet", "shower", "tree"], "explanation": "A sport is a game like tennis. Playing one often helps you to be strong." },
+    { "type": "mc", "prompt": "People who play a ___ every week are often strong.", "options": ["sport", "diet", "nurse", "hospital"], "explanation": "A sport is a game like tennis. Playing one often helps you to be strong." },
     { "type": "mc", "prompt": "Dad is tired after work, so he wants to ___ and do nothing.", "options": ["relax", "cook", "wash", "build"], "explanation": "To relax is to feel good and not work. Dad is tired, so he wants to stop working." }
   ],
   "A1|vocabulary|10|fill|easy": [
@@ -59,16 +59,16 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Mia has a small bag on her left", "after": ".", "answer": "arm", "bank": ["arm", "chair", "table"], "explanation": "Your arm is the long part of your body with your hand at the end. Mia carries a bag on it." },
     { "type": "fill", "before": "Ali runs very fast because he has long", "after": ".", "answer": "legs", "bank": ["legs", "ears", "books"], "target": "leg", "explanation": "You run with your legs. Long legs help Ali to run fast." },
     { "type": "fill", "before": "My sister has short black", "after": "and a small nose.", "answer": "hair", "bank": ["hair", "shoes", "books"], "explanation": "Hair grows on your head. It can be short or long." },
-    { "type": "fill", "before": "Emma eats an apple with her", "after": ".", "answer": "teeth", "bank": ["teeth", "shoes", "books"], "target": "tooth", "explanation": "Teeth are in your mouth. You eat an apple with them." },
+    { "type": "fill", "before": "Emma eats an apple with her", "after": ".", "answer": "teeth", "bank": ["teeth", "hats", "books"], "target": "tooth", "explanation": "Teeth are in your mouth. You eat an apple with them." },
     { "type": "fill", "before": "Please stand up and turn around so I can see your", "after": ".", "answer": "back", "bank": ["back", "door", "tree"], "targetType": "noun", "explanation": "Your back is the part of your body behind you. When you turn around, a person can see it." },
     { "type": "fill", "before": "Swimming is good for your", "after": ".", "answer": "body", "bank": ["body", "door", "shirt"], "explanation": "Your body is all of you, from your head to your feet. Swimming helps it to be strong." },
     { "type": "fill", "before": "Ken eats three sandwiches because he is very", "after": ".", "answer": "hungry", "bank": ["hungry", "tall", "quiet"], "explanation": "When you are hungry, you want to eat. Ken eats a lot because he wants food." },
-    { "type": "fill", "before": "After the run, Tom is very", "after": ", so he drinks juice.", "answer": "thirsty", "bank": ["thirsty", "tall", "quiet"], "explanation": "When you are thirsty, you want to drink. Tom drinks juice for that." }
+    { "type": "fill", "before": "After the run, Tom is very", "after": ", so he drinks juice.", "answer": "thirsty", "bank": ["thirsty", "young", "quiet"], "explanation": "When you are thirsty, you want to drink. Tom drinks juice for that." }
   ],
   "A1|vocabulary|10|fill|hard": [
-    { "type": "fill", "before": "Dad goes to bed at eight because he is very", "after": ".", "answer": "tired", "bank": ["tired", "tall", "young", "quiet"], "explanation": "When you are tired, you want to sleep. Dad goes to bed early because he is tired." },
-    { "type": "fill", "before": "The doctor says, \"You are", "after": ", so please stay in bed.\"", "answer": "sick", "bank": ["sick", "tall", "young", "quiet"], "explanation": "A sick person is not well. The doctor says to stay in bed." },
-    { "type": "fill", "before": "Ali was sick on Monday, but today he is", "after": "again.", "answer": "fine", "bank": ["fine", "tall", "young", "old"], "explanation": "Fine means well. Ali is not sick today." },
+    { "type": "fill", "before": "Dad goes to bed at eight because he is very", "after": ".", "answer": "tired", "bank": ["tired", "fast", "young", "short"], "explanation": "When you are tired, you want to sleep. Dad goes to bed early because he is tired." },
+    { "type": "fill", "before": "The doctor says, \"You are", "after": ", so please stay in bed.\"", "answer": "sick", "bank": ["sick", "quiet", "short", "young"], "explanation": "A sick person is not well. The doctor says to stay in bed." },
+    { "type": "fill", "before": "Ali was sick on Monday, but today he is", "after": "again.", "answer": "fine", "bank": ["fine", "rich", "slow", "old"], "explanation": "Fine means well. Ali is not sick today." },
     { "type": "fill", "before": "Mia is sick, so she goes to see the", "after": ".", "answer": "doctor", "bank": ["doctor", "bank", "library", "hotel"], "explanation": "A doctor helps sick people to get well. Mia goes to see one." },
     { "type": "fill", "before": "At the hospital, a", "after": "gives Anna a glass of water.", "answer": "nurse", "bank": ["nurse", "farmer", "singer", "teacher"], "explanation": "A nurse works with doctors and helps sick people in a hospital." },
     { "type": "fill", "before": "Sick people stay in a", "after": "and doctors help them.", "answer": "hospital", "bank": ["hospital", "bank", "library", "gym"], "explanation": "A hospital is a big building where doctors and nurses help sick people." },
@@ -76,13 +76,13 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Anna takes a hot", "after": "every morning.", "answer": "shower", "bank": ["shower", "face", "foot", "desk"], "explanation": "A shower is a way to wash with water that falls on you." }
   ],
   "A1|vocabulary|10|fill|veryhard": [
-    { "type": "fill", "before": "Thank you for asking about my", "after": ". I am fine now.", "answer": "health", "bank": ["health", "shower", "shoes", "doors"], "explanation": "Your health is how well your body is. The person says she is well now." },
-    { "type": "fill", "before": "Ben eats well and sleeps well, so he is", "after": ".", "answer": "healthy", "bank": ["healthy", "sick", "tired", "quiet"], "explanation": "Healthy means good for your body, or not sick. Good food and good sleep help you to be healthy." },
+    { "type": "fill", "before": "Thank you for asking about my", "after": ". I am fine now.", "answer": "health", "bank": ["health", "shower", "advice", "hospital"], "explanation": "Your health is how well your body is. The person says she is well now." },
+    { "type": "fill", "before": "Ben eats well and sleeps well, so he is", "after": ".", "answer": "healthy", "bank": ["healthy", "sick", "tired", "busy"], "explanation": "Healthy means good for your body, or not sick. Good food and good sleep help you to be healthy." },
     { "type": "fill", "before": "Do you", "after": "the music from the next room?", "answer": "hear", "bank": ["hear", "wash", "cook", "build"], "explanation": "To hear is to know about a sound with your ears." },
-    { "type": "fill", "before": "Anna asks her teacher for", "after": "about her homework.", "answer": "advice", "bank": ["advice", "health", "diet", "windows"], "explanation": "Advice is a good idea that a person tells you. Anna wants her teacher's help with homework." },
-    { "type": "fill", "before": "Ali's", "after": "is rice, fish and fruit.", "answer": "diet", "bank": ["diet", "health", "doctor", "shoe"], "explanation": "Your diet is the food and drink that you usually have." },
-    { "type": "fill", "before": "Walking to school every day is good", "after": ".", "answer": "exercise", "bank": ["exercise", "doctor", "rice", "milk"], "targetType": "noun", "explanation": "Exercise is moving your body to stay strong. Walking every day is good exercise." },
-    { "type": "fill", "before": "My brother plays a", "after": "at school: basketball.", "answer": "sport", "bank": ["sport", "shower", "doctor", "tree"], "explanation": "A sport is a game like tennis. Basketball is a sport." },
+    { "type": "fill", "before": "Amy asks her teacher for", "after": "about her homework.", "answer": "advice", "bank": ["advice", "health", "diet", "nurse"], "explanation": "Advice is a good idea that a person tells you. Amy wants her teacher's help with homework." },
+    { "type": "fill", "before": "Ali's", "after": "is rice, fish and fruit.", "answer": "diet", "bank": ["diet", "health", "doctor", "exercise"], "explanation": "Your diet is the food and drink that you usually have." },
+    { "type": "fill", "before": "Walking to school every day is good", "after": ".", "answer": "exercise", "bank": ["exercise", "doctor", "diet", "hospital"], "targetType": "noun", "explanation": "Exercise is moving your body to stay strong. Walking every day is good exercise." },
+    { "type": "fill", "before": "My brother plays a", "after": "at school: basketball.", "answer": "sport", "bank": ["sport", "shower", "nurse", "diet"], "explanation": "A sport is a game like tennis. Basketball is a sport." },
     { "type": "fill", "before": "Please sit down and", "after": ". You work too much.", "answer": "relax", "bank": ["relax", "cook", "wash", "build"], "explanation": "To relax is to feel good and not work. This person works too much and needs to stop working." }
   ],
   "A1|vocabulary|10|tf|easy": [

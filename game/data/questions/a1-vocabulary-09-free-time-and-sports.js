@@ -26,24 +26,24 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Many people go to the ___ to hear a singer and a band.", "options": ["concert", "bank", "hospital", "bus"], "explanation": "A concert is a time when singers or a band play music for many people." }
   ],
   "A1|vocabulary|9|mc|hard": [
-    { "type": "mc", "prompt": "Ken and Mia see a movie at the ___ on Saturday night.", "options": ["theater", "bank", "hospital", "gym"], "explanation": "A theater is a place where you watch a play or a movie." },
+    { "type": "mc", "prompt": "Ken and Mia see a movie at the ___ on Saturday night.", "options": ["theater", "bank", "gym", "pool"], "explanation": "A theater is a place where you watch a play or a movie." },
     { "type": "mc", "prompt": "The school has a big ___ on Saturday. Parents, children and teachers all come.", "options": ["event", "camera", "magazine", "bank"], "explanation": "An event is something special that happens. A big day at school is an event." },
     { "type": "mc", "prompt": "We watch a funny ___ on TV every Sunday.", "options": ["show", "guitar", "piano", "camera"], "targetType": "noun", "explanation": "A show is something that you watch on TV or at a theater." },
     { "type": "mc", "prompt": "Leo ___ every day: he runs and plays tennis.", "options": ["exercises", "paints", "draws", "sings"], "target": "exercise", "targetType": "verb", "explanation": "To exercise is to run, swim or play sports to be strong. Leo runs and plays tennis." },
     { "type": "mc", "prompt": "Mom has no time for ___, so she does not visit stores.", "options": ["shopping", "swimming", "dancing", "reading"], "explanation": "Shopping is buying things in stores. Mom does not visit stores, so she has no time for shopping." },
     { "type": "mc", "prompt": "A person who sings songs at a concert is a ___.", "options": ["singer", "player", "doctor", "farmer"], "explanation": "A singer is a person who sings, for example at a concert." },
     { "type": "mc", "prompt": "My hobby is ___: I make a new meal every Sunday.", "options": ["cooking", "swimming", "dancing", "reading"], "explanation": "Cooking is making food ready to eat. Making a meal every Sunday is a hobby." },
-    { "type": "mc", "prompt": "Every summer, our town has a music ___ in the park. People come from many cities.", "options": ["festival", "gym", "rule", "hotel"], "explanation": "A festival is a big event with music, food or other fun things, for many people." }
+    { "type": "mc", "prompt": "Every summer, our town has a music ___ in the park. People come from many cities.", "options": ["festival", "rule", "picture", "magazine"], "explanation": "A festival is a big event with music, food or other fun things, for many people." }
   ],
   "A1|vocabulary|9|mc|veryhard": [
     { "type": "mc", "prompt": "Mia wants to play the piano well, so she must ___ every day.", "options": ["practice", "swim", "paint", "climb"], "targetType": "verb", "explanation": "To practice is to do something many times to get better. Mia plays the piano every day." },
     { "type": "mc", "prompt": "This old ___ shows my grandmother as a young girl.", "options": ["photograph", "piano", "ball", "guitar"], "explanation": "A photograph is a picture that a camera makes. Many families keep old photographs for many years." },
-    { "type": "mc", "prompt": "Our team plays a ___ against the red team on Sunday.", "options": ["match", "rule", "guitar", "camera"], "targetType": "noun", "explanation": "A match is a game between two teams or two players." },
+    { "type": "mc", "prompt": "Our team plays a ___ against the red team on Sunday.", "options": ["match", "rule", "ball", "band"], "targetType": "noun", "explanation": "A match is a game between two teams or two players." },
     { "type": "mc", "prompt": "I can hear a ___ in the kitchen.", "options": ["sound", "picture", "magazine", "ball"], "targetType": "noun", "explanation": "A sound is something that you hear." },
-    { "type": "mc", "prompt": "The ___ game of the year is on Sunday. It is the last game.", "options": ["final", "real", "tired", "angry"], "explanation": "Final means last, at the end. The last game of the year is the final game." },
+    { "type": "mc", "prompt": "The ___ game of the year is on Sunday. It is the last game.", "options": ["final", "real", "popular", "favorite"], "explanation": "Final means last, at the end. The last game of the year is the final game." },
     { "type": "mc", "prompt": "Everybody likes this singer's songs, so she is very ___.", "options": ["popular", "terrible", "real", "boring"], "explanation": "Popular means that many people like it or like her." },
     { "type": "mc", "prompt": "The concert was ___! I loved it.", "options": ["fantastic", "terrible", "boring", "hungry"], "explanation": "Fantastic means very, very good. You loved the concert, so it was a very good one." },
-    { "type": "mc", "prompt": "We had a ___ day at the beach. I want to go again.", "options": ["wonderful", "terrible", "boring", "tired"], "explanation": "Wonderful means very good, and it makes you happy. You want to go again after a wonderful day." }
+    { "type": "mc", "prompt": "We had a ___ day at the beach. I want to go again.", "options": ["wonderful", "terrible", "boring", "slow"], "explanation": "Wonderful means very good, and it makes you happy. You want to go again after a wonderful day." }
   ],
   "A1|vocabulary|9|fill|easy": [
     { "type": "fill", "before": "Please", "after": "a house on your paper.", "answer": "draw", "bank": ["draw", "drink", "wash"], "explanation": "To draw is to make a picture with a pencil. You can draw a house on paper." },
@@ -57,12 +57,12 @@ Object.assign(GAME_DATA.questions, {
   ],
   "A1|vocabulary|9|fill|medium": [
     { "type": "fill", "before": "Ali needs some blue", "after": "for the wall.", "answer": "paint", "bank": ["paint", "milk", "rice"], "targetType": "noun", "explanation": "Paint is something with color that you put on a wall. Ali wants blue paint." },
-    { "type": "fill", "before": "My brother is in a", "after": ". They play at parties on Saturday.", "answer": "band", "bank": ["band", "door", "tree"], "explanation": "A band is a group of people who play music together. This band plays at parties." },
+    { "type": "fill", "before": "My brother is in a", "after": ". They play at parties on Saturday.", "answer": "band", "bank": ["band", "bag", "tree"], "explanation": "A band is a group of people who play music together. This band plays at parties." },
     { "type": "fill", "before": "Mia cannot find her keys. She", "after": "them at school.", "answer": "lost", "bank": ["lost", "sang", "slept"], "target": "lose", "explanation": "To lose something is to not know where it is. Mia cannot find her keys." },
-    { "type": "fill", "before": "Dad reads a", "after": "about sports on the train.", "answer": "magazine", "bank": ["magazine", "shoe", "door"], "explanation": "A magazine has pictures and stories. A new one comes out every week or month." },
+    { "type": "fill", "before": "Dad reads a", "after": "about sports on the train.", "answer": "magazine", "bank": ["magazine", "shoe", "bread"], "explanation": "A magazine has pictures and stories. A new one comes out every week or month." },
     { "type": "fill", "before": "Ken plays", "after": "with ten friends. There are two teams and one ball.", "answer": "football", "bank": ["football", "piano", "magazine"], "explanation": "Football is a sport with two teams and a ball." },
-    { "type": "fill", "before": "Sam is on the school", "after": "team.", "answer": "baseball", "bank": ["baseball", "piano", "door"], "explanation": "Baseball is a sport with a small ball and two teams." },
-    { "type": "fill", "before": "Leo plays the", "after": "and sings songs with his band.", "answer": "guitar", "bank": ["guitar", "shoe", "tree"], "explanation": "A guitar is a music thing that many singers and bands play." },
+    { "type": "fill", "before": "Sam is on the school", "after": "team.", "answer": "baseball", "bank": ["baseball", "piano", "hat"], "explanation": "Baseball is a sport with a small ball and two teams." },
+    { "type": "fill", "before": "Leo plays the", "after": "and sings songs with his band.", "answer": "guitar", "bank": ["guitar", "hat", "tree"], "explanation": "A guitar is a music thing that many singers and bands play." },
     { "type": "fill", "before": "Anna sits at the", "after": "and plays music with her hands.", "answer": "piano", "bank": ["piano", "band", "magazine"], "explanation": "A piano is a big music thing with black and white keys." }
   ],
   "A1|vocabulary|9|fill|hard": [
@@ -71,14 +71,14 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "Please", "after": "me your new camera.", "answer": "show", "bank": ["show", "lose", "win", "sing"], "targetType": "verb", "explanation": "To show is to let a person see something. I want to see your new camera." },
     { "type": "fill", "before": "Leo does exercise at the", "after": "three times a week.", "answer": "gym", "bank": ["gym", "bank", "library", "office"], "explanation": "A gym is a big room or building where people do exercise and play sports." },
     { "type": "fill", "before": "Tom goes to the book", "after": "on Tuesday. They read and talk.", "answer": "club", "bank": ["club", "piano", "camera", "rule"], "explanation": "A club is a group of people who meet to do something together, like reading." },
-    { "type": "fill", "before": "Mia loves", "after": "because she likes long stories.", "answer": "reading", "bank": ["reading", "swimming", "dancing", "shopping"], "explanation": "Reading is looking at words and understanding them. Mia likes long stories." },
-    { "type": "fill", "before": "The water in the", "after": "is warm, and the children swim all day.", "answer": "pool", "bank": ["pool", "piano", "magazine", "guitar"], "explanation": "A pool is a place with water where people swim." },
+    { "type": "fill", "before": "Amy loves", "after": "because she likes long stories.", "answer": "reading", "bank": ["reading", "swimming", "dancing", "shopping"], "explanation": "Reading is looking at words and understanding them. Amy likes long stories." },
+    { "type": "fill", "before": "The water in the", "after": "is warm, and the children swim all day.", "answer": "pool", "bank": ["pool", "piano", "photo", "guitar"], "explanation": "A pool is a place with water where people swim." },
     { "type": "fill", "before": "Swimming and dancing are my favorite", "after": "in my free time.", "answer": "activities", "bank": ["activities", "rules", "cameras", "players"], "target": "activity", "explanation": "An activity is something that you do, like a game or a sport." }
   ],
   "A1|vocabulary|9|fill|veryhard": [
-    { "type": "fill", "before": "Tom has a big", "after": "in music.", "answer": "interest", "bank": ["interest", "rule", "picture", "piano"], "targetType": "noun", "explanation": "An interest is when you want to learn or do more of something. Tom wants to know more about music." },
-    { "type": "fill", "before": "The", "after": "on my desk shows my family at the beach.", "answer": "photograph", "bank": ["photograph", "guitar", "piano", "window"], "explanation": "A photograph is a picture that a camera makes. This one shows a family at the beach." },
-    { "type": "fill", "before": "There is one", "after": "in this room: Everyone must be quiet.", "answer": "rule", "bank": ["rule", "camera", "piano", "bag"], "explanation": "A rule says what you can and cannot do. Here it says to be quiet." },
+    { "type": "fill", "before": "Tom has a big", "after": "in music.", "answer": "interest", "bank": ["interest", "rule", "picture", "story"], "targetType": "noun", "explanation": "An interest is when you want to learn or do more of something. Tom wants to know more about music." },
+    { "type": "fill", "before": "The", "after": "on my desk shows my family at the beach.", "answer": "photograph", "bank": ["photograph", "guitar", "story", "ball"], "explanation": "A photograph is a picture that a camera makes. This one shows a family at the beach." },
+    { "type": "fill", "before": "There is one", "after": "in this room: Everyone must be quiet.", "answer": "rule", "bank": ["rule", "camera", "ball", "guitar"], "explanation": "A rule says what you can and cannot do. Here it says to be quiet." },
     { "type": "fill", "before": "Your new song", "after": "nice!", "answer": "sounds", "bank": ["sounds", "dances", "paints", "swims"], "target": "sound", "targetType": "verb", "explanation": "To sound nice is to be nice when you hear it." },
     { "type": "fill", "before": "Our team has ten", "after": ", and the other team has eight.", "answer": "points", "bank": ["points", "hours", "cameras", "guitars"], "target": "point", "explanation": "A point is what a team gets when it does well in a game." },
     { "type": "fill", "before": "This is a", "after": "story. It happened to my grandmother.", "answer": "real", "bank": ["real", "hungry", "tired", "young"], "explanation": "Real means true. This story is true: it happened to my grandmother." },

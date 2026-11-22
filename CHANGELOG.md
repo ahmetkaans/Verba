@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-22
 
+### Better wrong answers in the A1 vocabulary quizzes
+In many Multiple Choice and Fill in the Blank questions, the wrong options were from a different topic and were too easy to cross out. They are now closer to the answer, more at Hard and Very Hard, and none of them can also be a right answer. Wrong options and names that came back too often in one theme were swapped, so the quizzes feel less repeated. No question text, answer or explanation was rewritten.
+
 ### Bigger names in the menu tree
 On the Word list, Settings and History, "Main menu" and the page name in the menu tree are now the larger main line instead of the small gray caption, in the same style as the game menus' tree.
 

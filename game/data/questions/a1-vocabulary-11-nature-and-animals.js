@@ -40,7 +40,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Flowers need water and sun to ___.", "options": ["grow", "stay", "sleep", "wait"], "explanation": "When a plant grows, it gets bigger. It needs water and sun to do that." },
     { "type": "mc", "prompt": "Do not play with ___: it is very hot.", "options": ["fire", "ice", "snow", "rain"], "explanation": "Fire is very hot and can be dangerous. Ice, snow and rain are cold." },
     { "type": "mc", "prompt": "Do not go near that big river in winter. It is ___.", "options": ["dangerous", "new", "warm", "sunny"], "explanation": "Dangerous means that something very bad can happen to you." },
-    { "type": "mc", "prompt": "Anna has a small green ___ in her room. She gives it water every day.", "options": ["plant", "chair", "shoe", "phone"], "explanation": "A plant is a living thing, like a flower. It needs water." },
+    { "type": "mc", "prompt": "Anna has a small green ___ in her room. She gives it water every day.", "options": ["plant", "cat", "dog", "pig"], "explanation": "A plant is a living thing, like a flower. It needs water." },
     { "type": "mc", "prompt": "A bird flies in the ___ above the trees.", "options": ["air", "fire", "ice", "bread"], "explanation": "Air is all around us. Birds fly in the air." },
     { "type": "mc", "prompt": "The sun and all the stars are very far from us, in ___.", "options": ["space", "snow", "rain", "fire"], "explanation": "Space is the very big place with the sun and the stars in it." },
     { "type": "mc", "prompt": "The sun gives us ___ in the day.", "options": ["light", "ice", "rain", "snow"], "targetType": "noun", "explanation": "Light is what lets us see. The sun gives us light in the day." }
@@ -73,17 +73,17 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "The water in the pool is not cold. It is", "after": ", and we can swim.", "answer": "warm", "bank": ["warm", "dangerous", "quick", "high"], "explanation": "Warm means not cold and not hot. Warm water is nice for swimming." },
     { "type": "fill", "before": "The", "after": "today is sunny and warm, so let's go out.", "answer": "weather", "bank": ["weather", "flower", "umbrella", "star"], "explanation": "The weather is the sun, the rain, the snow and the wind of the day." },
     { "type": "fill", "before": "Tom opens his", "after": "and walks in the rain.", "answer": "umbrella", "bank": ["umbrella", "flower", "shoe", "tree"], "explanation": "An umbrella keeps the rain off you. You open it when it rains." },
-    { "type": "fill", "before": "At night, we see a small light far away. It is a", "after": ".", "answer": "star", "bank": ["star", "flower", "tree", "mouse"], "explanation": "A star is a small light that we see at night. It is very far away." }
+    { "type": "fill", "before": "At night, we see a small light far away. It is a", "after": ".", "answer": "star", "bank": ["star", "chair", "tree", "mouse"], "explanation": "A star is a small light that we see at night. It is very far away." }
   ],
   "A1|vocabulary|11|fill|veryhard": [
     { "type": "fill", "before": "Trees and rivers are", "after": "things, but a phone is not.", "answer": "natural", "bank": ["natural", "quick", "sunny", "warm"], "explanation": "Trees and rivers are natural. People make a phone." },
     { "type": "fill", "before": "Children", "after": "and get bigger every year.", "answer": "grow", "bank": ["grow", "sing", "wait", "carry"], "explanation": "When people or plants grow, they get bigger." },
     { "type": "fill", "before": "Flowers", "after": "when there is no water for a long time.", "answer": "die", "bank": ["die", "grow", "sing", "wait"], "explanation": "When a flower dies, it stops living. It needs water to live." },
     { "type": "fill", "before": "People sit near the", "after": "in winter. It is warm and gives light.", "answer": "fire", "bank": ["fire", "snow", "rain", "bread"], "explanation": "Fire is hot and gives light. It is nice near a fire in winter." },
-    { "type": "fill", "before": "A", "after": "needs water, sun and air to live.", "answer": "plant", "bank": ["plant", "phone", "chair", "shoe"], "explanation": "A plant is a living thing. It needs water, sun and air." },
+    { "type": "fill", "before": "A", "after": "needs water, sun and air to live.", "answer": "plant", "bank": ["plant", "rain", "star", "space"], "explanation": "A plant is a living thing. It needs water, sun and air." },
     { "type": "fill", "before": "Fish live in water, and people live on", "after": ".", "answer": "land", "bank": ["land", "ice", "fire", "air"], "explanation": "Land is the part of the world that is not water. People live on land." },
     { "type": "fill", "before": "We cannot see", "after": ", but it is all around us.", "answer": "air", "bank": ["air", "fire", "ice", "snow"], "explanation": "Air is all around us. We cannot see it, but we need it to live." },
-    { "type": "fill", "before": "It is dark in the room. Anna opens the door, and the", "after": "comes in from the garden.", "answer": "light", "bank": ["light", "ice", "bread", "soup"], "targetType": "noun", "explanation": "Light lets us see. It comes in through the door from the sun." }
+    { "type": "fill", "before": "It is dark in the room. Anna opens the door, and the", "after": "comes in from the garden.", "answer": "light", "bank": ["light", "ice", "table", "soup"], "targetType": "noun", "explanation": "Light lets us see. It comes in through the door from the sun." }
   ],
   "A1|vocabulary|11|tf|easy": [
     { "type": "tf", "prompt": "The sun is above us in the day.", "answer": true, "target": "sun", "explanation": "Yes. We see the sun far above us in the day." },
