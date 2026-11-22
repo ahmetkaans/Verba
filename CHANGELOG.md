@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### Play-through test brought up to date
+Nothing in the game changed. The private play-through test had drifted (1100 passed, 15 failed) because it still expected the old Settings pop-up, the old Word list level step, buttons that vanish on some screens, the visible test box and two unwritten themes. Its stale sections were rewritten for the screens as they are now, and it passes again: 1175 passed, 0 failed. The README's expected result says so.
+
 ### Private tools grouped
 Nothing in the game changed. In the private tools folder, the question-writing helpers (draft makers, review and blind sheets, the repetition and option tools, the batch helpers) now live in `tools/questions/`, and the small script library used by the file-map check in `tools/lib/`; the daily tools (question check, file map check, versions, test servers, play-through test) stay at the top. AGENTS.md, the rules, the README file map and the guides name the new places.
 
