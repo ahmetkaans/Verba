@@ -11,7 +11,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Tom is going to Tokyo for a year. What does his mother say to him at the airport?", "options": ["Goodbye", "Hello", "Please", "Yes"], "target": "goodbye", "targetType": "exclamation", "explanation": "Tom is leaving, so his mother says \"goodbye\". \"Bye\" means the same, but we say it more to friends." },
     { "type": "mc", "prompt": "Emma gives Ben a pen. Ben says, \"___ for the pen, Emma!\"", "options": ["Thanks", "Hello", "Bye", "Please"], "target": "thanks", "targetType": "exclamation", "explanation": "We say \"thanks\" when someone gives us something. It means \"thank you\"." },
     { "type": "mc", "prompt": "Maria is at a cafe. She says, \"A cup of tea, ___.\"", "options": ["please", "sorry", "bye", "hello"], "explanation": "We say \"please\" when we ask for something. It is the nice way to ask." },
-    { "type": "mc", "prompt": "Leo is late for class. He says, \"___ I'm late!\"", "options": ["Sorry", "Thanks", "Welcome", "Please"], "target": "sorry", "targetType": "exclamation", "explanation": "We say \"sorry\" when we do something wrong, like being late. \"Sorry I'm late!\" is very common." },
+    { "type": "mc", "prompt": "Leo is late for class. He says, \"___ I'm late!\"", "options": ["Sorry", "Thanks", "Goodbye", "Happy"], "target": "sorry", "targetType": "exclamation", "explanation": "We say \"sorry\" when we do something wrong, like being late. \"Sorry I'm late!\" is very common." },
     { "type": "mc", "prompt": "Mia: \"How are you, Ali?\" Ali: \"I'm ___, thank you.\"", "options": ["fine", "blue", "cheap", "tall"], "explanation": "\"I'm fine\" means \"I'm OK, I'm well\". It is a common answer to \"How are you?\"." },
     { "type": "mc", "prompt": "Tom: \"Let's play tennis after school.\" Anna: \"___! Good idea.\"", "options": ["OK", "Sorry", "Bye", "Hello"], "targetType": "exclamation", "explanation": "We say \"OK\" when we agree with an idea. Anna wants to play, too." }
   ],
@@ -32,7 +32,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Mia reads lots of books about animals. She is ___ in animals.", "options": ["interested", "happy", "excited", "bored"], "explanation": "When you are interested in something, you want to know more about it. We say \"interested in\"." },
     { "type": "mc", "prompt": "Teacher: \"Is the answer 12?\" Ken: \"Yes, I'm ___. I checked it twice.\"", "options": ["sure", "sorry", "tired", "hungry"], "explanation": "\"I'm sure\" means \"I know it is true\". Ken checked the answer two times." },
     { "type": "mc", "prompt": "\"I want to ___ you for the beautiful flowers,\" says Tom.", "options": ["thank", "like", "miss", "laugh"], "targetType": "verb", "explanation": "We thank people when they give us something or help us. \"Thank you for…\" is very common." },
-    { "type": "mc", "prompt": "Ben writes an email to his aunt. He starts with \"___ Aunt Mary,\".", "options": ["Dear", "Sure", "Sorry", "Fine"], "target": "dear", "explanation": "We often start a letter or an email with \"Dear\" and the person's name." },
+    { "type": "mc", "prompt": "Ben writes an email to his aunt. He starts with \"___ Aunt Mary,\".", "options": ["Dear", "Welcome", "Sorry", "Fine"], "target": "dear", "explanation": "We often start a letter or an email with \"Dear\" and the person's name." },
     { "type": "mc", "prompt": "The movie is very funny. Everyone in the theater ___ a lot.", "options": ["laughs", "misses", "hopes", "believes"], "target": "laugh", "targetType": "verb", "explanation": "When something is funny, we laugh. The movie is funny, so the people laugh." }
   ],
   "A1|vocabulary|0|mc|veryhard": [
@@ -43,7 +43,7 @@ Object.assign(GAME_DATA.questions, {
     { "type": "mc", "prompt": "Anna is going to Paris tomorrow. Her friend says, \"I ___ you have a great trip!\"", "options": ["hope", "miss", "thank", "feel"], "explanation": "We use \"hope\" when we want something good to happen. Her friend wants Anna's trip to be great." },
     { "type": "mc", "prompt": "\"What ___?\" Maria asks. There are police cars on our street.", "options": ["happened", "missed", "hoped", "laughed"], "target": "happen", "explanation": "\"What happened?\" asks about something that took place. The police are there, so something took place." },
     { "type": "mc", "prompt": "Mehmet lives in London now. His family is in Ankara. He ___ them a lot.", "options": ["misses", "hopes", "believes", "thanks"], "target": "miss", "explanation": "We miss people when they are not with us and we want to see them. Mehmet's family lives far away." },
-    { "type": "mc", "prompt": "Love is a beautiful ___.", "options": ["feeling", "laugh", "goodbye", "hello"], "explanation": "Love is something we feel, so it is a feeling. Happy, sad and angry are feelings, too." }
+    { "type": "mc", "prompt": "Love is a beautiful ___.", "options": ["feeling", "question", "problem", "laugh"], "explanation": "Love is something we feel, so it is a feeling. Happy, sad and angry are feelings, too." }
   ],
   "A1|vocabulary|0|fill|easy": [
     { "type": "fill", "before": "Sara sees her friend Omar in the park. She says, \"", "after": "! How are you, Omar?\"", "answer": "Hi", "bank": ["Hi", "No", "Please"], "target": "hi", "explanation": "We say \"hi\" when we meet a friend. It is like \"hello\", but we say it more to friends." },
@@ -66,13 +66,13 @@ Object.assign(GAME_DATA.questions, {
     { "type": "fill", "before": "\"Don't take my things without asking!\" Ahmet is", "after": "with his brother.", "answer": "angry", "bank": ["angry", "tall", "tired"], "explanation": "Ahmet's brother takes his things, and Ahmet is not happy about it. We are \"angry with\" someone." }
   ],
   "A1|vocabulary|0|fill|hard": [
-    { "type": "fill", "before": "Lisa is", "after": "to fly, so she always goes by train.", "answer": "afraid", "bank": ["afraid", "fine", "happy", "interested"], "explanation": "Lisa thinks flying is dangerous, so she is afraid to fly. She takes the train." },
-    { "type": "fill", "before": "It's Sunday afternoon, and Ben has nothing to do. He is", "after": ".", "answer": "bored", "bank": ["bored", "hot", "tall", "sure"], "explanation": "Ben has nothing to do, so he is bored." },
+    { "type": "fill", "before": "Lisa is", "after": "to fly, so she always goes by train.", "answer": "afraid", "bank": ["afraid", "happy", "excited", "interested"], "explanation": "Lisa thinks flying is dangerous, so she is afraid to fly. She takes the train." },
+    { "type": "fill", "before": "It's Sunday afternoon, and Ben has nothing to do. He is", "after": ".", "answer": "bored", "bank": ["bored", "excited", "hot", "sure"], "explanation": "Ben has nothing to do, so he is bored." },
     { "type": "fill", "before": "The children love trips. They are very", "after": "about the trip tomorrow.", "answer": "excited", "bank": ["excited", "tired", "afraid", "interested"], "explanation": "The trip is something good that is going to happen, so the children are excited. We say \"excited about\"." },
     { "type": "fill", "before": "\"Are you", "after": "in art?\" \"Yes, I love painting.\"", "answer": "interested", "bank": ["interested", "fine", "bored", "tall"], "explanation": "The answer \"I love painting\" tells us the person likes art. We say \"interested in\"." },
     { "type": "fill", "before": "\"Is the museum open today?\" \"I'm not", "after": ". Let's check online.\"", "answer": "sure", "bank": ["sure", "afraid", "bored", "tall"], "explanation": "\"I'm not sure\" means \"I don't know\". So they check online." },
     { "type": "fill", "before": "Don't forget to", "after": "your grandfather for the birthday money.", "answer": "thank", "bank": ["thank", "laugh", "hope", "miss"], "targetType": "verb", "explanation": "We thank people when they give us something. Your grandfather gives you money, so you thank him." },
-    { "type": "fill", "before": "Maria's email starts: \"", "after": "David, thanks for your letter.\"", "answer": "Dear", "bank": ["Dear", "Sure", "Fine", "Blue"], "target": "dear", "explanation": "Letters and emails often start with \"Dear\" and the person's name." },
+    { "type": "fill", "before": "Maria's email starts: \"", "after": "David, thanks for your letter.\"", "answer": "Dear", "bank": ["Dear", "Please", "Sorry", "Sure"], "target": "dear", "explanation": "Letters and emails often start with \"Dear\" and the person's name." },
     { "type": "fill", "before": "My brother is very funny. He always makes me", "after": ".", "answer": "laugh", "bank": ["laugh", "miss", "hope", "thank"], "targetType": "verb", "explanation": "Funny people make us laugh." }
   ],
   "A1|vocabulary|0|fill|veryhard": [

@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-22
 
+### Closer wrong answers in Greetings and Feelings
+Six questions in the first A1 theme had wrong options that were too far from the answer, too close to it, or two words that mean almost the same thing together. They now have wrong options that make you think a little, and none of them can also be right.
+
 ### Better wrong answers in the A1 vocabulary quizzes
 In many Multiple Choice and Fill in the Blank questions, the wrong options were from a different topic and were too easy to cross out. They are now closer to the answer, more at Hard and Very Hard, and none of them can also be a right answer. Wrong options and names that came back too often in one theme were swapped, so the quizzes feel less repeated. No question text, answer or explanation was rewritten.
 
