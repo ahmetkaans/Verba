@@ -32,6 +32,10 @@
   .credit-name, .credit-role { display: block; }
   .credit-name { font-weight: 600; }
   .modal .credit-role { margin-top: 2px; color: var(--muted); font-size: 0.9rem; }
+  /* "About voice" pop-up (opened from Credits): three short paragraphs and a row of links */
+  .voice-credit p { margin: 0 0 12px; font-size: 0.95rem; }
+  .modal ul.voice-links { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .voice-links a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
   /* "Words in this game" pop-up: word, type, meaning */
   .modal ul.word-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 8px; }
   .word-list li {

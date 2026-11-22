@@ -1,7 +1,7 @@
 /* js/quiz-flow.js - starting a quiz, the words pop-up, one question, answering, quitting
    Provides: startQuiz, questionTargets, quizTargetWords, glossarySenses, testedSenseIndex, wordRow, openWordPreview, currentQuestion, currentRecord,
              renderQuestion, updateScoreDisplay, submitAnswer, goNext, skipQuestion, requestQuit
-   Needs: CONFIG, el, fmt, englishText, noteText, hashString, mulberry32, makeLorem, state, $, playSound, t, GLOSSARY,
+   Needs: CONFIG, wordAudioButton, el, fmt, englishText, noteText, hashString, mulberry32, makeLorem, state, $, playSound, t, GLOSSARY,
           quizKey, getQuestions, prepareQuiz, correctAnswerText, showScreen, getQuestionSeconds, openModal,
           closeModal, startTimer, resumeTimer, pauseTimer, stopTimer, renderFillTap, RENDERERS, showResults, sinkWalker, saveQuizRun, newPlayId */
 'use strict';
@@ -106,7 +106,7 @@ function wordRow(word, senses, used, key) {
   const tested = senses.length > 1 ? testedSenseIndex(senses, used, key) : -1;
   const ordered = tested >= 0 ? [senses[tested], ...senses.filter((s, i) => i !== tested)] : senses;
   return el('li', {}, [
-    el('span', { class: 'word', text: word }),
+    el('div', { class: 'word-line' }, [el('span', { class: 'word', text: word }), wordAudioButton(word)]),
     ...ordered.map((s, i) => el('p', { class: 'word-sense' }, [
       el('span', { class: 'word-type', text: s.type }),
       ` ${s.meaning}${tested >= 0 && i === 0 ? ' *' : ''}`,   // a no-break space: the * never stands alone at the start of a line

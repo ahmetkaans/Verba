@@ -4,6 +4,12 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-22
 
+### Pronunciation buttons
+Every word in the Word list and in the "Words in this game" pop-up before a game now has a small round speaker button after it. It plays the recording of the word, takes the colour of your level, and keeps its filled colour for exactly as long as the sound lasts; a second tap stops it. It plays even when the sound switch in Settings is off. A word that has no recording yet shows the button muted, with "No audio yet" ("Henüz ses yok") next to it. The recordings of A1 themes 0 to 4 were added. The folder of the recordings is set in one place (`AUDIO_FOLDER` in the settings file), so it can be moved later without touching the code.
+
+### Word recordings and "About voice" in Credits
+The game folder now holds short recordings of the words of A1 themes 0 to 4 (222 files made with the free "Amy" voice); the pronunciation buttons (next entry) play them. The Credits window has a new button, "About voice" (in Turkish "Ses hakkında"), that names the voice, the dataset it comes from, their licences and the changes made to the audio, as the licences ask. The folder rule in AGENTS.md now allows these audio files.
+
 ### Dialogues: one speaker per line
 When two people talk in a question, each person now speaks on a line of their own and the name is bold ("Anna:" or the name before "says"), in Multiple Choice, Fill in the Blanks and True or False, and again on the Results screen and in History. The 28 dialogue questions of the first three A1 themes were changed this way (the words did not change). The question check now gives an error when a new dialogue is written on one line, so later questions will follow the same rule.
 

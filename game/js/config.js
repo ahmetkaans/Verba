@@ -79,7 +79,9 @@ const CONFIG = {
   TIPS_BALANCE_MIN_AVERAGE: 70,  // ... and an average of at least this much in it
   TIPS_TYPE_MIN_PLAYS: 10,       // tips: the question type hint needs this many finished plays ...
   TIPS_TYPE_SHARE: 0.6,          // ... and this share of them in one question type
-  HALLOWEEN_WALKER_DELAY_SECONDS: 3,        // Trick or Treat: the walker starts this long after the page opens (or after the switch is turned on)
+  AUDIO_FOLDER: 'audio/',        // the word recordings (pronunciation buttons, js/word-audio.js): the folder, relative to index.html or a full web address; the ONLY place that knows it (README "Word audio")
+  AUDIO_EXTENSION: '.mp3',       // the file ending of a recording; the file name is made from the word by wordAudioFile()
+  HALLOWEEN_WALKER_DELAY_SECONDS: 3,       // Trick or Treat: the walker starts this long after the page opens (or after the switch is turned on)
   HALLOWEEN_WALKER_STOP_SECONDS: 2.5,       // it stops this long, and looks back
   HALLOWEEN_WALKER_SPEED: 28,               // walking speed in px per second, the same on every screen width (a calm walk; its feet and rope are made for it)
   HALLOWEEN_WALKER_TUGS_BEFORE_STOP: [2.5, 5.8], // seconds after the start: hard tugs on the rope before the stop

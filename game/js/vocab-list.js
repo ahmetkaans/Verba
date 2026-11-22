@@ -1,7 +1,7 @@
 /* js/vocab-list.js - the Vocabulary lists: which words a topic (or one quiz) tests, with their meanings (data in, lists out), and the Vocabulary screen
    Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, vocabKinds, selectVocabKind, toggleVocabKinds, renderVocabList, vocabLevelTabs, selectVocabLevel, renderVocabTopics, renderVocab, openVocab, vocabBack, refreshVocab, initVocab
    Needs: bhNavigate, CONFIG, QUESTION_BANK, GLOSSARY, ICONS, $, el, t, state, getTopics, hasRealQuizzes, showScreen,
-          quizTargetWords, openUnfinishedConfirm */
+          quizTargetWords, openUnfinishedConfirm, wordAudioButton, stopWordAudio */
 'use strict';
 /* =========================================================================
  * VOCAB LIST  (README.md, Roadmap item 17; decided 2026-11-16. The lists come first, the screen (the Vocabulary button) is below.)
@@ -82,7 +82,7 @@ function vocabSub(result) {
 // No word type is underlined: the list shows every type of the word, not the one a game uses.
 function vocabRow(w) {
   return el('li', {}, [
-    el('span', { class: 'word', text: w.word }),
+    el('div', { class: 'word-line' }, [el('span', { class: 'word', text: w.word }), wordAudioButton(w.word)]),
     ...w.senses.map((s) => el('p', { class: 'vocab-sense' }, [el('i', { class: 'vocab-type', text: s.type }), ` · ${s.meaning}`])),
   ]);
 }
@@ -158,6 +158,7 @@ function toggleVocabKinds() {
 function renderVocabList(result) {
   const v = state.vocab;
   const box = $('#vocab-list');
+  stopWordAudio();   // the list is built again (a tab, a type button or the language): a sound that is playing stops
   box.replaceChildren();
   if (v.showTypes) box.append(vocabKinds());
   if (!result.total) {

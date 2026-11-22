@@ -1,5 +1,5 @@
 /* js/topics.js - topic names, credits, the two lists the data files fill, lorem words, icons
-   Provides: getTopics, DEFAULT_TOPICS, TOPICS_BY_SECTION, CREDITS, QUESTION_BANK, GLOSSARY, LOREM_WORDS, ICONS
+   Provides: getTopics, DEFAULT_TOPICS, TOPICS_BY_SECTION, CREDITS, VOICE_LINKS, QUESTION_BANK, GLOSSARY, LOREM_WORDS, ICONS
    Needs: GAME_DATA */
 'use strict';
 /* =========================================================================
@@ -68,6 +68,15 @@ const CREDITS = [
   { name: 'Enes Miraç Ateş', role: 'credits.enes' },
 ];
 
+// The links in the "About voice" pop-up (js/dialogs.js openVoiceCredit): a text key (translated) or a fixed label (a licence name), and the address.
+// The licences ask for a link to the material and to the licence (CC BY 4.0 for the dataset, CC BY-SA 4.0 for the voice); the text of the pop-up is in I18N 'voice.*'.
+const VOICE_LINKS = [
+  { key: 'voice.linkData', url: 'https://www.openslr.org/109/' },
+  { key: 'voice.linkVoice', url: 'https://github.com/MycroftAI/mimic3-voices' },
+  { label: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
+  { label: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+];
+
 // Real questions and the glossary come from the files of data/ (loaded before this script, see index.html).
 const QUESTION_BANK = GAME_DATA.questions;
 const GLOSSARY = GAME_DATA.glossary;
@@ -99,5 +108,7 @@ const ICONS = {
   eye: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
   eyeOff: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 5.2A9.7 9.7 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.1 4.1M6.6 6.7C3.6 8.5 2 12 2 12s3.5 7 10 7a9.8 9.8 0 0 0 4.3-1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M3 3l18 18"/></svg>',
   book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg>',
+  volume: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>',
+  volume2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>',
 };
 

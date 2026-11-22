@@ -1,7 +1,7 @@
 /* js/navigation.js - screens, the path line, the button builder (with the gray "not finished" buttons), difficulty buttons, the same-duration switch
    Provides: breadcrumbParts, refreshBreadcrumb, markTopbarButton, showScreen, showScreenRaw, renderButtons, getQuestionSeconds, setSameDuration,
              renderDifficultyButtons, SCREEN_DEPTH
-   Needs: bhNavigate, walkerModalClosed, stopConfetti, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
+   Needs: bhNavigate, walkerModalClosed, stopConfetti, stopWordAudio, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
           renderTopicButtons, openUnfinishedConfirm, refreshSettings, startQuiz */
 'use strict';
 /* =========================================================================
@@ -49,6 +49,7 @@ function showScreenRaw(name) {
   const leftSettings = state.screen === 'settings' && !onSettings;
   state.screen = name;
   stopConfetti();
+  stopWordAudio();   // a pronunciation that is playing stops when the screen changes (js/word-audio.js)
   if (name !== 'quiz') clearQuizRun(); // the quiz is over or left: this tab removes its own note, so a closed tab or a reload is no longer a quit
   if (name !== 'difficulty' && !onHistory) state.nextHint = null; // the History screens keep the "Next" mark for the way back
   document.querySelectorAll('.screen').forEach((s) => { s.hidden = s.id !== `screen-${name}`; });

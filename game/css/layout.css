@@ -354,6 +354,32 @@
   .vocab-kinds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 16px; }
   .vocab-kind { min-height: 48px; padding: 6px; font-size: 0.9rem; font-weight: 400; line-height: 1.25; text-align: center; }
   .vocab-kind[aria-pressed="true"], .vocab-kind[aria-pressed="true"]:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 500; }
+  /* Word audio: the pronunciation button after a word, in the Word list and in the words pop-up (js/word-audio.js; owner's mock-up B, 2026-11-22).
+     A 24px round button (a 44px touch area around it) in the level accent: a tint and a thin outline at rest, a solid fill while the sound plays.
+     No recording: a muted, inactive button with the note "No audio yet" next to it. */
+  .word-line { display: flex; align-items: center; gap: 8px; min-height: 24px; }
+  .audio-wrap { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+  button.audio-btn {
+    position: relative; flex: none; width: 24px; height: 24px; min-height: 0; padding: 0; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 22%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--surface));
+  }
+  button.audio-btn::before { content: ""; position: absolute; inset: -10px; }   /* the touch area is 44px */
+  .audio-btn svg { width: 14px; height: 14px; }
+  .audio-btn svg:last-child, .audio-btn.is-playing svg:first-child { display: none; }
+  .audio-btn.is-playing svg:last-child { display: block; }
+  button.audio-btn:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 32%, var(--surface)); border-color: var(--accent); }
+  button.audio-btn.is-playing, button.audio-btn.is-playing:hover:not(:disabled) {
+    background: var(--accent); border-color: var(--accent); color: var(--on-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+  .word-list button.audio-btn:not(.is-playing) { background: var(--surface); }   /* on the tinted word cards of the pop-up */
+  button.audio-btn.is-missing, button.audio-btn.is-missing:hover:not(:disabled), button.audio-btn.is-missing:active:not(:disabled) {
+    color: var(--muted); background: transparent; border-color: var(--border); cursor: default; transform: none;
+  }
+  .audio-note { color: var(--muted); font-size: 0.8rem; font-style: normal; font-weight: 400; }
   .vocab-separate { display: block; width: 100%; min-height: 52px; margin-top: 22px; background: transparent; border-color: var(--accent); color: var(--accent); }
   @media (max-width: 359px) {
     .vocab-page { padding: 34px 14px 16px; }

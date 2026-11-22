@@ -1,6 +1,6 @@
 /* js/dialogs.js - the pop-up engine, the inert page behind it, the "not finished yet" question, the reload notice, Credits
-   Provides: updateInert, openModal, closeModal, openUnfinishedConfirm, wasReloaded, openReloadNotice, openCredits, modalState
-   Needs: el, $, t, CREDITS, walkerModalClosed, bhOverlayOpened, bhOverlayClosed */
+   Provides: updateInert, openModal, closeModal, openUnfinishedConfirm, wasReloaded, openReloadNotice, openCredits, openVoiceCredit, modalState
+   Needs: el, $, t, CREDITS, VOICE_LINKS, stopWordAudio, walkerModalClosed, bhOverlayOpened, bhOverlayClosed */
 'use strict';
 /* =========================================================================
  * MODAL
@@ -45,6 +45,7 @@ function openModal({ title = '', body, buttons, dismissible = false, onBack = nu
 
 function closeModal() {
   if ($('#modal-overlay').hidden) return;
+  stopWordAudio();   // a pronunciation that is playing in the words pop-up stops with it
   $('#modal-overlay').hidden = true;
   modalState.kind = null;
   modalState.onDismiss = null;
@@ -96,8 +97,27 @@ function openCredits() {
       el('span', { class: 'credit-name', text: name }),
       el('span', { class: 'credit-role', text: t(role) }),
     ]))),
+    buttons: [{ label: t('aboutVoice'), onClick: openVoiceCredit }, { label: t('close'), primary: true, onClick: closeModal }],
+    dismissible: true,
+  });
+}
+
+// "About voice": the credit for the word recordings (game/audio/). A second pop-up opened from Credits; its arrow goes back to Credits.
+// The names, licences and links are fixed text; the links are in VOICE_LINKS (js/topics.js) and open in a new tab.
+function openVoiceCredit() {
+  openModal({
+    title: t('voice.title'),
+    body: el('div', { class: 'voice-credit' }, [
+      el('p', { text: t('voice.p1') }),
+      el('p', { text: t('voice.p2') }),
+      el('p', { text: t('voice.p3') }),
+      el('ul', { class: 'voice-links' }, VOICE_LINKS.map(({ key, label, url }) => el('li', {}, [
+        el('a', { href: url, target: '_blank', rel: 'noopener', text: key ? t(key) : label }),
+      ]))),
+    ]),
     buttons: [{ label: t('close'), primary: true, onClick: closeModal }],
     dismissible: true,
+    onBack: openCredits,
   });
 }
 
