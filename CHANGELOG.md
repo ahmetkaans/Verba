@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### Private tools grouped
+Nothing in the game changed. In the private tools folder, the question-writing helpers (draft makers, review and blind sheets, the repetition and option tools, the batch helpers) now live in `tools/questions/`, and the small script library used by the file-map check in `tools/lib/`; the daily tools (question check, file map check, versions, test servers, play-through test) stay at the top. AGENTS.md, the rules, the README file map and the guides name the new places.
+
 ### Audio tools in one private folder
 The game itself plays and looks the same. The private audio work (the tools that make and publish the word recordings, the Piper voice program and the workspace with the recordings being listened to) now lives together in `.gitignore/audio/`. The read-deny rules for the audio files and Piper follow it, AGENTS.md and the rules now list the new drawer, and the one comment in `word-audio.js` that named the old tool path was updated (so that file's version number changed).
 
