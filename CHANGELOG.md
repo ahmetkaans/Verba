@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### Design and question-writing guides moved to docs/
+Nothing in the game changed. `DESIGN.md` and `ADDING_QUESTIONS.md` moved from the main folder into `docs/`, next to `RULES_FULL.md`; only `AGENTS.md`, `README.md` and `CHANGELOG.md` stay at the top. Every link and mention in README, AGENTS.md, the rules and the private tools now names the new place.
+
 ### Tidier private folders (steps 1 to 4 of the folder revision)
 Nothing in the game changed. The private working folder `.gitignore/` was sorted: the one-off scripts that split the game into folders and the old handoff note are now in `archive/`, the plans are split into `plans/audio/` and `plans/questions/`, and the 199 loose draft files are sorted into `drafts/themes/`, `proposals/`, `mockups/` and `old/`. Every tool, the README file map, AGENTS.md and ADDING_QUESTIONS.md now name the new places. Claude is also told not to read the audio files and the Piper program (new read-deny rules in `.claude/settings.json`; the joined `_ALL.json` rule now covers the new `themes/` folder). Still to come: moving DESIGN.md and ADDING_QUESTIONS.md into `docs/`, then grouping the tools.
 
