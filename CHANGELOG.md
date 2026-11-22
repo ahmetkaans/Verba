@@ -2,6 +2,11 @@
 
 What changed in Verba, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-23
+
+### Tidier private folders (steps 1 to 4 of the folder revision)
+Nothing in the game changed. The private working folder `.gitignore/` was sorted: the one-off scripts that split the game into folders and the old handoff note are now in `archive/`, the plans are split into `plans/audio/` and `plans/questions/`, and the 199 loose draft files are sorted into `drafts/themes/`, `proposals/`, `mockups/` and `old/`. Every tool, the README file map, AGENTS.md and ADDING_QUESTIONS.md now name the new places. Claude is also told not to read the audio files and the Piper program (new read-deny rules in `.claude/settings.json`; the joined `_ALL.json` rule now covers the new `themes/` folder). Still to come: moving DESIGN.md and ADDING_QUESTIONS.md into `docs/`, then grouping the tools.
+
 ## 2026-11-22
 
 ### Pronunciation buttons
