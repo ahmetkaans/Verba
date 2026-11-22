@@ -4,8 +4,8 @@
       "Read(./.gitignore/archive/**)",
       "Read(./.gitignore/drafts/**/*_ALL.json)",
       "Read(./.gitignore/tools/playthrough.js)",
-      "Read(./.gitignore/drafts/audio_compare/**/*.mp3)",
-      "Read(./.gitignore/tools/piper/**)"
+      "Read(./.gitignore/audio/audio_compare/**/*.mp3)",
+      "Read(./.gitignore/audio/piper/**)"
     ]
   }
 }

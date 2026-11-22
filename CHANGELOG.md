@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### Audio tools in one private folder
+The game itself plays and looks the same. The private audio work (the tools that make and publish the word recordings, the Piper voice program and the workspace with the recordings being listened to) now lives together in `.gitignore/audio/`. The read-deny rules for the audio files and Piper follow it, AGENTS.md and the rules now list the new drawer, and the one comment in `word-audio.js` that named the old tool path was updated (so that file's version number changed).
+
 ### Design and question-writing guides moved to docs/
 Nothing in the game changed. `DESIGN.md` and `ADDING_QUESTIONS.md` moved from the main folder into `docs/`, next to `RULES_FULL.md`; only `AGENTS.md`, `README.md` and `CHANGELOG.md` stay at the top. Every link and mention in README, AGENTS.md, the rules and the private tools now names the new place.
 

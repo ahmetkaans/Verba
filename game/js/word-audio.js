@@ -15,7 +15,7 @@
  * - It plays when the Settings sound switch is off (owner: a direct tap on a pronunciation button always plays).
  * ========================================================================= */
 
-// The file name of a word (the same rule as the private tool .gitignore/tools/make_audio.ps1): lower case, apostrophes removed,
+// The file name of a word (the same rule as the private tool .gitignore/audio/make_audio.ps1): lower case, apostrophes removed,
 // every other character that is not a letter or a digit becomes "-" (o'clock -> oclock.mp3, t-shirt -> t-shirt.mp3).
 function wordAudioFile(word) {
   return word.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]/g, '-') + CONFIG.AUDIO_EXTENSION;
