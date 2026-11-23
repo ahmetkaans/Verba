@@ -1,8 +1,8 @@
-# DESIGN.md
+# docs/DESIGN.md
 
 ## Status
 
-The visual design is **decided** and applied in [game/index.html](game/index.html) (all CSS lives in the seven files of [game/css/](game/css/)). Copy that the owner has not named explicitly is still lorem ipsum.
+The visual design is **decided** and applied in [game/index.html](../game/index.html) (all CSS lives in the seven files of [game/css/](../game/css/)). Copy that the owner has not named explicitly is still lorem ipsum.
 
 Names that are fixed by the owner: A1, A2, B1, B2, C1, Vocabulary, Grammar, Multiple Choice, Fill in the Blanks, True or False, Matching, Easy, Medium, Hard, Very Hard, "Same duration per question across all difficulty settings", Credits, Back, Time out, Game over, Skip question, Retry, Next exercise.
 

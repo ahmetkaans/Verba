@@ -2,6 +2,29 @@
 
 What changed in Verba, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-23
+
+### Every A1 word can be heard
+All 653 words of level A1 now have a recording: before, only the words of the first five themes could be played, and now the speaker button after a word in the Word list and in the "Words in this game" pop-up plays for every theme. The "About voice" pop-up (Credits) has more links: the voice's model card on Hugging Face, a copy of that model card that is hosted with the game, and both versions of Piper, the program that made the recordings. The licence of the voice is not fully settled yet; the credit says what we know.
+
+### Learning and Ideas written (theme 14)
+The last A1 vocabulary theme now has real questions: 16 quizzes (Multiple Choice, Fill in the Blanks, True or False and Matching at all four difficulties), 107 questions in all, and 51 new meanings in the "Words in this game" pop-up. The words *form*, *match* and *right* now show the meaning of the theme that is being played, and the adverb meanings of *right* and *left* are shorter ("to the hand that most people write with") and no longer use the word "toward".
+
+### Play-through test brought up to date
+Nothing in the game changed. The private play-through test had drifted (1100 passed, 15 failed) because it still expected the old Settings pop-up, the old Word list level step, buttons that vanish on some screens, the visible test box and two unwritten themes. Its stale sections were rewritten for the screens as they are now, and it passes again: 1175 passed, 0 failed. The README's expected result says so.
+
+### Private tools grouped
+Nothing in the game changed. In the private tools folder, the question-writing helpers (draft makers, review and blind sheets, the repetition and option tools, the batch helpers) now live in `tools/questions/`, and the small script library used by the file-map check in `tools/lib/`; the daily tools (question check, file map check, versions, test servers, play-through test) stay at the top. AGENTS.md, the rules, the README file map and the guides name the new places.
+
+### Audio tools in one private folder
+The game itself plays and looks the same. The private audio work (the tools that make and publish the word recordings, the Piper voice program and the workspace with the recordings being listened to) now lives together in `.gitignore/audio/`. The read-deny rules for the audio files and Piper follow it, AGENTS.md and the rules now list the new drawer, and the one comment in `word-audio.js` that named the old tool path was updated (so that file's version number changed).
+
+### Design and question-writing guides moved to docs/
+Nothing in the game changed. `DESIGN.md` and `ADDING_QUESTIONS.md` moved from the main folder into `docs/`, next to `RULES_FULL.md`; only `AGENTS.md`, `README.md` and `CHANGELOG.md` stay at the top. Every link and mention in README, AGENTS.md, the rules and the private tools now names the new place.
+
+### Tidier private folders (steps 1 to 4 of the folder revision)
+Nothing in the game changed. The private working folder `.gitignore/` was sorted: the one-off scripts that split the game into folders and the old handoff note are now in `archive/`, the plans are split into `plans/audio/` and `plans/questions/`, and the 199 loose draft files are sorted into `drafts/themes/`, `proposals/`, `mockups/` and `old/`. Every tool, the README file map, AGENTS.md and ADDING_QUESTIONS.md now name the new places. Claude is also told not to read the audio files and the Piper program (new read-deny rules in `.claude/settings.json`; the joined `_ALL.json` rule now covers the new `themes/` folder). Still to come: moving DESIGN.md and ADDING_QUESTIONS.md into `docs/`, then grouping the tools.
+
 ## 2026-11-22
 
 ### Pronunciation buttons

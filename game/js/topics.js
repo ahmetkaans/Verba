@@ -1,6 +1,6 @@
 /* js/topics.js - topic names, credits, the two lists the data files fill, lorem words, icons
    Provides: getTopics, DEFAULT_TOPICS, TOPICS_BY_SECTION, CREDITS, VOICE_LINKS, QUESTION_BANK, GLOSSARY, LOREM_WORDS, ICONS
-   Needs: GAME_DATA */
+   Needs: GAME_DATA, CONFIG */
 'use strict';
 /* =========================================================================
  * TOPICS AND DATA (topic names, credits, the JSON blocks, lorem words, icons)
@@ -73,6 +73,12 @@ const CREDITS = [
 const VOICE_LINKS = [
   { key: 'voice.linkData', url: 'https://www.openslr.org/109/' },
   { key: 'voice.linkVoice', url: 'https://github.com/MycroftAI/mimic3-voices' },
+  // the model card of the voice: the original on the internet, and our own copy hosted with the game (owner, 2026-11-23); the copy is in the audio folder,
+  // so its address is built from CONFIG.AUDIO_FOLDER (the only place that knows the folder, same rule as wordAudioUrl() in js/word-audio.js)
+  { key: 'voice.linkCardOnline', url: 'https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/amy/medium/MODEL_CARD' },
+  { key: 'voice.linkCardCopy', url: CONFIG.AUDIO_FOLDER.replace(/\/?$/, '/') + 'MODEL_CARD_en_US-amy-medium.txt' },
+  { label: 'Piper', url: 'https://github.com/rhasspy/piper' },                    // the program that made the recordings: the first version (archived) ...
+  { label: 'Piper (OHF-Voice)', url: 'https://github.com/OHF-Voice/piper1-gpl' }, // ... and its successor (owner, 2026-11-23: both links, while the recordings come from both versions)
   { label: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
   { label: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' },
 ];
