@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### The voice credit now says only what we know
+The "About voice" pop-up (Credits), the licence file in the audio folder and the README no longer say that the voice is "CC BY-SA 4.0" or that Cori Samuel is its speaker. They now say what is documented: the voice was fine-tuned from the Hi-Fi TTS voice of reader 92 (Cori Samuel, CC BY 4.0), the voice's model card points to a repository that lists no Amy voice, and the licence of Amy's own recordings is not documented, so the audio is shared under CC BY-SA 4.0 as a precaution. The Turkish text is new and still to be reviewed.
+
 ### Every A1 word can be heard
 All 653 words of level A1 now have a recording: before, only the words of the first five themes could be played, and now the speaker button after a word in the Word list and in the "Words in this game" pop-up plays for every theme. The "About voice" pop-up (Credits) has more links: the voice's model card on Hugging Face, a copy of that model card that is hosted with the game, and both versions of Piper, the program that made the recordings. The licence of the voice is not fully settled yet; the credit says what we know.
 

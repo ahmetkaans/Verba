@@ -69,7 +69,7 @@ const CREDITS = [
 ];
 
 // The links in the "About voice" pop-up (js/dialogs.js openVoiceCredit): a text key (translated) or a fixed label (a licence name), and the address.
-// The licences ask for a link to the material and to the licence (CC BY 4.0 for the dataset, CC BY-SA 4.0 for the voice); the text of the pop-up is in I18N 'voice.*'.
+// The licences ask for a link to the material and to the licence (CC BY 4.0 for the Hi-Fi TTS dataset, CC BY-SA 4.0 for the repository the model card names; Amy's own licence is not documented); the text of the pop-up is in I18N 'voice.*'.
 const VOICE_LINKS = [
   { key: 'voice.linkData', url: 'https://www.openslr.org/109/' },
   { key: 'voice.linkVoice', url: 'https://github.com/MycroftAI/mimic3-voices' },
