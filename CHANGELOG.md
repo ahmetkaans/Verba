@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### README tidied
+Nothing in the game changed. The README's file map now lists the word lists of levels A2 to C1, and the new idea for a welcome pop-up on the first visit (Roadmap item 28) is in its proper place at the end of the Roadmap list.
+
 ### A2 word recordings added
 668 recordings of A2 vocabulary words were added to the game's audio folder (for example *argue*, *behave*, *kitchen* and *weather*). No A2 word is in the game yet, so nobody will hear them until the A2 words arrive; the pronunciation button of those words will then work at once. 27 words that still need a better take are not in yet.
 
