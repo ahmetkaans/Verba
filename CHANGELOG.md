@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### First A2 theme: Food and Cooking
+Level A2 now has its first real theme. Food and Cooking has 16 quizzes (Multiple Choice, Fill in the Blanks, True or False and Matching, four difficulties each) with 104 questions and 36 word meanings; the other 14 A2 themes show their names and say "Not finished". It was written with a new question method for A2 and higher, described in `docs/QUESTION_METHOD.md`: A2 words come first, lower-level words may be used around them, and most wrong options come from the theme. Four of the 36 words (*beef, jam, oil, sale*) have no recording yet and show "No audio yet".
+
 ### README tidied
 Nothing in the game changed. The README's file map now lists the word lists of levels A2 to C1, and the new idea for a welcome pop-up on the first visit (Roadmap item 28) is in its proper place at the end of the Roadmap list.
 

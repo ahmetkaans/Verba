@@ -53,6 +53,8 @@ Screen and pop-up texts approved by the owner:
 
 A1 Vocabulary themes (15, in this order; stored in `TOPICS_BY_SECTION['A1|vocabulary']`): Greetings and Feelings; Numbers and Amounts; People and Family; School and Classroom; Time and Dates; Home and Daily Routine; Food and Drink; Clothes and Colors; Town and Shopping; Free Time and Sports; Body and Health; Nature and Animals; Travel and the World; Jobs and Technology; Learning and Ideas.
 
+A2 Vocabulary themes (15, in this order; stored in `TOPICS_BY_SECTION['A2|vocabulary']`; names approved by the owner 2026-11-23): Personality and Relationships; Daily Life and Habits; Home and Household; Food and Cooking; Shopping and Money; Clothes and Appearance; Health and Body; School and Learning; Work and Careers; Travel and Transport; Places and Directions; Weather, Nature and Environment; Free Time and Entertainment; Media, Technology and Communication; Opinions, Ideas and Experiences.
+
 A1 Grammar topics (21, in this order; stored in `TOPICS_BY_SECTION['A1|grammar']`): To be (am / is / are); A / an / the; Present simple; Present continuous; Past simple of "to be" (was / were); Past simple; Going to; Imperatives; Can / can't / could / couldn't; Questions (yes/no and wh-); There is / there are; How much / how many (countable and uncountable); Personal pronouns; Possessives (my, mine, 's); This / that / these / those; Adjectives with very / really; Comparatives and superlatives; Adverbs of frequency; Prepositions of place; Prepositions of time (in / on / at); Like / love / hate + -ing and I'd like.
 
 ## Style: "clean study app"
