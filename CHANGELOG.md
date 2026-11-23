@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### Every A1 word can be heard
+All 653 words of level A1 now have a recording: before, only the words of the first five themes could be played, and now the speaker button after a word in the Word list and in the "Words in this game" pop-up plays for every theme. The "About voice" pop-up (Credits) has more links: the voice's model card on Hugging Face, a copy of that model card that is hosted with the game, and both versions of Piper, the program that made the recordings. The licence of the voice is not fully settled yet; the credit says what we know.
+
 ### Learning and Ideas written (theme 14)
 The last A1 vocabulary theme now has real questions: 16 quizzes (Multiple Choice, Fill in the Blanks, True or False and Matching at all four difficulties), 107 questions in all, and 51 new meanings in the "Words in this game" pop-up. The words *form*, *match* and *right* now show the meaning of the theme that is being played, and the adverb meanings of *right* and *left* are shorter ("to the hand that most people write with") and no longer use the word "toward".
 
