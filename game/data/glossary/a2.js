@@ -43,6 +43,55 @@ Object.assign(GAME_DATA.glossary, {
       { "type": "noun", "meaning": "the way that food or drink is in your mouth, for example sweet or good" },
       { "type": "verb", "meaning": "to put a little food in your mouth to find out what it is like" }
     ],
-    "tip": { "type": "noun", "meaning": "extra money that you give to a waiter to say thank you" }
+    "tip": { "type": "noun", "meaning": "extra money that you give to a waiter to say thank you" },
+    "advertise": { "type": "verb", "meaning": "to tell people about a product so that they want to buy it" },
+    "advertisement": { "type": "noun", "meaning": "a picture or a text that tells people about a product" },
+    "advertising": { "type": "noun", "meaning": "the work of telling people about products so that they buy them" },
+    "amount": { "type": "noun", "meaning": "how much of something there is" },
+    "available": { "type": "adjective", "meaning": "that you can buy, get or use" },
+    "billion": { "type": "number", "meaning": "a thousand million (1,000,000,000)" },
+    "charity": { "type": "noun", "meaning": "a group that helps people who need help, for example with money or food" },
+    "check": { "type": "noun", "meaning": "the paper that shows how much you must pay in a restaurant" },
+    "clerk": { "type": "noun", "meaning": "a person who works in a store and helps customers" },
+    "complain": { "type": "verb", "meaning": "to say that you are not happy about something" },
+    "credit": { "type": "noun", "meaning": "a way to buy something now and pay for it later" },
+    "deal": { "type": "verb", "meaning": "to take care of a problem or a person" },
+    "department": { "type": "noun", "meaning": "a part of a big store, for example for toys or clothes" },
+    "double": [
+      { "type": "adjective", "meaning": "twice as big or twice as much" },
+      { "type": "determiner", "meaning": "two times the size or the amount of something" },
+      { "type": "pronoun", "meaning": "two times the amount that you have or get" },
+      { "type": "verb", "meaning": "to become twice as big or twice as much" }
+    ],
+    "earn": { "type": "verb", "meaning": "to get money for the work that you do" },
+    "free": { "type": "adverb", "meaning": "without paying anything" },
+    "gift": { "type": "noun", "meaning": "something nice that you give to a person" },
+    "gold": [
+      { "type": "noun", "meaning": "a yellow metal that costs a lot" },
+      { "type": "adjective", "meaning": "with the yellow color of an expensive metal" }
+    ],
+    "included": { "type": "adjective", "meaning": "part of the price, so that you do not pay more" },
+    "item": { "type": "noun", "meaning": "one thing in a shop or on a list" },
+    "offer": [
+      { "type": "verb", "meaning": "to say that you will give something to a person" },
+      { "type": "noun", "meaning": "a special price in a shop, for example buy one and get one free" }
+    ],
+    "owner": { "type": "noun", "meaning": "the person that a shop or a thing belongs to" },
+    "pay": { "type": "noun", "meaning": "the money that you get for your work" },
+    "penny": { "type": "noun", "meaning": "a small piece of money that is one cent" },
+    "percent": [
+      { "type": "noun", "meaning": "a part out of 100: 10% is ten out of 100" },
+      { "type": "adjective", "meaning": "out of every 100, as in a 10% sale" },
+      { "type": "adverb", "meaning": "by a part out of 100, as in 20% cheaper" }
+    ],
+    "quality": { "type": "noun", "meaning": "how good a thing is" },
+    "quantity": { "type": "noun", "meaning": "how much or how many of something there is" },
+    "rate": { "type": "noun", "meaning": "the price for one hour, one night or one unit" },
+    "salary": { "type": "noun", "meaning": "the money that you get every month or year for your job" },
+    "silver": [
+      { "type": "noun", "meaning": "a gray metal that costs a lot" },
+      { "type": "adjective", "meaning": "with the gray color of an expensive metal" }
+    ],
+    "zero": { "type": "number", "meaning": "the number 0" }
   }
 });
