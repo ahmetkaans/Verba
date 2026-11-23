@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-23
 
+### Audio work folder tidied
+Nothing in the game changed. The private folder for making the word recordings now has a clear layout: the old-Piper tools, the recordings, one shared copy of the voice, the new Piper with its scripts, and the programs and docs that are not ours in one place. About 165 MB of unused downloads and duplicates were deleted, and the README map, the rules and the guide point to the new places; the settings that keep large files from being read were updated too.
+
 ### The voice credit now says only what we know
 The "About voice" pop-up (Credits), the licence file in the audio folder and the README no longer say that the voice is "CC BY-SA 4.0" or that Cori Samuel is its speaker. They now say what is documented: the voice was fine-tuned from the Hi-Fi TTS voice of reader 92 (Cori Samuel, CC BY 4.0), the voice's model card points to a repository that lists no Amy voice, and the licence of Amy's own recordings is not documented, so the audio is shared under CC BY-SA 4.0 as a precaution. The Turkish text is new and still to be reviewed.
 
