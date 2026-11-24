@@ -108,6 +108,9 @@
 
   html { -webkit-text-size-adjust: 100%; }
 
+  /* Phone keyboard (js/fill.js): while the keyboard is open the page gets that much room at the bottom, so it can scroll the sentence above it. */
+  html { padding-bottom: var(--kb-height, 0px); }
+
   /* Scroll bars on touch screens (owner's request, 2026-11-21): a phone normally shows a thin scroll bar only while you scroll, so a new
      player may not know that a page or a pop-up goes on. Here the bar stays visible and is 10px wide (between the thin standard bar and the 16px
      striped bar tried first; the stripes did not show on the owner's phone and were dropped), with a plain rounded thumb in the level color

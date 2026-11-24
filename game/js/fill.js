@@ -1,5 +1,5 @@
 /* js/fill.js - the question screens, part 2: Fill in the Blanks, typed and tapped (SmartBoard)
-   Provides: fillBefore, fillAfter, renderFill, renderFillTap
+   Provides: fillBefore, fillAfter, renderFill, keepBlankAboveKeyboard, renderFillTap
    Needs: CONFIG, el, questionNodes, state, t, normalizeAnswer, alsoCorrectForms, judgeFill, submitAnswer */
 'use strict';
 // Typed fill: the word bank is shown above the sentence; the student types one word into the blank.
@@ -50,6 +50,35 @@ function renderFill(q, area) {
   );
   state.quiz.ui = { input, check };
   input.focus({ preventScroll: true });
+  keepBlankAboveKeyboard(input);
+}
+
+// Phones: when the on-screen keyboard opens it covers the sentence. Give the page room for the keyboard
+// (the CSS variable --kb-height) and scroll the sentence into the visible part above it.
+// Listeners are set up once and only act while a typed blank is focused.
+function keepBlankAboveKeyboard(input) {
+  const vv = window.visualViewport;
+  if (!vv) return;
+  const reveal = () => {
+    const active = document.activeElement;
+    const kb = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop));
+    const typing = active && active.classList && active.classList.contains('blank-input');
+    document.documentElement.style.setProperty('--kb-height', typing && kb > 80 ? `${kb}px` : '0px');
+    if (!typing || kb <= 80) return;
+    const room = vv.height - 12;                      // visible height above the keyboard
+    // Keep the whole sentence in view when it fits. A dialogue (one line per speaker, the blank in the last line) can be taller than the
+    // space above the keyboard: then keep the blank's own line in view and let the first lines scroll off the top.
+    let box = (active.closest('.fill-sentence') || active).getBoundingClientRect();
+    if (box.height > room - 16) box = active.getBoundingClientRect();
+    if (box.bottom > room) window.scrollBy({ top: box.bottom - room + 12, behavior: 'auto' });
+  };
+  if (!keepBlankAboveKeyboard.watching) {
+    keepBlankAboveKeyboard.watching = true;
+    vv.addEventListener('resize', reveal);
+    document.addEventListener('focusin', () => setTimeout(reveal, 250)); // after the keyboard has slid up
+    document.addEventListener('focusout', () => setTimeout(reveal, 100));
+  }
+  input.addEventListener('focus', () => setTimeout(reveal, 250));
 }
 
 // SmartBoard mode: the same question, answered with taps. Tap a bank word and it goes into the blank;

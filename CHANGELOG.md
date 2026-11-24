@@ -2,7 +2,42 @@
 
 What changed in Verba, in plain language. The newest change is at the top. Every commit adds one entry here: its date, a short title and two or three sentences about what was added or changed. The code in brackets is the commit's ID on GitHub, so you can open that exact version.
 
+## 2026-11-25
+
+### Finished Roadmap items moved out of the README (documentation only)
+The README Roadmap now keeps only open items, ideas and the item that other documents cite; the 14 finished items and the finished design draft are in docs/ROADMAP_DONE.md word for word, with a one-line pointer left in the README for each, so every Roadmap item number still works. This makes the README about 5,000 tokens shorter. The game itself did not change.
+
+### Two more private tools moved to Python and one shared helper file (documentation only)
+The section reader and the version-number script now run in Python with output byte for byte the same as the old PowerShell versions, and the section reader can also find which sections use a word. Nine private tools now share one small helper file instead of each keeping its own copy. The documents name the new commands. The game itself did not change.
+
+### A changelog tool, a doc-path check and wider read protection (documentation only)
+A private tool now adds a changelog entry in the right place without anyone reading the long file, and the sync check now fails when AGENTS.md or a docs file names a path that does not exist. The project settings also keep finished drafts, old drafts, voice model files and compiled Python files out of the context (a missing comma in that file was fixed so the rules load). The game itself did not change.
+
+### Two stale tool notes removed (documentation only)
+The README no longer mentions the unused `CHECK_BRIEF_ENGINE=ps` switch of the short check view, because the script it pointed to is archived. The game itself did not change.
+
+### Working rules: root cause first, "Spotted while working", true paths (documentation only)
+Rule 10 now says that a failure is traced to its root cause and answered with a guard for the whole class of error, and that a short "Spotted while working" note is given at handoff. The docs now name the real place of the frozen PowerShell originals, point to the short check view `check_brief.py` (the old `check_brief.ps1` name was stale), and tell sessions to read a README section with `offset`/`limit` instead of the whole file. The audit that led to this is saved as `docs/AUDIT_2026-11-25.md`. The game itself did not change.
+
+### One more lesson in the question method (documentation only)
+The question method now records how a theme with too few words of one type was fixed (a pool check at plan time, a few allowed A1 fillers, a repair search and a reader's check of every changed sentence). The project settings keep the same read-protection rules; only the order of two lines changed. The game itself did not change.
+
+### The play-through test is up to date again (documentation only)
+The private test that plays the whole game in the browser had three stale parts: the old "not ready yet" question for A2 to C1, the removed Word list question type buttons, and the first-visit welcome pop-up. It now checks the locked-level pop-up (wrong and right password, Go back, the Turkish texts, and the end-of-category choice that leads into a locked level) and passes: 1163 checks, 0 failed. The README records the new number. The game itself did not change.
+
 ## 2026-11-24
+
+### New working rules and a regression suite (documentation only)
+Two new project rules are written down: work as a software engineer and an English teacher at once, and four habits (keep every folder tidy, save every lesson in the right permanent file, keep data and audio wiring in step by a script, change things in small safe steps and run the whole test suite). The README, the question method and the question recipe now describe the new private question tools (one-command draft check, pool check, risk table, sync check, one-command test run) and their lessons. The game itself did not change.
+
+### A2 themes 3 and 4 taken out of the game for now
+The question files of A2 Food and Cooking (theme 3) and A2 Shopping and Money (theme 4) were moved out of the game into the private folder `.gitignore/drafts/a2_themes_taken_out_2026-11-24/`, so they are kept but not shipped. Those two themes show placeholder text again like the other A2 themes. The A2 word meanings (`data/glossary/a2.js`) stayed in place.
+
+### Speech after a narration sentence goes on its own line
+A question like "Ken sees Anna at school in the morning. He says "___, Anna! How are you?"" now shows the narration on one line and the speech on the next, like our dialogues. A name before "says," is bold ("Ben says,"); "He" and "She" are not. It is done when the question is shown, so no question text changed. Speech that comes first, or a single speaker with no narration, stays on one line.
+
+### The phone keyboard no longer covers the blank
+In Fill in the Blanks (typed), the on-screen keyboard on a phone used to hide the sentence. Now, when the keyboard opens, the page makes room at the bottom and scrolls the sentence up so it stays visible above the keyboard. It was checked with a simulated keyboard in the browser pane; a real phone still needs a test.
 
 ### A fuller licence, in English and Turkish
 The LICENSE file now names Verba, says what it covers (code, questions, word lists, texts, design), allows playing on the official website for study or in a classroom, tells people to open a GitHub issue to ask for any other permission, keeps the voice recordings under their own licences, and says the game is provided "as is". The same text is written in Turkish below the English, and both say that the English version prevails if the two ever differ. The game itself did not change.

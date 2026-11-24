@@ -51,12 +51,16 @@ function englishText(text) {
 // A question text with a line break ("\n") is a DIALOGUE: each speaker is on a line of their own and the speaker's name is bold
 // ("Anna:" at the start of a line, or the name before "says," / "asks," / "answers,"). A text without a line break is shown as it is.
 // Returns a list of nodes (strings, <strong class="speaker">, <br>) so that Fill in the Blanks can put the blank in the last line.
+// A narration sentence followed by "<who> says ..." with a quote ("Emma gives Ben a pen. Ben says, "..." / "Ken sees Anna. He says "...")
+// also puts the speech on a line of its own (owner, 2026-11-24). The text is not changed in the data; this is only how it is shown.
+// Speech that comes first ("Thanks!" Ben says.) stays one sentence. Pronouns (He, She, ...) are not made bold.
 function questionNodes(text) {
-  const lines = String(text).split('\n');
+  const speechSplit = /([.!?]["'”]?) +(?=(?:[A-Z][A-Za-z']*|The [a-z]+) (?:says|asks|answers|replies|shouts|said|asked|answered|replied|shouted)\b[^"“.!?\n]{0,25}["“])/g;
+  const lines = String(text).replace(speechSplit, '$1\n').split('\n');
   const nodes = [];
   lines.forEach((line, i) => {
     if (i > 0) nodes.push(el('br'));
-    const label = lines.length > 1 ? line.match(/^([A-Z][A-Za-z']*:|(?:The )?[A-Za-z']+(?= (?:says|asks|answers),))/) : null;
+    const label = lines.length > 1 ? line.match(/^([A-Z][A-Za-z']*:|(?:The )?(?!(?:He|She|They|I|We|It|You)\b)[A-Za-z']+(?= (?:says|asks|answers),))/) : null;
     if (label) nodes.push(el('strong', { class: 'speaker', text: label[1] }), line.slice(label[1].length));
     else if (line) nodes.push(line);
   });
