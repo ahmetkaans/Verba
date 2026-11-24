@@ -22,6 +22,9 @@
     --shadow: none;
     --shadow-lg: none;
     --shadow-lift: none;
+    --ctrl-fill: #000000;
+    --ctrl-line: #8A5A1E;
+    --shadow-ctrl: none;
     --overlay: rgba(0, 0, 0, 0.82);
     --tint: 0%;
     --soft: 14%;

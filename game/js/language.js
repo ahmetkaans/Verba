@@ -32,8 +32,8 @@ function setLanguage(lang, save = true) {
   if (state.screen === 'topic') renderTopicButtons();   // the "Not finished" tags are texts too
   renderDifficultyButtons();
   refreshBreadcrumb();
-  // The Settings page's texts change in place, so the toggle keeps its slide and its focus.
-  if (state.screen === 'settings') translateSettings();
+  // The Settings page's texts change in place, so the toggle keeps its slide and its focus. Always (the welcome pop-up changes the language too).
+  translateSettings();
   // The results screen is built from the quiz record: build it again in the new language.
   if (state.screen === 'results' && state.quiz) renderResultsContent();
   refreshHistoryScreen();   // the History screens too (only when one is showing)

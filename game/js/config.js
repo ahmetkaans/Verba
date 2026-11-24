@@ -81,7 +81,10 @@ const CONFIG = {
   TIPS_TYPE_SHARE: 0.6,          // ... and this share of them in one question type
   AUDIO_FOLDER: 'audio/',        // the word recordings (pronunciation buttons, js/word-audio.js): the folder, relative to index.html or a full web address; the ONLY place that knows it (README "Word audio")
   AUDIO_EXTENSION: '.mp3',       // the file ending of a recording; the file name is made from the word by wordAudioFile()
-  HALLOWEEN_WALKER_DELAY_SECONDS: 3,       // Trick or Treat: the walker starts this long after the page opens (or after the switch is turned on)
+  LOCKED_LEVELS: ['A2', 'B1', 'B2', 'C1'], // levels a normal player can't enter: they ask for the developer password (js/dev-lock.js; owner, 2026-11-24). Empty the list to open them all.
+  DEV_PASSWORD_HASH: '289n62pun6a', // the scrambled developer password (not the password itself; made by devHash() in js/dev-lock.js). A curtain against casual players, not real security: the files are public.
+  WELCOME_FINISHED_LEVELS: ['A1'], // the welcome pop-up's last page: these level codes are shown solid, the others pale ("only A1 is finished"); the sentence itself is a text (welcomeNoteFinished). Change both when another level is finished.
+  HALLOWEEN_WALKER_DELAY_SECONDS: 3,      // Trick or Treat: the walker starts this long after the page opens (or after the switch is turned on)
   HALLOWEEN_WALKER_STOP_SECONDS: 2.5,       // it stops this long, and looks back
   HALLOWEEN_WALKER_SPEED: 28,               // walking speed in px per second, the same on every screen width (a calm walk; its feet and rope are made for it)
   HALLOWEEN_WALKER_TUGS_BEFORE_STOP: [2.5, 5.8], // seconds after the start: hard tugs on the rope before the stop

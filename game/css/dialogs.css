@@ -124,6 +124,143 @@
   }
   .lang-lbl.is-on { color: var(--on-accent); }
 
+  /* "What's new?" pop-up (js/versions.js; owner's mock-up, 2026-11-24): version cards, the newest open with a "Latest" tag, older ones folded rows */
+  .wn { display: grid; gap: 10px; margin-top: 4px; max-height: calc(90vh - 190px); overflow-y: auto; padding-right: 4px; }   /* the list scrolls inside, so the Close button stays in view */
+  .wn-ver { padding: 14px; background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; }
+  .wn-ver.is-latest { border-color: var(--ctrl-line); }
+  .wn-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .wn-badge { padding: 2px 10px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; color: var(--on-accent); background: var(--accent); }
+  .wn-new { padding: 2px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 600; color: var(--lvl-A1); background: color-mix(in srgb, var(--lvl-A1) 16%, var(--surface)); }
+  .wn-date { margin-left: auto; font-size: 0.8rem; color: var(--muted); }
+  .modal .wn-tagline { margin: 8px 0 10px; font-size: 1rem; font-weight: 600; color: var(--fg); }
+  .wn-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .modal .wn-list { padding: 0; }
+  .wn-list li { display: flex; gap: 10px; line-height: 1.45; }
+  .wn-mark { flex: none; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--lvl-A1); background: color-mix(in srgb, var(--lvl-A1) 16%, var(--surface)); }
+  .wn-mark svg { width: 11px; height: 11px; }
+  details.wn-ver { background: var(--ctrl-fill); border-color: var(--ctrl-line); box-shadow: var(--shadow-ctrl); }
+  details.wn-ver[open] { background: var(--surface); }
+  details.wn-ver summary { display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; min-height: 28px; }
+  details.wn-ver summary::-webkit-details-marker { display: none; }
+  details.wn-ver summary::after { content: ""; flex: none; width: 8px; height: 8px; margin-left: 4px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); }
+  details.wn-ver[open] summary::after { transform: rotate(-135deg); }
+  details.wn-ver summary:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 4px; border-radius: 8px; }
+  details.wn-ver[open] .wn-list { margin-top: 12px; }
+  .wn-sum { flex: 1; min-width: 0; font-weight: 500; }
+
+  /* Locked-level pop-up "Not ready yet" (js/dev-lock.js; owner's mock-up, 2026-11-24): a lock icon, the text with the level's tag, the developer password
+     field with a show / hide eye, and two firm pill buttons: "Go back" (the main one) and "Continue". */
+  .lock-icon { width: 48px; height: 48px; margin: 0 0 12px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); background: color-mix(in srgb, var(--fg) 7%, var(--surface)); }
+  .lock-icon svg { width: 24px; height: 24px; }
+  .modal .lock-body p { margin: 0 0 14px; color: var(--fg); }
+  .lock-level { display: inline-block; margin-right: 4px; padding: 2px 10px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; color: var(--on-accent); background: var(--c); }
+  .lock-label { display: block; margin: 0 0 6px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .lock-field { display: flex; gap: 8px; margin: 0 0 6px; }
+  .lock-input { flex: 1; min-width: 0; height: 48px; padding: 0 14px; font: inherit; font-size: 1rem; color: var(--fg); background: var(--surface); border: 1.5px solid var(--ctrl-line); border-radius: var(--radius-sm); }
+  .lock-input:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 2px; }
+  .lock-field.is-wrong .lock-input { border-color: var(--bad); }
+  button.lock-eye { flex: none; width: 48px; min-height: 48px; padding: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--ctrl-fill); border: 1.5px solid var(--ctrl-line); box-shadow: var(--shadow-ctrl); }
+  button.lock-eye svg { width: 20px; height: 20px; }
+  .modal p.lock-error { min-height: 20px; margin: 0 0 10px; font-size: 0.85rem; color: var(--bad); }
+  .actions button.pill { min-height: 52px; border-radius: 26px; font-weight: 600; box-shadow: var(--shadow-ctrl); }
+  .actions button.pill.firm { background: var(--ctrl-fill); border: 1.5px solid var(--ctrl-line); font-weight: 500; }
+  .actions button.pill.firm:hover:not(:disabled) { background: var(--ctrl-fill); border-color: var(--accent); }
+
+  /* Welcome pop-up (js/welcome.js; owner's mock-ups, 2026-11-24): five pages in the normal pop-up. Its buttons are firm controls (--ctrl-fill,
+     --ctrl-line, --shadow-ctrl: a tinted fill, a firmer line and a soft shadow), so they are seen at rest, not only on hover. */
+  .welcome { display: flex; flex-direction: column; min-height: min(400px, calc(90vh - 200px)); }
+  .modal .welcome p { color: var(--fg); }
+  .modal .welcome .welcome-help, .modal .welcome .welcome-step { color: var(--muted); }
+  .welcome-step { margin: 0; font-size: 0.78rem; letter-spacing: 0.02em; }
+  .welcome-bar { display: flex; gap: 4px; margin: 8px 0 18px; }
+  .welcome-bar i { flex: 1; height: 4px; border-radius: 2px; background: var(--border); }
+  .welcome-bar i.is-on { background: var(--accent); }
+  .welcome-page { flex: 1; }
+  .welcome-page.is-entering { animation: rise 0.28s ease-out; }   /* only when the page changes, not after a tap on a control */
+  .modal .welcome-title { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 1.4rem; line-height: 1.25; }
+  .welcome-title:focus { outline: none; }
+  .welcome-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--lvl-A1); }   /* the small teal dot before "Verba", as on the level screen */
+  .welcome-lead { margin: 6px 0 14px; }
+  .welcome-help { margin: 8px 0 0; font-size: 0.9rem; }
+  .welcome-help-top { margin: 0 0 16px; }
+  .welcome-icon svg { display: block; width: 20px; height: 20px; }
+  .welcome-bubbles { display: flex; gap: 8px; margin: 2px 0 18px; }
+  .welcome-bubble { padding: 9px 16px; border-radius: 18px 18px 18px 5px; font-weight: 500; color: var(--lvl-A1); background: color-mix(in srgb, var(--lvl-A1) 14%, var(--surface)); }
+  .welcome-bubble.is-second { border-radius: 18px 18px 5px 18px; color: var(--fg); background: color-mix(in srgb, var(--fg) 7%, var(--surface)); }
+  .welcome-label { margin: 0 0 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .lang-toggle.welcome-lang { width: 100%; height: 50px; border-radius: 25px; background: var(--ctrl-fill); border-color: var(--ctrl-line); border-width: 1.5px; }
+  .welcome-lang .lang-thumb { height: 42px; border-radius: 21px; box-shadow: var(--shadow-ctrl); }
+  /* the three theme tiles */
+  .welcome-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  button.welcome-tile {
+    position: relative; display: flex; flex-direction: column; min-height: 0; padding: 8px 8px 11px; text-align: center;
+    background: var(--ctrl-fill); border: 1.5px solid var(--ctrl-line); border-radius: 16px; box-shadow: var(--shadow-ctrl);
+  }
+  button.welcome-tile:hover:not(:disabled) { background: var(--ctrl-fill); border-color: var(--accent); }
+  button.welcome-tile[aria-pressed="true"], button.welcome-tile[aria-pressed="true"]:hover:not(:disabled) {
+    background: var(--surface); border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow-ctrl);
+  }
+  .welcome-mini { position: relative; display: block; height: 60px; margin-bottom: 8px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, 0.14); overflow: hidden; color: #2A241C; }
+  .welcome-mini::after { content: ""; position: absolute; left: 9px; right: 9px; top: 12px; height: 8px; border-radius: 4px; background: currentColor; opacity: 0.7; box-shadow: 0 14px 0 -1px currentColor, 0 26px 0 -1px currentColor; }
+  .welcome-mini.is-light { background: #F8F3EA; }
+  .welcome-mini.is-dark { background: #161616; color: #EDEBE6; }
+  .welcome-mini.is-auto { background: linear-gradient(90deg, #F8F3EA 50%, #161616 50%); }
+  .welcome-mini.is-auto::after { background: linear-gradient(90deg, #2A241C 50%, #EDEBE6 50%); box-shadow: none; }
+  .welcome-tile-name { font-weight: 500; font-size: 0.9rem; }
+  .welcome-check { position: absolute; top: -7px; right: -7px; width: 22px; height: 22px; border-radius: 50%; display: none; align-items: center; justify-content: center; background: var(--accent); color: var(--on-accent); }
+  .welcome-check svg { width: 13px; height: 13px; }
+  .welcome-tile[aria-pressed="true"] .welcome-check { display: flex; }
+  /* SmartBoard page */
+  .welcome-card { margin: 12px 0; padding: 14px; background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; }
+  .welcome-card .setting-head { min-height: 32px; }
+  .welcome-demo { padding: 14px; border: 1.5px dashed var(--ctrl-line); border-radius: 14px; background: color-mix(in srgb, var(--fg) 5%, var(--surface)); }
+  .welcome-demo .welcome-help { margin: 0; }
+  .welcome-sentence { margin: 6px 0 4px; font-size: 1.05rem; line-height: 2.1; }
+  .welcome-blank { display: inline-block; min-width: 78px; padding: 0 6px; text-align: center; font-weight: 500; border-bottom: 2px solid var(--accent); }
+  .welcome-caret { display: inline-block; width: 1.5px; height: 1.1em; vertical-align: -0.2em; background: var(--accent); animation: welcome-blink 1s steps(1) infinite; }
+  @keyframes welcome-blink { 50% { opacity: 0; } }
+  .welcome-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  button.welcome-chip {
+    min-height: 40px; padding: 0 18px; border-radius: 20px; font-size: 0.95rem;
+    background: var(--surface); border: 1.5px solid var(--ctrl-line); box-shadow: var(--shadow-ctrl);
+  }
+  button.welcome-chip:hover:not(:disabled) { background: var(--surface); border-color: var(--accent); }
+  button.welcome-chip.is-used, button.welcome-chip.is-used:hover:not(:disabled) { background: transparent; border-style: dashed; box-shadow: none; color: var(--muted); }
+  /* Tour page: a number, a sentence and a small sample */
+  .welcome-item { display: flex; gap: 12px; margin: 0 0 16px; }
+  .welcome-num { flex: none; width: 26px; height: 26px; margin-top: 1px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; color: var(--accent); background: color-mix(in srgb, var(--fg) 7%, var(--surface)); }
+  .welcome-item-body { flex: 1; min-width: 0; }
+  .modal .welcome-item-body p { margin: 0 0 8px; }
+  .welcome-sample { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .welcome-lv { padding: 3px 10px; border-radius: 8px; font-size: 0.78rem; font-weight: 600; color: var(--on-accent); background: var(--c); }
+  .welcome-lv.is-pale { opacity: 0.35; }
+  .welcome-tag { padding: 3px 9px; border: 1px solid var(--ctrl-line); border-radius: 10px; font-size: 0.75rem; color: var(--muted); }
+  .welcome-diff { display: inline-flex; align-items: center; gap: 6px; }
+  .welcome-dots { display: inline-flex; gap: 3px; }
+  .welcome-dots s { width: 5px; height: 5px; border-radius: 50%; background: var(--border); text-decoration: none; }
+  .welcome-dots s.is-on { background: var(--accent); }
+  .welcome-word { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 12px; background: color-mix(in srgb, var(--fg) 6%, var(--surface)); }
+  .welcome-word b { font-weight: 500; }
+  .welcome-word em { font-style: normal; font-size: 0.85rem; color: var(--muted); }
+  .welcome-word em i { color: var(--lvl-A1); }
+  .welcome-spk { flex: none; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--lvl-A1); background: color-mix(in srgb, var(--lvl-A1) 22%, var(--surface)); border: 1px solid var(--lvl-A1); }
+  .welcome-spk svg { width: 14px; height: 14px; }
+  /* Last page: two notes */
+  .welcome-note { display: flex; gap: 12px; align-items: flex-start; }
+  .modal .welcome-note p { margin: 0; }
+  .welcome-note-icon { flex: none; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); background: color-mix(in srgb, var(--fg) 7%, var(--surface)); }
+  .welcome-note-icon svg { width: 19px; height: 19px; }
+  .welcome-levels { display: flex; gap: 6px; margin: 10px 0 0 48px; }
+  /* The buttons: a round Back arrow and a wide Next / "Let's go" */
+  .actions.welcome-actions { flex-wrap: nowrap; gap: 12px; margin-top: 14px; }
+  .actions.welcome-actions button.primary { flex: 1 1 auto; min-width: 0; min-height: 52px; border-radius: 26px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-ctrl); }
+  .actions.welcome-actions button.welcome-back {
+    flex: none; width: 52px; min-width: 0; min-height: 52px; height: 52px; padding: 0; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--ctrl-fill); border: 1.5px solid var(--ctrl-line); box-shadow: var(--shadow-ctrl);
+  }
+  .actions.welcome-actions button.welcome-back:hover:not(:disabled) { background: var(--ctrl-fill); border-color: var(--accent); }
+
   /* Menu tree: a drawer on the right on wide screens, a bottom sheet on phones */
   #tree-btn, #home-btn { color: var(--accent); }
   .tree-overlay {

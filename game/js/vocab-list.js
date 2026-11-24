@@ -1,7 +1,7 @@
 /* js/vocab-list.js - the Vocabulary lists: which words a topic (or one quiz) tests, with their meanings (data in, lists out), and the Vocabulary screen
-   Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, vocabKinds, selectVocabKind, toggleVocabKinds, renderVocabList, vocabLevelTabs, selectVocabLevel, renderVocabTopics, renderVocab, openVocab, vocabBack, refreshVocab, initVocab
+   Provides: vocabularyWords, vocabAccent, vocabCount, vocabSub, vocabRow, vocabTabs, selectVocabTab, renderVocabList, vocabLevelTabs, selectVocabLevel, renderVocabTopics, renderVocab, openVocab, vocabBack, refreshVocab, initVocab
    Needs: bhNavigate, CONFIG, QUESTION_BANK, GLOSSARY, ICONS, $, el, t, state, getTopics, hasRealQuizzes, showScreen,
-          quizTargetWords, openUnfinishedConfirm, wordAudioButton, stopWordAudio */
+          quizTargetWords, openUnfinishedConfirm, wordAudioButton, stopWordAudio, isLevelLocked, openLockedLevel */
 'use strict';
 /* =========================================================================
  * VOCAB LIST  (README.md, Roadmap item 17; decided 2026-11-16. The lists come first, the screen (the Vocabulary button) is below.)
@@ -51,11 +51,10 @@ function vocabularyWords(level, category, theme, only = {}, bank = QUESTION_BANK
  * Word list button opens it on A1) and the topics of the chosen level as rows with the number of words; a topic with no real
  * questions is gray and asks "Go back / Go there", and a level with no real vocabulary quizzes (its tab is softly grayed) shows
  * "There are no words here yet." with the "Not finished" tag. The list shows every word of the topic under one tab for each
- * difficulty. A button at the end of the list, "Separate words by question type", shows four question type buttons above the
- * tabs; a type button keeps only the words of that question type (tap it again, or the button at the end, to see all types
- * again). Back goes one step back; from the topic step to the main menu. Both steps sit on a "notebook page" (spiral rings;
+ * difficulty. Back goes one step back; from the topic step to the main menu. Both steps sit on a "notebook page" (spiral rings;
  * the list also has a ribbon with the level code), so the screen never looks like the main menu.
- * (Until 2026-11-19 there was a separate Level step with the main menu's level buttons; the owner replaced it with the tabs.)
+ * (Until 2026-11-19 there was a separate Level step with the main menu's level buttons; the owner replaced it with the tabs.
+ * Until 2026-11-24 a button at the end of the list, "Separate words by question type", filtered the list by question type; the owner removed it.)
  * ========================================================================= */
 
 // The level accent of the Vocabulary screen: the chosen level's color, neutral before a level is chosen (showScreen calls it too).
@@ -75,7 +74,7 @@ function vocabSub(result) {
   const v = state.vocab;
   if (v.step === 'theme') return `${v.level} · ${t(`levelName.${v.level}`)}`;
   const count = result.total ? ` · ${vocabCount(result.total)}` : '';
-  return (v.type ? t(`type.${v.type}`) : t('vocabButton')) + count;
+  return t('vocabButton') + count;
 }
 
 // One word of the list: the word, then one line for each word type: the type in italics (accent color), a dot, the meaning.
@@ -120,58 +119,18 @@ function selectVocabTab(difficulty, focus) {
   if (focus) $('#vocab-list .vocab-tab.is-on').focus();
 }
 
-// The four question type buttons (shown above the tabs after "Separate words by question type"): one pressed at most.
-function vocabKinds() {
-  const box = el('div', { class: 'vocab-kinds' });
-  CONFIG.TYPES.forEach((ty) => {
-    const btn = el('button', {
-      type: 'button',
-      class: 'vocab-kind',
-      'aria-pressed': String(state.vocab.type === ty.id),
-      'data-type': ty.id,
-      text: t(`type.${ty.id}`),
-    });
-    btn.addEventListener('click', () => selectVocabKind(ty.id));
-    box.append(btn);
-  });
-  return box;
-}
-
-// A type button keeps only that question type's words; the pressed one again shows all types. The focus stays on the button.
-function selectVocabKind(id) {
-  const v = state.vocab;
-  v.type = v.type === id ? null : id;
-  renderVocab(false);
-  $(`#vocab-list .vocab-kind[data-type="${id}"]`).focus({ preventScroll: true });
-}
-
-// The button at the end of the list: shows the type buttons (the page goes back to the top, where they are) or hides them (all types again).
-function toggleVocabKinds() {
-  const v = state.vocab;
-  v.showTypes = !v.showTypes;
-  if (!v.showTypes) v.type = null;
-  renderVocab();
-  if (v.showTypes) $('#vocab-list .vocab-kind').focus({ preventScroll: true });
-}
-
-// The list: the type buttons (when shown), the tabs and the words of the open tab, or one muted line when there are none; then the button at the end.
+// The list: the tabs and the words of the open tab, or one muted line when there are none.
 function renderVocabList(result) {
   const v = state.vocab;
   const box = $('#vocab-list');
-  stopWordAudio();   // the list is built again (a tab, a type button or the language): a sound that is playing stops
+  stopWordAudio();   // the list is built again (a tab or the language): a sound that is playing stops
   box.replaceChildren();
-  if (v.showTypes) box.append(vocabKinds());
   if (!result.total) {
     box.append(el('p', { class: 'vocab-empty', text: t('vocabEmpty') }));
   } else {
     const block = result.blocks.find((b) => b.difficulty === v.tab) || result.blocks[0];
     v.tab = block.difficulty;
     box.append(vocabTabs(result, block), el('ul', { class: 'vocab-words has-tabs', lang: 'en', role: 'tabpanel' }, block.words.map(vocabRow)));
-  }
-  if (result.total || v.showTypes) {
-    const more = el('button', { type: 'button', class: 'vocab-separate', text: t(v.showTypes ? 'vocabShowAll' : 'vocabSeparate') });
-    more.addEventListener('click', toggleVocabKinds);
-    box.append(more);
   }
 }
 
@@ -186,10 +145,10 @@ function vocabLevelTabs(box) {
     const finished = hasRealQuizzes(l, 'vocabulary');
     const btn = el('button', {
       type: 'button',
-      class: `vocab-level-tab${on ? ' is-on' : ''}${finished ? '' : ' is-unfinished'}`,
+      class: `vocab-level-tab${on ? ' is-on' : ''}${finished ? '' : ' is-unfinished'}${isLevelLocked(l) ? ' is-locked' : ''}`,
       role: 'tab',
       'aria-selected': String(on),
-      'aria-label': `${l}, ${t(`levelName.${l}`)}`,
+      'aria-label': `${l}, ${t(`levelName.${l}`)}${isLevelLocked(l) ? `, ${t('lockedTag')}` : ''}`,
       tabindex: on ? '0' : '-1',
       'data-level': l,
       text: l,
@@ -207,7 +166,11 @@ function vocabLevelTabs(box) {
 
 // A level tab: shows the topics of that level; the reading position stays, the focus stays on the (new) chosen tab.
 function selectVocabLevel(level) {
-  Object.assign(state.vocab, { level, theme: null, type: null, tab: null, showTypes: false });
+  if (isLevelLocked(level)) {   // a locked level (js/dev-lock.js): the developer password first
+    openLockedLevel(level, () => selectVocabLevel(level));
+    return;
+  }
+  Object.assign(state.vocab, { level, theme: null, tab: null });
   renderVocab(false);
   $('#vocab-levels .vocab-level-tab.is-on').focus({ preventScroll: true });
   bhNavigate();   // only keeps the current step up to date (a tab is not a step)
@@ -236,7 +199,7 @@ function renderVocabTopics(box) {
     ]);
     if (total && !unfinished) row.setAttribute('aria-label', `${name}, ${vocabCount(total)}`);
     const go = () => {
-      Object.assign(v, { theme: i, tab: null, type: null, showTypes: false, step: 'list' });
+      Object.assign(v, { theme: i, tab: null, step: 'list' });
       renderVocab();
       bhNavigate();   // the list is a step of the browser's history
     };
@@ -245,7 +208,7 @@ function renderVocabTopics(box) {
   }));
 }
 
-// Shows the step in state.vocab.step. focus: move the reading position to the title (not when only the language, a tab or a type button changed).
+// Shows the step in state.vocab.step. focus: move the reading position to the title (not when only the language or a tab changed).
 function renderVocab(focus = true) {
   const v = state.vocab;
   vocabAccent();
@@ -254,7 +217,7 @@ function renderVocab(focus = true) {
   const title = $('#vocab-title');
   title.textContent = onList ? topic : t('vocabButton');
   title.lang = onList ? 'en' : state.lang;   // topic names are not translated
-  const result = onList ? vocabularyWords(v.level, 'vocabulary', v.theme, v.type ? { type: v.type } : {}) : null;
+  const result = onList ? vocabularyWords(v.level, 'vocabulary', v.theme) : null;
   $('#vocab-sub').textContent = vocabSub(result);
   const ribbon = $('#vocab-ribbon');
   ribbon.hidden = !onList;   // on the topic step the level tabs already show the level
@@ -280,7 +243,7 @@ function renderVocab(focus = true) {
 
 // The Word list button: always starts at the topic step of the first level (A1); the level tabs change the level.
 function openVocab() {
-  Object.assign(state.vocab, { step: 'theme', level: CONFIG.LEVELS[0], theme: null, type: null, tab: null, showTypes: false });
+  Object.assign(state.vocab, { step: 'theme', level: CONFIG.LEVELS[0], theme: null, tab: null });
   showScreen('vocab');
   renderVocab();
 }

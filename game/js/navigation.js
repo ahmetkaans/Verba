@@ -2,7 +2,7 @@
    Provides: breadcrumbParts, refreshBreadcrumb, markTopbarButton, showScreen, showScreenRaw, renderButtons, getQuestionSeconds, setSameDuration,
              renderDifficultyButtons, SCREEN_DEPTH
    Needs: bhNavigate, walkerModalClosed, stopConfetti, stopWordAudio, clearQuizRun, HISTORY_SCREENS, vocabAccent, CONFIG, el, findById, savePref, state, $, t, getTopics, renderCategoryButtons,
-          renderTopicButtons, openUnfinishedConfirm, refreshSettings, startQuiz */
+          renderTopicButtons, openUnfinishedConfirm, refreshSettings, startQuiz, ICONS, openLockedLevel */
 'use strict';
 /* =========================================================================
  * NAVIGATION / MENUS
@@ -88,11 +88,22 @@ function renderButtons(container, items, onClick) {
       btn.classList.add('is-next');
       btn.append(el('span', { class: 'next-tag', text: item.tag }));
     }
-    if (item.unfinished) {
+    if (item.locked) {
+      // a locked level (js/dev-lock.js): the same soft look as an unfinished button, with a lock in its tag; it asks for the developer password
+      btn.classList.add('is-unfinished', 'is-locked');
+      const tag = el('span', { class: 'unfinished-tag lock-tag', lang: state.lang });
+      tag.innerHTML = ICONS.lock;
+      tag.append(t('lockedTag'));
+      btn.append(tag);
+    } else if (item.unfinished) {
       btn.classList.add('is-unfinished');
       btn.append(el('span', { class: 'unfinished-tag', lang: state.lang, text: t('unfinishedTag') }));
     }
-    btn.addEventListener('click', () => (item.unfinished ? openUnfinishedConfirm(() => onClick(item)) : onClick(item)));
+    btn.addEventListener('click', () => {
+      if (item.locked) openLockedLevel(item.id, () => onClick(item));
+      else if (item.unfinished) openUnfinishedConfirm(() => onClick(item));
+      else onClick(item);
+    });
     return btn;
   }));
 }

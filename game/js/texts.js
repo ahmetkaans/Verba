@@ -82,7 +82,6 @@ const I18N = {
     nextTag: 'Next', secondsShort: '{n}s',
     sameDuration: 'Same duration per question across all difficulty settings',
     vocabButton: 'Word list', vocabLevelTitle: 'Choose a level',
-    vocabSeparate: 'Separate words by question type', vocabShowAll: 'Show all question types',
     vocabWords: '{n} words', vocabWordsOne: '1 word', vocabEmpty: 'There are no words here yet.', audioListen: 'Listen to {word}', audioMissing: 'No audio yet',
 
     homeTitle: 'Go to the main menu?', homeBody: 'You will go back to the level selection screen.', no: 'No', yes: 'Yes',
@@ -113,6 +112,26 @@ const I18N = {
     smartBoardLock: 'You can change this between quizzes.',
     workInProgress: 'Work in Progress',
     settingsGroupLanguage: 'Language', settingsGroupLook: 'Look', settingsGroupPlay: 'Play',
+
+    // "What's new?" (js/versions.js; the version texts themselves are in VERSIONS, in both languages)
+    whatsNew: 'What\'s new?', whatsNewLatest: 'Latest',
+
+    // Locked levels (js/dev-lock.js; owner's mock-up, 2026-11-24): A2 to C1 ask for the developer password.
+    lockedTag: 'Locked', lockedTitle: 'Not ready yet',
+    lockedBody: 'This part is not ready yet. If you are a developer, enter the password to continue. Everyone else can go back and play the other levels.',
+    lockedLabel: 'Developer password', lockedWrong: 'That password is not right. Try again.',
+    lockedShow: 'Show password', lockedHide: 'Hide password', lockedContinue: 'Continue',
+
+    // The welcome pop-up (js/welcome.js; owner's mock-ups, 2026-11-24): five pages. The Language, Theme and SmartBoard texts are the Settings ones.
+    welcomeTitle: 'Welcome to Verba', welcomeIntro: 'Let\'s set up the game. You can change all of this later in Settings.',
+    welcomeStep: 'Step {n} of {total}', welcomeGo: 'Let\'s go',
+    welcomeSmartBoardHelp: 'Typing is hard on a smart board. When this is on, you tap a word instead of typing it.',
+    welcomeTourTitle: 'What you can do',
+    welcomeTour1: 'Choose your level, from A1 to C1.', welcomeTour2: 'Try four kinds of questions.',
+    welcomeTour3: 'Pick a difficulty, from Easy to Very Hard.', welcomeTour4: 'Use the Word list to read meanings and hear each word.',
+    welcomeGoodTitle: 'Before you start',
+    welcomeNoteFinished: 'Only A1 Vocabulary is finished. All its words have audio. More is coming soon.',
+    welcomeNoteHistory: 'Your History is saved in this browser only. If you clear your browser data, it is gone.',
 
     treeTitle: 'Where you are',
     'step.level': 'Level', 'step.category': 'Category', 'step.topic': 'Topic', 'step.type': 'Question type', 'step.difficulty': 'Difficulty',
@@ -205,7 +224,6 @@ const I18N = {
     nextTag: 'Sıradaki', secondsShort: '{n} sn',
     sameDuration: 'Tüm zorluk seviyelerinde soru başına aynı süre',
     vocabButton: 'Kelime Listesi', vocabLevelTitle: 'Bir seviye seç',
-    vocabSeparate: 'Kelimeleri soru türüne göre ayır', vocabShowAll: 'Tüm soru türlerini göster',
     vocabWords: '{n} kelime', vocabWordsOne: '1 kelime', vocabEmpty: 'Burada henüz kelime yok.', audioListen: '{word} kelimesini dinle', audioMissing: 'Henüz ses yok',
 
     homeTitle: 'Ana menüye gitmek istiyor musun?', homeBody: 'Seviye seçim ekranına geri döneceksin.', no: 'Hayır', yes: 'Evet',
@@ -236,6 +254,26 @@ const I18N = {
     smartBoardLock: 'Bunu alıştırmalar arasında değiştirebilirsin.',
     workInProgress: 'Yapım aşamasında',
     settingsGroupLanguage: 'Dil', settingsGroupLook: 'Görünüm', settingsGroupPlay: 'Oyun',
+
+    // "Yenilikler neler?" (js/versions.js; sürüm metinleri VERSIONS içinde, iki dilde)
+    whatsNew: 'Yenilikler neler?', whatsNewLatest: 'En yeni',
+
+    // Kilitli seviyeler (js/dev-lock.js): A2'den C1'e geliştirici şifresi ister. (Türkçesi sahibinin incelemesi için.)
+    lockedTag: 'Kilitli', lockedTitle: 'Henüz hazır değil',
+    lockedBody: 'Bu bölüm henüz hazır değil. Geliştiriciysen devam etmek için şifreyi gir. Diğer herkes geri dönüp diğer seviyeleri oynayabilir.',
+    lockedLabel: 'Geliştirici şifresi', lockedWrong: 'Şifre doğru değil. Tekrar dene.',
+    lockedShow: 'Şifreyi göster', lockedHide: 'Şifreyi gizle', lockedContinue: 'Devam et',
+
+    // Karşılama penceresi (js/welcome.js): Dil, Tema ve Akıllı tahta metinleri Ayarlar'dakiyle aynı. (Türkçesi sahibinin incelemesi için.)
+    welcomeTitle: 'Verba\'ya hoş geldin', welcomeIntro: 'Önce oyunu ayarlayalım. Bunların hepsini sonra Ayarlar\'dan değiştirebilirsin.',
+    welcomeStep: 'Adım {n} / {total}', welcomeGo: 'Hadi başlayalım',
+    welcomeSmartBoardHelp: 'Akıllı tahtada yazmak zordur. Bu açıkken kelimeyi yazmak yerine dokunarak seçersin.',
+    welcomeTourTitle: 'Neler yapabilirsin?',
+    welcomeTour1: 'Seviyeni seç, A1\'den C1\'e kadar.', welcomeTour2: 'Dört farklı soru türünü dene.',
+    welcomeTour3: 'Bir zorluk seç, Kolay\'dan Çok Zor\'a kadar.', welcomeTour4: 'Anlamları okumak ve her kelimeyi dinlemek için Kelime Listesi\'ni kullan.',
+    welcomeGoodTitle: 'Başlamadan önce',
+    welcomeNoteFinished: 'Şimdilik yalnızca A1 Kelime Bilgisi hazır. Tüm kelimelerin sesi var. Yenileri yakında geliyor.',
+    welcomeNoteHistory: 'Geçmişin yalnızca bu tarayıcıda saklanır. Tarayıcı verilerini silersen geçmişin de silinir.',
 
     treeTitle: 'Bulunduğun yer',
     'step.level': 'Seviye', 'step.category': 'Kategori', 'step.topic': 'Konu', 'step.type': 'Soru türü', 'step.difficulty': 'Zorluk',

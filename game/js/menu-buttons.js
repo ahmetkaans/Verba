@@ -2,7 +2,7 @@
    Provides: renderTopicButtons, renderCategoryButtons, renderLevelGroups, renderMenus, initMenus
    Needs: CONFIG, el, loadPref, state, $, t, getTopics, ICONS, hasRealQuizzes, showScreen, renderButtons,
           setSameDuration, goHome, openNextExercise, openCredits, setSmartBoard, openSettings, startQuiz, goNext,
-          requestQuit */
+          requestQuit, isLevelLocked */
 'use strict';
 /* =========================================================================
  * MENU BUTTONS (topic, level, category and question type buttons; the menus' start-up)
@@ -40,7 +40,7 @@ function renderCategoryButtons() {
 function renderLevelGroups(container, onPick) {
   container.replaceChildren(...CONFIG.LEVEL_GROUPS.map((group) => {
     const grid = el('div', { class: 'grid' });
-    renderButtons(grid, group.levels.map((l) => ({ id: l, label: l, sub: t(`levelName.${l}`), unfinished: !hasRealQuizzes(l) })), onPick);
+    renderButtons(grid, group.levels.map((l) => ({ id: l, label: l, sub: t(`levelName.${l}`), unfinished: !hasRealQuizzes(l), locked: isLevelLocked(l) })), onPick);
     // Each level button previews its own level color.
     [...grid.children].forEach((btn, i) => {
       btn.classList.add('level-btn');
