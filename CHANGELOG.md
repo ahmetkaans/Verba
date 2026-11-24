@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Working rules: root cause first, "Spotted while working", true paths (documentation only)
+Rule 10 now says that a failure is traced to its root cause and answered with a guard for the whole class of error, and that a short "Spotted while working" note is given at handoff. The docs now name the real place of the frozen PowerShell originals, point to the short check view `check_brief.py` (the old `check_brief.ps1` name was stale), and tell sessions to read a README section with `offset`/`limit` instead of the whole file. The audit that led to this is saved as `docs/AUDIT_2026-11-25.md`. The game itself did not change.
+
 ### One more lesson in the question method (documentation only)
 The question method now records how a theme with too few words of one type was fixed (a pool check at plan time, a few allowed A1 fillers, a repair search and a reader's check of every changed sentence). The project settings keep the same read-protection rules; only the order of two lines changed. The game itself did not change.
 

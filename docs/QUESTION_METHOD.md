@@ -5,7 +5,7 @@ Written 2026-11-23 with the owner; linked from AGENTS.md, RULES_FULL.md (rule 9)
 This is the method for **new** question work at any level: A2 vocabulary first (pilot: Food and Cooking), later B1 to C1, and new A1 work such as the A1 grammar topics. A1 vocabulary is finished and keeps its recipe in `docs/ADDING_QUESTIONS.md`. The rules of AGENTS.md (ask first, draft, check, review, go-ahead, then write) and the README sections "Never ambiguous", "Target words and difficulty", "How similar the wrong options are", "Writing the questions", "Review checklist" and "Question repetition" all stay true; this file does not copy them, it only says the order and what changes. Where this file and the README disagree, stop and ask (rule 10).
 
 ## The tools (private, in `.gitignore/tools/`; run every command from the project folder)
-Since 2026-11-24 these tools run in Python (standard library only, always `python -I`); the `.ps1` originals are frozen as the reference and give the same results. Never copy the list of checks into a doc: `check_questions.py --checks` prints the numbered checks and is always right.
+Since 2026-11-24 these tools run in Python (standard library only, always `python -I`); the `.ps1` originals are frozen as the reference in `.gitignore/archive/tools/ps_oracles/` (read-denied) and give the same results. Never copy the list of checks into a doc: `check_questions.py --checks` prints the numbered checks and is always right.
 | Job | Command | Notes |
 |---|---|---|
 | Check a draft or the whole bank | `python -I .gitignore/tools/check_questions.py [--draft <file> --draft-glossary <file>] [--only 'A2|vocabulary|3|']` | no option = whole bank (about 1 second); `--show-level A2` shows how a word list is read; `--worksheet` for the review |
@@ -20,7 +20,7 @@ Since 2026-11-24 these tools run in Python (standard library only, always `pytho
 | Pool math BEFORE the plan is approved | `python -I .gitignore/tools/questions/pool_check.py --level A2 --theme "<name>"` | OK / TIGHT / SHORT per word type; slot arithmetic |
 | Where a second answer is likely (read-only) | `python -I .gitignore/tools/questions/risk_table.py --prefix A2_vocabulary_1` | writes `<Prefix>_RISK.md`: each close wrong option with the sentence completed with it |
 | Readable file, short check view, bank index, review sheet | `make_readable.py --prefix <P>`, `check_brief.py <check_questions options>`, `bank_index.py [--only K] [--word W]`, `review_sheet.py --draft <ALL.json> --out-dir <folder>` | Python ports of the PowerShell tools of the same names (2026-11-24); same flags, same output |
-Still PowerShell: `make_draft_kit.ps1` (makes `draft_kit_<LEVEL>.md`), `repetition_fix.ps1`, `show_section.ps1`, `set_versions.ps1`, `check_filemap.ps1`. The `.ps1` originals of the ported tools stay as the frozen oracle.
+Still PowerShell: `make_draft_kit.ps1` (makes `draft_kit_<LEVEL>.md`), `repetition_fix.ps1`, `show_section.ps1`, `set_versions.ps1`, `check_filemap.ps1`. The `.ps1` originals of the ported tools are the frozen oracle in `.gitignore/archive/tools/ps_oracles/` (not next to the live tools).
 
 ## The level rule (owner, 2026-11-23)
 1. **Target words first.** Every new word of the level, in the theme's list, is tested, as at A1.
