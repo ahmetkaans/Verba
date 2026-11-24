@@ -1,8 +1,55 @@
+Verba
 Copyright (c) 2026 Ahmet Kaan Sarılarlı. All Rights Reserved.
 
-No permission is granted to copy, modify, distribute, publish, sublicense,
-or create derivative works from this software, its source code, or its
-content without explicit written permission from the copyright owner.
+(In the event of any discrepancy between the English and Turkish versions,
+the English version shall prevail.)
 
-This does not apply to third-party material, such as the voice recordings,
-which keep their own licences and credits (see Credits in the game and the README).
+What this covers: Verba, including its source code, questions, word
+lists, texts, design and other content.
+
+Using Verba: You may play Verba on its official website
+(https://ahmetkaans.github.io/Verba/), free of charge, for your own
+study or in a classroom.
+
+No permission is granted to copy, modify, distribute, publish,
+sublicense, or create derivative works from Verba without explicit
+written permission from the copyright owner. To ask for permission,
+open an issue at https://github.com/ahmetkaans/Verba/issues
+
+Third-party material: This does not apply to third-party material,
+such as the voice recordings, which keep their own licences and
+credits (see Credits in the game and the README).
+
+No warranty: Verba is provided "as is", without any warranty. The
+owner is not responsible for any loss or damage from using it,
+including loss of saved results.
+
+----------------------------------------------------------------------
+
+Verba
+Telif Hakkı (c) 2026 Ahmet Kaan Sarılarlı. Tüm Hakları Saklıdır.
+
+(İngilizce ve Türkçe metinler arasında herhangi bir çelişki olması durumunda
+İngilizce metin esas alınacaktır.)
+
+Kapsam: Kaynak kodları, sorular, kelime listeleri, metinler, tasarım ve diğer
+tüm içerikler dâhil olmak üzere Verba'nın tamamı bu lisans kapsamındadır.
+
+Kullanım İzni: Verba'yı resmi web sitesi (https://ahmetkaans.github.io/Verba/)
+üzerinden kendi bireysel çalışmalarınız veya sınıf içi eğitim amaçlı olarak
+ücretsiz şekilde oynayabilirsiniz.
+
+Telif hakkı sahibinin açık ve yazılı izni olmaksızın Verba'nın kopyalanmasına,
+değiştirilmesine, dağıtılmasına, yayımlanmasına, alt lisanslanmasına veya
+bundan türev eserler oluşturulmasına izin verilmez. İzin talepleri için
+https://github.com/ahmetkaans/Verba/issues adresinden bildirim (issue)
+açabilirsiniz.
+
+Üçüncü Taraf Materyaller: Bu hükümler, kendi lisanslarına ve atıflarına tabi
+olan ses kayıtları gibi üçüncü taraf materyalleri kapsamaz (oyun içindeki
+"Emeği Geçenler" bölümüne ve README dosyasına bakınız).
+
+Garanti Reddi: Verba, açık veya zımni herhangi bir garanti verilmeksizin
+"olduğu gibi" sunulmaktadır. Kaydedilen sonuçların kaybı da dâhil olmak üzere,
+oyunun kullanımından doğabilecek hiçbir zarar veya kayıptan eser sahibi
+sorumlu tutulamaz.

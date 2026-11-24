@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-24
 
+### A fuller licence, in English and Turkish
+The LICENSE file now names Verba, says what it covers (code, questions, word lists, texts, design), allows playing on the official website for study or in a classroom, tells people to open a GitHub issue to ask for any other permission, keeps the voice recordings under their own licences, and says the game is provided "as is". The same text is written in Turkish below the English, and both say that the English version prevails if the two ever differ. The game itself did not change.
+
 ### A "What's new?" button with the version list
 A new button next to Credits opens a pop-up with the game's versions, newest first, each with its number, date, tagline and a list in very plain words. Today's version is called v1.0 and lists everything the game offers. It is in English and Turkish and follows the language setting, and older versions will fold into short rows. The README has the plan and the rule that a new version is added only when the owner says "release". The Turkish and the defaults (sparkle icon, folded rows, date style) are for the owner's review.
 
