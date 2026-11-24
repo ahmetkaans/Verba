@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-24
 
+### Question docs updated for the Python tools and grammar topics
+The question method now has a table of the tools with their Python commands, and a short list of steps for writing a grammar topic (a variety plan before the sentences, a hand-made table of wrong options, and how to treat repeated forms). The recipe for adding questions uses the Python commands too, and one wrong step number was fixed. The game itself did not change.
+
 ### Grammar rules for A2 and higher
 Grammar questions at A2 and above may now test forms of easier words (for example *went* and *gone*), so the level rule that only applies to vocabulary quizzes (checks 36 and 37) no longer applies to them. A new warning, check 40, asks for at least one word of the level in a grammar sentence so the vocabulary still gets practice. The new rules are written in the question method, the README and the A2 word list; the whole bank gives the same report as before, and the self-tests passed. The game itself did not change.
 
