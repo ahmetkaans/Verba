@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-24
 
+### More question tools moved to Python
+Four more private tools now run in Python: the blueprint check (with its 31 self-tests), the multi-meaning report, the repetition overview and the repetition proposal tool. On the real themes and on made-up broken files they give the same results as the PowerShell originals, which stay untouched; only the order of some lists differs. The tools that change files were not moved. The game itself did not change.
+
 ### Question check tools moved to Python
 The private question check, its 77 self-tests, the option closeness check and the repetition report now run in Python (`check_questions.py`, `test_check_questions.py`, `option_check.py`, `repetition_report.py`): the whole bank is checked in about a second instead of about a minute. The old PowerShell versions are kept untouched as the reference; on the whole bank, the real drafts and made-up broken drafts the reports are the same, apart from the order of some lists and one line the old script wrongly left out. README, the question docs and AGENTS.md show the new commands. The game itself did not change.
 
