@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Finished Roadmap items moved out of the README (documentation only)
+The README Roadmap now keeps only open items, ideas and the item that other documents cite; the 14 finished items and the finished design draft are in docs/ROADMAP_DONE.md word for word, with a one-line pointer left in the README for each, so every Roadmap item number still works. This makes the README about 5,000 tokens shorter. The game itself did not change.
+
 ### Two more private tools moved to Python and one shared helper file (documentation only)
 The section reader and the version-number script now run in Python with output byte for byte the same as the old PowerShell versions, and the section reader can also find which sections use a word. Nine private tools now share one small helper file instead of each keeping its own copy. The documents name the new commands. The game itself did not change.
 
