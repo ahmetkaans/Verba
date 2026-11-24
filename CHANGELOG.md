@@ -4,6 +4,12 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-24
 
+### New working rules and a regression suite (documentation only)
+Two new project rules are written down: work as a software engineer and an English teacher at once, and four habits (keep every folder tidy, save every lesson in the right permanent file, keep data and audio wiring in step by a script, change things in small safe steps and run the whole test suite). The README, the question method and the question recipe now describe the new private question tools (one-command draft check, pool check, risk table, sync check, one-command test run) and their lessons. The game itself did not change.
+
+### A2 themes 3 and 4 taken out of the game for now
+The question files of A2 Food and Cooking (theme 3) and A2 Shopping and Money (theme 4) were moved out of the game into the private folder `.gitignore/drafts/a2_themes_taken_out_2026-11-24/`, so they are kept but not shipped. Those two themes show placeholder text again like the other A2 themes. The A2 word meanings (`data/glossary/a2.js`) stayed in place.
+
 ### Speech after a narration sentence goes on its own line
 A question like "Ken sees Anna at school in the morning. He says "___, Anna! How are you?"" now shows the narration on one line and the speech on the next, like our dialogues. A name before "says," is bold ("Ben says,"); "He" and "She" are not. It is done when the question is shown, so no question text changed. Speech that comes first, or a single speaker with no narration, stays on one line.
 
