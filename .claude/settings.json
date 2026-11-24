@@ -3,8 +3,8 @@
     "deny": [
       "Read(./.gitignore/archive/**)",
       "Read(./.gitignore/drafts/**/*_ALL.json)",
-      "Read(./.gitignore/tools/playthrough.js)",
       "Read(./.gitignore/audio/**/*.mp3)",
+      "Read(./.gitignore/tools/playthrough.js)",
       "Read(./.gitignore/audio/**/*.wav)",
       "Read(./.gitignore/audio/third_party/piper_old/**)",
       "Read(./.gitignore/audio/voices/**)",

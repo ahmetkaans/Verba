@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### One more lesson in the question method (documentation only)
+The question method now records how a theme with too few words of one type was fixed (a pool check at plan time, a few allowed A1 fillers, a repair search and a reader's check of every changed sentence). The project settings keep the same read-protection rules; only the order of two lines changed. The game itself did not change.
+
 ### The play-through test is up to date again (documentation only)
 The private test that plays the whole game in the browser had three stale parts: the old "not ready yet" question for A2 to C1, the removed Word list question type buttons, and the first-visit welcome pop-up. It now checks the locked-level pop-up (wrong and right password, Go back, the Turkish texts, and the end-of-category choice that leads into a locked level) and passes: 1163 checks, 0 failed. The README records the new number. The game itself did not change.
 
