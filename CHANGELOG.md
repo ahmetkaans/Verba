@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Two more private tools moved to Python and one shared helper file (documentation only)
+The section reader and the version-number script now run in Python with output byte for byte the same as the old PowerShell versions, and the section reader can also find which sections use a word. Nine private tools now share one small helper file instead of each keeping its own copy. The documents name the new commands. The game itself did not change.
+
 ### A changelog tool, a doc-path check and wider read protection (documentation only)
 A private tool now adds a changelog entry in the right place without anyone reading the long file, and the sync check now fails when AGENTS.md or a docs file names a path that does not exist. The project settings also keep finished drafts, old drafts, voice model files and compiled Python files out of the context (a missing comma in that file was fixed so the rules load). The game itself did not change.
 
