@@ -8,7 +8,11 @@
       "Read(./.gitignore/audio/**/*.wav)",
       "Read(./.gitignore/audio/third_party/piper_old/**)",
       "Read(./.gitignore/audio/voices/**)",
-      "Read(./.gitignore/audio/piper15/venv/**)"
+      "Read(./.gitignore/audio/piper15/venv/**)",
+      "Read(./.gitignore/drafts/old/**)",
+      "Read(./.gitignore/drafts/written/**)",
+      "Read(./.gitignore/audio/**/*.onnx*)",
+      "Read(./.gitignore/audio/**/*.pyc)"
     ]
   }
 }

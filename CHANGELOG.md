@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### A changelog tool, a doc-path check and wider read protection (documentation only)
+A private tool now adds a changelog entry in the right place without anyone reading the long file, and the sync check now fails when AGENTS.md or a docs file names a path that does not exist. The project settings also keep finished drafts, old drafts, voice model files and compiled Python files out of the context (a missing comma in that file was fixed so the rules load). The game itself did not change.
+
 ### Two stale tool notes removed (documentation only)
 The README no longer mentions the unused `CHECK_BRIEF_ENGINE=ps` switch of the short check view, because the script it pointed to is archived. The game itself did not change.
 
