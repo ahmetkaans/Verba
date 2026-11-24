@@ -180,7 +180,7 @@ function bhCloseOverlayByBack(overlay) {
 // Shows a restorable view (without adding a step).
 function bhShow(view) {
   try {
-    if (view.vocab) Object.assign(state.vocab, view.vocab, { type: null, tab: null, showTypes: false });
+    if (view.vocab) Object.assign(state.vocab, view.vocab, { tab: null });
     if (view.screen === 'history' || view.screen === 'history-detail') historyView.openId = view.openId;
     showScreenRaw(view.screen);
     if (view.screen === 'vocab') renderVocab();

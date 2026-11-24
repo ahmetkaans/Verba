@@ -29,7 +29,7 @@ function openModal({ title = '', body, buttons, dismissible = false, onBack = nu
   $('#modal-back').onclick = onBack;
   $('#modal-body').replaceChildren(typeof body === 'string' ? el('p', { text: body }) : body);
   $('#modal-actions').replaceChildren(...buttons.map((b) => {
-    const btn = el('button', { class: b.primary ? 'primary' : '', text: b.label });
+    const btn = el('button', { class: [b.primary ? 'primary' : '', b.class || ''].join(' ').trim(), text: b.label });   // b.class: extra css classes (the locked-level pop-up)
     btn.addEventListener('click', b.onClick);
     return btn;
   }));

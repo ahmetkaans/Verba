@@ -4,6 +4,18 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-24
 
+### A "What's new?" button with the version list
+A new button next to Credits opens a pop-up with the game's versions, newest first, each with its number, date, tagline and a list in very plain words. Today's version is called v1.0 and lists everything the game offers. It is in English and Turkish and follows the language setting, and older versions will fold into short rows. The README has the plan and the rule that a new version is added only when the owner says "release". The Turkish and the defaults (sparkle icon, folded rows, date style) are for the owner's review.
+
+### A2, B1, B2 and C1 are locked behind a developer password
+The four level buttons, their Word list tabs and "Next exercise" into them now show a lock tag and open a "Not ready yet" pop-up: players can go back, and a developer can type the password to open the levels until the tab is closed. It replaces the old "Not finished yet / Go there" question for these levels. This keeps casual players out but is not real security, because the game is plain files that anyone can read; the README says so. The Turkish texts are for the owner's review.
+
+### A welcome pop-up for the first visit
+When someone opens the game for the first time (and when a player of an earlier version opens it once), a five-page welcome pop-up appears: a greeting with the language choice, the theme (three preview tiles), SmartBoard mode with a small working demo, a short tour of what the game offers, and a last page that says only A1 Vocabulary is finished and that the History is kept in this browser. The language, theme and SmartBoard choices are saved at once, like in Settings. The pop-up has no Skip button and cannot be closed from outside; the only way out is "Let's go" on the last page, and it remembers which page a player reached. The buttons use new firm colours so they can be seen without hovering. The Turkish texts are for the owner's review.
+
+### "Separate words by question type" removed from the Word list
+The button at the end of the Word list and the four question type buttons it showed are gone, with their texts and styles. The list shows all of a topic's words under the difficulty tabs, as before. The "Words in this game" pop-up before a quiz is unchanged.
+
 ### Question docs updated for the Python tools and grammar topics
 The question method now has a table of the tools with their Python commands, and a short list of steps for writing a grammar topic (a variety plan before the sentences, a hand-made table of wrong options, and how to treat repeated forms). The recipe for adding questions uses the Python commands too, and one wrong step number was fixed. The game itself did not change.
 

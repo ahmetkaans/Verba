@@ -13,7 +13,7 @@ const state = {
   lang: 'en', // language of menus, buttons and pop-ups (Settings): 'en' or 'tr'; remembered ('lg-lang'); set by initLanguage()
   screen: 'level', // the screen being shown (set by showScreen)
   nextHint: null, // { difficulty }: the quiz "Next exercise" suggests; marked on the Difficulty screen, cleared on any other screen
-  vocab: { step: 'theme', level: null, theme: null, type: null, tab: null, showTypes: false }, // the Word list screen (js/vocab-list.js): its own path, never state.nav; step = theme (with the level tabs) or list; level = the chosen level tab (the Word list button sets the first level); tab = the open difficulty tab of the list; type = the chosen question type (null = all types); showTypes = the four question type buttons are shown
+  vocab: { step: 'theme', level: null, theme: null, tab: null }, // the Word list screen (js/vocab-list.js): its own path, never state.nav; step = theme (with the level tabs) or list; level = the chosen level tab (the Word list button sets the first level); tab = the open difficulty tab of the list
 };
 
 /* =========================================================================

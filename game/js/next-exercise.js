@@ -1,7 +1,7 @@
 /* js/next-exercise.js - the order of the next quiz, the main menu pop-up, the end-of-category pop-up
    Provides: getNextExercise, levelCategoryLabel, openHomeConfirm, goHome, goToNextExercise, goToNextExerciseAsking,
              openNextExercise
-   Needs: CONFIG, state, t, getTopics, isInUnfinished, showScreen, openModal, closeModal, openUnfinishedConfirm */
+   Needs: CONFIG, state, t, getTopics, isInUnfinished, showScreen, openModal, closeModal, openUnfinishedConfirm, isLevelLocked, openLockedLevel */
 'use strict';
 /* =========================================================================
  * NEXT EXERCISE  (results screen: difficulty -> question type -> topic; the student chooses at the end of a category)
@@ -62,6 +62,11 @@ function goToNextExercise(nav) {
 // was just played does not (finished -> unfinished): "Go back" stays on the results screen, "Go there" continues.
 // Moving from one unfinished part to another does not ask again.
 function goToNextExerciseAsking(nav) {
+  if (nav.level !== state.nav.level && isLevelLocked(nav.level)) {   // into a locked level (js/dev-lock.js): the developer password first; "Go back" stays on the results screen
+    closeModal();
+    openLockedLevel(nav.level, () => goToNextExercise(nav));
+    return;
+  }
   if (isInUnfinished(nav) && !isInUnfinished(state.nav)) {
     closeModal();
     openUnfinishedConfirm(() => goToNextExercise(nav));

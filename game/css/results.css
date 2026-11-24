@@ -49,6 +49,10 @@
 
   /* Footer / credits */
   footer { padding: 16px 16px 28px; text-align: center; }
+  #credits-footer { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 14px; }   /* Credits and "What's new?" side by side (js/versions.js) */
+  .footer-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); opacity: 0.6; }
+  .whatsnew-icon { display: inline-block; margin-right: 6px; vertical-align: -3px; color: var(--accent); }
+  .whatsnew-icon svg { width: 16px; height: 16px; }
   .link-btn {
     min-height: 44px;
     background: none;

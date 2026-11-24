@@ -9,7 +9,7 @@
  * after 650 ms; it never changes the button's text or the game's state.
  * ========================================================================= */
 // The buttons that get the lift and the ripple: the same list as in css/layout.css ("Buttons on a computer").
-const RIPPLE_TARGETS = '.menu-btn, .option, .match-item, button.chip, .modal-actions button, button.primary, .icon-btn, .pill-btn, button.history-row, .view-pill, .vocab-kind, .vocab-separate';
+const RIPPLE_TARGETS = '.menu-btn, .option, .match-item, button.chip, .modal-actions button, button.primary, .icon-btn, .pill-btn, button.history-row, .view-pill';
 
 function initButtonRipple() {
   document.addEventListener('click', (e) => {
