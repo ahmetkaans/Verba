@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-24
 
+### Question check tools moved to Python
+The private question check, its 77 self-tests, the option closeness check and the repetition report now run in Python (`check_questions.py`, `test_check_questions.py`, `option_check.py`, `repetition_report.py`): the whole bank is checked in about a second instead of about a minute. The old PowerShell versions are kept untouched as the reference; on the whole bank, the real drafts and made-up broken drafts the reports are the same, apart from the order of some lists and one line the old script wrongly left out. README, the question docs and AGENTS.md show the new commands. The game itself did not change.
+
 ### Second A2 theme: Shopping and Money
 Level A2 has a second real theme. Shopping and Money has 16 quizzes (Multiple Choice, Fill in the Blanks, True or False and Matching, four difficulties each) with 104 questions and 31 new word meanings; the five words it shares with Food and Cooking (*cash, grocery, sale, service, tip*) keep their Food meanings. It is the first theme made with the new blueprint step, and `docs/QUESTION_METHOD.md` has two new rules: a word is tested only in the word types that the level's list gives it, and the same word never uses the same sentence frame in Multiple Choice and Fill in the Blanks. One new word (*owner*) has no recording yet and shows "No audio yet".
 
