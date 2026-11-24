@@ -4,6 +4,12 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-24
 
+### Speech after a narration sentence goes on its own line
+A question like "Ken sees Anna at school in the morning. He says "___, Anna! How are you?"" now shows the narration on one line and the speech on the next, like our dialogues. A name before "says," is bold ("Ben says,"); "He" and "She" are not. It is done when the question is shown, so no question text changed. Speech that comes first, or a single speaker with no narration, stays on one line.
+
+### The phone keyboard no longer covers the blank
+In Fill in the Blanks (typed), the on-screen keyboard on a phone used to hide the sentence. Now, when the keyboard opens, the page makes room at the bottom and scrolls the sentence up so it stays visible above the keyboard. It was checked with a simulated keyboard in the browser pane; a real phone still needs a test.
+
 ### A fuller licence, in English and Turkish
 The LICENSE file now names Verba, says what it covers (code, questions, word lists, texts, design), allows playing on the official website for study or in a classroom, tells people to open a GitHub issue to ask for any other permission, keeps the voice recordings under their own licences, and says the game is provided "as is". The same text is written in Turkish below the English, and both say that the English version prevails if the two ever differ. The game itself did not change.
 
