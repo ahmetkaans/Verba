@@ -82,6 +82,7 @@ const CONFIG = {
   AUDIO_FOLDER: 'audio/',        // the word recordings (pronunciation buttons, js/word-audio.js): the folder, relative to index.html or a full web address; the ONLY place that knows it (README "Word audio")
   AUDIO_EXTENSION: '.mp3',       // the file ending of a recording; the file name is made from the word by wordAudioFile()
   LOCKED_LEVELS: ['A2', 'B1', 'B2', 'C1'], // levels a normal player can't enter: they ask for the developer password (js/dev-lock.js; owner, 2026-11-24). Empty the list to open them all.
+  LOCKED_PARTS: [{ level: 'A1', category: 'grammar' }], // single parts of an open level that are locked the same way (owner, 2026-11-25): the Grammar button of A1 and "Next exercise" into it. Empty the list to open them.
   DEV_PASSWORD_HASH: '289n62pun6a', // the scrambled developer password (not the password itself; made by devHash() in js/dev-lock.js). A curtain against casual players, not real security: the files are public.
   WELCOME_FINISHED_LEVELS: ['A1'], // the welcome pop-up's last page: these level codes are shown solid, the others pale ("only A1 is finished"); the sentence itself is a text (welcomeNoteFinished). Change both when another level is finished.
   HALLOWEEN_WALKER_DELAY_SECONDS: 3,      // Trick or Treat: the walker starts this long after the page opens (or after the switch is turned on)

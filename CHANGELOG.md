@@ -4,6 +4,36 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Lock the A1 Grammar part behind the developer password
+A new CONFIG.LOCKED_PARTS list locks single parts of an open level; A1 Grammar is the first. Its category button and Next exercise into it ask for the same developer password as A2 to C1. Empty the list to open it again.
+
+### Wording fixes in six A2 vocabulary questions (themes 2 and 3)
+Six sentences from the naturalness audit were reworded: oil, chip, fork, sheet, knife and electrical. No answers, word lists or test counts changed.
+
+### Add A2 Work and Careers (theme 8)
+16 quizzes, 108 questions and 52 glossary entries (department and clerk now have two tagged meanings: store and company). Audio index refreshed; recordings for employer, engineer, officer and secretary wait for the owner.
+
+### Add A2 School and Learning (theme 7)
+16 quizzes, 111 questions and 63 new glossary entries for A2 theme 7; audio index refreshed for the published A2 words (recordings for essay, fail, predict and survey still wait for the owner). Collocation-first sentences, the ancient exception (up to 3 A1 adjectives as wrong options) and a helper review that caught all 3 planted questions.
+
+### Add A2 Health and Body (theme 6)
+A2 Vocabulary theme 6 (Health and Body) is in the game: 16 quizzes, 104 questions and 43 new glossary entries, with a refreshed audio index. The helper review caught all planted questions and its 12 real findings were fixed. QUESTION_METHOD.md now asks for a natural-collocation check in the self-audit.
+
+### Memory hygiene in rules 16(b) and 19 (documentation only)
+Rule 16(b) now says memory keeps the owner's preferences plus one rolling state note, and rule 19 adds the upkeep rules: overwrite the state note, retire finished notes in the same flush, and keep MEMORY.md at or below about 30 lines and 4 KB. Changed in AGENTS.md and docs/RULES_FULL.md.
+
+### Add A2 Food and Cooking and Shopping and Money
+Two A2 vocabulary themes are now in the game, with 16 quizzes and 104 questions each; the A2 glossary already had their words. The Very Hard Fill rows for quality and quantity keep a bank of 3 (owner accepted, 2026-11-25). Known: sync_check still fails for the five A2 words that wait for a recording choice.
+
+### Rule 19 (clean-desk flush) and the teacher export tool (documentation and private tools only)
+Added rule 19 to AGENTS.md and docs/RULES_FULL.md: before the final reply of a finished task, save lessons and state to their permanent file and end with a 3-line status block. Added the private tool .gitignore/tools/export_for_teacher.py (Markdown, print-ready HTML and PDF of a theme for teachers, in key, worksheet and audit modes) with a self-test, and its README file map rows. The game itself is unchanged.
+
+### Question method lesson 15 (sentence variety); variety pass on A2 Home and Household and Clothes and Appearance
+docs/QUESTION_METHOD.md has lesson 15: mix sentence moods inside a quiz, use the colon shortcut at most once or twice per quiz, and keep at least half of the Easy True or False items about everyday situations. Under rule 17, 44 sentences of the two A2 themes were reworded (questions, polite commands, I, we and you subjects, because and so instead of colons); the answers, wrong options, bank words and word meanings did not change, and both themes still pass the draft check. The three golden baselines refreshed in the previous entry still pass, so they were not refreshed again. The sync check still fails for the five A2 words that wait for the owner's recording choice.
+
+### A2 Home and Household and Clothes and Appearance added; working rules 17 and 18; question method lesson 14
+Two new A2 vocabulary themes are in the game: Home and Household (theme 2) and Clothes and Appearance (theme 5), 16 quizzes each, 104 questions each, with 67 new glossary words (the A2 glossary now has 134; comfortable has two meanings tagged by theme) and the audio index rebuilt. New working rules in AGENTS.md and docs/RULES_FULL.md: rule 17 (the assistant fixes small things quietly and reports them, and always asks before big changes) and rule 18 (circuit breaker: stop when something drags, loops or repeats an error). docs/QUESTION_METHOD.md has lesson 14 (check each question type the moment it is written). Three golden test baselines were refreshed on purpose after review: the frozen old Food and Cooking draft now correctly reports the oven and stove pair, and the multi-meaning report lists the new themes. The sync check still fails for five A2 words that wait for the owner's recording choice (beef, jam, oil, owner, sale).
+
 ### Finished Roadmap items moved out of the README (documentation only)
 The README Roadmap now keeps only open items, ideas and the item that other documents cite; the 14 finished items and the finished design draft are in docs/ROADMAP_DONE.md word for word, with a one-line pointer left in the README for each, so every Roadmap item number still works. This makes the README about 5,000 tokens shorter. The game itself did not change.
 

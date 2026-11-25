@@ -1,5 +1,5 @@
 /* js/dev-lock.js - the locked levels: A2 to C1 ask for a developer password until the tab is closed
-   Provides: devUnlockedInMemory, DEV_LOCK_KEY, cyrb53, devHash, devUnlocked, isLevelLocked, openLockedLevel
+   Provides: devUnlockedInMemory, DEV_LOCK_KEY, cyrb53, devHash, devUnlocked, isLevelLocked, isPartLocked, openLockedLevel
    Needs: CONFIG, ICONS, el, t, openModal, closeModal, renderMenus */
 'use strict';
 /* =========================================================================
@@ -46,6 +46,11 @@ function devUnlocked() {
 
 function isLevelLocked(level) {
   return CONFIG.LOCKED_LEVELS.includes(level) && !devUnlocked();
+}
+
+// A single part of a level (CONFIG.LOCKED_PARTS, e.g. A1 Grammar): locked like a level, and opened by the same password.
+function isPartLocked(level, category) {
+  return CONFIG.LOCKED_PARTS.some((p) => p.level === level && p.category === category) && !devUnlocked();
 }
 
 // The "Not ready yet" pop-up. onUnlock runs after a right password (the pop-up is closed and the level buttons are built again).

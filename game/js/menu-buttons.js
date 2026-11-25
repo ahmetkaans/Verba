@@ -2,7 +2,7 @@
    Provides: renderTopicButtons, renderCategoryButtons, renderLevelGroups, renderMenus, initMenus
    Needs: CONFIG, el, loadPref, state, $, t, getTopics, ICONS, hasRealQuizzes, showScreen, renderButtons,
           setSameDuration, goHome, openNextExercise, openCredits, setSmartBoard, openSettings, startQuiz, goNext,
-          requestQuit, isLevelLocked */
+          requestQuit, isLevelLocked, isPartLocked */
 'use strict';
 /* =========================================================================
  * MENU BUTTONS (topic, level, category and question type buttons; the menus' start-up)
@@ -29,6 +29,7 @@ function renderCategoryButtons() {
   const levelFinished = !!level && hasRealQuizzes(level);
   renderButtons($('#category-buttons'), CONFIG.CATEGORIES.map((c) => ({
     ...c, label: t(`category.${c.id}`), unfinished: levelFinished && !hasRealQuizzes(level, c.id),
+    locked: isPartLocked(level, c.id), lockLevel: level,   // a locked part (CONFIG.LOCKED_PARTS, js/dev-lock.js)
   })), (item) => {
     state.nav.category = item.id;
     showScreen('topic');
