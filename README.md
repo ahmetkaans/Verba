@@ -149,8 +149,10 @@ The `<head>` script applies the saved theme before the first paint, and the page
 | `data/questions/a1-vocabulary-12-travel-and-the-world.js` | A1 Vocabulary, theme 12: 16 quizzes (4 types x 4 difficulties) |
 | `data/questions/a1-vocabulary-13-jobs-and-technology.js` | A1 Vocabulary, theme 13: 16 quizzes (4 types x 4 difficulties) |
 | `data/questions/a1-vocabulary-14-learning-and-ideas.js` | A1 Vocabulary, theme 14: 16 quizzes (4 types x 4 difficulties) |
+| `data/questions/a2-vocabulary-02-home-and-household.js` | A2 Vocabulary, theme 2 (Home and Household): 16 quizzes (4 types x 4 difficulties), 104 questions |
+| `data/questions/a2-vocabulary-05-clothes-and-appearance.js` | A2 Vocabulary, theme 5 (Clothes and Appearance): 16 quizzes (4 types x 4 difficulties), 104 questions |
 | `data/glossary/a1.js` | the word meanings of level A1 (shown in the "Words in this game" pop-up); search a word |
-| `data/glossary/a2.js` | the word meanings of level A2 (so far Food and Cooking and Shopping and Money: 67 words); same shape as `a1.js`, key `"A2"` |
+| `data/glossary/a2.js` | the word meanings of level A2 (so far Food and Cooking, Shopping and Money, Home and Household and Clothes and Appearance: 134 words; *comfortable* has two meanings tagged by theme); same shape as `a1.js`, key `"A2"` |
 
 **CSS anchors** (each is the start of a `/* ... */` comment in one of the seven files of `game/css/`; the look itself is described in docs/DESIGN.md):
 
