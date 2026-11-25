@@ -33,7 +33,22 @@ Object.assign(GAME_DATA.glossary, {
     "check": {"type": "noun", "meaning": "the paper that shows how much you must pay in a restaurant"},
     "chef": {"type": "noun", "meaning": "a person who cooks food in a restaurant"},
     "chip": {"type": "noun", "meaning": "a thin piece of potato that people eat from a bag"},
-    "clerk": {"type": "noun", "meaning": "a person who works in a store and helps customers"},
+    "clerk": [
+      {
+        "type": "noun",
+        "meaning": "a person who works in a store and helps customers",
+        "for": [
+          "4"
+        ]
+      },
+      {
+        "type": "noun",
+        "meaning": "a person who works in an office or a bank and does jobs such as writing papers",
+        "for": [
+          "8"
+        ]
+      }
+    ],
     "closet": {"type": "noun", "meaning": "a place in a wall or room where you keep clothes"},
     "clothing": {"type": "noun", "meaning": "the things that people wear, for example shirts, pants and coats"},
     "comfortable": [
@@ -47,7 +62,22 @@ Object.assign(GAME_DATA.glossary, {
     "credit": {"type": "noun", "meaning": "a way to buy something now and pay for it later"},
     "curly": {"type": "adjective", "meaning": "with many small circles, not straight, like some hair"},
     "deal": {"type": "verb", "meaning": "to take care of a problem or a person"},
-    "department": {"type": "noun", "meaning": "a part of a big store, for example for toys or clothes"},
+    "department": [
+      {
+        "type": "noun",
+        "meaning": "a part of a big store, for example for toys or clothes",
+        "for": [
+          "4"
+        ]
+      },
+      {
+        "type": "noun",
+        "meaning": "one part of a big company where people do one kind of work",
+        "for": [
+          "8"
+        ]
+      }
+    ],
     "designer": {"type": "noun", "meaning": "a person who draws ideas for new things, for example clothes or shoes"},
     "dessert": {"type": "noun", "meaning": "sweet food that you eat at the end of a meal"},
     "double": [
@@ -673,6 +703,224 @@ Object.assign(GAME_DATA.glossary, {
     "unit": {
       "type": "noun",
       "meaning": "one part of a book or a course"
+    },
+    "apply": {
+      "type": "verb",
+      "meaning": "to ask for a job in a letter or on a form"
+    },
+    "architect": {
+      "type": "noun",
+      "meaning": "a person who draws plans for houses and other buildings"
+    },
+    "assistant": [
+      {
+        "type": "noun",
+        "meaning": "a person whose job is to help another person at work"
+      },
+      {
+        "type": "adjective",
+        "meaning": "helping the main person at work, for example the second manager of a shop"
+      }
+    ],
+    "boss": {
+      "type": "noun",
+      "meaning": "the person who tells workers what to do and checks their work"
+    },
+    "businessman": {
+      "type": "noun",
+      "meaning": "a man whose work is business, for example buying and selling things"
+    },
+    "coach": [
+      {
+        "type": "noun",
+        "meaning": "a person who trains a sports player or a team"
+      },
+      {
+        "type": "verb",
+        "meaning": "to train a sports player or a team"
+      }
+    ],
+    "colleague": {
+      "type": "noun",
+      "meaning": "a person who works with you in the same place"
+    },
+    "conference": {
+      "type": "noun",
+      "meaning": "a big meeting where many people talk about one subject"
+    },
+    "detective": {
+      "type": "noun",
+      "meaning": "a person whose job is to find out who did a crime"
+    },
+    "director": {
+      "type": "noun",
+      "meaning": "a person who tells the actors what to do in a film, or who leads a big company"
+    },
+    "employ": {
+      "type": "verb",
+      "meaning": "to pay a person to work for you"
+    },
+    "employee": {
+      "type": "noun",
+      "meaning": "a person who has a job and is paid to work for someone"
+    },
+    "employer": {
+      "type": "noun",
+      "meaning": "a person or a company that pays people to work for them"
+    },
+    "engineer": {
+      "type": "noun",
+      "meaning": "a person who plans and checks machines, roads or bridges"
+    },
+    "equipment": {
+      "type": "noun",
+      "meaning": "the machines and tools that you need for a job or a sport"
+    },
+    "experience": {
+      "type": "noun",
+      "meaning": "what you learn from doing a job for some time"
+    },
+    "expert": [
+      {
+        "type": "noun",
+        "meaning": "a person who knows a lot about one subject"
+      },
+      {
+        "type": "adjective",
+        "meaning": "knowing a lot about one subject"
+      }
+    ],
+    "factor": {
+      "type": "noun",
+      "meaning": "one of the things that help you to decide something"
+    },
+    "factory": {
+      "type": "noun",
+      "meaning": "a big building where workers use machines to make things"
+    },
+    "feature": {
+      "type": "noun",
+      "meaning": "a special or important part of something"
+    },
+    "fire": {
+      "type": "verb",
+      "meaning": "to tell a worker that he or she must leave the job"
+    },
+    "industry": {
+      "type": "noun",
+      "meaning": "the companies that make or sell one kind of thing, such as cars"
+    },
+    "journalist": {
+      "type": "noun",
+      "meaning": "a person who writes news stories for a newspaper or a website"
+    },
+    "lawyer": {
+      "type": "noun",
+      "meaning": "a person whose job is to give advice about the law"
+    },
+    "leader": {
+      "type": "noun",
+      "meaning": "a person who is in front of a group and shows the others what to do"
+    },
+    "manage": {
+      "type": "verb",
+      "meaning": "to look after a shop, a team or a company"
+    },
+    "manager": {
+      "type": "noun",
+      "meaning": "a person who looks after a shop, a hotel or a team"
+    },
+    "material": {
+      "type": "noun",
+      "meaning": "what you use to make something, such as wood, stone or paper"
+    },
+    "officer": {
+      "type": "noun",
+      "meaning": "a person who has an important job in the police or the army"
+    },
+    "opportunity": {
+      "type": "noun",
+      "meaning": "a chance to do something good, such as a new job"
+    },
+    "organization": {
+      "type": "noun",
+      "meaning": "a big group of people who work together, such as a company or a school"
+    },
+    "organize": {
+      "type": "verb",
+      "meaning": "to plan something and make everything ready"
+    },
+    "painter": {
+      "type": "noun",
+      "meaning": "a person whose job is to paint walls, houses or pictures"
+    },
+    "pilot": {
+      "type": "noun",
+      "meaning": "a person who flies a plane"
+    },
+    "power": {
+      "type": "noun",
+      "meaning": "the energy, such as electricity, that makes machines work"
+    },
+    "process": {
+      "type": "noun",
+      "meaning": "a number of steps that you follow to make or do something"
+    },
+    "produce": {
+      "type": "verb",
+      "meaning": "to make something, for example food or things in a factory"
+    },
+    "professional": {
+      "type": "adjective",
+      "meaning": "doing a job for money, and not just for fun"
+    },
+    "purpose": {
+      "type": "noun",
+      "meaning": "the reason why you do something"
+    },
+    "reception": {
+      "type": "noun",
+      "meaning": "the place in a hotel or an office where visitors say who they are and ask for help"
+    },
+    "role": {
+      "type": "noun",
+      "meaning": "the job or the part that a person has in a team or a company"
+    },
+    "secretary": {
+      "type": "noun",
+      "meaning": "a person who writes letters, answers the phone and keeps the papers for a boss"
+    },
+    "strategy": {
+      "type": "noun",
+      "meaning": "a plan to get something that you want"
+    },
+    "succeed": {
+      "type": "verb",
+      "meaning": "to do what you tried to do"
+    },
+    "successful": {
+      "type": "adjective",
+      "meaning": "getting the good result that you wanted, or making a lot of money"
+    },
+    "target": {
+      "type": "noun",
+      "meaning": "a number or an amount that you want to reach"
+    },
+    "task": {
+      "type": "noun",
+      "meaning": "a piece of work that you have to do"
+    },
+    "tool": {
+      "type": "noun",
+      "meaning": "something you hold in your hand to do a job, such as a knife or a brush"
+    },
+    "training": {
+      "type": "noun",
+      "meaning": "lessons that teach you how to do a job well"
+    },
+    "working": {
+      "type": "adjective",
+      "meaning": "to do with your job, for example the days or the hours when you work"
     }
   }
 });

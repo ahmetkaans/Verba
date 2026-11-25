@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Add A2 Work and Careers (theme 8)
+16 quizzes, 108 questions and 52 glossary entries (department and clerk now have two tagged meanings: store and company). Audio index refreshed; recordings for employer, engineer, officer and secretary wait for the owner.
+
 ### Add A2 School and Learning (theme 7)
 16 quizzes, 111 questions and 63 new glossary entries for A2 theme 7; audio index refreshed for the published A2 words (recordings for essay, fail, predict and survey still wait for the owner). Collocation-first sentences, the ancient exception (up to 3 A1 adjectives as wrong options) and a helper review that caught all 3 planted questions.
 
