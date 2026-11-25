@@ -13,7 +13,7 @@ Object.assign(GAME_DATA.questions, {
     {"type": "mc", "prompt": "Tom bought these tomatoes at the market this morning, so they are very ___.", "options": ["fresh", "cheap", "bad", "sweet"], "targetType": "adjective", "explanation": "Fresh food is new and good. Tomatoes from this morning are fresh."},
     {"type": "mc", "prompt": "This soup has a strong ___, so I only eat a little.", "options": ["taste", "carrot", "meat", "cash"], "targetType": "noun", "explanation": "Taste is what you feel in your mouth when you eat. A strong taste is easy to notice."},
     {"type": "mc", "prompt": "My uncle is a ___ in a school kitchen. He makes lunch for 300 children.", "options": ["cook", "career", "farming", "break"], "explanation": "A cook is a person who makes food. My uncle makes lunch, so he is a cook."},
-    {"type": "mc", "prompt": "Mom puts a little ___ with the potatoes before she cooks them.", "options": ["oil", "cash", "radio", "light"], "explanation": "Oil is used for cooking. Mom puts a little with the potatoes."}
+    {"type": "mc", "prompt": "Mom puts a little ___ in the pan before she cooks the potatoes.", "options": ["oil", "cash", "radio", "light"], "explanation": "Oil is used for cooking. Mom puts a little in the pan."}
   ],
   "A2|vocabulary|3|mc|medium": [
     {"type": "mc", "prompt": "Lucy eats her ice cream with a small ___.", "options": ["spoon", "computer", "cook", "knife"], "explanation": "A spoon is a small tool for eating soft food like ice cream."},
@@ -29,7 +29,7 @@ Object.assign(GAME_DATA.questions, {
     {"type": "mc", "prompt": "Lisa has bread with butter and sweet ___ for breakfast.", "options": ["jam", "oil", "sauce", "candy"], "explanation": "Jam is a sweet food made from fruit and sugar. People put it on bread."},
     {"type": "mc", "prompt": "Be careful with this hard ___. You must break it to eat the part inside.", "options": ["nut", "cookie", "chip", "bean"], "explanation": "A nut is a hard food. You break it to eat the part inside."},
     {"type": "mc", "prompt": "Tom's ___ soup was hot, brown and thick.", "options": ["bean", "dessert", "fat", "lemon"], "explanation": "A bean is a small food from a plant. Bean soup is brown and thick."},
-    {"type": "mc", "prompt": "Ben takes a ___ of potato from the bag and eats it.", "options": ["chip", "beef", "candy", "nut"], "explanation": "A chip is a thin piece of potato. People eat chips from a bag."},
+    {"type": "mc", "prompt": "Ben takes a potato ___ from the bag and eats it.", "options": ["chip", "beef", "candy", "nut"], "explanation": "A chip is a thin piece of potato. People eat chips from a bag."},
     {"type": "mc", "prompt": "After dinner, we had ice cream for ___.", "options": ["dessert", "bean", "corn", "jam"], "explanation": "Dessert is the sweet food at the end of a meal. We had ice cream after dinner."},
     {"type": "mc", "prompt": "My grandmother wrote her soup ___ on paper, so I can cook it too.", "options": ["recipe", "can", "spoon", "stove"], "explanation": "A recipe tells you how to make a kind of food. My grandmother wrote hers on paper."},
     {"type": "mc", "prompt": "The waiter will ___ our dinner in a few minutes.", "options": ["serve", "boil", "finish", "hope"], "targetType": "verb", "explanation": "To serve food is to bring it to people at the table. Waiters serve dinner."},
@@ -46,7 +46,7 @@ Object.assign(GAME_DATA.questions, {
     {"type": "mc", "prompt": "Mom will ___ the potatoes for ten minutes, and then we can eat them.", "options": ["boil", "thank", "serve", "taste"], "targetType": "verb", "explanation": "To boil is to cook something in very hot water. Potatoes need some minutes in it."}
   ],
   "A2|vocabulary|3|fill|easy": [
-    {"type": "fill", "before": "Ana holds her meat with a fork and cuts it with a", "after": ".", "answer": "knife", "bank": ["knife", "bowl", "spoon"], "explanation": "A knife is the tool for cutting. Ana holds the meat with the fork and cuts it with the knife."},
+    {"type": "fill", "before": "Ana cuts her bread with a", "after": "and puts butter on it.", "answer": "knife", "bank": ["knife", "bowl", "spoon"], "explanation": "A knife is the tool for cutting. Ana cuts her bread with a knife and puts butter on it."},
     {"type": "fill", "before": "Your rice and chicken are on this big", "after": ".", "answer": "plate", "bank": ["plate", "oven", "recipe"], "explanation": "A plate is a round dish for food. Your dinner is on it."},
     {"type": "fill", "before": "Dad puts the salad in a large, deep", "after": "before dinner.", "answer": "bowl", "bank": ["bowl", "plate", "fork"], "explanation": "A bowl is a deep dish. Salad is easy to carry in a large bowl."},
     {"type": "fill", "before": "This orange juice is too", "after": "for me. I want less sugar.", "answer": "sweet", "bank": ["sweet", "fresh", "good"], "targetType": "adjective", "explanation": "Sweet means with a lot of sugar. This juice has too much sugar for me."},

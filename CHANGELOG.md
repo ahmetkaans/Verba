@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Wording fixes in six A2 vocabulary questions (themes 2 and 3)
+Six sentences from the naturalness audit were reworded: oil, chip, fork, sheet, knife and electrical. No answers, word lists or test counts changed.
+
 ### Add A2 Work and Careers (theme 8)
 16 quizzes, 108 questions and 52 glossary entries (department and clerk now have two tagged meanings: store and company). Audio index refreshed; recordings for employer, engineer, officer and secretary wait for the owner.
 
