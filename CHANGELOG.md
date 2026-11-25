@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Add A2 Food and Cooking and Shopping and Money
+Two A2 vocabulary themes are now in the game, with 16 quizzes and 104 questions each; the A2 glossary already had their words. The Very Hard Fill rows for quality and quantity keep a bank of 3 (owner accepted, 2026-11-25). Known: sync_check still fails for the five A2 words that wait for a recording choice.
+
 ### Rule 19 (clean-desk flush) and the teacher export tool (documentation and private tools only)
 Added rule 19 to AGENTS.md and docs/RULES_FULL.md: before the final reply of a finished task, save lessons and state to their permanent file and end with a 3-line status block. Added the private tool .gitignore/tools/export_for_teacher.py (Markdown, print-ready HTML and PDF of a theme for teachers, in key, worksheet and audit modes) with a self-test, and its README file map rows. The game itself is unchanged.
 
