@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Memory hygiene in rules 16(b) and 19 (documentation only)
+Rule 16(b) now says memory keeps the owner's preferences plus one rolling state note, and rule 19 adds the upkeep rules: overwrite the state note, retire finished notes in the same flush, and keep MEMORY.md at or below about 30 lines and 4 KB. Changed in AGENTS.md and docs/RULES_FULL.md.
+
 ### Add A2 Food and Cooking and Shopping and Money
 Two A2 vocabulary themes are now in the game, with 16 quizzes and 104 questions each; the A2 glossary already had their words. The Very Hard Fill rows for quality and quantity keep a bank of 3 (owner accepted, 2026-11-25). Known: sync_check still fails for the five A2 words that wait for a recording choice.
 
