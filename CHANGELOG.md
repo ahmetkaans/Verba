@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Lock the A1 Grammar part behind the developer password
+A new CONFIG.LOCKED_PARTS list locks single parts of an open level; A1 Grammar is the first. Its category button and Next exercise into it ask for the same developer password as A2 to C1. Empty the list to open it again.
+
 ### Wording fixes in six A2 vocabulary questions (themes 2 and 3)
 Six sentences from the naturalness audit were reworded: oil, chip, fork, sheet, knife and electrical. No answers, word lists or test counts changed.
 

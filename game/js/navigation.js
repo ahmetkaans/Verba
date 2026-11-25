@@ -100,7 +100,7 @@ function renderButtons(container, items, onClick) {
       btn.append(el('span', { class: 'unfinished-tag', lang: state.lang, text: t('unfinishedTag') }));
     }
     btn.addEventListener('click', () => {
-      if (item.locked) openLockedLevel(item.id, () => onClick(item));
+      if (item.locked) openLockedLevel(item.lockLevel || item.id, () => onClick(item));
       else if (item.unfinished) openUnfinishedConfirm(() => onClick(item));
       else onClick(item);
     });
