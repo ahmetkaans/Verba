@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Question method lesson 15 (sentence variety); variety pass on A2 Home and Household and Clothes and Appearance
+docs/QUESTION_METHOD.md has lesson 15: mix sentence moods inside a quiz, use the colon shortcut at most once or twice per quiz, and keep at least half of the Easy True or False items about everyday situations. Under rule 17, 44 sentences of the two A2 themes were reworded (questions, polite commands, I, we and you subjects, because and so instead of colons); the answers, wrong options, bank words and word meanings did not change, and both themes still pass the draft check. The three golden baselines refreshed in the previous entry still pass, so they were not refreshed again. The sync check still fails for the five A2 words that wait for the owner's recording choice.
+
 ### A2 Home and Household and Clothes and Appearance added; working rules 17 and 18; question method lesson 14
 Two new A2 vocabulary themes are in the game: Home and Household (theme 2) and Clothes and Appearance (theme 5), 16 quizzes each, 104 questions each, with 67 new glossary words (the A2 glossary now has 134; comfortable has two meanings tagged by theme) and the audio index rebuilt. New working rules in AGENTS.md and docs/RULES_FULL.md: rule 17 (the assistant fixes small things quietly and reports them, and always asks before big changes) and rule 18 (circuit breaker: stop when something drags, loops or repeats an error). docs/QUESTION_METHOD.md has lesson 14 (check each question type the moment it is written). Three golden test baselines were refreshed on purpose after review: the frozen old Food and Cooking draft now correctly reports the oven and stove pair, and the multi-meaning report lists the new themes. The sync check still fails for five A2 words that wait for the owner's recording choice (beef, jam, oil, owner, sale).
 

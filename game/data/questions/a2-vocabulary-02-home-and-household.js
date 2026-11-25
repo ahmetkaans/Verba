@@ -9,40 +9,40 @@ Object.assign(GAME_DATA.questions, {
     {"type": "mc", "prompt": "Don't sit on that chair. It is ___, and you may fall.", "options": ["broken", "electric", "good", "open"], "explanation": "Something is broken when it does not work or is in pieces. A broken chair is not safe."},
     {"type": "mc", "prompt": "It is dark in my room, so I turn on the ___ next to my bed.", "options": ["lamp", "water", "plate", "electricity"], "explanation": "A lamp gives light. You can put it on a desk or next to a bed."},
     {"type": "mc", "prompt": "Dad can ___ my old bike. Soon it will work again.", "options": ["fix", "break", "lock", "knock"], "explanation": "When you fix something, you make it work again. Dad will fix the bike."},
-    {"type": "mc", "prompt": "After swimming, Ben dries his hair with a ___.", "options": ["towel", "bottle", "carpet", "trash"], "explanation": "A towel is something soft for drying your hands, body or hair."},
+    {"type": "mc", "prompt": "Can you give me a ___? I need to dry my hair after swimming.", "options": ["towel", "bottle", "carpet", "trash"], "explanation": "A towel is something soft for drying your hands, body or hair."},
     {"type": "mc", "prompt": "Please ___ on the door before you come in.", "options": ["knock", "shut", "repair", "lock"], "explanation": "To knock is to hit a door with your hand to say you are there."},
     {"type": "mc", "prompt": "Wash your hands with water and ___ before dinner.", "options": ["soap", "desk", "towel", "garbage"], "explanation": "We use soap with water to make our hands clean."},
     {"type": "mc", "prompt": "I opened the box, but it is ___. My toy is not in it.", "options": ["empty", "dry", "upstairs", "electric"], "explanation": "Empty means there is nothing inside. This box has nothing in it."},
     {"type": "mc", "prompt": "Please write your ___ address on the form.", "options": ["home", "electrical", "empty", "downstairs"], "explanation": "Your home address tells people where you live. Here, home comes before the noun address."}
   ],
   "A2|vocabulary|2|mc|medium": [
-    {"type": "mc", "prompt": "Jim puts the pizza on a big ___ and brings it to the table.", "options": ["plate", "bowl", "stove", "knife"], "explanation": "A plate is a dish for food. A pizza sits on it very well."},
+    {"type": "mc", "prompt": "Can you put the pizza on a big ___ and bring it to the table?", "options": ["plate", "bowl", "stove", "knife"], "explanation": "A plate is a dish for food. A pizza sits on it very well."},
     {"type": "mc", "prompt": "Put the wet shirt in the sun. Soon it will be ___.", "options": ["dry", "home", "shut", "upstairs"], "targetType": "adjective", "explanation": "When something is dry, it has no water on it. Sun and wind help a wet shirt to get dry."},
-    {"type": "mc", "prompt": "The dog drinks water from a ___ on the kitchen floor.", "options": ["bowl", "stove", "spoon", "plate"], "explanation": "A bowl is a deep dish. It holds water, soup or food."},
+    {"type": "mc", "prompt": "We always give our dog water in a ___ on the kitchen floor.", "options": ["bowl", "stove", "spoon", "plate"], "explanation": "A bowl is a deep dish. It holds water, soup or food."},
     {"type": "mc", "prompt": "Take off your coat in the ___ and then come into the kitchen.", "options": ["hall", "floor", "stair", "roof"], "explanation": "The hall is the space just inside the front door. People often leave coats there."},
     {"type": "mc", "prompt": "Be careful with that ___. It can cut your finger.", "options": ["knife", "bowl", "oven", "fork"], "explanation": "A knife is a tool for cutting. That is why you must be careful with it."},
-    {"type": "mc", "prompt": "Rain is falling on the ___ of our house, so it is very loud inside.", "options": ["roof", "kitchen", "stair", "hall"], "explanation": "The roof is the top of a house. Rain hits it first."},
+    {"type": "mc", "prompt": "Why is it so loud inside? Rain is falling on the ___ of our house.", "options": ["roof", "kitchen", "stair", "hall"], "explanation": "The roof is the top of a house. Rain hits it first."},
     {"type": "mc", "prompt": "This chair is soft and very ___. I can sit here all day.", "options": ["comfortable", "home", "dry", "broken"], "explanation": "Something comfortable feels good when you sit or lie on it."},
-    {"type": "mc", "prompt": "Lara looks at herself in the ___ before she goes out.", "options": ["mirror", "washing", "furniture", "poster"], "explanation": "A mirror shows you your own face and clothes."}
+    {"type": "mc", "prompt": "Do you look in the ___ before you go out?", "options": ["mirror", "washing", "furniture", "poster"], "explanation": "A mirror shows you your own face and clothes."}
   ],
   "A2|vocabulary|2|mc|hard": [
-    {"type": "mc", "prompt": "Mom puts her coats in the ___ near the front door.", "options": ["closet", "trash", "carpet", "furniture"], "explanation": "In American English, a closet is a place in a wall where you keep clothes."},
+    {"type": "mc", "prompt": "Where do you put your coats? I put mine in the ___ near the front door.", "options": ["closet", "trash", "carpet", "furniture"], "explanation": "In American English, a closet is a place in a wall where you keep clothes."},
     {"type": "mc", "prompt": "My phone is broken, but a man at the store can ___ it for me.", "options": ["repair", "clean", "light", "knock"], "explanation": "To repair something is to make a broken thing work again."},
     {"type": "mc", "prompt": "Aunt Rosa is staying at our house for a week. She is our ___.", "options": ["guest", "farmer", "owner", "partner"], "explanation": "A guest is a person who visits or stays in your home."},
     {"type": "mc", "prompt": "My key is ___, so it feels cold in my hand.", "options": ["metal", "paper", "wood", "plastic"], "explanation": "Metal is a hard material, like gold or silver. A metal key feels cold when you touch it."},
-    {"type": "mc", "prompt": "Lisa puts a little sugar in her tea with a small ___.", "options": ["spoon", "plate", "oven", "fork"], "explanation": "A spoon has a small round end. You can use it for tea, soup or sugar."},
+    {"type": "mc", "prompt": "Do you put sugar in your tea with a small ___?", "options": ["spoon", "plate", "oven", "fork"], "explanation": "A spoon has a small round end. You can use it for tea, soup or sugar."},
     {"type": "mc", "prompt": "Our power is out, so Dad will ___ a fire this evening.", "options": ["light", "lock", "shut", "repair"], "targetType": "verb", "explanation": "To light a fire means to make it burn. It is a verb here."},
     {"type": "mc", "prompt": "We bought a new ___ for the floor, so our feet are warm in winter.", "options": ["carpet", "garbage", "closet", "sheet"], "explanation": "A carpet is a thick cover for a floor. It is soft and warm."},
     {"type": "mc", "prompt": "Mom covers the old chair with a big, thin, white ___ when we go away.", "options": ["sheet", "towel", "soap", "carpet"], "explanation": "A sheet is a big, thin cover. People use it on beds, and also over furniture."}
   ],
   "A2|vocabulary|2|mc|veryhard": [
-    {"type": "mc", "prompt": "Mom puts the cake in the hot ___ for forty minutes.", "options": ["oven", "spoon", "computer", "refrigerator"], "explanation": "An oven is a hot box in the kitchen for cooking. A cake cooks inside it."},
+    {"type": "mc", "prompt": "Don't forget to take the cake out of the hot ___ after forty minutes.", "options": ["oven", "spoon", "computer", "refrigerator"], "explanation": "An oven is a hot box in the kitchen for cooking. A cake cooks inside it."},
     {"type": "mc", "prompt": "Many ___ bikes can go up a hill without much work from you.", "options": ["electric", "broken", "new", "wooden"], "explanation": "Electric things use electricity. An electric bike has a small machine that helps you go up a hill."},
-    {"type": "mc", "prompt": "Ben puts a big ___ of his favorite band on the wall.", "options": ["poster", "trash", "furniture", "closet"], "explanation": "A poster is a big picture for a wall."},
-    {"type": "mc", "prompt": "We bought new ___ for the house: a table, four chairs and a bed.", "options": ["furniture", "washing", "poster", "mirror"], "explanation": "Furniture means things like tables, chairs and beds. We say furniture, not furnitures."},
+    {"type": "mc", "prompt": "Can you help me put this big ___ of my favorite band on the wall?", "options": ["poster", "trash", "furniture", "closet"], "explanation": "A poster is a big picture for a wall."},
+    {"type": "mc", "prompt": "We bought new ___ for the house because we needed a table and chairs.", "options": ["furniture", "washing", "poster", "mirror"], "explanation": "Furniture means things like tables, chairs and beds. We say furniture, not furnitures."},
     {"type": "mc", "prompt": "Careful! The ___ is hot because the soup is on it.", "options": ["stove", "fork", "refrigerator", "lamp"], "explanation": "A stove is the top of a cooker. It gets hot when you cook."},
     {"type": "mc", "prompt": "Dad built this ___ table from a tree.", "options": ["wooden", "downstairs", "electrical", "comfortable"], "explanation": "Wooden means from wood. Dad used a tree to build this table."},
-    {"type": "mc", "prompt": "The small child sits on the second ___ and waits for his mom.", "options": ["stair", "bathroom", "roof", "hall"], "explanation": "A stair is one step of the stairs in a house."},
+    {"type": "mc", "prompt": "Why is the small child sitting on the second ___? He is waiting for his mom.", "options": ["stair", "bathroom", "roof", "hall"], "explanation": "A stair is one step of the stairs in a house."},
     {"type": "mc", "prompt": "Never touch ___ machines with wet hands, because water and power are dangerous together.", "options": ["electrical", "dry", "old", "wooden"], "explanation": "Electrical means using electricity. Water and electricity together are dangerous."}
   ],
   "A2|vocabulary|2|fill|easy": [
@@ -59,15 +59,15 @@ Object.assign(GAME_DATA.questions, {
     {"type": "fill", "before": "Our small", "after": "has a table and a place for shoes, next to the front door.", "answer": "hall", "bank": ["hall", "stair", "stove"], "explanation": "The hall is the space inside the front door. People often put shoes and a table there."},
     {"type": "fill", "before": "Ben cuts the cheese with his", "after": "and puts it on his bread.", "answer": "knife", "bank": ["knife", "oven", "spoon"], "explanation": "You cut cheese with a knife. A spoon and an oven cannot cut."},
     {"type": "fill", "before": "The cat climbed onto the", "after": "and sat high above the garden.", "answer": "roof", "bank": ["roof", "hall", "stair"], "explanation": "The roof is the top of a house. A cat can sit there high above the garden."},
-    {"type": "fill", "before": "This bed is hard and small, but that one is soft and", "after": ".", "answer": "comfortable", "bank": ["comfortable", "upstairs", "home"], "explanation": "Comfortable means nice to sit or lie on. A soft bed is comfortable."},
-    {"type": "fill", "before": "Jack brushes his hair in front of the", "after": ".", "answer": "mirror", "bank": ["mirror", "carpet", "soap"], "explanation": "A mirror shows you your face and your hair. People look in it to get ready."},
+    {"type": "fill", "before": "Which bed do you like? That one is soft and", "after": ".", "answer": "comfortable", "bank": ["comfortable", "upstairs", "home"], "explanation": "Comfortable means nice to sit or lie on. A soft bed is comfortable."},
+    {"type": "fill", "before": "Do you brush your hair in front of the", "after": "every morning?", "answer": "mirror", "bank": ["mirror", "carpet", "soap"], "explanation": "A mirror shows you your face and your hair. People look in it to get ready."},
     {"type": "fill", "before": "Please put the empty bottles in the", "after": "outside.", "answer": "trash", "bank": ["trash", "sheet", "closet"], "explanation": "Trash is the things you throw away, like empty bottles. In the US, people also say garbage."},
     {"type": "fill", "before": "The trees in the forest give us", "after": "for the fire.", "answer": "wood", "bank": ["wood", "metal", "plastic"], "explanation": "Wood is the hard material from trees. People burn it in a fire."},
-    {"type": "fill", "before": "Mom turns on the", "after": "and lights the stove for dinner.", "answer": "gas", "bank": ["gas", "metal", "wood"], "explanation": "Gas is what burns in many kitchen stoves. Mom turns it on to cook dinner."}
+    {"type": "fill", "before": "Can you turn on the", "after": "and light the stove for dinner?", "answer": "gas", "bank": ["gas", "metal", "wood"], "explanation": "Gas is what burns in many kitchen stoves. Mom turns it on to cook dinner."}
   ],
   "A2|vocabulary|2|fill|hard": [
     {"type": "fill", "before": "The tower walls have", "after": "inside because it is strong and does not burn or break.", "answer": "metal", "bank": ["metal", "glass", "plastic", "wood"], "explanation": "Metal is a strong material that does not burn easily. People use it inside walls."},
-    {"type": "fill", "before": "Sam eats his soup with a", "after": ".", "answer": "spoon", "bank": ["spoon", "bowl", "knife", "fork"], "explanation": "A spoon is the tool for eating soup. The soup is in a bowl, but Sam uses a spoon."},
+    {"type": "fill", "before": "At home we eat our soup with a", "after": ".", "answer": "spoon", "bank": ["spoon", "bowl", "knife", "fork"], "explanation": "A spoon is the tool for eating soup. The soup is in a bowl, but Sam uses a spoon."},
     {"type": "fill", "before": "In winter, Mom is the first to", "after": "the stove with a match.", "answer": "light", "bank": ["light", "knock", "shut", "fix"], "targetType": "verb", "explanation": "To light something is to make it burn. Mom lights the stove with a match."},
     {"type": "fill", "before": "Please take off your wet shoes before you walk on the new", "after": ".", "answer": "carpet", "bank": ["carpet", "poster", "soap", "sheet"], "explanation": "A carpet covers a floor. Wet shoes can make a new carpet dirty."},
     {"type": "fill", "before": "Dad is painting the walls, so the furniture is under an old, thin", "after": ".", "answer": "sheet", "bank": ["sheet", "towel", "garbage", "mirror"], "explanation": "A sheet is a big, thin cover. Dad uses it to keep paint off the furniture."},
@@ -92,8 +92,8 @@ Object.assign(GAME_DATA.questions, {
     {"type": "tf", "prompt": "A glass with water in it is empty.", "answer": false, "target": "empty", "explanation": "False. Empty means there is nothing inside. A glass with water is not empty."},
     {"type": "tf", "prompt": "Your home town is the town where you grew up.", "answer": true, "target": "home", "explanation": "True. Your home town is the place where you lived as a child. Home comes before the noun here."},
     {"type": "tf", "prompt": "You lock a door when you want to keep it open.", "answer": false, "target": "lock", "targetType": "verb", "explanation": "False. When you lock a door, you close it with a key. Then nobody can open it."},
-    {"type": "tf", "prompt": "A bedroom on the second floor is an upstairs room.", "answer": true, "target": "upstairs", "explanation": "True. Upstairs means on a higher floor of a house."},
-    {"type": "tf", "prompt": "A room on the top floor of a house is a downstairs room.", "answer": false, "target": "downstairs", "explanation": "False. A downstairs room is on a lower floor. The top floor is upstairs."}
+    {"type": "tf", "prompt": "If your bedroom is on the second floor, it is an upstairs room.", "answer": true, "target": "upstairs", "explanation": "True. Upstairs means on a higher floor of a house."},
+    {"type": "tf", "prompt": "When you climb the stairs to your bedroom, you go to a downstairs room.", "answer": false, "target": "downstairs", "explanation": "False. A downstairs room is on a lower floor. The top floor is upstairs."}
   ],
   "A2|vocabulary|2|tf|medium": [
     {"type": "tf", "prompt": "People often eat dinner from a plate.", "answer": true, "target": "plate", "explanation": "True. A plate is a dish for food. Many people eat dinner from one."},
