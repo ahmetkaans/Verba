@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Add A2 Health and Body (theme 6)
+A2 Vocabulary theme 6 (Health and Body) is in the game: 16 quizzes, 104 questions and 43 new glossary entries, with a refreshed audio index. The helper review caught all planted questions and its 12 real findings were fixed. QUESTION_METHOD.md now asks for a natural-collocation check in the self-audit.
+
 ### Memory hygiene in rules 16(b) and 19 (documentation only)
 Rule 16(b) now says memory keeps the owner's preferences plus one rolling state note, and rule 19 adds the upkeep rules: overwrite the state note, retire finished notes in the same flush, and keep MEMORY.md at or below about 30 lines and 4 KB. Changed in AGENTS.md and docs/RULES_FULL.md.
 

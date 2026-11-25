@@ -153,6 +153,7 @@ The `<head>` script applies the saved theme before the first paint, and the page
 | `data/questions/a2-vocabulary-03-food-and-cooking.js` | A2 Vocabulary, theme 3 (Food and Cooking): 16 quizzes (4 types x 4 difficulties), 104 questions |
 | `data/questions/a2-vocabulary-04-shopping-and-money.js` | A2 Vocabulary, theme 4 (Shopping and Money): 16 quizzes (4 types x 4 difficulties), 104 questions. Its two Very Hard Fill rows *quality* and *quantity* have a bank of 3, not 4 (owner accepted, 2026-11-25) |
 | `data/questions/a2-vocabulary-05-clothes-and-appearance.js` | A2 Vocabulary, theme 5 (Clothes and Appearance): 16 quizzes (4 types x 4 difficulties), 104 questions |
+| `data/questions/a2-vocabulary-06-health-and-body.js` | A2 Vocabulary, theme 6 (Health and Body): 16 quizzes (4 types x 4 difficulties), 104 questions; 43 glossary entries in `data/glossary/a2.js` |
 | `data/glossary/a1.js` | the word meanings of level A1 (shown in the "Words in this game" pop-up); search a word |
 | `data/glossary/a2.js` | the word meanings of level A2 (so far Food and Cooking, Shopping and Money, Home and Household and Clothes and Appearance: 134 words; *comfortable* has two meanings tagged by theme); same shape as `a1.js`, key `"A2"` |
 

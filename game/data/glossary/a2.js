@@ -183,6 +183,214 @@ Object.assign(GAME_DATA.glossary, {
     "wide": {"type": "adjective", "meaning": "big from one side to the other, not narrow"},
     "wood": {"type": "noun", "meaning": "the hard material that comes from a tree"},
     "wooden": {"type": "adjective", "meaning": "made of wood"},
-    "zero": {"type": "number", "meaning": "the number 0"}
+    "zero": {"type": "number", "meaning": "the number 0"},
+    "accident": {
+      "type": "noun",
+      "meaning": "something bad that happens by chance, for example when two cars hit each other"
+    },
+    "active": {
+      "type": "adjective",
+      "meaning": "doing many things and full of energy"
+    },
+    "alive": {
+      "type": "adjective",
+      "meaning": "living, not dead"
+    },
+    "ankle": {
+      "type": "noun",
+      "meaning": "the part of the leg just above the foot"
+    },
+    "birth": {
+      "type": "noun",
+      "meaning": "the time when a baby comes out of its mother and starts to live"
+    },
+    "blood": {
+      "type": "noun",
+      "meaning": "the red thing that goes around inside your body"
+    },
+    "bone": {
+      "type": "noun",
+      "meaning": "one of the hard white parts inside your body"
+    },
+    "brain": {
+      "type": "noun",
+      "meaning": "the part inside your head that you use to think and remember"
+    },
+    "care": [
+      {
+        "type": "noun",
+        "meaning": "the work of looking after a person or a thing so that they stay well"
+      },
+      {
+        "type": "verb",
+        "meaning": "to think that a person or a thing is important to you"
+      }
+    ],
+    "cell": {
+      "type": "noun",
+      "meaning": "a very small living part of a person, an animal or a plant"
+    },
+    "cigarette": {
+      "type": "noun",
+      "meaning": "a thin white thing that people smoke"
+    },
+    "dead": {
+      "type": "adjective",
+      "meaning": "not living any more"
+    },
+    "death": {
+      "type": "noun",
+      "meaning": "the end of a life"
+    },
+    "dentist": {
+      "type": "noun",
+      "meaning": "a doctor who looks after your teeth"
+    },
+    "disease": {
+      "type": "noun",
+      "meaning": "a serious illness that a person can have for a long time"
+    },
+    "drug": {
+      "type": "noun",
+      "meaning": "a medicine that a doctor gives you to make you better"
+    },
+    "fever": {
+      "type": "noun",
+      "meaning": "a high temperature of the body when you are ill"
+    },
+    "finger": {
+      "type": "noun",
+      "meaning": "one of the five long parts at the end of your hand"
+    },
+    "flu": {
+      "type": "noun",
+      "meaning": "an illness like a bad cold, with a fever and pain in the body"
+    },
+    "headache": {
+      "type": "noun",
+      "meaning": "a pain in your head"
+    },
+    "heart": {
+      "type": "noun",
+      "meaning": "the part inside your body that pushes blood around it"
+    },
+    "hurt": [
+      {
+        "type": "verb",
+        "meaning": "to give someone pain, or to feel pain in a part of the body"
+      },
+      {
+        "type": "adjective",
+        "meaning": "sad because of something that another person said or did"
+      }
+    ],
+    "ill": {
+      "type": "adjective",
+      "meaning": "not well, with a problem in your body"
+    },
+    "illness": {
+      "type": "noun",
+      "meaning": "a time when a person is ill, or a problem that makes a person ill"
+    },
+    "injury": {
+      "type": "noun",
+      "meaning": "a part of the body that is hurt in an accident, for example by a fall"
+    },
+    "knee": {
+      "type": "noun",
+      "meaning": "the part in the middle of your leg"
+    },
+    "medical": {
+      "type": "adjective",
+      "meaning": "about doctors and the care of ill people"
+    },
+    "medicine": {
+      "type": "noun",
+      "meaning": "something that you take to feel better when you are ill"
+    },
+    "movement": {
+      "type": "noun",
+      "meaning": "the act of moving from one place or position to another"
+    },
+    "neck": {
+      "type": "noun",
+      "meaning": "the part of the body between the head and the shoulders"
+    },
+    "pain": {
+      "type": "noun",
+      "meaning": "the bad feeling in your body when something hurts"
+    },
+    "patient": {
+      "type": "noun",
+      "meaning": "a person that a doctor or a hospital looks after"
+    },
+    "physical": {
+      "type": "adjective",
+      "meaning": "about the body, not the mind"
+    },
+    "rest": [
+      {
+        "type": "noun",
+        "meaning": "a time when you stop work or sport and do nothing"
+      },
+      {
+        "type": "verb",
+        "meaning": "to stop work or sport and sit or lie down for a time"
+      }
+    ],
+    "shoulder": {
+      "type": "noun",
+      "meaning": "the part of the body where the arm joins the body"
+    },
+    "skin": {
+      "type": "noun",
+      "meaning": "the outside of your body"
+    },
+    "smell": [
+      {
+        "type": "verb",
+        "meaning": "to give a nice or a bad feeling to your nose, or to notice something with your nose"
+      },
+      {
+        "type": "noun",
+        "meaning": "the thing that your nose notices, for example from flowers or food"
+      }
+    ],
+    "smoke": [
+      {
+        "type": "verb",
+        "meaning": "to take the gray air of a cigarette into your mouth and out again"
+      },
+      {
+        "type": "noun",
+        "meaning": "the gray air that comes from a fire or a cigarette"
+      }
+    ],
+    "smoking": {
+      "type": "noun",
+      "meaning": "the act of taking the smoke of a cigarette into your mouth"
+    },
+    "stomach": {
+      "type": "noun",
+      "meaning": "the part inside your body where food goes after you eat"
+    },
+    "stress": [
+      {
+        "type": "noun",
+        "meaning": "a worried and tired feeling that you have when you have too much to do"
+      },
+      {
+        "type": "verb",
+        "meaning": "to say that something is very important"
+      }
+    ],
+    "virus": {
+      "type": "noun",
+      "meaning": "a very small living thing that can make people ill"
+    },
+    "weak": {
+      "type": "adjective",
+      "meaning": "not strong"
+    }
   }
 });
