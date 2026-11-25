@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Rule 19 (clean-desk flush) and the teacher export tool (documentation and private tools only)
+Added rule 19 to AGENTS.md and docs/RULES_FULL.md: before the final reply of a finished task, save lessons and state to their permanent file and end with a 3-line status block. Added the private tool .gitignore/tools/export_for_teacher.py (Markdown, print-ready HTML and PDF of a theme for teachers, in key, worksheet and audit modes) with a self-test, and its README file map rows. The game itself is unchanged.
+
 ### Question method lesson 15 (sentence variety); variety pass on A2 Home and Household and Clothes and Appearance
 docs/QUESTION_METHOD.md has lesson 15: mix sentence moods inside a quiz, use the colon shortcut at most once or twice per quiz, and keep at least half of the Easy True or False items about everyday situations. Under rule 17, 44 sentences of the two A2 themes were reworded (questions, polite commands, I, we and you subjects, because and so instead of colons); the answers, wrong options, bank words and word meanings did not change, and both themes still pass the draft check. The three golden baselines refreshed in the previous entry still pass, so they were not refreshed again. The sync check still fails for the five A2 words that wait for the owner's recording choice.
 
