@@ -391,6 +391,288 @@ Object.assign(GAME_DATA.glossary, {
     "weak": {
       "type": "adjective",
       "meaning": "not strong"
+    },
+    "achieve": {
+      "type": "verb",
+      "meaning": "to do or get something good after trying hard"
+    },
+    "analyze": {
+      "type": "verb",
+      "meaning": "to look at something very carefully to understand it"
+    },
+    "ancient": {
+      "type": "adjective",
+      "meaning": "very, very old, from a time long ago"
+    },
+    "attend": {
+      "type": "verb",
+      "meaning": "to go to a school, a class or an event"
+    },
+    "attention": {
+      "type": "noun",
+      "meaning": "the act of watching or listening with care"
+    },
+    "author": {
+      "type": "noun",
+      "meaning": "a person who writes a book or a story"
+    },
+    "biology": {
+      "type": "noun",
+      "meaning": "the subject about living things, such as plants and animals"
+    },
+    "board": {
+      "type": "noun",
+      "meaning": "a big thing on the wall of a classroom where the teacher writes"
+    },
+    "campus": {
+      "type": "noun",
+      "meaning": "the land and the buildings of a university or a school"
+    },
+    "chemistry": {
+      "type": "noun",
+      "meaning": "the subject about water, air and other things, and how they change when you put them together"
+    },
+    "column": {
+      "type": "noun",
+      "meaning": "one of the long parts of a page, with a line of words going down it"
+    },
+    "context": {
+      "type": "noun",
+      "meaning": "the words around a word that help you understand its meaning"
+    },
+    "copy": [
+      {
+        "type": "noun",
+        "meaning": "a page or a thing that is made to look exactly like another one"
+      },
+      {
+        "type": "verb",
+        "meaning": "to make something that is exactly like another thing"
+      }
+    ],
+    "count": {
+      "type": "verb",
+      "meaning": "to say numbers in order, or to find how many there are"
+    },
+    "degree": {
+      "type": "noun",
+      "meaning": "a paper from a university that shows you finished your studies"
+    },
+    "education": {
+      "type": "noun",
+      "meaning": "the learning and teaching that happens at school and at university"
+    },
+    "error": {
+      "type": "noun",
+      "meaning": "a mistake"
+    },
+    "essay": {
+      "type": "noun",
+      "meaning": "a short piece of writing about one subject, written for school"
+    },
+    "evidence": {
+      "type": "noun",
+      "meaning": "facts or signs that show that something is true"
+    },
+    "experiment": {
+      "type": "noun",
+      "meaning": "a test that you do to learn something new"
+    },
+    "explanation": {
+      "type": "noun",
+      "meaning": "words that make something easy to understand"
+    },
+    "fail": {
+      "type": "verb",
+      "meaning": "to not pass a test, or to not do something well enough"
+    },
+    "identify": {
+      "type": "verb",
+      "meaning": "to say who a person is or what a thing is"
+    },
+    "instruction": {
+      "type": "noun",
+      "meaning": "words that tell you how to do something"
+    },
+    "instructor": {
+      "type": "noun",
+      "meaning": "a person who teaches a skill, such as swimming or driving"
+    },
+    "knowledge": {
+      "type": "noun",
+      "meaning": "what you know about a subject"
+    },
+    "lab": {
+      "type": "noun",
+      "meaning": "a room where people do science work"
+    },
+    "learning": {
+      "type": "noun",
+      "meaning": "the work of getting new knowledge or a new skill"
+    },
+    "lecture": [
+      {
+        "type": "noun",
+        "meaning": "a long talk to a class about a subject"
+      },
+      {
+        "type": "verb",
+        "meaning": "to give a long talk to a class about a subject"
+      }
+    ],
+    "level": {
+      "type": "noun",
+      "meaning": "a step in how easy or hard something is"
+    },
+    "mark": [
+      {
+        "type": "noun",
+        "meaning": "the number or letter a teacher gives for your work"
+      },
+      {
+        "type": "verb",
+        "meaning": "to write on something, or to check work and give it a number or letter"
+      }
+    ],
+    "math": {
+      "type": "noun",
+      "meaning": "the school subject about numbers and shapes"
+    },
+    "mathematics": {
+      "type": "noun",
+      "meaning": "the subject about numbers, shapes and how to count them"
+    },
+    "memory": {
+      "type": "noun",
+      "meaning": "the power to remember things"
+    },
+    "method": {
+      "type": "noun",
+      "meaning": "a way of doing something"
+    },
+    "number": {
+      "type": "verb",
+      "meaning": "to put 1, 2, 3 and so on on each thing in a list"
+    },
+    "pass": {
+      "type": "verb",
+      "meaning": "to do well enough in a test to move on"
+    },
+    "physics": {
+      "type": "noun",
+      "meaning": "the subject about things such as light, sound and how things move"
+    },
+    "predict": {
+      "type": "verb",
+      "meaning": "to say what will happen in the future before it happens"
+    },
+    "present": {
+      "type": "verb",
+      "meaning": "to show or tell something to a group of people"
+    },
+    "professor": {
+      "type": "noun",
+      "meaning": "a teacher at a university"
+    },
+    "progress": [
+      {
+        "type": "noun",
+        "meaning": "the change to a better skill over time"
+      },
+      {
+        "type": "verb",
+        "meaning": "to get better, or to move forward"
+      }
+    ],
+    "pronounce": {
+      "type": "verb",
+      "meaning": "to say a word with the right sounds"
+    },
+    "question": {
+      "type": "verb",
+      "meaning": "to ask a person many things to find facts"
+    },
+    "realize": {
+      "type": "verb",
+      "meaning": "to understand something suddenly"
+    },
+    "recognize": {
+      "type": "verb",
+      "meaning": "to know who a person is or what a thing is when you see it again"
+    },
+    "refer": {
+      "type": "verb",
+      "meaning": "to talk about a person or a thing, or to look at a book for facts"
+    },
+    "research": [
+      {
+        "type": "noun",
+        "meaning": "the work of looking for facts about a subject"
+      },
+      {
+        "type": "verb",
+        "meaning": "to look for facts about a subject"
+      }
+    ],
+    "researcher": {
+      "type": "noun",
+      "meaning": "a person whose job is to find new facts about a subject"
+    },
+    "solution": {
+      "type": "noun",
+      "meaning": "an answer to a problem"
+    },
+    "solve": {
+      "type": "verb",
+      "meaning": "to find the answer to a problem"
+    },
+    "source": {
+      "type": "noun",
+      "meaning": "the book or place where you found a fact"
+    },
+    "speaker": {
+      "type": "noun",
+      "meaning": "a person who gives a talk to a group of people"
+    },
+    "speech": {
+      "type": "noun",
+      "meaning": "a talk that a person gives to a group of people"
+    },
+    "structure": {
+      "type": "noun",
+      "meaning": "the way the parts of something are put together"
+    },
+    "survey": {
+      "type": "noun",
+      "meaning": "a list of questions that you ask many people to learn what they think"
+    },
+    "symbol": {
+      "type": "noun",
+      "meaning": "a picture or a sign that stands for an idea"
+    },
+    "teaching": {
+      "type": "noun",
+      "meaning": "the work of a teacher: helping people learn"
+    },
+    "term": {
+      "type": "noun",
+      "meaning": "one of the parts of the school year"
+    },
+    "thinking": {
+      "type": "noun",
+      "meaning": "the work your mind does when you try to find an answer"
+    },
+    "thought": {
+      "type": "noun",
+      "meaning": "an idea in your head"
+    },
+    "understanding": {
+      "type": "noun",
+      "meaning": "knowing how something works or what it means"
+    },
+    "unit": {
+      "type": "noun",
+      "meaning": "one part of a book or a course"
     }
   }
 });

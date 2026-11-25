@@ -4,6 +4,9 @@ What changed in Verba, in plain language. The newest change is at the top. Every
 
 ## 2026-11-25
 
+### Add A2 School and Learning (theme 7)
+16 quizzes, 111 questions and 63 new glossary entries for A2 theme 7; audio index refreshed for the published A2 words (recordings for essay, fail, predict and survey still wait for the owner). Collocation-first sentences, the ancient exception (up to 3 A1 adjectives as wrong options) and a helper review that caught all 3 planted questions.
+
 ### Add A2 Health and Body (theme 6)
 A2 Vocabulary theme 6 (Health and Body) is in the game: 16 quizzes, 104 questions and 43 new glossary entries, with a refreshed audio index. The helper review caught all planted questions and its 12 real findings were fixed. QUESTION_METHOD.md now asks for a natural-collocation check in the self-audit.
 
